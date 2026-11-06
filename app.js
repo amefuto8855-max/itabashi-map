@@ -194,8 +194,12 @@
     '#itabashi-map.izm-sheet-open .izm-toast{bottom:auto;top:58px}',
     '#itabashi-map .izm-toast{position:absolute;left:50%;bottom:80px;z-index:8;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);padding:9px 14px;border-radius:10px;background:rgba(10,14,24,.96);border:1px solid var(--line);font-size:13px;text-align:center;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.35)}',
     '#itabashi-map .izm-sheet{position:absolute;left:0;right:0;bottom:0;z-index:7;max-height:72%;display:flex;flex-direction:column;background:var(--panel2);border-top:1px solid var(--line);border-radius:16px 16px 0 0;box-shadow:0 -8px 30px rgba(0,0,0,.4)}',
-    '#itabashi-map .izm-sheet-head{display:flex;align-items:center;justify-content:space-between;padding:12px 10px 6px 16px;font-size:15px;font-weight:700}',
-    '#itabashi-map .izm-sheet-head button{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px}',
+    '#itabashi-map .izm-sheet-head{display:flex;align-items:center;gap:6px;padding:12px 8px 6px 16px;font-size:15px;font-weight:700}',
+    '#itabashi-map .izm-sheet-head .izm-sh-t{margin-right:auto;white-space:nowrap}',
+    '#itabashi-map .izm-sheet-head .izm-x{flex:none;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px}',
+    '#itabashi-map .izm-btn.izm-sm{height:32px;padding:0 10px;font-size:12px}',
+    '#itabashi-map .izm-file{position:relative;overflow:hidden;cursor:pointer}',
+    '#itabashi-map .izm-file input{position:absolute;left:0;top:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:pointer;font-size:16px}',
     '#itabashi-map .izm-sheet-body{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y;padding:0 10px 14px}',
     '#itabashi-map .izm-item{margin-top:8px;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03)}',
     '#itabashi-map .izm-item-head{display:flex;align-items:center;gap:10px;width:100%;text-align:left}',
@@ -233,7 +237,10 @@
       '<button type="button" data-act="list">' + ICON.list + '<span>記録一覧</span></button>' +
       '<button type="button" data-act="full">' + ICON.full + '<span>全画面</span></button>' +
     '</div>' +
-    '<div class="izm-sheet" hidden><div class="izm-sheet-head"><span>記録一覧</span><button type="button" data-act="closelist" aria-label="閉じる">' + ICON.close + '</button></div><div class="izm-sheet-body"></div></div>' +
+    '<div class="izm-sheet" hidden><div class="izm-sheet-head"><span class="izm-sh-t">記録一覧</span>' +
+    '<button type="button" class="izm-btn izm-sm" data-act="saveall">まとめて保存</button>' +
+    '<label class="izm-btn izm-sm izm-file">GPXから復元<input type="file" class="izm-gpxin" multiple></label>' +
+    '<button type="button" class="izm-x" data-act="closelist" aria-label="閉じる">' + ICON.close + '</button></div><div class="izm-sheet-body"></div></div>' +
     '<div class="izm-toast" hidden></div>' +
     '<div class="izm-dialog" hidden></div>';
   root.style.visibility = '';
@@ -884,7 +891,7 @@
 
   /* ---------- route list ---------- */
   function renderList() {
-    if (!S.routes.length) { elList.innerHTML = '<div class="izm-empty">保存した記録はありません</div>'; return; }
+    if (!S.routes.length) { elList.innerHTML = '<div class="izm-empty">保存した記録はありません<br>書き出したGPXファイルがあれば、「GPXから復元」で記録を戻せます</div>'; return; }
     var yr = new Date().getFullYear(), h = '';
     S.routes.forEach(function (r) {
       var on = !!S.shown[r.id], col = PAL[(r.c || 0) % PAL.length];
@@ -964,14 +971,11 @@
     return new Blob([a], { type: u.slice(5, u.indexOf(';')) });
   }
   function iso(ms) { return new Date(ms).toISOString().replace(/\.\d{3}Z$/, 'Z'); }
-  function buildGpx(r) {
-    var name = AREA_NAME + ' ' + fmtDay(r.start, true) + ' ' + hhmm(r.start);
-    var out = [
-      '<?xml version="1.0" encoding="UTF-8"?>',
-      '<gpx version="1.1" creator="itabashi map" xmlns="http://www.topografix.com/GPX/1/1">',
-      '<metadata><name>' + esc(name) + '</name><time>' + iso(r.start) + '</time></metadata>',
-      '<trk><name>' + esc(name) + '</name>'
-    ];
+  var GPX_NS = 'https://amefuto8855-max.github.io/itabashi-map/gpx/1';
+  function routeName(r) { return AREA_NAME + ' ' + fmtDay(r.start, true) + ' ' + hhmm(r.start); }
+  function trkXml(r, out) {
+    out.push('<trk><name>' + esc(routeName(r)) + '</name>');
+    out.push('<extensions><izm:start>' + iso(r.start) + '</izm:start><izm:end>' + iso(r.end || r.start) + '</izm:end></extensions>');
     r.segs.forEach(function (sg) {
       if (!sg.length) return;
       out.push('<trkseg>');
@@ -980,8 +984,126 @@
       });
       out.push('</trkseg>');
     });
-    out.push('</trk>', '</gpx>');
+    out.push('</trk>');
+  }
+  function buildGpx(list, title) {
+    var out = [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<gpx version="1.1" creator="itabashi map" xmlns="http://www.topografix.com/GPX/1/1" xmlns:izm="' + GPX_NS + '">',
+      '<metadata><name>' + esc(title) + '</name><time>' + iso(Date.now()) + '</time></metadata>'
+    ];
+    list.forEach(function (r) { trkXml(r, out); });
+    out.push('</gpx>');
     return out.join('\n');
+  }
+
+  /* ---------- restore from GPX ---------- */
+  function gpxTime(el) {
+    if (!el) return null;
+    var t = Date.parse(String(el.textContent || '').trim());
+    return isFinite(t) ? t : null;
+  }
+  function firstTag(el, name) { var l = el.getElementsByTagName(name); return l.length ? l[0] : null; }
+  function extTime(el, name) {
+    var l = el.getElementsByTagNameNS ? el.getElementsByTagNameNS(GPX_NS, name) : [];
+    if (!l.length) l = el.getElementsByTagName('izm:' + name);
+    return l.length ? gpxTime(l[0]) : null;
+  }
+  function parseGpx(text) {
+    var doc = new DOMParser().parseFromString(text, 'application/xml');
+    if (!doc || doc.getElementsByTagName('parsererror').length) return null;
+    var groups = [], i, j;
+    var trks = doc.getElementsByTagName('trk');
+    for (i = 0; i < trks.length; i++) {
+      var segEls = trks[i].getElementsByTagName('trkseg'), segs = [];
+      for (j = 0; j < segEls.length; j++) segs.push(segEls[j].getElementsByTagName('trkpt'));
+      if (!segEls.length) segs.push(trks[i].getElementsByTagName('trkpt'));
+      groups.push({ el: trks[i], segs: segs });
+    }
+    var rtes = doc.getElementsByTagName('rte');
+    for (i = 0; i < rtes.length; i++) groups.push({ el: rtes[i], segs: [rtes[i].getElementsByTagName('rtept')] });
+    var out = [];
+    groups.forEach(function (g) {
+      var pts = [], tFirst = null, tLast = null, n = 0;
+      g.segs.forEach(function (list) {
+        var sg = [];
+        for (var k = 0; k < list.length; k++) {
+          var el = list[k], la = parseFloat(el.getAttribute('lat')), lo = parseFloat(el.getAttribute('lon'));
+          if (!isFinite(la) || !isFinite(lo) || Math.abs(la) > 90 || Math.abs(lo) > 180) continue;
+          var tm = gpxTime(firstTag(el, 'time'));
+          if (tm != null) { if (tFirst == null) tFirst = tm; tLast = tm; }
+          sg.push([la, lo, tm]);
+        }
+        if (sg.length) { pts.push(sg); n += sg.length; }
+      });
+      if (n < 2) return;
+      var start = extTime(g.el, 'start'), end = extTime(g.el, 'end');
+      if (start == null) start = tFirst != null ? tFirst : Date.now();
+      if (end == null) end = tLast != null ? tLast : start;
+      var dist = 0;
+      var segs = pts.map(function (sg) {
+        var prev = null;
+        return sg.map(function (p) {
+          if (prev) dist += hav(prev[0], prev[1], p[0], p[1]);
+          prev = p;
+          return [r6(p[0]), r6(p[1]), p[2] != null ? Math.max(0, Math.round((p[2] - start) / 1000)) : 0, 0];
+        });
+      });
+      out.push({ v: 1, id: 'r' + start, start: start, end: Math.max(end, start), dist: dist, segs: segs });
+    });
+    return out;
+  }
+  function edgePoints(r) {
+    var f = null, l = null, n = 0;
+    r.segs.forEach(function (sg) { if (sg.length) { if (!f) f = sg[0]; l = sg[sg.length - 1]; n += sg.length; } });
+    return { f: f, l: l, n: n };
+  }
+  function sameRoute(a, b) {
+    var x = edgePoints(a), y = edgePoints(b);
+    if (!x.f || !y.f || x.n !== y.n) return false;
+    function eq(p, q) { return Math.abs(p[0] - q[0]) < 2e-6 && Math.abs(p[1] - q[1]) < 2e-6; }
+    return eq(x.f, y.f) && eq(x.l, y.l);
+  }
+  function importFiles(files) {
+    var list = Array.prototype.slice.call(files || []);
+    if (!list.length) return;
+    var added = 0, dup = 0, bad = 0, pending = list.length;
+    toast('読み込んでいます…', 8000);
+    list.forEach(function (f) {
+      var fr = new FileReader();
+      fr.onload = function () { handle(String(fr.result || '')); done(); };
+      fr.onerror = function () { bad++; done(); };
+      try { fr.readAsText(f); } catch (e) { bad++; done(); }
+    });
+    function handle(text) {
+      var recs = null;
+      try { recs = parseGpx(text); } catch (e) { recs = null; }
+      if (!recs || !recs.length) { bad++; return; }
+      recs.forEach(function (r) {
+        for (var i = 0; i < S.routes.length; i++) if (sameRoute(S.routes[i], r)) { dup++; return; }
+        while (findRoute(r.id)) r.id += 'x';
+        var ci = sget('cidx', 0);
+        r.c = ci % PAL.length;
+        sset('cidx', ci + 1);
+        S.routes.push(r);
+        S.shown[r.id] = true;
+        added++;
+      });
+    }
+    function done() {
+      if (--pending > 0) return;
+      S.routes.sort(function (a, b) { return b.start - a.start; });
+      var saved = added ? sset('routes', S.routes) : true;
+      sset('shown', S.shown);
+      renderList(); draw();
+      var msg;
+      if (added) msg = added + '件の記録を復元しました' + (dup ? '（復元済みの' + dup + '件は飛ばしました）' : '');
+      else if (dup) msg = 'どの記録も復元済みです';
+      else msg = 'GPXファイルを読み込めませんでした';
+      if (bad && (added || dup)) msg += '。読めないファイルが' + bad + '件ありました';
+      if (!saved) msg = '保存領域がいっぱいのため、ブラウザに保存できませんでした';
+      toast(msg, 5000);
+    }
   }
   function download(blob, name) {
     var u = URL.createObjectURL(blob), a = document.createElement('a');
@@ -1021,7 +1143,12 @@
     });
   }
   function exportGpx(r) {
-    saveFile(new Blob([buildGpx(r)], { type: 'application/gpx+xml' }), '板橋区_' + fileStamp(r.start) + '.gpx');
+    saveFile(new Blob([buildGpx([r], routeName(r))], { type: 'application/gpx+xml' }), '板橋区_' + fileStamp(r.start) + '.gpx');
+  }
+  function exportAllGpx() {
+    if (!S.routes.length) { toast('保存した記録はありません'); return; }
+    var list = S.routes.slice().sort(function (a, b) { return a.start - b.start; });
+    saveFile(new Blob([buildGpx(list, AREA_NAME + ' 全記録')], { type: 'application/gpx+xml' }), '板橋区_全記録_' + fileStamp(Date.now()) + '.gpx');
   }
 
   /* ---------- fullscreen ---------- */
@@ -1107,8 +1234,16 @@
         break;
       case 'png': if (r) exportPng(r); break;
       case 'gpx': if (r) exportGpx(r); break;
+      case 'saveall': exportAllGpx(); break;
       case 'del': if (r) askDelete(r); break;
     }
+  });
+
+  var elGpxIn = q('.izm-gpxin');
+  elGpxIn.addEventListener('change', function () {
+    var files = elGpxIn.files;
+    importFiles(files);
+    setTimeout(function () { elGpxIn.value = ''; }, 0);
   });
 
   /* ---------- gestures ---------- */
@@ -1246,7 +1381,7 @@
   checkResume();
   resize(true);
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', BASE + 'data.json', true);
+  xhr.open('GET', BASE + 'data.json?v=' + Math.floor(Date.now() / 3600000), true);
   xhr.onload = function () {
     if (xhr.status >= 200 && xhr.status < 300) {
       try { init(JSON.parse(xhr.responseText)); }
