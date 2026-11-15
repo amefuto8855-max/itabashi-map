@@ -56,3 +56,36 @@
 #itbM .c-purposes .c-purpall{display:inline-flex;min-height:42px;font-size:calc(15px*var(--tz,1))}
 #itbM .c-conds{top:68px}
 }
+
+/* ===== 最初の画面（何をしに行きますか）と、2段目（種類） ===== */
+#itbM .c-home{position:absolute;top:50%;left:12px;right:66px;z-index:1050;max-width:520px;margin:0 auto;transform:translateY(-50%);padding:18px 14px 14px;border-radius:18px;background:var(--bg);color:var(--ink);text-align:center;box-shadow:0 10px 30px rgba(20,40,30,.28)}
+#itbM .c-stage:not(.is-home) .c-home{display:none}
+#itbM .c-stage.is-home .c-purposes{display:none}
+#itbM .c-home-h{margin:0 0 12px;font-size:calc(19px*var(--tz,1));font-weight:900;line-height:1.4}
+#itbM .c-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#itbM .c-homebtn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;min-height:96px;padding:10px 3px 9px;border-radius:14px;background:var(--panel);color:var(--ink);line-height:1.25}
+#itbM .c-homebtn:hover{box-shadow:inset 0 0 0 2px var(--c)}
+#itbM .c-home-ic{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;flex:none;border-radius:50%;background:var(--c);color:#fff}
+#itbM .c-home-ic svg{width:23px;height:23px;stroke-width:2}
+#itbM .c-homebtn b{font-size:calc(15px*var(--tz,1));font-weight:800;white-space:nowrap}
+#itbM .c-home-n{font-size:calc(11.5px*var(--tz,1));font-weight:500;color:var(--ink3);white-space:nowrap}
+#itbM .c-home-f{margin:12px 0 0;font-size:calc(12.5px*var(--tz,1));line-height:1.6;color:var(--ink3)}
+#itbM .c-kinds{position:absolute;top:78px;left:12px;right:66px;z-index:1000;display:flex;align-items:center;gap:6px;padding:4px 4px 6px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 20px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 20px),transparent)}
+#itbM .c-kinds::-webkit-scrollbar{display:none}
+#itbM .c-kind{gap:4px;padding:0 13px}
+#itbM .c-kind .c-chip-n{margin-left:2px}
+#itbM .c-kind.is-zero{background:rgba(255,255,255,.8);color:var(--ink3)}
+#itbM .c-stage.has-kinds{--r2b:170px}
+#itbM .c-stage.has-kinds .c-conds{top:120px}
+#itbM .c-top.is-search .c-purposes,#itbM .c-top.is-search~.c-kinds,#itbM .c-top.is-search~.c-conds{display:none}
+@container (min-width: 560px){
+#itbM .c-kinds{top:76px}
+#itbM .c-stage.has-kinds{--r2b:168px}
+#itbM .c-stage.has-kinds .c-conds{top:118px}
+#itbM .c-top.is-search~.c-conds{display:none}
+}
+@container (min-width: 1100px){
+#itbM .c-kinds{top:68px}
+#itbM .c-stage.has-kinds{--r2b:160px}
+#itbM .c-stage.has-kinds .c-conds{top:110px}
+}
