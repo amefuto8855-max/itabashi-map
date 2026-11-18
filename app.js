@@ -6,10 +6,10 @@
   if (!root || root.getAttribute("data-ready")) { return; }
   root.setAttribute("data-ready", "1");
   var BASE = root.getAttribute("data-base") || (document.currentScript && document.currentScript.src ? document.currentScript.src.replace(/[^\/]*$/, "") : "");
-  var ICONS = {"tree": "<circle cx=\"12\" cy=\"9\" r=\"5.5\"/><path d=\"M12 14.5V21M8.5 21h7\"/>", "dumbbell": "<path d=\"M7 7v10M4 9.5v5M17 7v10M20 9.5v5M7 12h10\"/>", "book": "<path d=\"M12 6.5C10 5 7 4.6 4 5v13c3-.4 6 0 8 1.5 2-1.5 5-1.9 8-1.5V5c-3-.4-6 0-8 1.5zM12 6.5v13\"/>", "balloon": "<path d=\"M12 3.5c2.9 0 5 2.2 5 5 0 3.3-2.7 6-5 6s-5-2.7-5-6c0-2.8 2.1-5 5-5z\"/><path d=\"M12 14.5l-.9 1.6h1.8zM12 16.1c0 1.6 1.4 2.4 0 4.4\"/>", "museum": "<path d=\"M3.5 9 12 4.5 20.5 9M5.5 9.5v8M9.8 9.5v8M14.2 9.5v8M18.5 9.5v8M3.5 20h17\"/>", "paw": "<circle cx=\"8.3\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"15.7\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"5\" cy=\"12\" r=\"1.5\"/><circle cx=\"19\" cy=\"12\" r=\"1.5\"/><path d=\"M12 11.5c-2.8 0-4.8 3-4.8 5.1 0 1.5 1.3 2.2 2.6 1.7 1.5-.6 2.9-.6 4.4 0 1.3.5 2.6-.2 2.6-1.7 0-2.1-2-5.1-4.8-5.1z\"/>", "landmark": "<path d=\"M4 9.5c3-.5 5-2 8-5 3 3 5 4.5 8 5M6.5 9.5V19M17.5 9.5V19M4 19.5h16M9.5 14h5\"/>", "people": "<circle cx=\"9\" cy=\"8\" r=\"2.8\"/><circle cx=\"16.5\" cy=\"9\" r=\"2.2\"/><path d=\"M3.8 19c.6-3.4 2.6-5.3 5.2-5.3s4.6 1.9 5.2 5.3M14.6 14.1c2.4-.4 4.6 1.1 5.2 4.6\"/>", "bubble": "<path d=\"M4.5 5.5h15v10h-9l-4 3.5v-3.5h-2z\"/><path d=\"M8 9.5h8M8 12.5h5\"/>", "pin": "<path d=\"M12 20.5s-6-5.3-6-10.5a6 6 0 0 1 12 0c0 5.2-6 10.5-6 10.5z\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2\"/><circle cx=\"18\" cy=\"6\" r=\"2\"/><path d=\"M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16\"/>", "share": "<circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/>", "phone": "<path d=\"M6.5 4.5h2.7l1.4 3.6-1.8 1.2a10.5 10.5 0 0 0 5.9 5.9l1.2-1.8 3.6 1.4v2.7a1.5 1.5 0 0 1-1.6 1.5C10.4 18.4 5.6 13.6 5 6.1a1.5 1.5 0 0 1 1.5-1.6z\"/>", "copy": "<rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/>", "search": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/>", "locate": "<circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/>", "close": "<path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/>", "star": "<path d=\"M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8z\"/>", "expand": "<path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/>", "shrink": "<path d=\"M9 4.5V9H4.5M15 4.5V9h4.5M9 19.5V15H4.5M15 19.5V15h4.5\"/>", "print": "<path d=\"M7 9V4.5h10V9M7 17H5.5A1.5 1.5 0 0 1 4 15.5v-5A1.5 1.5 0 0 1 5.5 9h13a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H17\"/><path d=\"M7 14h10v6H7z\"/>", "sliders": "<path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/>", "map": "<path d=\"M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z\"/><path d=\"M9 4.5v13M15 6.5v13\"/>", "walk": "<circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/>", "rings": "<circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/>", "link": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>", "chevron": "<path d=\"M9 6l6 6-6 6\"/>", "check": "<path d=\"M5 12.5l4.5 4.5L19 7.5\"/>", "list": "<path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/>", "dice": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/>", "layers": "<path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/>", "train": "<rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/>", "bus": "<rect x=\"5\" y=\"3.5\" width=\"14\" height=\"14.5\" rx=\"2.5\"/><path d=\"M5 11.5h14M8 6.6h8M7.6 18v2.5M16.4 18v2.5\"/><path d=\"M8.4 14.8h.01M15.6 14.8h.01\" stroke-width=\"2.6\"/>", "up": "<path d=\"M12 18V6M6.5 11.5L12 6l5.5 5.5\"/>", "down": "<path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/>", "flag": "<path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/>", "umbrella": "<path d=\"M3.5 12.5a8.5 8.5 0 0 1 17 0z\"/><path d=\"M12 12.5v6a2 2 0 0 1-4 0M12 3.5V4\"/>", "stroller": "<path d=\"M12.5 4.5v7h7.5a7.5 7.5 0 0 0-7.5-7.5z\"/><path d=\"M3.5 7.5H6l1.6 4h12.4a5 5 0 0 1-5 5h-4.5a5 5 0 0 1-3.3-1.3\"/><circle cx=\"9\" cy=\"19.2\" r=\"1.6\"/><circle cx=\"16.5\" cy=\"19.2\" r=\"1.6\"/>", "yen": "<path d=\"M7 4.5l5 7 5-7M12 11.5V20M8 12.5h8M8 16h8\"/>", "laptop": "<rect x=\"5\" y=\"5.5\" width=\"14\" height=\"9.5\" rx=\"1.3\"/><path d=\"M3 18.5h18\"/>", "wifi": "<path d=\"M3.8 9.6a11.6 11.6 0 0 1 16.4 0M6.9 12.9a7.2 7.2 0 0 1 10.2 0M10 16.1a2.9 2.9 0 0 1 4 0\"/><path d=\"M12 19.2v.01\" stroke-width=\"2.8\"/>", "parking": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M10 16.5v-9h3.2a2.7 2.7 0 0 1 0 5.4H10\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7.5V12l3 2\"/>", "drink": "<path d=\"M6.5 8.5h11l-1.3 10.6a1.6 1.6 0 0 1-1.6 1.4H9.4a1.6 1.6 0 0 1-1.6-1.4z\"/><path d=\"M7 12.5h10M13 8.5l1.6-5h3\"/>", "smoke": "<rect x=\"3\" y=\"14\" width=\"15\" height=\"4\" rx=\"1\"/><path d=\"M14.5 14v4M20.5 14v4M17.5 11c0-1.6 2-1.6 2-3.2S17.5 6.2 17.5 4.6\"/>", "moon": "<path d=\"M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.1 6.1 0 0 0 10.1 10.1z\"/>", "flower": "<path d=\"M7.5 5l2.2 2.5L12 4.5l2.3 3 2.2-2.5v4.6a4.5 4.5 0 0 1-9 0z\"/><path d=\"M12 14.1V21M12 18.2c-1.6-1.8-3.6-2.1-5.1-1.7M12 17.2c1.6-1.8 3.6-2.1 5.1-1.7\"/>", "shop": "<path d=\"M4 9.5l1.6-5h12.8L20 9.5\"/><path d=\"M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0\"/><path d=\"M5.5 12v7.5h13V12M10 19.5v-4.5h4v4.5\"/>", "home": "<path d=\"M4 11.5L12 5l8 6.5M6.5 9.5v10h11v-10\"/>", "ext": "<path d=\"M13.5 4.5h6v6M19.5 4.5l-8 8M17 13.5V18a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 5 18V9a1.5 1.5 0 0 1 1.5-1.5H11\"/>", "tag": "<path d=\"M4.5 12.3V5.5a1 1 0 0 1 1-1h6.8l7.2 7.2a1 1 0 0 1 0 1.4l-5.9 5.9a1 1 0 0 1-1.4 0z\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.3\"/>", "info": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/>", "play": "<path d=\"M8.5 5.8v12.4l9.8-6.2z\"/>", "mug": "<path d=\"M5.5 8h9.5v11a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19z\"/><path d=\"M15 10h2a2 2 0 0 1 2 2v2.5a2 2 0 0 1-2 2h-2M5.5 8a2.6 2.6 0 0 1 3.3-2.5 3 3 0 0 1 5.4.4A2.2 2.2 0 0 1 15 8M8.8 11.5v5.5M11.7 11.5v5.5\"/>", "fish": "<path d=\"M4.5 12c2.5-3.4 5.5-5 8.6-5 3.2 0 5.8 1.7 7.4 5-1.6 3.3-4.2 5-7.4 5-3.1 0-6.1-1.6-8.6-5z\"/><path d=\"M4.5 12 2.5 9M4.5 12l-2 3\"/><path d=\"M16.6 11h.01\" stroke-width=\"2.6\"/>", "udon": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M13.5 3.5 9.5 12M18.5 4.5 13.5 12\"/>", "ramen": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M8.5 9.5c-1-1.2 1-2.1 0-3.5M12 9.5c-1-1.2 1-2.1 0-3.5M15.5 9.5c-1-1.2 1-2.1 0-3.5\"/>", "dumpling": "<path d=\"M3.5 15c1.5-4.6 4.8-7.2 8.5-7.2s7 2.6 8.5 7.2c-2.6 1.6-5.4 2.4-8.5 2.4S6.1 16.6 3.5 15z\"/><path d=\"M7.6 10.8l.9 2M10.6 9l.4 2.2M13.4 9l-.4 2.2M16.4 10.8l-.9 2\"/>", "grill": "<circle cx=\"12\" cy=\"11\" r=\"7\"/><path d=\"M5.6 8.5h12.8M5 11h14M5.6 13.5h12.8M8.5 17.2 7 20.5M15.5 17.2l1.5 3.3\"/>", "cutlery": "<path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/>", "curry": "<path d=\"M3 14.5h18a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 14.5z\"/><path d=\"M5.5 14.5c.6-3.2 2.4-5 5-5 2 0 3.3 1 4 2.6.9-.6 2.1-.8 3.3-.4M10.5 7.5c-.8-1.1.8-1.9 0-3.2\"/>", "teppan": "<path d=\"M3 17.5h14\"/><ellipse cx=\"9.5\" cy=\"14\" rx=\"6\" ry=\"2.5\"/><path d=\"M14.5 11.5l2.6-2.6 1.6 1.6-2.6 2.6zM17.9 9.7 21 6.6\"/>", "plate": "<circle cx=\"13.5\" cy=\"12\" r=\"7\"/><circle cx=\"13.5\" cy=\"12\" r=\"3.5\"/><path d=\"M3.5 3.5v5a1.5 1.5 0 0 0 1.5 1.5v10.5M3.5 3.5v5\"/>", "coffee": "<path d=\"M4.5 10h11.5v4.5a5 5 0 0 1-5 5h-1.5a5 5 0 0 1-5-5z\"/><path d=\"M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16M8.5 7.5c-.8-1 .8-1.8 0-3M12.5 7.5c-.8-1 .8-1.8 0-3\"/>", "bento": "<rect x=\"3.5\" y=\"6\" width=\"17\" height=\"12\" rx=\"2\"/><path d=\"M12 6v12M12 12h8.5\"/><circle cx=\"7.7\" cy=\"12\" r=\"1.7\"/>"};
+  var ICONS = {"tree": "<circle cx=\"12\" cy=\"9\" r=\"5.5\"/><path d=\"M12 14.5V21M8.5 21h7\"/>", "dumbbell": "<path d=\"M7 7v10M4 9.5v5M17 7v10M20 9.5v5M7 12h10\"/>", "book": "<path d=\"M12 6.5C10 5 7 4.6 4 5v13c3-.4 6 0 8 1.5 2-1.5 5-1.9 8-1.5V5c-3-.4-6 0-8 1.5zM12 6.5v13\"/>", "balloon": "<path d=\"M12 3.5c2.9 0 5 2.2 5 5 0 3.3-2.7 6-5 6s-5-2.7-5-6c0-2.8 2.1-5 5-5z\"/><path d=\"M12 14.5l-.9 1.6h1.8zM12 16.1c0 1.6 1.4 2.4 0 4.4\"/>", "museum": "<path d=\"M3.5 9 12 4.5 20.5 9M5.5 9.5v8M9.8 9.5v8M14.2 9.5v8M18.5 9.5v8M3.5 20h17\"/>", "paw": "<circle cx=\"8.3\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"15.7\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"5\" cy=\"12\" r=\"1.5\"/><circle cx=\"19\" cy=\"12\" r=\"1.5\"/><path d=\"M12 11.5c-2.8 0-4.8 3-4.8 5.1 0 1.5 1.3 2.2 2.6 1.7 1.5-.6 2.9-.6 4.4 0 1.3.5 2.6-.2 2.6-1.7 0-2.1-2-5.1-4.8-5.1z\"/>", "landmark": "<path d=\"M4 9.5c3-.5 5-2 8-5 3 3 5 4.5 8 5M6.5 9.5V19M17.5 9.5V19M4 19.5h16M9.5 14h5\"/>", "people": "<circle cx=\"9\" cy=\"8\" r=\"2.8\"/><circle cx=\"16.5\" cy=\"9\" r=\"2.2\"/><path d=\"M3.8 19c.6-3.4 2.6-5.3 5.2-5.3s4.6 1.9 5.2 5.3M14.6 14.1c2.4-.4 4.6 1.1 5.2 4.6\"/>", "bubble": "<path d=\"M4.5 5.5h15v10h-9l-4 3.5v-3.5h-2z\"/><path d=\"M8 9.5h8M8 12.5h5\"/>", "pin": "<path d=\"M12 20.5s-6-5.3-6-10.5a6 6 0 0 1 12 0c0 5.2-6 10.5-6 10.5z\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2\"/><circle cx=\"18\" cy=\"6\" r=\"2\"/><path d=\"M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16\"/>", "share": "<circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/>", "phone": "<path d=\"M6.5 4.5h2.7l1.4 3.6-1.8 1.2a10.5 10.5 0 0 0 5.9 5.9l1.2-1.8 3.6 1.4v2.7a1.5 1.5 0 0 1-1.6 1.5C10.4 18.4 5.6 13.6 5 6.1a1.5 1.5 0 0 1 1.5-1.6z\"/>", "copy": "<rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/>", "search": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/>", "locate": "<circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/>", "close": "<path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/>", "star": "<path d=\"M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8z\"/>", "expand": "<path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/>", "shrink": "<path d=\"M9 4.5V9H4.5M15 4.5V9h4.5M9 19.5V15H4.5M15 19.5V15h4.5\"/>", "print": "<path d=\"M7 9V4.5h10V9M7 17H5.5A1.5 1.5 0 0 1 4 15.5v-5A1.5 1.5 0 0 1 5.5 9h13a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H17\"/><path d=\"M7 14h10v6H7z\"/>", "sliders": "<path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/>", "map": "<path d=\"M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z\"/><path d=\"M9 4.5v13M15 6.5v13\"/>", "walk": "<circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/>", "rings": "<circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/>", "link": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>", "chevron": "<path d=\"M9 6l6 6-6 6\"/>", "check": "<path d=\"M5 12.5l4.5 4.5L19 7.5\"/>", "list": "<path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/>", "dice": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/>", "layers": "<path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/>", "train": "<rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/>", "bus": "<rect x=\"5\" y=\"3.5\" width=\"14\" height=\"14.5\" rx=\"2.5\"/><path d=\"M5 11.5h14M8 6.6h8M7.6 18v2.5M16.4 18v2.5\"/><path d=\"M8.4 14.8h.01M15.6 14.8h.01\" stroke-width=\"2.6\"/>", "up": "<path d=\"M12 18V6M6.5 11.5L12 6l5.5 5.5\"/>", "down": "<path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/>", "flag": "<path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/>", "umbrella": "<path d=\"M3.5 12.5a8.5 8.5 0 0 1 17 0z\"/><path d=\"M12 12.5v6a2 2 0 0 1-4 0M12 3.5V4\"/>", "stroller": "<path d=\"M12.5 4.5v7h7.5a7.5 7.5 0 0 0-7.5-7.5z\"/><path d=\"M3.5 7.5H6l1.6 4h12.4a5 5 0 0 1-5 5h-4.5a5 5 0 0 1-3.3-1.3\"/><circle cx=\"9\" cy=\"19.2\" r=\"1.6\"/><circle cx=\"16.5\" cy=\"19.2\" r=\"1.6\"/>", "yen": "<path d=\"M7 4.5l5 7 5-7M12 11.5V20M8 12.5h8M8 16h8\"/>", "laptop": "<rect x=\"5\" y=\"5.5\" width=\"14\" height=\"9.5\" rx=\"1.3\"/><path d=\"M3 18.5h18\"/>", "wifi": "<path d=\"M3.8 9.6a11.6 11.6 0 0 1 16.4 0M6.9 12.9a7.2 7.2 0 0 1 10.2 0M10 16.1a2.9 2.9 0 0 1 4 0\"/><path d=\"M12 19.2v.01\" stroke-width=\"2.8\"/>", "parking": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M10 16.5v-9h3.2a2.7 2.7 0 0 1 0 5.4H10\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7.5V12l3 2\"/>", "drink": "<path d=\"M6.5 8.5h11l-1.3 10.6a1.6 1.6 0 0 1-1.6 1.4H9.4a1.6 1.6 0 0 1-1.6-1.4z\"/><path d=\"M7 12.5h10M13 8.5l1.6-5h3\"/>", "smoke": "<rect x=\"3\" y=\"14\" width=\"15\" height=\"4\" rx=\"1\"/><path d=\"M14.5 14v4M20.5 14v4M17.5 11c0-1.6 2-1.6 2-3.2S17.5 6.2 17.5 4.6\"/>", "moon": "<path d=\"M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.1 6.1 0 0 0 10.1 10.1z\"/>", "flower": "<path d=\"M7.5 5l2.2 2.5L12 4.5l2.3 3 2.2-2.5v4.6a4.5 4.5 0 0 1-9 0z\"/><path d=\"M12 14.1V21M12 18.2c-1.6-1.8-3.6-2.1-5.1-1.7M12 17.2c1.6-1.8 3.6-2.1 5.1-1.7\"/>", "shop": "<path d=\"M4 9.5l1.6-5h12.8L20 9.5\"/><path d=\"M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0\"/><path d=\"M5.5 12v7.5h13V12M10 19.5v-4.5h4v4.5\"/>", "home": "<path d=\"M4 11.5L12 5l8 6.5M6.5 9.5v10h11v-10\"/>", "ext": "<path d=\"M13.5 4.5h6v6M19.5 4.5l-8 8M17 13.5V18a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 5 18V9a1.5 1.5 0 0 1 1.5-1.5H11\"/>", "tag": "<path d=\"M4.5 12.3V5.5a1 1 0 0 1 1-1h6.8l7.2 7.2a1 1 0 0 1 0 1.4l-5.9 5.9a1 1 0 0 1-1.4 0z\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.3\"/>", "info": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/>", "play": "<path d=\"M8.5 5.8v12.4l9.8-6.2z\"/>", "mug": "<path d=\"M5.5 8h9.5v11a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19z\"/><path d=\"M15 10h2a2 2 0 0 1 2 2v2.5a2 2 0 0 1-2 2h-2M5.5 8a2.6 2.6 0 0 1 3.3-2.5 3 3 0 0 1 5.4.4A2.2 2.2 0 0 1 15 8M8.8 11.5v5.5M11.7 11.5v5.5\"/>", "fish": "<path d=\"M4.5 12c2.5-3.4 5.5-5 8.6-5 3.2 0 5.8 1.7 7.4 5-1.6 3.3-4.2 5-7.4 5-3.1 0-6.1-1.6-8.6-5z\"/><path d=\"M4.5 12 2.5 9M4.5 12l-2 3\"/><path d=\"M16.6 11h.01\" stroke-width=\"2.6\"/>", "udon": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M13.5 3.5 9.5 12M18.5 4.5 13.5 12\"/>", "ramen": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M8.5 9.5c-1-1.2 1-2.1 0-3.5M12 9.5c-1-1.2 1-2.1 0-3.5M15.5 9.5c-1-1.2 1-2.1 0-3.5\"/>", "dumpling": "<path d=\"M3.5 15c1.5-4.6 4.8-7.2 8.5-7.2s7 2.6 8.5 7.2c-2.6 1.6-5.4 2.4-8.5 2.4S6.1 16.6 3.5 15z\"/><path d=\"M7.6 10.8l.9 2M10.6 9l.4 2.2M13.4 9l-.4 2.2M16.4 10.8l-.9 2\"/>", "grill": "<circle cx=\"12\" cy=\"11\" r=\"7\"/><path d=\"M5.6 8.5h12.8M5 11h14M5.6 13.5h12.8M8.5 17.2 7 20.5M15.5 17.2l1.5 3.3\"/>", "cutlery": "<path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/>", "curry": "<path d=\"M3 14.5h18a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 14.5z\"/><path d=\"M5.5 14.5c.6-3.2 2.4-5 5-5 2 0 3.3 1 4 2.6.9-.6 2.1-.8 3.3-.4M10.5 7.5c-.8-1.1.8-1.9 0-3.2\"/>", "teppan": "<path d=\"M3 17.5h14\"/><ellipse cx=\"9.5\" cy=\"14\" rx=\"6\" ry=\"2.5\"/><path d=\"M14.5 11.5l2.6-2.6 1.6 1.6-2.6 2.6zM17.9 9.7 21 6.6\"/>", "plate": "<circle cx=\"13.5\" cy=\"12\" r=\"7\"/><circle cx=\"13.5\" cy=\"12\" r=\"3.5\"/><path d=\"M3.5 3.5v5a1.5 1.5 0 0 0 1.5 1.5v10.5M3.5 3.5v5\"/>", "coffee": "<path d=\"M4.5 10h11.5v4.5a5 5 0 0 1-5 5h-1.5a5 5 0 0 1-5-5z\"/><path d=\"M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16M8.5 7.5c-.8-1 .8-1.8 0-3M12.5 7.5c-.8-1 .8-1.8 0-3\"/>", "bento": "<rect x=\"3.5\" y=\"6\" width=\"17\" height=\"12\" rx=\"2\"/><path d=\"M12 6v12M12 12h8.5\"/><circle cx=\"7.7\" cy=\"12\" r=\"1.7\"/>", "swap": "<path d=\"M8 4.5v15M4.5 8 8 4.5 11.5 8M16 19.5v-15M12.5 16l3.5 3.5 3.5-3.5\"/>"};
   var COURSES = [{"key": "akatsuka", "label": "赤塚で半日", "ids": ["6-01", "5-01", "5-02", "1-1-12", "7-3-02", "7-3-01"], "text": "赤塚植物園・板橋区立美術館・郷土資料館・都立赤塚公園の4施設が徒歩圏に集まっていて、無料〜低額で半日過ごせます。近くには東京大仏（乗蓮寺）や松月院もあります。"}];
   var CFG = {"mapName": "板橋区と周辺のスポット・飲食店地図", "wide": true, "groupZoom": true, "meZoomOut": 3, "kyokaUrl": "https://www.city.itabashi.tokyo.jp/kenko/eisei/shokuhin/1051220.html", "attr": "<a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">© OpenStreetMap contributors</a>", "syn": [["寿司", "寿司", "すし", "鮨"], ["すし", "すし", "寿司", "鮨"], ["鮨", "鮨", "すし", "寿司"], ["蕎麦", "蕎麦", "そば"], ["そば", "そば", "蕎麦"], ["饂飩", "饂飩", "うどん"], ["拉麺", "拉麺", "ラーメン"], ["焼き肉", "焼き肉", "焼肉"], ["焼肉", "焼肉", "焼き肉"], ["焼き鳥", "焼き鳥", "焼鳥", "やきとり"], ["焼鳥", "焼鳥", "焼き鳥", "やきとり"], ["やきとり", "やきとり", "焼き鳥", "焼鳥"], ["喫茶", "喫茶", "カフェ"], ["カフェ", "カフェ", "喫茶", "珈琲", "コーヒー"], ["コーヒー", "コーヒー", "珈琲", "カフェ", "喫茶"], ["珈琲", "珈琲", "コーヒー", "カフェ", "喫茶"], ["餃子", "餃子", "ぎょうざ", "ギョーザ", "ギョウザ"], ["飲み屋", "飲み屋", "居酒屋", "バー", "スナック"], ["惣菜", "惣菜", "総菜", "そうざい", "デリ"], ["総菜", "総菜", "惣菜", "そうざい"], ["出前", "出前", "配達", "宅配", "デリバリー"], ["宅配", "宅配", "配達", "出前", "デリバリー"], ["デリバリー", "デリバリー", "配達", "宅配", "出前"], ["パスタ", "パスタ", "イタリアン"], ["ピザ", "ピザ", "ピッツァ", "イタリアン"], ["定食", "定食", "食堂"], ["もんじゃ", "もんじゃ", "鉄板焼", "お好み焼"], ["たこ焼", "たこ焼", "タコ焼"]], "condKeys": ["ドリンクバー", "Wi-Fiあり", "喫煙できる", "駐車場あり"], "purposes": [{"key": "food", "label": "食べる", "short": "食べる", "name": "飲食店", "icon": "cutlery", "color": "#d9480f", "cats": ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113"], "kinds": [["c:101", "居酒屋・バー", 514, "居酒屋・バー"], ["c:110", "食堂・軽食", 199, "食堂・レストラン・軽食"], ["c:105", "中華", 176, "中華"], ["c:111", "カフェ", 170, "カフェ・喫茶"], ["c:104", "ラーメン", 164, "ラーメン"], ["c:112", "弁当・惣菜", 122, "弁当・惣菜・配達"], ["c:102", "和食・すし", 102, "和食・すし"], ["c:107", "洋食", 90, "洋食・イタリアン"], ["c:106", "焼肉", 89, "焼肉・肉料理"], ["c:108", "カレー・エスニック", 85, "カレー・エスニック"], ["c:103", "うどん・そば", 65, "うどん・そば"], ["c:109", "お好み焼き", 27, "お好み焼き・鉄板焼き"], ["c:113", "その他", 78, "その他"]], "conds": ["drink", "wifi", "smoke", "park"], "co": 1, "unit": "店"}, {"key": "play", "label": "遊ぶ", "short": "遊ぶ", "name": "公園・遊び場", "icon": "tree", "color": "#2f7d3b", "cats": ["1"], "kinds": [["s:1-1", "公園・緑地", 73, "公園・緑地・庭園"], ["s:1-2", "遊び場", 19, "遊び場（ボール遊び広場・児童遊園・校庭開放）"]]}, {"key": "sport", "label": "運動", "short": "運動", "name": "運動施設", "icon": "dumbbell", "color": "#c2410c", "cats": ["2"], "kinds": [["s:2-2", "野球場・テニス場など", 47, "公営の屋外施設（野球場・庭球場・競技場など）"], ["s:2-3", "ジム", 38, "民間ジム（一般・24時間）"], ["s:2-1", "体育館・プール", 28, "公営の屋内施設（体育館・温水プール）"], ["s:2-6", "パーソナルジム", 25, "パーソナルジム"], ["s:2-4", "chocoZAP", 15, "民間ジム（chocoZAP）"], ["s:2-8", "ピラティス・ヨガ", 12, "ピラティス・ヨガ"], ["s:2-7", "カーブス", 8, "女性専用サーキット（カーブス）"], ["s:2-9", "格闘技", 8, "格闘技ジム"], ["s:2-5", "スポーツクラブ", 7, "総合スポーツクラブ"], ["s:2-10", "大学の施設", 1, "大学施設（一般非公開・参考）"]]}, {"key": "book", "label": "本・自習", "short": "読む", "name": "図書館", "icon": "book", "color": "#3f51b5", "cats": ["3"], "kinds": []}, {"key": "kids", "label": "子ども", "short": "子ども", "name": "子ども・高齢者向けの施設", "icon": "balloon", "color": "#c2185b", "cats": ["4"], "kinds": [["s:4-1", "子ども向け", 95, "子ども向け（児童館・遊び場施設）"], ["s:4-2", "高齢者向け", 2, "高齢者向け"]]}, {"key": "see", "label": "見る・学ぶ", "short": "見る", "name": "博物館・動植物園・名所", "icon": "museum", "color": "#7b1fa2", "cats": ["5", "6", "7"], "kinds": [["s:7-3", "寺社", 46, "寺社"], ["s:7-4", "史跡・文化財", 36, "史跡・文化財"], ["c:5", "博物館・美術館", 28, "博物館・美術館・科学館・資料館"], ["c:6", "動物園・植物園", 6, "動物園・植物園・水族館"], ["s:7-1", "展望", 3, "展望施設"], ["s:7-2", "娯楽施設", 3, "テーマパーク・娯楽施設"]]}, {"key": "room", "label": "借りる", "short": "借りる", "name": "集会・貸室施設", "icon": "people", "color": "#6d4c41", "cats": ["8"], "kinds": [["s:8-1", "集会所・ホール", 107, "地域センター・ホール・区民センター"], ["s:8-2", "生涯学習", 3, "生涯学習センター"], ["s:8-3", "区民農園", 1, "区民農園"]]}, {"key": "shop", "label": "買い物", "short": "買い物", "name": "商店街・商店通り", "icon": "shop", "color": "#455a64", "cats": ["11"], "kinds": [["s:11-2", "練馬区", 38, "練馬区"], ["s:11-1", "板橋区", 14, "板橋区"], ["s:11-5", "埼玉県6市", 13, "埼玉県6市"]]}, {"key": "wifi", "label": "無料Wi-Fi", "short": "Wi-Fi", "name": "無料Wi-Fiが使える場所", "icon": "wifi", "color": "#0277bd", "cats": [], "kinds": [], "tags": ["設備:TOKYO FREE Wi-Fi", "設備:区の無料Wi-Fi"]}], "tutPurp": "food", "tutCond": "drink", "condMax": 5, "tutKind": "c:104"};
-  var SKELETON = "<section class=\"c-guide needs-js\" aria-labelledby=\"itbM-guide-h\"><div class=\"c-guide-head\"><h3 class=\"c-guide-h\" id=\"itbM-guide-h\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/></svg>まちあるき地図の使い方</h3><button type=\"button\" class=\"c-guide-tg\" data-act=\"guide\" aria-expanded=\"true\" aria-controls=\"itbM-guide-b\"><span>閉じる</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><div class=\"c-guide-body\" id=\"itbM-guide-b\"><p class=\"c-guide-lead\">スポット794か所と飲食店1,881店を、1つの地図と一覧から探せます。</p><ol class=\"c-guide-steps\"><li><span class=\"c-guide-n\">1</span><b>探す</b><span class=\"c-guide-d\">目的を選び、種類や条件で絞る</span></li><li><span class=\"c-guide-n\">2</span><b>見る</b><span class=\"c-guide-d\">ピンかカードで詳しい情報</span></li><li><span class=\"c-guide-n\">3</span><b>残す・送る</b><span class=\"c-guide-d\">コースにまとめて共有</span></li></ol><div class=\"c-guide-row\"><button type=\"button\" class=\"c-guide-try\" data-act=\"tutorial\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.5 5.8v12.4l9.8-6.2z\"/></svg><span class=\"c-guide-try-t\">30秒で試す</span></button><button type=\"button\" class=\"c-guide-more\" data-act=\"guidebtns\" aria-expanded=\"false\" aria-controls=\"itbM-guide-l\">地図のボタンの説明<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><ul class=\"c-guide-list\" id=\"itbM-guide-l\" hidden><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/></svg></span><b>目的</b><span>最初に出る「何をしに行きますか」か上の段で選ぶ。選んだ目的の場所だけが地図に出る。別の目的を押すと入れ替わり、同じ目的をもう一度押すと最初の画面に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/></svg></span><b>種類</b><span>目的を選ぶと出る2段目。ラーメン・カフェ、公園・遊び場などで、さらに絞る。押した種類をもう一度押すと、目的の全部に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/></svg></span><b>条件</b><span>3段目。雨の日・子連れ・ドリンクバーなどの条件とエリアで絞る。条件は1つずつ選ぶ。数字は当てはまる件数</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></span><b>検索</b><span>名前・駅・やりたいことで探す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg></span><b>ピンの大きさ</b><span>Googleマップの口コミ件数の3段階。100件以上は大きく縁取りのあるピン、20件未満は小さく薄いピン。件数がわからない場所と飲食店は、ふつうの大きさ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></span><b>全画面</b><span>地図を画面いっぱいに広げる</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></span><b>現在地</b><span>いまいる場所と向きを地図に出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></span><b>徒歩圏</b><span>選んだ場所や現在地から、徒歩5・10・20分の範囲を出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></span><b>行き先おみくじ</b><span>地図に出ている場所から1か所を選ぶ。最初の画面では、全部の場所から選ぶ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></span><b>地図の表示</b><span>背景の地図（航空写真・淡色地図・標準地図）を切り替え、鉄道の路線・駅・バス停を重ねる</span></li></ul><p class=\"c-guide-note\">営業時間や料金は、公式ページで確かめてください。</p></div></section><div class=\"c-bar needs-js\"><button type=\"button\" class=\"c-stat\" data-act=\"course\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/></svg><span>自分のコース</span><b class=\"c-stat-course\">0</b><span>か所</span></button><button type=\"button\" class=\"c-stat\" data-act=\"gotoindex\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg><span>行った場所</span><b class=\"c-stat-went\">0</b><span>/2675か所</span></button><div class=\"c-textsize\" role=\"group\" aria-label=\"文字の大きさ\"><span class=\"c-textsize-lb\">文字</span><button type=\"button\" data-act=\"text\" data-size=\"1\" aria-pressed=\"true\">標準</button><button type=\"button\" data-act=\"text\" data-size=\"2\" aria-pressed=\"false\">大きく</button></div><button type=\"button\" class=\"c-sharebtn\" data-act=\"sharemap\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg><span>共有</span></button></div><div class=\"c-sharemenu\" role=\"dialog\" aria-label=\"共有する\" hidden><div class=\"c-sharemenu-head\"><p class=\"c-sharemenu-h\">共有する<span class=\"c-sharemenu-t\"></span></p><button type=\"button\" class=\"c-sharemenu-x\" data-act=\"shareclose\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-snsgrid\"><a class=\"c-sns c-sns-line\" data-sns=\"line\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>LINE</a><a class=\"c-sns c-sns-x\" data-sns=\"x\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>X</a><a class=\"c-sns c-sns-fb\" data-sns=\"facebook\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Facebook</a><a class=\"c-sns c-sns-th\" data-sns=\"threads\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Threads</a><a class=\"c-sns c-sns-bs\" data-sns=\"bluesky\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Bluesky</a><a class=\"c-sns c-sns-hb\" data-sns=\"hatena\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>はてな<wbr>ブックマーク</a></div><div class=\"c-sharemore\"><button type=\"button\" data-act=\"sharecopy\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/></svg>リンクをコピー</button><button type=\"button\" data-act=\"sharenative\" hidden><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg>ほかのアプリ</button></div></div><div class=\"c-stage needs-js\"><div class=\"c-map\" role=\"region\" aria-label=\"スポットと飲食店の地図\"></div><div class=\"c-cross\" aria-hidden=\"true\" hidden></div><div class=\"c-top\"><div class=\"c-purposes\" role=\"group\" aria-label=\"目的で選ぶ\"></div><div class=\"c-searchbox\" hidden><label class=\"c-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg><input type=\"search\" class=\"c-q\" placeholder=\"名前・駅・やりたいことで探す\" aria-label=\"スポットを探す\" autocomplete=\"off\" enterkeyhint=\"search\"></label></div><button type=\"button\" class=\"c-round c-searchbtn\" data-act=\"search\" aria-expanded=\"false\" aria-label=\"名前・駅・やりたいことで探す\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button></div><div class=\"c-conds\" role=\"group\" aria-label=\"種類と条件で絞る\"></div><div class=\"c-legend\" role=\"group\" aria-label=\"絞り込みの条件\" hidden></div><div class=\"c-side\"><button type=\"button\" class=\"c-round c-full2\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"locate\" aria-label=\"現在地を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"rings\" aria-pressed=\"false\" aria-label=\"徒歩圏を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"omikuji\" aria-label=\"今日の行き先おみくじ\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round c-trbtn\" data-act=\"trmenu\" aria-expanded=\"false\" aria-label=\"地図の表示を切り替える（背景の地図・鉄道とバス停）\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zin\" aria-label=\"拡大\">＋</button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zout\" aria-label=\"縮小\">−</button></div><div class=\"c-trmenu\" role=\"group\" aria-label=\"地図の表示\" hidden><p class=\"c-trmenu-h\">背景の地図</p><div class=\"c-basemenu\" role=\"group\" aria-label=\"背景の地図\"><button type=\"button\" data-act=\"base\" data-base=\"photo\" aria-pressed=\"true\"><span class=\"c-sw c-sw-photo\"></span>航空写真</button><button type=\"button\" data-act=\"base\" data-base=\"pale\" aria-pressed=\"false\"><span class=\"c-sw c-sw-pale\"></span>淡色地図</button><button type=\"button\" data-act=\"base\" data-base=\"std\" aria-pressed=\"false\"><span class=\"c-sw c-sw-std\"></span>標準地図</button></div><p class=\"c-trmenu-h\">地図に重ねて表示</p><button type=\"button\" data-act=\"tr\" data-k=\"l\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-l\"></span><span class=\"c-trtx\">鉄道の路線</span></button><button type=\"button\" data-act=\"tr\" data-k=\"s\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-s\"></span><span class=\"c-trtx\">駅<small>拡大すると表示</small></span></button><button type=\"button\" data-act=\"tr\" data-k=\"b\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-b\"></span><span class=\"c-trtx\">バス停<small>さらに拡大すると表示</small></span></button><p class=\"c-trmenu-src\">出典：「国土数値情報（<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html\" target=\"_blank\" rel=\"noopener\">鉄道データ</a>・<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P11-2022.html\" target=\"_blank\" rel=\"noopener\">バス停留所データ</a>）」（国土交通省）を加工して作成。鉄道は2025年度、バス停は2022年度のデータです。</p></div><div class=\"c-ringinfo\" aria-live=\"polite\" hidden></div><div class=\"c-rail\" aria-label=\"地図に出ている場所\"></div><button type=\"button\" class=\"c-round c-scrolldown\" data-act=\"gotoindex\" aria-label=\"地図の下の一覧へ進む\" title=\"下へ進む\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/></svg></button><div class=\"c-sheet\" role=\"region\" aria-label=\"選んだ場所の情報\" hidden></div><div class=\"c-taghint\" role=\"status\" hidden><span>目的を押すと、押した目的の場所だけが地図に出ます</span><button type=\"button\" data-act=\"taghintx\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-tut\" hidden><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-block\" hidden></div><div class=\"c-tut-ring\"></div><div class=\"c-tut-pop\" role=\"dialog\" aria-labelledby=\"itbM-tut-t\"><p class=\"c-tut-step\"></p><p class=\"c-tut-text\" id=\"itbM-tut-t\" aria-live=\"polite\"></p><div class=\"c-tut-acts\"><button type=\"button\" class=\"c-tut-skip\" data-act=\"tutskip\">スキップ</button><button type=\"button\" class=\"c-tut-done\" data-act=\"tutdone\" hidden>終わる</button></div></div></div></div><div class=\"c-index needs-js\"><div class=\"c-index-head\"><h3 class=\"c-index-h\">一覧から探す</h3><p class=\"c-index-count\"></p></div><p class=\"c-index-note\">地図と同じ条件で絞り込まれます。町名やエリアを開くと、分類の順に並んでいます。行を押すと、詳しい情報が開きます。</p><p class=\"c-index-empty\" hidden>条件に合う場所が見つかりませんでした。言葉を短くするか、条件を外してください。</p><div class=\"c-groups\"></div></div>";
+  var SKELETON = "<section class=\"c-guide needs-js\" aria-labelledby=\"itbM-guide-h\"><div class=\"c-guide-head\"><h3 class=\"c-guide-h\" id=\"itbM-guide-h\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/></svg>まちあるき地図の使い方</h3><button type=\"button\" class=\"c-guide-tg\" data-act=\"guide\" aria-expanded=\"true\" aria-controls=\"itbM-guide-b\"><span>閉じる</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><div class=\"c-guide-body\" id=\"itbM-guide-b\"><p class=\"c-guide-lead\">スポット794か所と飲食店1,881店を、1つの地図と一覧から探せます。</p><ol class=\"c-guide-steps\"><li><span class=\"c-guide-n\">1</span><b>探す</b><span class=\"c-guide-d\">目的を選び、種類や条件で絞る</span></li><li><span class=\"c-guide-n\">2</span><b>見る</b><span class=\"c-guide-d\">ピンかカードで詳しい情報</span></li><li><span class=\"c-guide-n\">3</span><b>残す・送る</b><span class=\"c-guide-d\">コースにまとめて共有</span></li></ol><div class=\"c-guide-row\"><button type=\"button\" class=\"c-guide-try\" data-act=\"tutorial\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.5 5.8v12.4l9.8-6.2z\"/></svg><span class=\"c-guide-try-t\">30秒で試す</span></button><button type=\"button\" class=\"c-guide-more\" data-act=\"guidebtns\" aria-expanded=\"false\" aria-controls=\"itbM-guide-l\">地図のボタンの説明<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><ul class=\"c-guide-list\" id=\"itbM-guide-l\" hidden><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/></svg></span><b>目的</b><span>最初に出る「何をしに行きますか」か上の段で選ぶ。選んだ目的の場所だけが地図に出る。別の目的を押すと入れ替わり、同じ目的をもう一度押すと最初の画面に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/></svg></span><b>種類</b><span>目的を選ぶと出る2段目。ラーメン・カフェ、公園・遊び場などで、さらに絞る。押した種類をもう一度押すと、目的の全部に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/></svg></span><b>条件</b><span>3段目。雨の日・子連れ・ドリンクバーなどの条件とエリアで絞る。条件は1つずつ選ぶ。数字は当てはまる件数</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></span><b>検索</b><span>名前・駅・やりたいことで探す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg></span><b>ピンの大きさ</b><span>Googleマップの口コミ件数の3段階。100件以上は大きく縁取りのあるピン、20件未満は小さく薄いピン。件数がわからない場所と飲食店は、ふつうの大きさ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></span><b>全画面</b><span>地図を画面いっぱいに広げる</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></span><b>現在地</b><span>いまいる場所と向きを地図に出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/></svg></span><b>都営で行く</b><span>都営地下鉄・都バス・東京さくらトラム・日暮里・舎人ライナーだけで行く経路と時刻を、時刻表から調べる。場所の詳しい情報にある「都営で行く」からも使える</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></span><b>徒歩圏</b><span>選んだ場所や現在地から、徒歩5・10・20分の範囲を出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></span><b>行き先おみくじ</b><span>地図に出ている場所から1か所を選ぶ。最初の画面では、全部の場所から選ぶ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></span><b>地図の表示</b><span>背景の地図（航空写真・淡色地図・標準地図）を切り替え、鉄道の路線・駅・バス停を重ねる</span></li></ul><p class=\"c-guide-note\">営業時間や料金は、公式ページで確かめてください。</p></div></section><div class=\"c-bar needs-js\"><button type=\"button\" class=\"c-stat\" data-act=\"course\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/></svg><span>自分のコース</span><b class=\"c-stat-course\">0</b><span>か所</span></button><button type=\"button\" class=\"c-stat\" data-act=\"gotoindex\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg><span>行った場所</span><b class=\"c-stat-went\">0</b><span>/2675か所</span></button><div class=\"c-textsize\" role=\"group\" aria-label=\"文字の大きさ\"><span class=\"c-textsize-lb\">文字</span><button type=\"button\" data-act=\"text\" data-size=\"1\" aria-pressed=\"true\">標準</button><button type=\"button\" data-act=\"text\" data-size=\"2\" aria-pressed=\"false\">大きく</button></div><button type=\"button\" class=\"c-sharebtn\" data-act=\"sharemap\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg><span>共有</span></button></div><div class=\"c-sharemenu\" role=\"dialog\" aria-label=\"共有する\" hidden><div class=\"c-sharemenu-head\"><p class=\"c-sharemenu-h\">共有する<span class=\"c-sharemenu-t\"></span></p><button type=\"button\" class=\"c-sharemenu-x\" data-act=\"shareclose\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-snsgrid\"><a class=\"c-sns c-sns-line\" data-sns=\"line\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>LINE</a><a class=\"c-sns c-sns-x\" data-sns=\"x\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>X</a><a class=\"c-sns c-sns-fb\" data-sns=\"facebook\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Facebook</a><a class=\"c-sns c-sns-th\" data-sns=\"threads\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Threads</a><a class=\"c-sns c-sns-bs\" data-sns=\"bluesky\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Bluesky</a><a class=\"c-sns c-sns-hb\" data-sns=\"hatena\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>はてな<wbr>ブックマーク</a></div><div class=\"c-sharemore\"><button type=\"button\" data-act=\"sharecopy\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/></svg>リンクをコピー</button><button type=\"button\" data-act=\"sharenative\" hidden><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg>ほかのアプリ</button></div></div><div class=\"c-stage needs-js\"><div class=\"c-map\" role=\"region\" aria-label=\"スポットと飲食店の地図\"></div><div class=\"c-cross\" aria-hidden=\"true\" hidden></div><div class=\"c-top\"><div class=\"c-purposes\" role=\"group\" aria-label=\"目的で選ぶ\"></div><div class=\"c-searchbox\" hidden><label class=\"c-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg><input type=\"search\" class=\"c-q\" placeholder=\"名前・駅・やりたいことで探す\" aria-label=\"スポットを探す\" autocomplete=\"off\" enterkeyhint=\"search\"></label></div><button type=\"button\" class=\"c-round c-searchbtn\" data-act=\"search\" aria-expanded=\"false\" aria-label=\"名前・駅・やりたいことで探す\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button></div><div class=\"c-conds\" role=\"group\" aria-label=\"種類と条件で絞る\"></div><div class=\"c-legend\" role=\"group\" aria-label=\"絞り込みの条件\" hidden></div><div class=\"c-side\"><button type=\"button\" class=\"c-round c-full2\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"locate\" aria-label=\"現在地を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></button><button type=\"button\" class=\"c-round c-rtbtn\" data-act=\"rt\" aria-pressed=\"false\" aria-label=\"都営交通で行く経路と時刻を調べる\" title=\"都営交通で行く\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"rings\" aria-pressed=\"false\" aria-label=\"徒歩圏を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"omikuji\" aria-label=\"今日の行き先おみくじ\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round c-trbtn\" data-act=\"trmenu\" aria-expanded=\"false\" aria-label=\"地図の表示を切り替える（背景の地図・鉄道とバス停）\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zin\" aria-label=\"拡大\">＋</button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zout\" aria-label=\"縮小\">−</button></div><div class=\"c-trmenu\" role=\"group\" aria-label=\"地図の表示\" hidden><p class=\"c-trmenu-h\">背景の地図</p><div class=\"c-basemenu\" role=\"group\" aria-label=\"背景の地図\"><button type=\"button\" data-act=\"base\" data-base=\"photo\" aria-pressed=\"true\"><span class=\"c-sw c-sw-photo\"></span>航空写真</button><button type=\"button\" data-act=\"base\" data-base=\"pale\" aria-pressed=\"false\"><span class=\"c-sw c-sw-pale\"></span>淡色地図</button><button type=\"button\" data-act=\"base\" data-base=\"std\" aria-pressed=\"false\"><span class=\"c-sw c-sw-std\"></span>標準地図</button></div><p class=\"c-trmenu-h\">地図に重ねて表示</p><button type=\"button\" data-act=\"tr\" data-k=\"l\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-l\"></span><span class=\"c-trtx\">鉄道の路線</span></button><button type=\"button\" data-act=\"tr\" data-k=\"s\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-s\"></span><span class=\"c-trtx\">駅<small>拡大すると表示</small></span></button><button type=\"button\" data-act=\"tr\" data-k=\"b\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-b\"></span><span class=\"c-trtx\">バス停<small>さらに拡大すると表示</small></span></button><p class=\"c-trmenu-src\">出典：「国土数値情報（<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html\" target=\"_blank\" rel=\"noopener\">鉄道データ</a>・<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P11-2022.html\" target=\"_blank\" rel=\"noopener\">バス停留所データ</a>）」（国土交通省）を加工して作成。鉄道は2025年度、バス停は2022年度のデータです。</p></div><div class=\"c-ringinfo\" aria-live=\"polite\" hidden></div><div class=\"c-rail\" aria-label=\"地図に出ている場所\"></div><button type=\"button\" class=\"c-round c-scrolldown\" data-act=\"gotoindex\" aria-label=\"地図の下の一覧へ進む\" title=\"下へ進む\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/></svg></button><div class=\"c-sheet\" role=\"region\" aria-label=\"選んだ場所の情報\" hidden></div><div class=\"c-taghint\" role=\"status\" hidden><span>目的を押すと、押した目的の場所だけが地図に出ます</span><button type=\"button\" data-act=\"taghintx\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-tut\" hidden><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-block\" hidden></div><div class=\"c-tut-ring\"></div><div class=\"c-tut-pop\" role=\"dialog\" aria-labelledby=\"itbM-tut-t\"><p class=\"c-tut-step\"></p><p class=\"c-tut-text\" id=\"itbM-tut-t\" aria-live=\"polite\"></p><div class=\"c-tut-acts\"><button type=\"button\" class=\"c-tut-skip\" data-act=\"tutskip\">スキップ</button><button type=\"button\" class=\"c-tut-done\" data-act=\"tutdone\" hidden>終わる</button></div></div></div></div><div class=\"c-index needs-js\"><div class=\"c-index-head\"><h3 class=\"c-index-h\">一覧から探す</h3><p class=\"c-index-count\"></p></div><p class=\"c-index-note\">地図と同じ条件で絞り込まれます。町名やエリアを開くと、分類の順に並んでいます。行を押すと、詳しい情報が開きます。</p><p class=\"c-index-empty\" hidden>条件に合う場所が見つかりませんでした。言葉を短くするか、条件を外してください。</p><div class=\"c-groups\"></div></div>";
 
   function $(s, b) { return (b || root).querySelector(s); }
   function $$(s, b) { return Array.prototype.slice.call((b || root).querySelectorAll(s)); }
@@ -1083,6 +1083,7 @@
       if (it.gm) { a.push('<a class="c-act" href="' + esc(it.gm) + '" target="_blank" rel="noopener">' + icon("pin") + "gMap施設情報</a>"); }
       if (tel) { a.push('<a class="c-act" href="tel:' + esc(tel[1]) + '">' + icon("phone") + "電話</a>"); }
       a.push('<a class="c-act" href="' + esc(routeHref(it)) + '" target="_blank" rel="noopener">' + icon("route") + "経路</a>");
+      if (it.pin) { a.push('<button type="button" class="c-act" data-act="rtto" data-id="' + it.id + '">' + icon("train") + "都営で行く</button>"); }
       a.push('<button type="button" class="c-act c-fav" data-act="fav" data-id="' + it.id + '" aria-pressed="false">' + icon("star") + "<span>コースに入れる</span></button>");
       a.push('<button type="button" class="c-act c-went" data-act="went" data-id="' + it.id + '" aria-pressed="false">' + icon("check") + "<span>行った</span></button>");
       a.push('<button type="button" class="c-act" data-act="share" data-id="' + it.id + '" aria-label="' + esc(it.name) + 'のリンクを共有">' + icon("share") + "</button>");
@@ -1333,10 +1334,14 @@
     }
     function paintPanelState() {
       var own = !!S.panel && S.panel.type === "course";
+      var rb = $('[data-act="rt"]', stage);
+      if (rb) { rb.setAttribute("aria-pressed", S.panel && S.panel.type === "route" ? "true" : "false"); }
+      stage.classList.toggle("has-rt", !!S.panel && S.panel.type === "route");
       $('.c-chip[data-act="course"]', legend).setAttribute("aria-pressed", own ? "true" : "false");
     }
     function showPanel(p, html) {
       var prev = selId();
+      if (p.type !== "route") { rtLeave(); }
       if (p.type !== "item") { S.back = null; }
       S.panel = p;
       sheet.innerHTML = html;
@@ -1354,6 +1359,7 @@
     }
     function closePanel() {
       var prev = selId();
+      rtLeave();
       S.panel = null;
       S.back = null;
       sheet.hidden = true;
@@ -1785,6 +1791,794 @@
       });
     }
 
+    // ---- 都営交通だけで行く経路案内 ----
+    // 時刻表：東京都交通局・公共交通オープンデータセンターのGTFS（CC BY 4.0）を toei.json に縮めたもの
+    var TO = null, toWait = null, toDays = {}, toDayKeys = [], rtLayer = null, rtBar = null;
+    var RT = { from: null, to: null, mode: "dep", date: "", time: "", res: null, sel: 0, pick: "", edit: "", q: "", sug: [], busy: "", msg: "", compact: false };
+    var EP = [3, 2, 1, 0];               // 乗り場まで・乗り場からの分（地下鉄・ライナー・路面電車・バス）
+    var CHG = [2, 2, 2, 1];              // 同じ駅・停留所での乗り換えの分
+    var ACC_M = 1000, RAIL_M = 2000, FOOT_M = 500, RT_K = 6, RT_INF = 1e9, LONG_WALK = 15;
+    function toWalk(m) { return Math.max(1, Math.round(m * 1.3 / 80)); }
+    function rtHM(t) { return Math.floor(t / 60) % 24 + ":" + pad(t % 60); }
+    function rtDur(d) { return d >= 60 ? Math.floor(d / 60) + "時間" + (d % 60 ? d % 60 + "分" : "") : d + "分"; }
+    function rtMin(s) { var p = String(s || "").split(":"); return p.length >= 2 ? Number(p[0]) * 60 + Number(p[1]) : 0; }
+    function rtDate(ds, add) {
+      var d = new Date(Date.UTC(Number(ds.slice(0, 4)), Number(ds.slice(5, 7)) - 1, Number(ds.slice(8, 10)) + (add || 0)));
+      return d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate());
+    }
+    function rtNowSet() {
+      var d = new Date();
+      RT.date = today();
+      RT.time = pad(d.getHours()) + ":" + pad(d.getMinutes());
+    }
+    var KR = { "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o", "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko", "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so",
+      "た": "ta", "ち": "chi", "つ": "tsu", "て": "te", "と": "to", "な": "na", "に": "ni", "ぬ": "nu", "ね": "ne", "の": "no", "は": "ha", "ひ": "hi", "ふ": "fu", "へ": "he", "ほ": "ho",
+      "ま": "ma", "み": "mi", "む": "mu", "め": "me", "も": "mo", "や": "ya", "ゆ": "yu", "よ": "yo", "ら": "ra", "り": "ri", "る": "ru", "れ": "re", "ろ": "ro", "わ": "wa", "を": "o", "ん": "n",
+      "が": "ga", "ぎ": "gi", "ぐ": "gu", "げ": "ge", "ご": "go", "ざ": "za", "じ": "ji", "ず": "zu", "ぜ": "ze", "ぞ": "zo", "だ": "da", "ぢ": "ji", "づ": "zu", "で": "de", "ど": "do",
+      "ば": "ba", "び": "bi", "ぶ": "bu", "べ": "be", "ぼ": "bo", "ぱ": "pa", "ぴ": "pi", "ぷ": "pu", "ぺ": "pe", "ぽ": "po", "ゔ": "vu", "ぁ": "a", "ぃ": "i", "ぅ": "u", "ぇ": "e", "ぉ": "o" };
+    function kr(s) {
+      var out = "", dbl = false;
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charAt(i), y = s.charAt(i + 1), r = KR[c];
+        if (c === "っ") { dbl = true; continue; }
+        if (!r) { if (c !== "ー") { out += c; } dbl = false; continue; }
+        if ((y === "ゃ" || y === "ゅ" || y === "ょ") && r.slice(-1) === "i") {
+          var v = { "ゃ": "a", "ゅ": "u", "ょ": "o" }[y];
+          r = /^(shi|chi|ji)$/.test(r) ? r.slice(0, -1) + v : r.slice(0, -1) + "y" + v;
+          i++;
+        }
+        if (dbl) { out += r.slice(0, 2) === "ch" ? "t" : r.charAt(0); dbl = false; }
+        out += r;
+      }
+      return out;
+    }
+    function rk(s) { return String(s || "").toLowerCase().replace(/[^a-z]/g, "").replace(/m(?=[bmp])/g, "n").replace(/ou/g, "o").replace(/oo/g, "o").replace(/uu/g, "u"); }
+    function toLoad() {
+      if (TO) { return Promise.resolve(TO); }
+      if (!toWait) {
+        toWait = fetch(BASE + "toei.json").then(function (r) { if (!r.ok) { throw new Error("toei"); } return r.json(); })
+          .then(function (j) { TO = toPrep(j); return TO; }, function (e) { toWait = null; throw e; });
+      }
+      return toWait;
+    }
+    function toPrep(j) {
+      var n = j.stops.length / 4, lat = new Float64Array(n), lng = new Float64Array(n), nm = new Int32Array(n), kd = new Uint8Array(n), i, k;
+      for (i = 0; i < n; i++) {
+        nm[i] = j.stops[4 * i];
+        lat[i] = (j.o[0] + j.stops[4 * i + 1]) / 1e5;
+        lng[i] = (j.o[1] + j.stops[4 * i + 2]) / 1e5;
+        kd[i] = j.stops[4 * i + 3];
+      }
+      var GY = 0.005, GX = 0.006, grid = {};
+      for (i = 0; i < n; i++) {
+        var gk = Math.floor(lat[i] / GY) + ":" + Math.floor(lng[i] / GX);
+        (grid[gk] || (grid[gk] = [])).push(i);
+      }
+      // 乗り換えで歩ける駅・停留所の組（直線500m以内）
+      var kx = Math.cos(35.7 * Math.PI / 180) * 111320, ky = 110574, off = new Int32Array(n + 1), to = [], w = [];
+      for (i = 0; i < n; i++) {
+        off[i] = to.length;
+        var gy = Math.floor(lat[i] / GY), gx = Math.floor(lng[i] / GX);
+        for (var dy = -1; dy <= 1; dy++) {
+          for (var dx = -1; dx <= 1; dx++) {
+            var c = grid[(gy + dy) + ":" + (gx + dx)];
+            if (!c) { continue; }
+            for (k = 0; k < c.length; k++) {
+              var q = c[k];
+              if (q === i) { continue; }
+              var ex = (lng[q] - lng[i]) * kx, ey = (lat[q] - lat[i]) * ky, d = Math.sqrt(ex * ex + ey * ey);
+              if (d <= FOOT_M) { to.push(q); w.push(toWalk(d) + Math.ceil((EP[kd[i]] + EP[kd[q]]) / 2) + 1); }
+            }
+          }
+        }
+      }
+      off[n] = to.length;
+      // 名前で選ぶための駅・停留所の一覧
+      var lineAt = [], ents = [], byKey = {};
+      for (i = 0; i < n; i++) { lineAt.push([]); }
+      j.pats.forEach(function (p) { p[1].forEach(function (s) { if (lineAt[s].indexOf(p[0]) === -1) { lineAt[s].push(p[0]); } }); });
+      for (i = 0; i < n; i++) {
+        var name = j.names[nm[i]], rail = kd[i] < 3, key = (rail ? "r:" : "b:") + name, e = byKey[key];
+        if (e && meters({ lat: e.lat0, lng: e.lng0 }, { lat: lat[i], lng: lng[i] }) > 1500) {
+          key += ":" + Math.round(lat[i] * 50) + ":" + Math.round(lng[i] * 50);
+          e = byKey[key];
+        }
+        if (!e) {
+          e = byKey[key] = { name: name, rail: rail, ss: [], lines: [], lat0: lat[i], lng0: lng[i], kana: j.kana[nm[i]] || "", tram: false };
+          ents.push(e);
+        }
+        e.ss.push(i);
+        if (kd[i] === 2) { e.tram = true; }
+        lineAt[i].forEach(function (li) { if (e.lines.indexOf(li) === -1) { e.lines.push(li); } });
+      }
+      ents.forEach(function (e) {
+        var y = 0, x = 0;
+        e.ss.forEach(function (s) { y += lat[s]; x += lng[s]; });
+        e.lat = y / e.ss.length;
+        e.lng = x / e.ss.length;
+        e.title = e.name + (e.rail && !e.tram && !/駅$/.test(e.name) ? "駅" : "");
+        var labs = e.lines.map(function (li) { return j.lines[li][0]; });
+        e.sub = e.rail ? labs.join("・") : "都バス " + labs.slice(0, 4).join("・") + (labs.length > 4 ? "ほか" : "");
+        e.key = norm(e.name);
+        e.kkey = norm(e.kana);
+        e.rkey = rk(e.kkey ? kr(e.kkey) : (j.en && j.en[nm[e.ss[0]]]) || "");
+      });
+      return { j: j, n: n, lat: lat, lng: lng, nm: nm, kd: kd, grid: grid, GY: GY, GX: GX, fpOff: off, fpTo: new Int32Array(to), fpW: new Int32Array(w), ents: ents };
+    }
+    // その日に走る便だけで、追い越しのない系統の組を作る
+    function toDay(si) {
+      if (toDays[si]) { return toDays[si]; }
+      var j = TO.j, act = {}, rs = [], i, k;
+      j.sets[si].forEach(function (s) { act[s] = 1; });
+      j.pats.forEach(function (P, pi) {
+        var seq = P[1], vecs = P[2], hs = P[3], fl = P[4], nop = P[5] || [], n = seq.length, w = hs.length > 1 ? 4 : 3, t = 0, trips = [];
+        for (k = 0; k < fl.length; k += w) {
+          t += fl[k];
+          if (!act[fl[k + 2]]) { continue; }
+          var v = vecs[fl[k + 1]], a = new Int32Array(n), d = new Int32Array(n), c = t;
+          a[0] = d[0] = t;
+          for (i = 1; i < n; i++) { var e = v[i - 1], hop = e % 100; a[i] = c + hop; d[i] = a[i] + (e - hop) / 100; c = d[i]; }
+          trips.push({ a: a, d: d, h: w === 4 ? hs[fl[k + 3]] : hs[0] });
+        }
+        if (!trips.length) { return; }
+        var groups = [];
+        trips.forEach(function (tr) {
+          for (var g = 0; g < groups.length; g++) {
+            var last = groups[g][groups[g].length - 1], ok = true;
+            for (i = 0; i < n; i++) { if (tr.a[i] < last.a[i] || tr.d[i] < last.d[i]) { ok = false; break; } }
+            if (ok) { groups[g].push(tr); return; }
+          }
+          groups.push([tr]);
+        });
+        groups.forEach(function (g) { rs.push({ p: pi, li: P[0], seq: seq, nop: nop, trips: g }); });
+      });
+      var nR = rs.length, nS = TO.n, rSeq = new Int32Array(nR + 1), rTrip = new Int32Array(nR + 1), rTime = new Int32Array(nR + 1), rLine = new Int32Array(nR);
+      var tS = 0, tT = 0, tX = 0;
+      rs.forEach(function (r, x) {
+        rSeq[x] = tS; rTrip[x] = tT; rTime[x] = tX; rLine[x] = r.li;
+        tS += r.seq.length; tT += r.trips.length; tX += r.seq.length * r.trips.length;
+      });
+      rSeq[nR] = tS; rTrip[nR] = tT; rTime[nR] = tX;
+      var seq = new Int32Array(tS), nop = new Uint8Array(tS), arr = new Int32Array(tX), dep = new Int32Array(tX), head = new Int32Array(tT), cnt = new Int32Array(nS + 1);
+      rs.forEach(function (r, x) {
+        var n = r.seq.length, b = rSeq[x];
+        for (i = 0; i < n; i++) { seq[b + i] = r.seq[i]; cnt[r.seq[i] + 1]++; }
+        r.nop.forEach(function (q) { nop[b + q] = 1; });
+        r.trips.forEach(function (tr, y) { var o = rTime[x] + y * n; arr.set(tr.a, o); dep.set(tr.d, o); head[rTrip[x] + y] = tr.h; });
+      });
+      for (i = 0; i < nS; i++) { cnt[i + 1] += cnt[i]; }
+      var srR = new Int32Array(tS), srPos = new Int32Array(tS), fill = cnt.slice(0, nS);
+      rs.forEach(function (r, x) { for (i = 0; i < r.seq.length; i++) { var z = fill[r.seq[i]]++; srR[z] = x; srPos[z] = i; } });
+      var D = { nR: nR, rSeq: rSeq, rTrip: rTrip, rTime: rTime, rLine: rLine, seq: seq, nop: nop, arr: arr, dep: dep, head: head, srOff: cnt, srR: srR, srPos: srPos };
+      toDays[si] = D;
+      toDayKeys.push(si);
+      if (toDayKeys.length > 3) { delete toDays[toDayKeys.shift()]; }
+      return D;
+    }
+    function rtChg(s) { return CHG[TO.kd[s]]; }
+    function rtFoot(a, b) {
+      if (a === b) { return rtChg(a); }
+      for (var f = TO.fpOff[a]; f < TO.fpOff[a + 1]; f++) { if (TO.fpTo[f] === b) { return TO.fpW[f]; } }
+      return RT_INF;
+    }
+    // RAPTOR：乗った回数ごとに、いちばん早く着く経路
+    function toRaptor(D, A, t0, B) {
+      var nS = TO.n, INF = RT_INF, k, i, x;
+      var tauV = [null], tauR = [new Int32Array(nS).fill(INF)], pv = [null], pr = [new Int32Array(nS).fill(-1)];
+      var best = new Int32Array(nS).fill(INF), bestR = new Int32Array(nS).fill(INF), isM = new Uint8Array(nS), marked = [];
+      var eg = new Int32Array(nS).fill(-1), tgt = INF, found = [];
+      A.forEach(function (a) {
+        var t = t0 + a.w;
+        if (t < tauR[0][a.s]) { tauR[0][a.s] = t; bestR[a.s] = t; if (!isM[a.s]) { isM[a.s] = 1; marked.push(a.s); } }
+      });
+      B.forEach(function (b) { if (eg[b.s] < 0 || b.w < eg[b.s]) { eg[b.s] = b.w; } });
+      var Q = new Int32Array(D.nR).fill(-1);
+      for (k = 1; k <= RT_K && marked.length; k++) {
+        var tv = new Int32Array(nS).fill(INF), tr = new Int32Array(nS).fill(INF), pvk = new Int32Array(nS * 4), prk = new Int32Array(nS).fill(-1), prev = tauR[k - 1];
+        tauV.push(tv); tauR.push(tr); pv.push(pvk); pr.push(prk);
+        var routes = [];
+        for (i = 0; i < marked.length; i++) {
+          var p = marked[i];
+          isM[p] = 0;
+          for (x = D.srOff[p]; x < D.srOff[p + 1]; x++) {
+            var r0 = D.srR[x], ps = D.srPos[x];
+            if (Q[r0] < 0) { Q[r0] = ps; routes.push(r0); } else if (ps < Q[r0]) { Q[r0] = ps; }
+          }
+        }
+        marked = [];
+        var vm = [];
+        for (i = 0; i < routes.length; i++) {
+          var r = routes[i], s0 = D.rSeq[r], n = D.rSeq[r + 1] - s0, m = D.rTrip[r + 1] - D.rTrip[r], tb = D.rTime[r], t = -1, bp = -1;
+          for (var q = Q[r]; q < n; q++) {
+            var st = D.seq[s0 + q];
+            if (t >= 0) {
+              var a = D.arr[tb + t * n + q];
+              if (a < best[st] && a < tgt) {
+                if (tv[st] === INF) { vm.push(st); }
+                tv[st] = a; best[st] = a;
+                pvk[st * 4] = r; pvk[st * 4 + 1] = t; pvk[st * 4 + 2] = bp; pvk[st * 4 + 3] = q;
+              }
+            }
+            var rr = prev[st];
+            if (rr < INF && q < n - 1 && !D.nop[s0 + q] && (t < 0 || rr <= D.dep[tb + t * n + q])) {
+              var lo = 0, hi = t < 0 ? m : t;
+              while (lo < hi) { var mid = (lo + hi) >> 1; if (D.dep[tb + mid * n + q] >= rr) { hi = mid; } else { lo = mid + 1; } }
+              if (lo < (t < 0 ? m : t)) { t = lo; bp = q; }
+            }
+          }
+          Q[r] = -1;
+        }
+        for (i = 0; i < vm.length; i++) {
+          var p2 = vm[i], v = tv[p2], c = v + rtChg(p2);
+          if (eg[p2] >= 0 && v + eg[p2] < tgt) { tgt = v + eg[p2]; found[k] = p2; }
+          if (c < tr[p2] && c < bestR[p2]) { tr[p2] = c; bestR[p2] = c; prk[p2] = p2; if (!isM[p2]) { isM[p2] = 1; marked.push(p2); } }
+          for (var f = TO.fpOff[p2]; f < TO.fpOff[p2 + 1]; f++) {
+            var q2 = TO.fpTo[f], c2 = v + TO.fpW[f];
+            if (c2 < tr[q2] && c2 < bestR[q2]) { tr[q2] = c2; bestR[q2] = c2; prk[q2] = p2; if (!isM[q2]) { isM[q2] = 1; marked.push(q2); } }
+          }
+        }
+      }
+      return { pv: pv, pr: pr, found: found };
+    }
+    function rtTimes(D, rd) {
+      var n = D.rSeq[rd.r + 1] - D.rSeq[rd.r], o = D.rTime[rd.r] + rd.t * n;
+      rd.dep = D.dep[o + rd.bp];
+      rd.arr = D.arr[o + rd.ap];
+    }
+    function rtBuild(D, res, k, A, B) {
+      var p = res.found[k], rides = [], kk;
+      for (kk = k; kk >= 1; kk--) {
+        var b4 = p * 4, rd = { r: res.pv[kk][b4], t: res.pv[kk][b4 + 1], bp: res.pv[kk][b4 + 2], ap: res.pv[kk][b4 + 3] };
+        rd.bs = D.seq[D.rSeq[rd.r] + rd.bp];
+        rd.as = D.seq[D.rSeq[rd.r] + rd.ap];
+        rides.unshift(rd);
+        if (kk > 1) { p = res.pr[kk - 1][rd.bs]; if (p < 0) { return null; } }
+      }
+      var acc = null, egr = null, i;
+      A.forEach(function (a) { if (a.s === rides[0].bs && (!acc || a.w < acc.w)) { acc = a; } });
+      B.forEach(function (b) { if (b.s === rides[rides.length - 1].as && (!egr || b.w < egr.w)) { egr = b; } });
+      if (!acc || !egr) { return null; }
+      rides.forEach(function (rd) { rtTimes(D, rd); });
+      // 着く時刻は変えずに、できるだけ遅く出る便へ寄せる
+      for (i = rides.length - 2; i >= 0; i--) {
+        var a0 = rides[i], b0 = rides[i + 1], limit = b0.dep - rtFoot(a0.as, b0.bs);
+        var n = D.rSeq[a0.r + 1] - D.rSeq[a0.r], m = D.rTrip[a0.r + 1] - D.rTrip[a0.r], tb = D.rTime[a0.r], lo = a0.t, hi = m - 1;
+        while (lo < hi) { var mid = (lo + hi + 1) >> 1; if (D.arr[tb + mid * n + a0.ap] <= limit) { lo = mid; } else { hi = mid - 1; } }
+        a0.t = lo;
+        rtTimes(D, a0);
+      }
+      var walk = acc.w + egr.w, maxW = Math.max(acc.w, egr.w);
+      for (i = 0; i + 1 < rides.length; i++) {
+        if (rides[i].as !== rides[i + 1].bs) { var fw = rtFoot(rides[i].as, rides[i + 1].bs); walk += fw; maxW = Math.max(maxW, fw); }
+      }
+      return {
+        rides: rides, acc: acc, eg: egr, dep: rides[0].dep - acc.w, arr: rides[rides.length - 1].arr + egr.w, walk: walk, maxW: maxW,
+        key: rides.map(function (rd) { return rd.r + "." + rd.t + "." + rd.bp + "." + rd.ap; }).join("|"),
+      };
+    }
+    function rtQuery(D, A, B, t0) {
+      var res = toRaptor(D, A, t0, B), out = [];
+      for (var k = 1; k <= RT_K; k++) {
+        if (res.found[k] == null) { continue; }
+        var jn = rtBuild(D, res, k, A, B);
+        if (jn) { out.push(jn); }
+      }
+      return out;
+    }
+    function rtTidy(list) {
+      var seen = {}, out = [];
+      list.forEach(function (x) { if (!seen[x.key]) { seen[x.key] = 1; out.push(x); } });
+      out = out.filter(function (y) {
+        return !out.some(function (x) {
+          if (x === y) { return false; }
+          var ge = x.dep >= y.dep && x.arr <= y.arr && x.rides.length <= y.rides.length && x.walk <= y.walk;
+          var gt = x.dep > y.dep || x.arr < y.arr || x.rides.length < y.rides.length || x.walk < y.walk;
+          return ge && (gt || x.key < y.key);
+        });
+      });
+      out.sort(function (a, b) { return a.arr - b.arr || a.rides.length - b.rides.length || b.dep - a.dep; });
+      return out.slice(0, 4);
+    }
+    function rtSearchDep(D, A, B, t0) {
+      var all = [], t = t0;
+      for (var g = 0; g < 3; g++) {
+        var js = rtQuery(D, A, B, t);
+        if (!js.length) { break; }
+        all = all.concat(js);
+        if (rtTidy(all).length >= 3) { break; }
+        t = Math.min.apply(null, js.map(function (x) { return x.dep; })) + 1;
+      }
+      return rtTidy(all);
+    }
+    function rtSearchArr(D, A, B, T) {
+      function ok(d) { return rtQuery(D, A, B, d).filter(function (x) { return x.arr <= T; }); }
+      var lo = T - 240, hi = T;
+      if (!ok(lo).length) { lo = T - 600; if (!ok(lo).length) { return []; } }
+      while (hi - lo > 1) { var mid = (lo + hi) >> 1; if (ok(mid).length) { lo = mid; } else { hi = mid; } }
+      return rtTidy(ok(lo));
+    }
+    function rtNear(pt) {
+      var out = [], gy = Math.floor(pt.lat / TO.GY), gx = Math.floor(pt.lng / TO.GX), s, i;
+      for (var dy = -4; dy <= 4; dy++) {
+        for (var dx = -4; dx <= 4; dx++) {
+          var c = TO.grid[(gy + dy) + ":" + (gx + dx)];
+          if (!c) { continue; }
+          for (i = 0; i < c.length; i++) {
+            s = c[i];
+            var m = meters(pt, { lat: TO.lat[s], lng: TO.lng[s] });
+            if (m <= ACC_M || (TO.kd[s] < 3 && m <= RAIL_M)) { out.push({ s: s, m: m }); }
+          }
+        }
+      }
+      if (!out.length) {
+        var all = [];
+        for (s = 0; s < TO.n; s++) { all.push({ s: s, m: meters(pt, { lat: TO.lat[s], lng: TO.lng[s] }) }); }
+        all.sort(function (a, b) { return a.m - b.m; });
+        out = all.slice(0, 6).filter(function (a) { return a.m <= 8000; });
+      }
+      out.forEach(function (a) { a.w = (a.m < 50 ? 0 : toWalk(a.m)) + EP[TO.kd[a.s]]; });
+      return out;
+    }
+    // 運行日：toei.json の期間の外は、同じ曜日の種類（平日・土曜・日曜休日）の日で代える
+    function rtType(ds) {
+      var d = new Date(Date.UTC(Number(ds.slice(0, 4)), Number(ds.slice(5, 7)) - 1, Number(ds.slice(8, 10)))), wd = d.getUTCDay(), mo = d.getUTCMonth() + 1, dd = d.getUTCDate();
+      if (wd === 0 || TO.j.hol.indexOf(ds.replace(/-/g, "")) !== -1 || (mo === 12 && dd >= 30) || (mo === 1 && dd <= 3)) { return 2; }
+      return wd === 6 ? 1 : 0;
+    }
+    function rtSet(ds) {
+      var r = rtSet0(ds), e = TO.j.ends && TO.j.ends.t;
+      if (e && ds.replace(/-/g, "") > e) {
+        r.note = (r.note ? r.note : "") + "地下鉄・都電・日暮里・舎人ライナーの時刻表は" + Number(e.slice(0, 4)) + "年" + Number(e.slice(4, 6)) + "月" + Number(e.slice(6, 8)) + "日までのため、その先はいまのダイヤで案内しています。ダイヤが変わると実際と異なります。";
+      }
+      return r;
+    }
+    function rtSet0(ds) {
+      var j = TO.j, d0 = j.d0.slice(0, 4) + "-" + j.d0.slice(4, 6) + "-" + j.d0.slice(6, 8);
+      var k = Math.round((Date.UTC(Number(ds.slice(0, 4)), Number(ds.slice(5, 7)) - 1, Number(ds.slice(8, 10))) - Date.UTC(Number(d0.slice(0, 4)), Number(d0.slice(5, 7)) - 1, Number(d0.slice(8, 10)))) / 864e5);
+      if (k >= 0 && k < j.cal.length) { return { si: j.cal[k], note: "" }; }
+      var ty = rtType(ds), x;
+      if (k < 0) {
+        for (x = 0; x < j.cal.length - 1; x++) { if (rtType(rtDate(d0, x)) === ty) { break; } }
+        return { si: j.cal[x], note: "過去の日付のため、いまの時刻表の同じ曜日のダイヤで案内しています。" };
+      }
+      for (x = j.cal.length - 1; x > 0; x--) { if (rtType(rtDate(d0, x)) === ty) { break; } }
+      return { si: j.cal[x], note: "時刻表データの期間より先の日付のため、同じ曜日のダイヤで案内しています。ダイヤが変わると実際と異なります。" };
+    }
+    function rtRun(mode, ds, t) {
+      var A = rtNear(RT.from), B = rtNear(RT.to), list = [], sd = ds, ss, D;
+      if (!A.length || !B.length) {
+        RT.res = { list: [], none: !A.length ? "from" : "to", ds: ds, mode: mode, t: t };
+        return;
+      }
+      if (t < 180) {
+        ss = rtSet(rtDate(ds, -1));
+        D = toDay(ss.si);
+        list = mode === "dep" ? rtSearchDep(D, A, B, t + 1440) : rtSearchArr(D, A, B, t + 1440);
+        if (list.length) { sd = rtDate(ds, -1); }
+      }
+      if (!list.length) {
+        sd = ds;
+        ss = rtSet(ds);
+        D = toDay(ss.si);
+        list = mode === "dep" ? rtSearchDep(D, A, B, t) : rtSearchArr(D, A, B, t);
+      }
+      RT.res = { D: D, list: list, note: ss.note, ds: sd, mode: mode, t: t, walkM: meters(RT.from, RT.to) };
+      RT.sel = 0;
+    }
+    function rtGo(mode, ds, t) {
+      if (!RT.from || !RT.to) {
+        RT.edit = !RT.from ? "from" : "to";
+        rtPaintForm(true);
+        return;
+      }
+      if (!RT.date) { rtNowSet(); }
+      mode = mode || RT.mode;
+      ds = ds || RT.date;
+      t = t == null ? rtMin(RT.time) : t;
+      RT.busy = TO ? "経路を調べています" : "時刻表を読み込んでいます";
+      RT.msg = "";
+      RT.edit = "";
+      rtPaintForm();
+      rtPaintRes();
+      toLoad().then(function () {
+        setTimeout(function () {
+          try { rtRun(mode, ds, t); } catch (e) { if (window.console) { window.console.error(e); } RT.res = null; RT.msg = "経路を調べられませんでした。"; }
+          RT.busy = "";
+          RT.compact = !!(RT.res && RT.res.list && RT.res.list.length);
+          rtPaintForm();
+          rtPaintRes();
+          rtDraw(true);
+        }, 20);
+      }, function () {
+        RT.busy = "";
+        RT.msg = "時刻表のデータを読み込めませんでした。通信の状態を確かめて、もう一度押してください。";
+        rtPaintRes();
+      });
+    }
+    function rtShift(dir) {
+      var R = RT.res;
+      if (!R || !R.list.length) { return; }
+      var ds = R.ds, t;
+      if (dir > 0) {
+        t = Math.max.apply(null, R.list.map(function (x) { return x.dep; })) + 1;
+        RT.mode = "dep";
+      } else {
+        t = Math.min.apply(null, R.list.map(function (x) { return x.arr; })) - 1;
+        RT.mode = "arr";
+      }
+      while (t >= 1440) { t -= 1440; ds = rtDate(ds, 1); }
+      while (t < 0) { t += 1440; ds = rtDate(ds, -1); }
+      RT.date = ds;
+      RT.time = pad(Math.floor(t / 60)) + ":" + pad(t % 60);
+      rtGo(RT.mode, ds, t);
+    }
+
+    // ---- 画面 ----
+    function rtStopName(s) {
+      var nmS = TO.j.names[TO.nm[s]], k = TO.kd[s];
+      return k <= 1 && !/駅$/.test(nmS) ? nmS + "駅" : nmS;
+    }
+    function rtInk(hex) {
+      var h = String(hex || "").replace("#", "");
+      if (h.length !== 6) { return "#fff"; }
+      var r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+      return 0.299 * r + 0.587 * g + 0.114 * b > 160 ? "#1f2a24" : "#fff";
+    }
+    function rtChip(li) {
+      var ln = TO.j.lines[li];
+      return '<span class="c-rt-chip" style="--c:' + esc(ln[1]) + ";--t:" + rtInk(ln[1]) + '">' + icon(ln[2] === 3 ? "bus" : "train") + esc(ln[2] === 3 ? ln[0] : ln[0].replace(/（.*）$/, "")) + "</span>";
+    }
+    function rtPtHTML(k) {
+      var p = RT[k], lb = k === "from" ? "出発" : "到着", on = RT.edit === k;
+      var val = p ? '<span class="c-rt-name">' + esc(p.name) + "</span>" + (p.sub ? '<span class="c-rt-sub">' + esc(p.sub) + "</span>" : "") :
+        '<span class="c-rt-ph">' + (k === "from" ? "出発する場所を選ぶ" : "行き先を選ぶ") + "</span>";
+      var h = '<div class="c-rt-pt is-' + k + (on ? " is-edit" : "") + '"><span class="c-rt-lb">' + lb + "</span>" +
+        '<button type="button" class="c-rt-val" data-act="rtedit" data-k="' + k + '" aria-expanded="' + (on ? "true" : "false") + '">' + val + "</button></div>";
+      if (on) {
+        h += '<div class="c-rt-pick"><input type="search" class="c-rt-q" placeholder="駅・停留所・場所の名前" aria-label="' + lb + 'する場所を名前で探す" autocomplete="off" enterkeyhint="search" value="' + esc(RT.q) + '">' +
+          '<div class="c-rt-quick"><button type="button" class="c-act" data-act="rtme" data-k="' + k + '">' + icon("locate") + "現在地</button>" +
+          '<button type="button" class="c-act" data-act="rtmap" data-k="' + k + '">' + icon("map") + "地図をタップして選ぶ</button></div>" +
+          '<ul class="c-rt-sug"></ul></div>';
+      }
+      return h;
+    }
+    function rtWhenText() {
+      var p = RT.date.split("-"), wd = "日月火水木金土".charAt(new Date(Date.UTC(Number(p[0]), Number(p[1]) - 1, Number(p[2]))).getUTCDay());
+      return Number(p[1]) + "月" + Number(p[2]) + "日（" + wd + "）" + RT.time.replace(/^0/, "") + (RT.mode === "arr" ? "までに到着" : "に出発");
+    }
+    function rtFormHTML() {
+      if (RT.compact && RT.from && RT.to && !RT.edit) {
+        return '<div class="c-rt-form is-compact"><button type="button" class="c-rt-sum" data-act="rtexpand" aria-label="出発・到着・日時を変える">' +
+          '<span class="c-rt-sumrow"><span class="c-rt-lb">出発</span><b>' + esc(RT.from.name) + "</b></span>" +
+          '<span class="c-rt-sumrow is-to"><span class="c-rt-lb">到着</span><b>' + esc(RT.to.name) + "</b></span>" +
+          '<span class="c-rt-sumwhen">' + icon("clock") + esc(rtWhenText()) + '<span class="c-rt-sumgo">変える</span></span></button></div>';
+      }
+      return '<div class="c-rt-form">' + rtPtHTML("from") +
+        '<div class="c-rt-mid"><button type="button" class="c-rt-swap" data-act="rtswap" aria-label="出発と到着を入れ替える">' + icon("swap") + "</button></div>" + rtPtHTML("to") +
+        '<div class="c-rt-when"><div class="c-rt-mode" role="group" aria-label="時刻の決め方">' +
+        '<button type="button" data-act="rtmode" data-m="dep" aria-pressed="' + (RT.mode === "dep" ? "true" : "false") + '">出発</button>' +
+        '<button type="button" data-act="rtmode" data-m="arr" aria-pressed="' + (RT.mode === "arr" ? "true" : "false") + '">到着</button></div>' +
+        '<input type="date" class="c-rt-date" value="' + esc(RT.date) + '" aria-label="日付">' +
+        '<input type="time" class="c-rt-time" value="' + esc(RT.time) + '" aria-label="時刻">' +
+        '<button type="button" class="c-rt-now" data-act="rtnow">いま</button></div>' +
+        '<button type="button" class="c-btn is-main c-rt-go" data-act="rtgo">' + icon("search") + "経路を調べる</button></div>";
+    }
+    function rtLegsHTML(J) {
+      var D = RT.res.D, h = '<ol class="c-rt-legs">';
+      function node(t, name, cls, c, u) {
+        return '<li class="c-rt-node' + (cls ? " " + cls : "") + '"' + (c ? ' style="--c:' + esc(c) + '"' : "") + '><span class="c-rt-t">' + (t == null ? "" : rtHM(t)) + '</span><span class="c-rt-dot"></span><span class="c-rt-pl">' + esc(name) + (u ? '<span class="c-rt-u">' + u + "</span>" : "") + "</span></li>";
+      }
+      function walk(w, m, what) {
+        if (!w) { return ""; }
+        if (m < 50) { return '<li class="c-rt-walk"><span class="c-rt-t"></span><span class="c-rt-bar"></span><span class="c-rt-tx">' + icon("walk") + (what ? "乗り換え" : "乗り場・出口との行き来") + " 約" + w + "分</span></li>"; }
+        var long = w > LONG_WALK;
+        return '<li class="c-rt-walk' + (long ? " is-long" : "") + '"><span class="c-rt-t"></span><span class="c-rt-bar"></span><span class="c-rt-tx">' + icon("walk") +
+          (what || "徒歩") + " 約" + w + "分" + (m ? "（" + fmtDist(m * 1.3) + "）" : "") + (long ? '<em class="c-rt-warn">歩く時間が長い区間です</em>' : "") + "</span></li>";
+      }
+      h += node(J.dep, RT.from.name, "is-end");
+      h += walk(J.acc.w, J.acc.m);
+      J.rides.forEach(function (rd, i) {
+        var ln = TO.j.lines[D.rLine[rd.r]], hd = TO.j.heads[D.head[D.rTrip[rd.r] + rd.t]], nst = rd.ap - rd.bp;
+        h += node(rd.dep, rtStopName(rd.bs), "", ln[1], "発");
+        h += '<li class="c-rt-ride" style="--c:' + esc(ln[1]) + '"><span class="c-rt-t"></span><span class="c-rt-bar"></span><span class="c-rt-tx">' + rtChip(D.rLine[rd.r]) +
+          (hd ? '<span class="c-rt-hd">' + esc(hd) + "行き</span>" : "") + '<small>' + nst + (ln[2] === 3 ? "停留所" : "駅") + "先・" + rtDur(rd.arr - rd.dep) + "</small></span></li>";
+        h += node(rd.arr, rtStopName(rd.as), "", ln[1], "着");
+        var nx = J.rides[i + 1];
+        if (nx) {
+          if (nx.bs === rd.as) {
+            h += '<li class="c-rt-walk is-chg"><span class="c-rt-t"></span><span class="c-rt-bar"></span><span class="c-rt-tx">同じ' + (TO.kd[rd.as] === 3 ? "停留所" : "駅") + "で乗り換え・待ち " + (nx.dep - rd.arr) + "分</span></li>";
+          } else {
+            var fw = rtFoot(rd.as, nx.bs);
+            h += walk(fw, meters({ lat: TO.lat[rd.as], lng: TO.lng[rd.as] }, { lat: TO.lat[nx.bs], lng: TO.lng[nx.bs] }), "乗り換えで徒歩");
+          }
+        }
+      });
+      h += walk(J.eg.w, J.eg.m);
+      h += node(J.arr, RT.to.name, "is-end");
+      return h + "</ol>";
+    }
+    function rtResHTML() {
+      if (RT.busy) { return '<p class="c-rt-msg is-busy">' + esc(RT.busy) + "</p>"; }
+      if (RT.msg) { return '<p class="c-rt-msg is-warn">' + esc(RT.msg) + "</p>"; }
+      var R = RT.res, h = "";
+      if (!R) { return ""; }
+      if (R.none) { return '<p class="c-rt-msg is-warn">' + (R.none === "from" ? "出発地" : "到着地") + "の近く（8km以内）に、都営交通の駅・停留所がありません。</p>"; }
+      if (R.note) { h += '<p class="c-note c-rt-note">' + esc(R.note) + "</p>"; }
+      var wm = R.walkM, ww = toWalk(wm), fast = R.list.length ? Math.min.apply(null, R.list.map(function (x) { return x.arr - x.dep; })) : RT_INF;
+      if (ww <= 30) { h += '<p class="c-rt-walkall">' + icon("walk") + "歩くと約" + ww + "分（" + fmtDist(wm * 1.3) + "）" + (ww <= fast ? "。都営交通を使うより早く着きます" : "") + "</p>"; }
+      if (!R.list.length) {
+        return h + '<p class="c-rt-msg is-warn">' + (R.mode === "dep" ? "この時刻からは" : "この時刻までに着く") + "都営交通だけの経路が見つかりませんでした。終電・終バスの後や、始発より前の時刻かもしれません。時刻を変えて調べてください。</p>";
+      }
+      function lo(f) { return Math.min.apply(null, R.list.map(f)); }
+      function hi(f) { return Math.max.apply(null, R.list.map(f)); }
+      function fA(x) { return x.arr; }
+      function fR(x) { return x.rides.length; }
+      function fW(x) { return x.walk; }
+      var minArr = lo(fA) < hi(fA) ? lo(fA) : -1, minRide = lo(fR) < hi(fR) ? lo(fR) : -1, minWalk = lo(fW) < hi(fW) ? lo(fW) : -1;
+      R.list.forEach(function (J, i) {
+        var on = i === RT.sel, tags = [];
+        if (R.list.length > 1) {
+          if (J.arr === minArr) { tags.push("早い"); }
+          if (J.rides.length === minRide) { tags.push("乗り換え少"); }
+          if (J.walk === minWalk) { tags.push("歩き少"); }
+        }
+        h += '<div class="c-rt-opt' + (on ? " is-on" : "") + '"><button type="button" class="c-rt-head" data-act="rtopt" data-i="' + i + '" aria-expanded="' + (on ? "true" : "false") + '">' +
+          '<span class="c-rt-tm"><b>' + rtHM(J.dep) + '</b><span class="c-rt-u">発</span><b>' + rtHM(J.arr) + '</b><span class="c-rt-u">着</span>' +
+          (tags.length ? '<span class="c-rt-tags">' + tags.map(function (t) { return "<i>" + t + "</i>"; }).join("") + "</span>" : "") + "</span>" +
+          '<span class="c-rt-meta">' + rtDur(J.arr - J.dep) + "・" + (J.rides.length > 1 ? "乗り換え" + (J.rides.length - 1) + "回" : "乗り換えなし") + "・徒歩" + J.walk + "分" +
+          (J.maxW > LONG_WALK ? '<em class="c-rt-warn">歩く時間が長い</em>' : "") + "</span>" +
+          '<span class="c-rt-chips">' + J.rides.map(function (rd) { return rtChip(R.D.rLine[rd.r]); }).join('<span class="c-rt-sep"></span>') + "</span></button>";
+        if (on) { h += rtLegsHTML(J); }
+        h += "</div>";
+      });
+      h += '<div class="c-rt-more"><button type="button" class="c-btn" data-act="rtprev">' + icon("up") + "前の時刻</button>" +
+        '<button type="button" class="c-btn" data-act="rtnext">' + icon("down") + "後の時刻</button></div>";
+      return h;
+    }
+    function rtSrcHTML() {
+      var made = TO ? TO.j.made : "";
+      return '<p class="c-rt-src">時刻表：東京都交通局・<a href="https://www.odpt.org/" target="_blank" rel="noopener">公共交通オープンデータセンター</a>のGTFS' +
+        '（<a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank" rel="noopener">CC BY 4.0</a>）を加工して作成' +
+        (made ? "（" + Number(made.slice(0, 4)) + "年" + Number(made.slice(4, 6)) + "月" + Number(made.slice(6, 8)) + "日時点）" : "") +
+        "。正確・完全とは限りません。この地図の表示内容について、東京都交通局へ問い合わせないでください。運賃と遅れは出ません。徒歩の時間は直線距離から出した目安です。</p>";
+    }
+    function rtLeave() {
+      if (!RT) { return; }
+      if (RT.pick) { rtPickStop(); }
+      if (rtLayer) { rtLayer.clearLayers(); }
+    }
+    function rtIn() { return S.panel && S.panel.type === "route" && !sheet.hidden; }
+    function rtOpen(dest) {
+      if (RT.pick) { rtPickStop(); }
+      if (dest) { RT.to = dest; RT.res = null; RT.compact = false; }
+      if (!RT.from && pos) { RT.from = { lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 }; }
+      if (!RT.date) { rtNowSet(); }
+      RT.edit = !RT.from ? "from" : !RT.to ? "to" : "";
+      RT.q = "";
+      var h = headHTML("#0079c2", "train", "地下鉄・都バス・都電・ライナー", "都営交通で行く") +
+        '<div class="c-rt">' + rtFormHTML() + '<div class="c-rt-res" aria-live="polite">' + rtResHTML() + "</div>" + '<div class="c-rt-srcbox">' + rtSrcHTML() + "</div></div>";
+      showPanel({ type: "route" }, h);
+      rtSug();
+      if (RT.edit) { rtFocus(); }
+      toLoad().then(function () {
+        var sb = $(".c-rt-srcbox", sheet);
+        if (sb && rtIn()) { sb.innerHTML = rtSrcHTML(); }
+        rtSug();
+      }, function () {});
+      if (RT.from && RT.to && !RT.res) { rtGo(); } else { rtDraw(!!RT.res); }
+    }
+    function rtFocus() {
+      var q = $(".c-rt-q", sheet);
+      if (q && !(window.matchMedia && window.matchMedia("(pointer: coarse)").matches)) { try { q.focus({ preventScroll: true }); } catch (e) {} }
+    }
+    function rtPaintForm(focus) {
+      var f = $(".c-rt-form", sheet);
+      if (!f || !rtIn()) { return; }
+      var d = document.createElement("div");
+      d.innerHTML = rtFormHTML();
+      f.parentNode.replaceChild(d.firstChild, f);
+      rtSug();
+      if (focus && RT.edit) { rtFocus(); }
+    }
+    function rtPaintRes() {
+      var r = $(".c-rt-res", sheet);
+      if (r && rtIn()) { r.innerHTML = rtResHTML(); }
+    }
+    function rtFind(q) {
+      var w = norm(q), out = [], rq = /[ぁ-ゖ]/.test(w) ? rk(kr(w)) : /^[a-z][a-z' \-]*$/.test(w) ? rk(w) : "";
+      if (!w || !TO) { return out; }
+      if (rq.length < 2) { rq = ""; }
+      TO.ents.forEach(function (e) {
+        var i1 = e.key.indexOf(w), i2 = e.kkey ? e.kkey.indexOf(w) : -1;
+        if (i2 < 0 && rq && e.rkey) { i2 = e.rkey.indexOf(rq); }
+        if (i1 < 0 && i2 < 0) { return; }
+        out.push({ e: e, sc: (i1 === 0 || i2 === 0 ? 0 : 3) + (e.rail ? 0 : 1) + e.key.length / 100 });
+      });
+      pins.forEach(function (it) {
+        var key = norm(it.name), i1 = key.indexOf(w);
+        if (i1 < 0) { return; }
+        out.push({ it: it, sc: (i1 === 0 ? 1.5 : 4.5) + key.length / 100 });
+      });
+      out.sort(function (a, b) { return a.sc - b.sc; });
+      return out.slice(0, 12);
+    }
+    function rtSug() {
+      var ul = $(".c-rt-sug", sheet);
+      if (!ul) { return; }
+      if (!RT.q) { RT.sug = []; ul.innerHTML = ""; return; }
+      if (!TO) { ul.innerHTML = '<li class="c-rt-sugmsg">駅と停留所の一覧を読み込んでいます</li>'; return; }
+      RT.sug = rtFind(RT.q);
+      ul.innerHTML = RT.sug.length ? RT.sug.map(function (x, i) {
+        var t = x.e ? x.e.title : x.it.name, s = x.e ? x.e.sub : CATS[x.it.cat].short + "（地図の場所）";
+        return '<li><button type="button" data-act="rtset" data-i="' + i + '">' + icon(x.e ? (x.e.rail ? "train" : "bus") : "pin") +
+          '<span class="c-rt-sugt"><b>' + esc(t) + "</b><small>" + esc(s) + "</small></span></button></li>";
+      }).join("") : '<li class="c-rt-sugmsg">見つかりませんでした。駅名・停留所名は一部だけでも探せます。</li>';
+    }
+    function rtSetPt(k, p) {
+      RT[k] = p;
+      RT.compact = false;
+      RT.edit = "";
+      RT.q = "";
+      RT.res = null;
+      if (!rtIn()) { return; }
+      if (RT.from && RT.to) { rtGo(); return; }
+      RT.edit = !RT.from ? "from" : "to";
+      rtPaintForm(true);
+      rtDraw(false);
+    }
+    function rtChoose(x) {
+      var k = RT.edit;
+      if (!k || !x) { return; }
+      if (x.e) { rtSetPt(k, { lat: x.e.lat, lng: x.e.lng, name: x.e.title, sub: x.e.sub }); }
+      else { rtSetPt(k, { lat: x.it.lat, lng: x.it.lng, name: x.it.name, sub: CATS[x.it.cat].short, id: x.it.id }); }
+    }
+    function rtMe(k) {
+      if (!navigator.geolocation) { toast("このブラウザでは現在地を取得できません"); return; }
+      toast("現在地を取得しています");
+      navigator.geolocation.getCurrentPosition(function (p) {
+        pos = { lat: p.coords.latitude, lng: p.coords.longitude };
+        locateMe(true);
+        rtSetPt(k, { lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 });
+      }, function () { toast("現在地を取得できませんでした。ブラウザで位置情報の利用を許可してください。"); },
+      { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
+    }
+    function rtPickStart(k) {
+      RT.pick = k;
+      RT.edit = "";
+      sheet.hidden = true;
+      stage.classList.remove("has-sheet");
+      stage.classList.add("is-rtpick");
+      if (!rtBar) {
+        rtBar = document.createElement("div");
+        rtBar.className = "c-rtbar";
+        rtBar.setAttribute("role", "status");
+        stage.appendChild(rtBar);
+      }
+      rtBar.innerHTML = "<span>地図をタップして、" + (k === "from" ? "出発する場所" : "行き先") + "を選んでください</span>" +
+        '<button type="button" data-act="rtpickx">やめる</button>';
+      rtBar.hidden = false;
+    }
+    function rtPickStop() {
+      RT.pick = "";
+      stage.classList.remove("is-rtpick");
+      if (rtBar) { rtBar.hidden = true; }
+    }
+    function rtPickEnd(ll) {
+      var k = RT.pick;
+      rtPickStop();
+      if (ll && k) { RT[k] = { lat: ll.lat, lng: ll.lng, name: "地図で選んだ地点" }; RT.res = null; }
+      rtOpen();
+    }
+    function rtDraw(fit) {
+      if (!map) { return; }
+      if (!rtLayer) { rtLayer = L.layerGroup().addTo(map); }
+      rtLayer.clearLayers();
+      var pts = [], R = RT.res, J = R && R.list && R.list[RT.sel];
+      function walkLine(a, b) {
+        L.polyline([a, b], { color: "#fff", weight: 7, opacity: 0.9, lineCap: "round", interactive: false }).addTo(rtLayer);
+        L.polyline([a, b], { color: ink, weight: 3.5, opacity: 0.95, dashArray: "1 8", lineCap: "round", interactive: false }).addTo(rtLayer);
+      }
+      if (J && RT.from && RT.to) {
+        var D = R.D, prev = [RT.from.lat, RT.from.lng];
+        J.rides.forEach(function (rd) {
+          var ln = TO.j.lines[D.rLine[rd.r]], ll = [], q;
+          for (q = rd.bp; q <= rd.ap; q++) { var s = D.seq[D.rSeq[rd.r] + q]; ll.push([TO.lat[s], TO.lng[s]]); }
+          walkLine(prev, ll[0]);
+          L.polyline(ll, { color: "#fff", weight: 10, opacity: 0.9, lineCap: "round", lineJoin: "round", interactive: false }).addTo(rtLayer);
+          L.polyline(ll, { color: ln[1], weight: 6, opacity: 1, lineCap: "round", lineJoin: "round", interactive: false }).addTo(rtLayer);
+          ll.forEach(function (p, i) {
+            var end = i === 0 || i === ll.length - 1;
+            L.circleMarker(p, { radius: end ? 6 : 3, color: end ? ink : ln[1], weight: end ? 2.5 : 1.5, fillColor: "#fff", fillOpacity: 1, interactive: false }).addTo(rtLayer);
+            pts.push({ lat: p[0], lng: p[1] });
+          });
+          prev = ll[ll.length - 1];
+        });
+        walkLine(prev, [RT.to.lat, RT.to.lng]);
+      }
+      [["from", "出発"], ["to", "到着"]].forEach(function (x) {
+        var p = RT[x[0]];
+        if (!p) { return; }
+        pts.push(p);
+        L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "c-rtpt is-" + x[0], html: "<span>" + x[1] + "</span>", iconSize: [0, 0] }), interactive: false, keyboard: false, zIndexOffset: 3500 }).addTo(rtLayer);
+      });
+      if (fit && pts.length) { rtFit(pts); }
+    }
+    function rtFit(pts) {
+      var sr = stage.getBoundingClientRect(), top = 16, open = !sheet.hidden, wide = isWide();
+      $$(".c-top, .c-kinds, .c-conds", stage).forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.height && el.offsetParent !== null) { top = Math.max(top, r.bottom - sr.top + 12); }
+      });
+      var ll = pts.map(function (p) { return [p.lat, p.lng]; });
+      map.fitBounds(ll, {
+        paddingTopLeft: [28, top + 30],
+        paddingBottomRight: [open && wide ? 430 : 72, open && !wide ? sheet.offsetHeight + 20 : 48],
+        maxZoom: 16,
+      });
+    }
+    function rtClick(act, b) {
+      var k = b.getAttribute("data-k");
+      if (act === "rt") {
+        menu(legend, false);
+        if (rtIn()) { closePanel(); return; }
+        toStage();
+        rtOpen();
+      } else if (act === "rtto") {
+        var it = byId[b.getAttribute("data-id")];
+        if (!it || !it.pin) { return; }
+        toStage();
+        rtOpen({ lat: it.lat, lng: it.lng, name: it.name, sub: CATS[it.cat].short, id: it.id });
+      } else if (act === "rtexpand") {
+        RT.compact = false;
+        rtPaintForm();
+      } else if (act === "rtedit") {
+        RT.edit = RT.edit === k ? "" : k;
+        RT.q = "";
+        rtPaintForm(true);
+      } else if (act === "rtme") { rtMe(k); }
+      else if (act === "rtmap") { rtPickStart(k); }
+      else if (act === "rtpickx") { rtPickEnd(null); }
+      else if (act === "rtset") { rtChoose(RT.sug[Number(b.getAttribute("data-i"))]); }
+      else if (act === "rtswap") {
+        var f = RT.from;
+        RT.from = RT.to; RT.to = f; RT.res = null;
+        if (RT.from && RT.to) { rtGo(); } else { rtPaintForm(); rtPaintRes(); rtDraw(false); }
+      } else if (act === "rtmode") {
+        RT.mode = b.getAttribute("data-m") === "arr" ? "arr" : "dep";
+        if (RT.res) { rtGo(); } else { rtPaintForm(); }
+      } else if (act === "rtnow") {
+        rtNowSet();
+        RT.mode = "dep";
+        if (RT.from && RT.to) { rtGo(); } else { rtPaintForm(); }
+      } else if (act === "rtgo") { rtGo(); }
+      else if (act === "rtopt") {
+        var i = Number(b.getAttribute("data-i"));
+        RT.sel = i;
+        rtPaintRes();
+        rtDraw(true);
+        var o = $$(".c-rt-opt", sheet)[i];
+        if (o && o.scrollIntoView) { o.scrollIntoView({ block: "nearest" }); }
+      } else if (act === "rtprev" || act === "rtnext") { rtShift(act === "rtnext" ? 1 : -1); }
+    }
+    root.addEventListener("input", function (e) {
+      var t = e.target;
+      if (t && t.classList && t.classList.contains("c-rt-q")) { RT.q = t.value; rtSug(); }
+    });
+    root.addEventListener("change", function (e) {
+      var t = e.target;
+      if (!t || !t.classList) { return; }
+      if (t.classList.contains("c-rt-date")) { RT.date = t.value || today(); if (RT.res) { rtGo(); } }
+      else if (t.classList.contains("c-rt-time")) { RT.time = t.value || "00:00"; if (RT.res) { rtGo(); } }
+    });
+    root.addEventListener("keydown", function (e) {
+      var t = e.target;
+      if (e.key === "Enter" && t && t.classList && t.classList.contains("c-rt-q")) {
+        e.preventDefault();
+        if (RT.sug.length) { rtChoose(RT.sug[0]); }
+      }
+    });
+    if (map) { map.on("click", function (e) { if (RT.pick) { rtPickEnd(e.latlng); } }); }
+
     var drawing = false;
     function omikuji() {
       if (drawing) { return; }
@@ -2170,6 +2964,7 @@
       var b = tgt.closest("[data-act]");
       if (!b || !root.contains(b)) { return; }
       var act = b.getAttribute("data-act"), id = b.getAttribute("data-id");
+      if (act.slice(0, 2) === "rt") { rtClick(act, b); return; }
       if (act === "select") { select(id, { fromRail: b.classList.contains("c-card") }); }
       else if (act === "row") { toggleRow(byId[id]); }
       else if (act === "close") { closePanel(); }
@@ -2341,6 +3136,7 @@
     document.addEventListener("keydown", function (e) {
       if (e.key !== "Escape") { return; }
       if (T) { tutEnd(); return; }
+      if (RT.pick) { rtPickEnd(null); return; }
       if (shareNow) { shareClose(true); return; }
       if (!searchBox.hidden && document.activeElement === qIn) { searchOpen(false, true); return; }
       if (!legend.hidden) { menu(legend, false); if ($(".c-filterbtn", topBar)) { $(".c-filterbtn", topBar).focus(); } }

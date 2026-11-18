@@ -1,29 +1,39 @@
-name: 都営交通の時刻表を取得
+name: 都営交通の時刻表を更新
 on:
   push:
     branches: [machi]
     paths: ['.github/workflows/toei.yml', 'tools/toei/**']
 permissions:
   contents: write
+concurrency:
+  group: toei-data
+  cancel-in-progress: false
 jobs:
-  fetch:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: 東京都交通局のGTFSを取得
+      - uses: actions/checkout@v4
+        with:
+          ref: machi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 東京都交通局のGTFSを取得して、経路探索用のデータを作る
         run: |
-          mkdir raw && cd raw
+          pip install -q jpholiday
+          mkdir -p "$RUNNER_TEMP/raw"
           for f in Toei-Train-GTFS.zip ToeiBus-GTFS.zip; do
-            curl -fsSL --retry 4 --retry-delay 5 -o "$f" "https://api-public.odpt.org/api/v4/files/Toei/data/$f"
+            curl -fsSL --retry 4 --retry-delay 5 -o "$RUNNER_TEMP/raw/$f" "https://api-public.odpt.org/api/v4/files/Toei/data/$f"
           done
-          ls -la
-          sha256sum *.zip
-      - name: 作業用ブランチへ置く
+          python tools/toei/build.py "$RUNNER_TEMP/raw/Toei-Train-GTFS.zip" "$RUNNER_TEMP/raw/ToeiBus-GTFS.zip" toei.json
+      - name: 変わっていれば反映する
         run: |
-          cd raw
-          printf '東京都交通局のGTFS（公共交通オープンデータセンター）。ライセンス CC BY 4.0。\n' > README.md
-          git init -q -b toei-src
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -qm "東京都交通局のGTFS（公共交通オープンデータセンター、CC BY 4.0）"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" toei-src
+          git add toei.json
+          if git diff --cached --quiet; then echo "時刻表データに変更はありません"; exit 0; fi
+          git commit -qm "都営交通の時刻表データを更新"
+          printf '{"ref":"%s","date":"%s"}\n' "$(git rev-parse HEAD)" "$(TZ=Asia/Tokyo date +%F)" > manifest.json
+          git add manifest.json
+          git commit -qm "読み込む版の指定を更新"
+          git push origin HEAD:machi
