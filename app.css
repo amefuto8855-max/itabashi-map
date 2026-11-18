@@ -108,6 +108,7 @@
 #itbM .c-rt-pick{margin:8px 0 6px 56px}
 #itbM input.c-rt-q{display:block;width:100%;min-height:44px;padding:8px 12px;border-radius:12px;background:var(--bg);box-shadow:inset 0 0 0 1.5px var(--ink3);font-size:16px;font-weight:700}
 #itbM input.c-rt-q::placeholder{color:var(--ink3);font-weight:500}
+#itbM .c-rt-hint{margin:6px 2px 0;font-size:calc(12.5px*var(--tz,1));font-weight:700;line-height:1.6;color:var(--ink2)}
 #itbM .c-rt-quick{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
 #itbM .c-rt-quick .c-act{background:var(--bg);box-shadow:inset 0 0 0 1px var(--line)}
 #itbM .c-rt-quick .c-act:hover{background:var(--fwash)}
@@ -356,4 +357,15 @@ html.itbM-lock,html.itbM-lock body{overflow:hidden!important;overscroll-behavior
   #itbM.is-app .c-stage .leaflet-bottom{bottom:0}
   #itbM.is-app .c-toast{top:70px;left:calc(var(--pw-px,408px) + (100vw - var(--pw-px,408px)) / 2)}
 }
-@media (prefers-reduced-motion:reduce){#itbM .c-panel,#itbM .c-fab,#itbM .c-panel-tg,#itbM.is-app .c-stage .leaflet-bottom{transition:none}#itbM .c-drawer-box{animation:none}}
+#itbM .c-hintpop{position:absolute;z-index:1280;display:flex;align-items:flex-start;gap:2px;width:max-content;max-width:min(300px,calc(100% - 16px));padding:6px 4px 6px 14px;border-radius:14px;background:var(--ink);color:#fff;font-size:calc(13.5px*var(--tz,1));font-weight:700;line-height:1.55;box-shadow:0 6px 18px rgba(0,0,0,.28);animation:itbM-hint .25s ease-out}
+#itbM .c-hintpop-t{flex:1;min-width:0;padding-top:5px}
+#itbM .c-hintpop-x{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex:none;border-radius:50%;color:#fff}
+#itbM .c-hintpop-x:hover{background:rgba(255,255,255,.16)}
+#itbM .c-hintpop-x svg{width:16px;height:16px}
+#itbM .c-hintpop-ar{position:absolute;width:12px;height:12px;background:var(--ink);transform:rotate(45deg)}
+#itbM .c-hintpop.is-below .c-hintpop-ar{top:-6px;margin-left:-6px}
+#itbM .c-hintpop.is-above .c-hintpop-ar{bottom:-6px;margin-left:-6px}
+#itbM .c-hintpop.is-left .c-hintpop-ar{right:-6px;margin-top:-6px}
+#itbM .c-hintpop.is-right .c-hintpop-ar{left:-6px;margin-top:-6px}
+@keyframes itbM-hint{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#itbM .c-hintpop{animation:none}#itbM .c-panel,#itbM .c-fab,#itbM .c-panel-tg,#itbM.is-app .c-stage .leaflet-bottom{transition:none}#itbM .c-drawer-box{animation:none}}

@@ -2261,6 +2261,7 @@
         '<button type="button" class="c-rt-val" data-act="rtedit" data-k="' + k + '" aria-expanded="' + (on ? "true" : "false") + '">' + val + "</button></div>";
       if (on) {
         h += '<div class="c-rt-pick"><input type="search" class="c-rt-q" placeholder="駅・停留所・場所の名前" aria-label="' + lb + 'する場所を名前で探す" autocomplete="off" enterkeyhint="search" value="' + esc(RT.q) + '">' +
+          '<p class="c-rt-hint">住所では探せません。駅名・停留所名で探してください。</p>' +
           '<div class="c-rt-quick"><button type="button" class="c-act" data-act="rtme" data-k="' + k + '">' + icon("locate") + "現在地</button>" +
           '<button type="button" class="c-act" data-act="rtmap" data-k="' + k + '">' + icon("map") + "地図をタップして選ぶ</button></div>" +
           '<ul class="c-rt-sug"></ul></div>';
@@ -3398,8 +3399,72 @@
     }
     appHooks.enter = function () {
       setTimeout(function () { if (map) { map.invalidateSize(); } setSnap(PS.snap); }, 40);
+      setTimeout(hintShow, 1500);
     };
+    // ---- 機能の場所を知らせる吹き出し：ページを開くたび（更新するたび）に1つずつ、全部を2周したら出さない ----
+    KEY.hint = "itbx-m-hint-v1";
+    var HINTS = [
+      { t: function () { return !sheet.hidden ? null : PS.home ? (narrow() ? $(".c-home-h", homeEl) : $(".c-home-grid", homeEl)) : condsEl.hidden ? null : condsEl; },
+        x: function () { return PS.home ? "目的を選ぶと、雨の日・子連れ・無料などでも絞り込めます" : "雨の日・子連れ・無料などの条件で、さらに絞り込めます"; } },
+      { t: function () { return $('[data-act="rt"]', fab); }, x: function () { return "都営交通だけの経路を調べられます。出発地・目的地は駅名・停留所名で探します"; } },
+      { t: function () { return $('[data-act="rings"]', side); }, x: function () { return "徒歩5・10・20分の範囲と、範囲の中の件数を出せます"; } },
+      { t: function () { return menuBtn; }, x: function () { return "場所を「コースに入れる」と、メニューの「自分のコース」で道順・印刷・共有ができます"; } },
+      { t: function () { return menuBtn; }, x: function () { return "場所の「行った」で日付を残せます。町ごとの回った数はメニューの「行った場所」から"; } },
+      { t: function () { return menuBtn; }, x: function () { return "文字は、メニューの「文字」で大きくできます"; } },
+      { t: function () { return menuBtn; }, x: function () { return "記事やコメント欄へは、メニューの「地図を閉じて、ブログの記事を見る」で戻れます"; } },
+    ];
+    var hintEl = null, hintTimer = 0, hintDone = false;
+    function hintHide() {
+      clearTimeout(hintTimer);
+      if (hintEl) { hintEl.hidden = true; }
+    }
+    function hintShow() {
+      if (hintDone || T || !root.classList.contains("is-app") || !drawer.hidden || RT.pick) { return; }
+      var n = Number(store.get(KEY.hint, 0)) || 0;
+      if (n >= HINTS.length * 2) { hintDone = true; return; }
+      for (var k = 0; k < HINTS.length; k++) {
+        var h = HINTS[(n + k) % HINTS.length], el = h.t();
+        if (!el || el.offsetParent === null) { continue; }
+        var r = el.getBoundingClientRect();
+        if (!r.width || !r.height) { continue; }
+        hintDone = true;
+        store.set(KEY.hint, n + k + 1);
+        hintPlace(el, h.x());
+        return;
+      }
+    }
+    function hintPlace(el, text) {
+      if (!hintEl) {
+        hintEl = document.createElement("div");
+        hintEl.setAttribute("role", "status");
+        hintEl.innerHTML = '<p class="c-hintpop-t"></p><button type="button" class="c-hintpop-x" data-act="hintx" aria-label="閉じる">' + icon("close") + '</button><span class="c-hintpop-ar" aria-hidden="true"></span>';
+        stage.appendChild(hintEl);
+      }
+      $(".c-hintpop-t", hintEl).textContent = text;
+      hintEl.className = "c-hintpop";
+      hintEl.hidden = false;
+      var sr = stage.getBoundingClientRect(), r = el.getBoundingClientRect(), W = sr.width, H = sr.height;
+      var cx = r.left + r.width / 2 - sr.left, cy = r.top + r.height / 2 - sr.top, bw = hintEl.offsetWidth, bh = hintEl.offsetHeight, g = 12, x, y, sd;
+      if (cx > W * 0.6 && r.left - sr.left - bw - g >= 8) { sd = "left"; x = r.left - sr.left - bw - g; y = cy - bh / 2; }
+      else if (!narrow() && r.right - sr.left < W * 0.45 && W - (r.right - sr.left) - g - bw >= 8) { sd = "right"; x = r.right - sr.left + g; y = cy - bh / 2; }
+      else if (cy < H * 0.45) { sd = "below"; x = cx - bw / 2; y = r.bottom - sr.top + g; }
+      else { sd = "above"; x = cx - bw / 2; y = r.top - sr.top - bh - g; }
+      x = Math.max(8, Math.min(W - bw - 8, x));
+      y = Math.max(8, Math.min(H - bh - 8, y));
+      hintEl.style.left = Math.round(x) + "px";
+      hintEl.style.top = Math.round(y) + "px";
+      hintEl.classList.add("is-" + sd);
+      var ar = $(".c-hintpop-ar", hintEl);
+      var side2 = sd === "left" || sd === "right";
+      ar.style.left = side2 ? "" : Math.round(Math.max(16, Math.min(bw - 16, cx - x))) + "px";
+      ar.style.top = side2 ? Math.round(Math.max(12, Math.min(bh - 12, cy - y))) + "px" : "";
+      clearTimeout(hintTimer);
+      hintTimer = setTimeout(hintHide, 7000);
+    }
+    root.addEventListener("pointerdown", function (e) { if (hintEl && !hintEl.hidden && !hintEl.contains(e.target)) { hintHide(); } }, true);
+    window.addEventListener("resize", hintHide);
     function appClick(act, b) {
+      if (act === "hintx") { hintHide(); return true; }
       if (b.closest(".c-drawer") && (act === "course" || act === "tutorial" || act === "gotoindex")) { drawerOpen(false); }
       if (act === "menu") { drawerOpen(drawer.hidden); return true; }
       if (act === "listall" || act === "gotoindex") { drawerOpen(false); appList(); return true; }
@@ -3429,6 +3494,7 @@
     apply(false);
     paintWent();
     setSnap(atHome() ? "half" : "peek");
+    setTimeout(hintShow, 1800);
     ready = true;
     if (map) {
       stage.classList.toggle("is-far", map.getZoom() < 14);
