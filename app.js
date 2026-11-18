@@ -6,10 +6,10 @@
   if (!root || root.getAttribute("data-ready")) { return; }
   root.setAttribute("data-ready", "1");
   var BASE = root.getAttribute("data-base") || (document.currentScript && document.currentScript.src ? document.currentScript.src.replace(/[^\/]*$/, "") : "");
-  var ICONS = {"tree": "<circle cx=\"12\" cy=\"9\" r=\"5.5\"/><path d=\"M12 14.5V21M8.5 21h7\"/>", "dumbbell": "<path d=\"M7 7v10M4 9.5v5M17 7v10M20 9.5v5M7 12h10\"/>", "book": "<path d=\"M12 6.5C10 5 7 4.6 4 5v13c3-.4 6 0 8 1.5 2-1.5 5-1.9 8-1.5V5c-3-.4-6 0-8 1.5zM12 6.5v13\"/>", "balloon": "<path d=\"M12 3.5c2.9 0 5 2.2 5 5 0 3.3-2.7 6-5 6s-5-2.7-5-6c0-2.8 2.1-5 5-5z\"/><path d=\"M12 14.5l-.9 1.6h1.8zM12 16.1c0 1.6 1.4 2.4 0 4.4\"/>", "museum": "<path d=\"M3.5 9 12 4.5 20.5 9M5.5 9.5v8M9.8 9.5v8M14.2 9.5v8M18.5 9.5v8M3.5 20h17\"/>", "paw": "<circle cx=\"8.3\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"15.7\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"5\" cy=\"12\" r=\"1.5\"/><circle cx=\"19\" cy=\"12\" r=\"1.5\"/><path d=\"M12 11.5c-2.8 0-4.8 3-4.8 5.1 0 1.5 1.3 2.2 2.6 1.7 1.5-.6 2.9-.6 4.4 0 1.3.5 2.6-.2 2.6-1.7 0-2.1-2-5.1-4.8-5.1z\"/>", "landmark": "<path d=\"M4 9.5c3-.5 5-2 8-5 3 3 5 4.5 8 5M6.5 9.5V19M17.5 9.5V19M4 19.5h16M9.5 14h5\"/>", "people": "<circle cx=\"9\" cy=\"8\" r=\"2.8\"/><circle cx=\"16.5\" cy=\"9\" r=\"2.2\"/><path d=\"M3.8 19c.6-3.4 2.6-5.3 5.2-5.3s4.6 1.9 5.2 5.3M14.6 14.1c2.4-.4 4.6 1.1 5.2 4.6\"/>", "bubble": "<path d=\"M4.5 5.5h15v10h-9l-4 3.5v-3.5h-2z\"/><path d=\"M8 9.5h8M8 12.5h5\"/>", "pin": "<path d=\"M12 20.5s-6-5.3-6-10.5a6 6 0 0 1 12 0c0 5.2-6 10.5-6 10.5z\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2\"/><circle cx=\"18\" cy=\"6\" r=\"2\"/><path d=\"M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16\"/>", "share": "<circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/>", "phone": "<path d=\"M6.5 4.5h2.7l1.4 3.6-1.8 1.2a10.5 10.5 0 0 0 5.9 5.9l1.2-1.8 3.6 1.4v2.7a1.5 1.5 0 0 1-1.6 1.5C10.4 18.4 5.6 13.6 5 6.1a1.5 1.5 0 0 1 1.5-1.6z\"/>", "copy": "<rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/>", "search": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/>", "locate": "<circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/>", "close": "<path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/>", "star": "<path d=\"M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8z\"/>", "expand": "<path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/>", "shrink": "<path d=\"M9 4.5V9H4.5M15 4.5V9h4.5M9 19.5V15H4.5M15 19.5V15h4.5\"/>", "print": "<path d=\"M7 9V4.5h10V9M7 17H5.5A1.5 1.5 0 0 1 4 15.5v-5A1.5 1.5 0 0 1 5.5 9h13a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H17\"/><path d=\"M7 14h10v6H7z\"/>", "sliders": "<path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/>", "map": "<path d=\"M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z\"/><path d=\"M9 4.5v13M15 6.5v13\"/>", "walk": "<circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/>", "rings": "<circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/>", "link": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>", "chevron": "<path d=\"M9 6l6 6-6 6\"/>", "check": "<path d=\"M5 12.5l4.5 4.5L19 7.5\"/>", "list": "<path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/>", "dice": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/>", "layers": "<path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/>", "train": "<rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/>", "bus": "<rect x=\"5\" y=\"3.5\" width=\"14\" height=\"14.5\" rx=\"2.5\"/><path d=\"M5 11.5h14M8 6.6h8M7.6 18v2.5M16.4 18v2.5\"/><path d=\"M8.4 14.8h.01M15.6 14.8h.01\" stroke-width=\"2.6\"/>", "up": "<path d=\"M12 18V6M6.5 11.5L12 6l5.5 5.5\"/>", "down": "<path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/>", "flag": "<path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/>", "umbrella": "<path d=\"M3.5 12.5a8.5 8.5 0 0 1 17 0z\"/><path d=\"M12 12.5v6a2 2 0 0 1-4 0M12 3.5V4\"/>", "stroller": "<path d=\"M12.5 4.5v7h7.5a7.5 7.5 0 0 0-7.5-7.5z\"/><path d=\"M3.5 7.5H6l1.6 4h12.4a5 5 0 0 1-5 5h-4.5a5 5 0 0 1-3.3-1.3\"/><circle cx=\"9\" cy=\"19.2\" r=\"1.6\"/><circle cx=\"16.5\" cy=\"19.2\" r=\"1.6\"/>", "yen": "<path d=\"M7 4.5l5 7 5-7M12 11.5V20M8 12.5h8M8 16h8\"/>", "laptop": "<rect x=\"5\" y=\"5.5\" width=\"14\" height=\"9.5\" rx=\"1.3\"/><path d=\"M3 18.5h18\"/>", "wifi": "<path d=\"M3.8 9.6a11.6 11.6 0 0 1 16.4 0M6.9 12.9a7.2 7.2 0 0 1 10.2 0M10 16.1a2.9 2.9 0 0 1 4 0\"/><path d=\"M12 19.2v.01\" stroke-width=\"2.8\"/>", "parking": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M10 16.5v-9h3.2a2.7 2.7 0 0 1 0 5.4H10\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7.5V12l3 2\"/>", "drink": "<path d=\"M6.5 8.5h11l-1.3 10.6a1.6 1.6 0 0 1-1.6 1.4H9.4a1.6 1.6 0 0 1-1.6-1.4z\"/><path d=\"M7 12.5h10M13 8.5l1.6-5h3\"/>", "smoke": "<rect x=\"3\" y=\"14\" width=\"15\" height=\"4\" rx=\"1\"/><path d=\"M14.5 14v4M20.5 14v4M17.5 11c0-1.6 2-1.6 2-3.2S17.5 6.2 17.5 4.6\"/>", "moon": "<path d=\"M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.1 6.1 0 0 0 10.1 10.1z\"/>", "flower": "<path d=\"M7.5 5l2.2 2.5L12 4.5l2.3 3 2.2-2.5v4.6a4.5 4.5 0 0 1-9 0z\"/><path d=\"M12 14.1V21M12 18.2c-1.6-1.8-3.6-2.1-5.1-1.7M12 17.2c1.6-1.8 3.6-2.1 5.1-1.7\"/>", "shop": "<path d=\"M4 9.5l1.6-5h12.8L20 9.5\"/><path d=\"M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0\"/><path d=\"M5.5 12v7.5h13V12M10 19.5v-4.5h4v4.5\"/>", "home": "<path d=\"M4 11.5L12 5l8 6.5M6.5 9.5v10h11v-10\"/>", "ext": "<path d=\"M13.5 4.5h6v6M19.5 4.5l-8 8M17 13.5V18a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 5 18V9a1.5 1.5 0 0 1 1.5-1.5H11\"/>", "tag": "<path d=\"M4.5 12.3V5.5a1 1 0 0 1 1-1h6.8l7.2 7.2a1 1 0 0 1 0 1.4l-5.9 5.9a1 1 0 0 1-1.4 0z\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.3\"/>", "info": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/>", "play": "<path d=\"M8.5 5.8v12.4l9.8-6.2z\"/>", "mug": "<path d=\"M5.5 8h9.5v11a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19z\"/><path d=\"M15 10h2a2 2 0 0 1 2 2v2.5a2 2 0 0 1-2 2h-2M5.5 8a2.6 2.6 0 0 1 3.3-2.5 3 3 0 0 1 5.4.4A2.2 2.2 0 0 1 15 8M8.8 11.5v5.5M11.7 11.5v5.5\"/>", "fish": "<path d=\"M4.5 12c2.5-3.4 5.5-5 8.6-5 3.2 0 5.8 1.7 7.4 5-1.6 3.3-4.2 5-7.4 5-3.1 0-6.1-1.6-8.6-5z\"/><path d=\"M4.5 12 2.5 9M4.5 12l-2 3\"/><path d=\"M16.6 11h.01\" stroke-width=\"2.6\"/>", "udon": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M13.5 3.5 9.5 12M18.5 4.5 13.5 12\"/>", "ramen": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M8.5 9.5c-1-1.2 1-2.1 0-3.5M12 9.5c-1-1.2 1-2.1 0-3.5M15.5 9.5c-1-1.2 1-2.1 0-3.5\"/>", "dumpling": "<path d=\"M3.5 15c1.5-4.6 4.8-7.2 8.5-7.2s7 2.6 8.5 7.2c-2.6 1.6-5.4 2.4-8.5 2.4S6.1 16.6 3.5 15z\"/><path d=\"M7.6 10.8l.9 2M10.6 9l.4 2.2M13.4 9l-.4 2.2M16.4 10.8l-.9 2\"/>", "grill": "<circle cx=\"12\" cy=\"11\" r=\"7\"/><path d=\"M5.6 8.5h12.8M5 11h14M5.6 13.5h12.8M8.5 17.2 7 20.5M15.5 17.2l1.5 3.3\"/>", "cutlery": "<path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/>", "curry": "<path d=\"M3 14.5h18a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 14.5z\"/><path d=\"M5.5 14.5c.6-3.2 2.4-5 5-5 2 0 3.3 1 4 2.6.9-.6 2.1-.8 3.3-.4M10.5 7.5c-.8-1.1.8-1.9 0-3.2\"/>", "teppan": "<path d=\"M3 17.5h14\"/><ellipse cx=\"9.5\" cy=\"14\" rx=\"6\" ry=\"2.5\"/><path d=\"M14.5 11.5l2.6-2.6 1.6 1.6-2.6 2.6zM17.9 9.7 21 6.6\"/>", "plate": "<circle cx=\"13.5\" cy=\"12\" r=\"7\"/><circle cx=\"13.5\" cy=\"12\" r=\"3.5\"/><path d=\"M3.5 3.5v5a1.5 1.5 0 0 0 1.5 1.5v10.5M3.5 3.5v5\"/>", "coffee": "<path d=\"M4.5 10h11.5v4.5a5 5 0 0 1-5 5h-1.5a5 5 0 0 1-5-5z\"/><path d=\"M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16M8.5 7.5c-.8-1 .8-1.8 0-3M12.5 7.5c-.8-1 .8-1.8 0-3\"/>", "bento": "<rect x=\"3.5\" y=\"6\" width=\"17\" height=\"12\" rx=\"2\"/><path d=\"M12 6v12M12 12h8.5\"/><circle cx=\"7.7\" cy=\"12\" r=\"1.7\"/>", "swap": "<path d=\"M8 4.5v15M4.5 8 8 4.5 11.5 8M16 19.5v-15M12.5 16l3.5 3.5 3.5-3.5\"/>"};
+  var ICONS = {"tree": "<circle cx=\"12\" cy=\"9\" r=\"5.5\"/><path d=\"M12 14.5V21M8.5 21h7\"/>", "dumbbell": "<path d=\"M7 7v10M4 9.5v5M17 7v10M20 9.5v5M7 12h10\"/>", "book": "<path d=\"M12 6.5C10 5 7 4.6 4 5v13c3-.4 6 0 8 1.5 2-1.5 5-1.9 8-1.5V5c-3-.4-6 0-8 1.5zM12 6.5v13\"/>", "balloon": "<path d=\"M12 3.5c2.9 0 5 2.2 5 5 0 3.3-2.7 6-5 6s-5-2.7-5-6c0-2.8 2.1-5 5-5z\"/><path d=\"M12 14.5l-.9 1.6h1.8zM12 16.1c0 1.6 1.4 2.4 0 4.4\"/>", "museum": "<path d=\"M3.5 9 12 4.5 20.5 9M5.5 9.5v8M9.8 9.5v8M14.2 9.5v8M18.5 9.5v8M3.5 20h17\"/>", "paw": "<circle cx=\"8.3\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"15.7\" cy=\"7.6\" r=\"1.7\"/><circle cx=\"5\" cy=\"12\" r=\"1.5\"/><circle cx=\"19\" cy=\"12\" r=\"1.5\"/><path d=\"M12 11.5c-2.8 0-4.8 3-4.8 5.1 0 1.5 1.3 2.2 2.6 1.7 1.5-.6 2.9-.6 4.4 0 1.3.5 2.6-.2 2.6-1.7 0-2.1-2-5.1-4.8-5.1z\"/>", "landmark": "<path d=\"M4 9.5c3-.5 5-2 8-5 3 3 5 4.5 8 5M6.5 9.5V19M17.5 9.5V19M4 19.5h16M9.5 14h5\"/>", "people": "<circle cx=\"9\" cy=\"8\" r=\"2.8\"/><circle cx=\"16.5\" cy=\"9\" r=\"2.2\"/><path d=\"M3.8 19c.6-3.4 2.6-5.3 5.2-5.3s4.6 1.9 5.2 5.3M14.6 14.1c2.4-.4 4.6 1.1 5.2 4.6\"/>", "bubble": "<path d=\"M4.5 5.5h15v10h-9l-4 3.5v-3.5h-2z\"/><path d=\"M8 9.5h8M8 12.5h5\"/>", "pin": "<path d=\"M12 20.5s-6-5.3-6-10.5a6 6 0 0 1 12 0c0 5.2-6 10.5-6 10.5z\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/>", "route": "<circle cx=\"6\" cy=\"18\" r=\"2\"/><circle cx=\"18\" cy=\"6\" r=\"2\"/><path d=\"M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16\"/>", "share": "<circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/>", "phone": "<path d=\"M6.5 4.5h2.7l1.4 3.6-1.8 1.2a10.5 10.5 0 0 0 5.9 5.9l1.2-1.8 3.6 1.4v2.7a1.5 1.5 0 0 1-1.6 1.5C10.4 18.4 5.6 13.6 5 6.1a1.5 1.5 0 0 1 1.5-1.6z\"/>", "copy": "<rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/>", "search": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/>", "locate": "<circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/>", "close": "<path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/>", "star": "<path d=\"M12 3.8l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8z\"/>", "expand": "<path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/>", "shrink": "<path d=\"M9 4.5V9H4.5M15 4.5V9h4.5M9 19.5V15H4.5M15 19.5V15h4.5\"/>", "print": "<path d=\"M7 9V4.5h10V9M7 17H5.5A1.5 1.5 0 0 1 4 15.5v-5A1.5 1.5 0 0 1 5.5 9h13a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1-1.5 1.5H17\"/><path d=\"M7 14h10v6H7z\"/>", "sliders": "<path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/>", "map": "<path d=\"M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z\"/><path d=\"M9 4.5v13M15 6.5v13\"/>", "walk": "<circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/>", "rings": "<circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/>", "link": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>", "chevron": "<path d=\"M9 6l6 6-6 6\"/>", "check": "<path d=\"M5 12.5l4.5 4.5L19 7.5\"/>", "list": "<path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/>", "dice": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/>", "layers": "<path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/>", "train": "<rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/>", "bus": "<rect x=\"5\" y=\"3.5\" width=\"14\" height=\"14.5\" rx=\"2.5\"/><path d=\"M5 11.5h14M8 6.6h8M7.6 18v2.5M16.4 18v2.5\"/><path d=\"M8.4 14.8h.01M15.6 14.8h.01\" stroke-width=\"2.6\"/>", "up": "<path d=\"M12 18V6M6.5 11.5L12 6l5.5 5.5\"/>", "down": "<path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/>", "flag": "<path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/>", "umbrella": "<path d=\"M3.5 12.5a8.5 8.5 0 0 1 17 0z\"/><path d=\"M12 12.5v6a2 2 0 0 1-4 0M12 3.5V4\"/>", "stroller": "<path d=\"M12.5 4.5v7h7.5a7.5 7.5 0 0 0-7.5-7.5z\"/><path d=\"M3.5 7.5H6l1.6 4h12.4a5 5 0 0 1-5 5h-4.5a5 5 0 0 1-3.3-1.3\"/><circle cx=\"9\" cy=\"19.2\" r=\"1.6\"/><circle cx=\"16.5\" cy=\"19.2\" r=\"1.6\"/>", "yen": "<path d=\"M7 4.5l5 7 5-7M12 11.5V20M8 12.5h8M8 16h8\"/>", "laptop": "<rect x=\"5\" y=\"5.5\" width=\"14\" height=\"9.5\" rx=\"1.3\"/><path d=\"M3 18.5h18\"/>", "wifi": "<path d=\"M3.8 9.6a11.6 11.6 0 0 1 16.4 0M6.9 12.9a7.2 7.2 0 0 1 10.2 0M10 16.1a2.9 2.9 0 0 1 4 0\"/><path d=\"M12 19.2v.01\" stroke-width=\"2.8\"/>", "parking": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M10 16.5v-9h3.2a2.7 2.7 0 0 1 0 5.4H10\"/>", "clock": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 7.5V12l3 2\"/>", "drink": "<path d=\"M6.5 8.5h11l-1.3 10.6a1.6 1.6 0 0 1-1.6 1.4H9.4a1.6 1.6 0 0 1-1.6-1.4z\"/><path d=\"M7 12.5h10M13 8.5l1.6-5h3\"/>", "smoke": "<rect x=\"3\" y=\"14\" width=\"15\" height=\"4\" rx=\"1\"/><path d=\"M14.5 14v4M20.5 14v4M17.5 11c0-1.6 2-1.6 2-3.2S17.5 6.2 17.5 4.6\"/>", "moon": "<path d=\"M19.5 14.6A7.6 7.6 0 1 1 9.4 4.5a6.1 6.1 0 0 0 10.1 10.1z\"/>", "flower": "<path d=\"M7.5 5l2.2 2.5L12 4.5l2.3 3 2.2-2.5v4.6a4.5 4.5 0 0 1-9 0z\"/><path d=\"M12 14.1V21M12 18.2c-1.6-1.8-3.6-2.1-5.1-1.7M12 17.2c1.6-1.8 3.6-2.1 5.1-1.7\"/>", "shop": "<path d=\"M4 9.5l1.6-5h12.8L20 9.5\"/><path d=\"M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0\"/><path d=\"M5.5 12v7.5h13V12M10 19.5v-4.5h4v4.5\"/>", "home": "<path d=\"M4 11.5L12 5l8 6.5M6.5 9.5v10h11v-10\"/>", "ext": "<path d=\"M13.5 4.5h6v6M19.5 4.5l-8 8M17 13.5V18a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 5 18V9a1.5 1.5 0 0 1 1.5-1.5H11\"/>", "tag": "<path d=\"M4.5 12.3V5.5a1 1 0 0 1 1-1h6.8l7.2 7.2a1 1 0 0 1 0 1.4l-5.9 5.9a1 1 0 0 1-1.4 0z\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.3\"/>", "info": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/>", "play": "<path d=\"M8.5 5.8v12.4l9.8-6.2z\"/>", "mug": "<path d=\"M5.5 8h9.5v11a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19z\"/><path d=\"M15 10h2a2 2 0 0 1 2 2v2.5a2 2 0 0 1-2 2h-2M5.5 8a2.6 2.6 0 0 1 3.3-2.5 3 3 0 0 1 5.4.4A2.2 2.2 0 0 1 15 8M8.8 11.5v5.5M11.7 11.5v5.5\"/>", "fish": "<path d=\"M4.5 12c2.5-3.4 5.5-5 8.6-5 3.2 0 5.8 1.7 7.4 5-1.6 3.3-4.2 5-7.4 5-3.1 0-6.1-1.6-8.6-5z\"/><path d=\"M4.5 12 2.5 9M4.5 12l-2 3\"/><path d=\"M16.6 11h.01\" stroke-width=\"2.6\"/>", "udon": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M13.5 3.5 9.5 12M18.5 4.5 13.5 12\"/>", "ramen": "<path d=\"M3.5 12h17a8.5 8.5 0 0 1-17 0z\"/><path d=\"M8.5 20.5h7M8.5 9.5c-1-1.2 1-2.1 0-3.5M12 9.5c-1-1.2 1-2.1 0-3.5M15.5 9.5c-1-1.2 1-2.1 0-3.5\"/>", "dumpling": "<path d=\"M3.5 15c1.5-4.6 4.8-7.2 8.5-7.2s7 2.6 8.5 7.2c-2.6 1.6-5.4 2.4-8.5 2.4S6.1 16.6 3.5 15z\"/><path d=\"M7.6 10.8l.9 2M10.6 9l.4 2.2M13.4 9l-.4 2.2M16.4 10.8l-.9 2\"/>", "grill": "<circle cx=\"12\" cy=\"11\" r=\"7\"/><path d=\"M5.6 8.5h12.8M5 11h14M5.6 13.5h12.8M8.5 17.2 7 20.5M15.5 17.2l1.5 3.3\"/>", "cutlery": "<path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/>", "curry": "<path d=\"M3 14.5h18a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 14.5z\"/><path d=\"M5.5 14.5c.6-3.2 2.4-5 5-5 2 0 3.3 1 4 2.6.9-.6 2.1-.8 3.3-.4M10.5 7.5c-.8-1.1.8-1.9 0-3.2\"/>", "teppan": "<path d=\"M3 17.5h14\"/><ellipse cx=\"9.5\" cy=\"14\" rx=\"6\" ry=\"2.5\"/><path d=\"M14.5 11.5l2.6-2.6 1.6 1.6-2.6 2.6zM17.9 9.7 21 6.6\"/>", "plate": "<circle cx=\"13.5\" cy=\"12\" r=\"7\"/><circle cx=\"13.5\" cy=\"12\" r=\"3.5\"/><path d=\"M3.5 3.5v5a1.5 1.5 0 0 0 1.5 1.5v10.5M3.5 3.5v5\"/>", "coffee": "<path d=\"M4.5 10h11.5v4.5a5 5 0 0 1-5 5h-1.5a5 5 0 0 1-5-5z\"/><path d=\"M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16M8.5 7.5c-.8-1 .8-1.8 0-3M12.5 7.5c-.8-1 .8-1.8 0-3\"/>", "bento": "<rect x=\"3.5\" y=\"6\" width=\"17\" height=\"12\" rx=\"2\"/><path d=\"M12 6v12M12 12h8.5\"/><circle cx=\"7.7\" cy=\"12\" r=\"1.7\"/>", "swap": "<path d=\"M8 4.5v15M4.5 8 8 4.5 11.5 8M16 19.5v-15M12.5 16l3.5 3.5 3.5-3.5\"/>", "menu": "<path d=\"M4 6.5h16M4 12h16M4 17.5h16\"/>"};
   var COURSES = [{"key": "akatsuka", "label": "赤塚で半日", "ids": ["6-01", "5-01", "5-02", "1-1-12", "7-3-02", "7-3-01"], "text": "赤塚植物園・板橋区立美術館・郷土資料館・都立赤塚公園の4施設が徒歩圏に集まっていて、無料〜低額で半日過ごせます。近くには東京大仏（乗蓮寺）や松月院もあります。"}];
   var CFG = {"mapName": "板橋区と周辺のスポット・飲食店地図", "wide": true, "groupZoom": true, "meZoomOut": 3, "kyokaUrl": "https://www.city.itabashi.tokyo.jp/kenko/eisei/shokuhin/1051220.html", "attr": "<a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">© OpenStreetMap contributors</a>", "syn": [["寿司", "寿司", "すし", "鮨"], ["すし", "すし", "寿司", "鮨"], ["鮨", "鮨", "すし", "寿司"], ["蕎麦", "蕎麦", "そば"], ["そば", "そば", "蕎麦"], ["饂飩", "饂飩", "うどん"], ["拉麺", "拉麺", "ラーメン"], ["焼き肉", "焼き肉", "焼肉"], ["焼肉", "焼肉", "焼き肉"], ["焼き鳥", "焼き鳥", "焼鳥", "やきとり"], ["焼鳥", "焼鳥", "焼き鳥", "やきとり"], ["やきとり", "やきとり", "焼き鳥", "焼鳥"], ["喫茶", "喫茶", "カフェ"], ["カフェ", "カフェ", "喫茶", "珈琲", "コーヒー"], ["コーヒー", "コーヒー", "珈琲", "カフェ", "喫茶"], ["珈琲", "珈琲", "コーヒー", "カフェ", "喫茶"], ["餃子", "餃子", "ぎょうざ", "ギョーザ", "ギョウザ"], ["飲み屋", "飲み屋", "居酒屋", "バー", "スナック"], ["惣菜", "惣菜", "総菜", "そうざい", "デリ"], ["総菜", "総菜", "惣菜", "そうざい"], ["出前", "出前", "配達", "宅配", "デリバリー"], ["宅配", "宅配", "配達", "出前", "デリバリー"], ["デリバリー", "デリバリー", "配達", "宅配", "出前"], ["パスタ", "パスタ", "イタリアン"], ["ピザ", "ピザ", "ピッツァ", "イタリアン"], ["定食", "定食", "食堂"], ["もんじゃ", "もんじゃ", "鉄板焼", "お好み焼"], ["たこ焼", "たこ焼", "タコ焼"]], "condKeys": ["ドリンクバー", "Wi-Fiあり", "喫煙できる", "駐車場あり"], "purposes": [{"key": "food", "label": "食べる", "short": "食べる", "name": "飲食店", "icon": "cutlery", "color": "#d9480f", "cats": ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113"], "kinds": [["c:101", "居酒屋・バー", 514, "居酒屋・バー"], ["c:110", "食堂・軽食", 199, "食堂・レストラン・軽食"], ["c:105", "中華", 176, "中華"], ["c:111", "カフェ", 170, "カフェ・喫茶"], ["c:104", "ラーメン", 164, "ラーメン"], ["c:112", "弁当・惣菜", 122, "弁当・惣菜・配達"], ["c:102", "和食・すし", 102, "和食・すし"], ["c:107", "洋食", 90, "洋食・イタリアン"], ["c:106", "焼肉", 89, "焼肉・肉料理"], ["c:108", "カレー・エスニック", 85, "カレー・エスニック"], ["c:103", "うどん・そば", 65, "うどん・そば"], ["c:109", "お好み焼き", 27, "お好み焼き・鉄板焼き"], ["c:113", "その他", 78, "その他"]], "conds": ["drink", "wifi", "smoke", "park"], "co": 1, "unit": "店"}, {"key": "play", "label": "遊ぶ", "short": "遊ぶ", "name": "公園・遊び場", "icon": "tree", "color": "#2f7d3b", "cats": ["1"], "kinds": [["s:1-1", "公園・緑地", 73, "公園・緑地・庭園"], ["s:1-2", "遊び場", 19, "遊び場（ボール遊び広場・児童遊園・校庭開放）"]]}, {"key": "sport", "label": "運動", "short": "運動", "name": "運動施設", "icon": "dumbbell", "color": "#c2410c", "cats": ["2"], "kinds": [["s:2-2", "野球場・テニス場など", 47, "公営の屋外施設（野球場・庭球場・競技場など）"], ["s:2-3", "ジム", 38, "民間ジム（一般・24時間）"], ["s:2-1", "体育館・プール", 28, "公営の屋内施設（体育館・温水プール）"], ["s:2-6", "パーソナルジム", 25, "パーソナルジム"], ["s:2-4", "chocoZAP", 15, "民間ジム（chocoZAP）"], ["s:2-8", "ピラティス・ヨガ", 12, "ピラティス・ヨガ"], ["s:2-7", "カーブス", 8, "女性専用サーキット（カーブス）"], ["s:2-9", "格闘技", 8, "格闘技ジム"], ["s:2-5", "スポーツクラブ", 7, "総合スポーツクラブ"], ["s:2-10", "大学の施設", 1, "大学施設（一般非公開・参考）"]]}, {"key": "book", "label": "本・自習", "short": "読む", "name": "図書館", "icon": "book", "color": "#3f51b5", "cats": ["3"], "kinds": []}, {"key": "kids", "label": "子ども", "short": "子ども", "name": "子ども・高齢者向けの施設", "icon": "balloon", "color": "#c2185b", "cats": ["4"], "kinds": [["s:4-1", "子ども向け", 95, "子ども向け（児童館・遊び場施設）"], ["s:4-2", "高齢者向け", 2, "高齢者向け"]]}, {"key": "see", "label": "見る・学ぶ", "short": "見る", "name": "博物館・動植物園・名所", "icon": "museum", "color": "#7b1fa2", "cats": ["5", "6", "7"], "kinds": [["s:7-3", "寺社", 46, "寺社"], ["s:7-4", "史跡・文化財", 36, "史跡・文化財"], ["c:5", "博物館・美術館", 28, "博物館・美術館・科学館・資料館"], ["c:6", "動物園・植物園", 6, "動物園・植物園・水族館"], ["s:7-1", "展望", 3, "展望施設"], ["s:7-2", "娯楽施設", 3, "テーマパーク・娯楽施設"]]}, {"key": "room", "label": "借りる", "short": "借りる", "name": "集会・貸室施設", "icon": "people", "color": "#6d4c41", "cats": ["8"], "kinds": [["s:8-1", "集会所・ホール", 107, "地域センター・ホール・区民センター"], ["s:8-2", "生涯学習", 3, "生涯学習センター"], ["s:8-3", "区民農園", 1, "区民農園"]]}, {"key": "shop", "label": "買い物", "short": "買い物", "name": "商店街・商店通り", "icon": "shop", "color": "#455a64", "cats": ["11"], "kinds": [["s:11-2", "練馬区", 38, "練馬区"], ["s:11-1", "板橋区", 14, "板橋区"], ["s:11-5", "埼玉県6市", 13, "埼玉県6市"]]}, {"key": "wifi", "label": "無料Wi-Fi", "short": "Wi-Fi", "name": "無料Wi-Fiが使える場所", "icon": "wifi", "color": "#0277bd", "cats": [], "kinds": [], "tags": ["設備:TOKYO FREE Wi-Fi", "設備:区の無料Wi-Fi"]}], "tutPurp": "food", "tutCond": "drink", "condMax": 5, "tutKind": "c:104"};
-  var SKELETON = "<section class=\"c-guide needs-js\" aria-labelledby=\"itbM-guide-h\"><div class=\"c-guide-head\"><h3 class=\"c-guide-h\" id=\"itbM-guide-h\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/></svg>まちあるき地図の使い方</h3><button type=\"button\" class=\"c-guide-tg\" data-act=\"guide\" aria-expanded=\"true\" aria-controls=\"itbM-guide-b\"><span>閉じる</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><div class=\"c-guide-body\" id=\"itbM-guide-b\"><p class=\"c-guide-lead\">スポット794か所と飲食店1,881店を、1つの地図と一覧から探せます。</p><ol class=\"c-guide-steps\"><li><span class=\"c-guide-n\">1</span><b>探す</b><span class=\"c-guide-d\">目的を選び、種類や条件で絞る</span></li><li><span class=\"c-guide-n\">2</span><b>見る</b><span class=\"c-guide-d\">ピンかカードで詳しい情報</span></li><li><span class=\"c-guide-n\">3</span><b>残す・送る</b><span class=\"c-guide-d\">コースにまとめて共有</span></li></ol><div class=\"c-guide-row\"><button type=\"button\" class=\"c-guide-try\" data-act=\"tutorial\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.5 5.8v12.4l9.8-6.2z\"/></svg><span class=\"c-guide-try-t\">30秒で試す</span></button><button type=\"button\" class=\"c-guide-more\" data-act=\"guidebtns\" aria-expanded=\"false\" aria-controls=\"itbM-guide-l\">地図のボタンの説明<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><ul class=\"c-guide-list\" id=\"itbM-guide-l\" hidden><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/></svg></span><b>目的</b><span>最初に出る「何をしに行きますか」か上の段で選ぶ。選んだ目的の場所だけが地図に出る。別の目的を押すと入れ替わり、同じ目的をもう一度押すと最初の画面に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/></svg></span><b>種類</b><span>目的を選ぶと出る2段目。ラーメン・カフェ、公園・遊び場などで、さらに絞る。押した種類をもう一度押すと、目的の全部に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/></svg></span><b>条件</b><span>3段目。雨の日・子連れ・ドリンクバーなどの条件とエリアで絞る。条件は1つずつ選ぶ。数字は当てはまる件数</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></span><b>検索</b><span>名前・駅・やりたいことで探す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg></span><b>ピンの大きさ</b><span>Googleマップの口コミ件数の3段階。100件以上は大きく縁取りのあるピン、20件未満は小さく薄いピン。件数がわからない場所と飲食店は、ふつうの大きさ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></span><b>全画面</b><span>地図を画面いっぱいに広げる</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></span><b>現在地</b><span>いまいる場所と向きを地図に出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/></svg></span><b>都営で行く</b><span>都営地下鉄・都バス・東京さくらトラム・日暮里・舎人ライナーだけで行く経路と時刻を、時刻表から調べる。場所の詳しい情報にある「都営で行く」からも使える</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></span><b>徒歩圏</b><span>選んだ場所や現在地から、徒歩5・10・20分の範囲を出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></span><b>行き先おみくじ</b><span>地図に出ている場所から1か所を選ぶ。最初の画面では、全部の場所から選ぶ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></span><b>地図の表示</b><span>背景の地図（航空写真・淡色地図・標準地図）を切り替え、鉄道の路線・駅・バス停を重ねる</span></li></ul><p class=\"c-guide-note\">営業時間や料金は、公式ページで確かめてください。</p></div></section><div class=\"c-bar needs-js\"><button type=\"button\" class=\"c-stat\" data-act=\"course\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/></svg><span>自分のコース</span><b class=\"c-stat-course\">0</b><span>か所</span></button><button type=\"button\" class=\"c-stat\" data-act=\"gotoindex\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg><span>行った場所</span><b class=\"c-stat-went\">0</b><span>/2675か所</span></button><div class=\"c-textsize\" role=\"group\" aria-label=\"文字の大きさ\"><span class=\"c-textsize-lb\">文字</span><button type=\"button\" data-act=\"text\" data-size=\"1\" aria-pressed=\"true\">標準</button><button type=\"button\" data-act=\"text\" data-size=\"2\" aria-pressed=\"false\">大きく</button></div><button type=\"button\" class=\"c-sharebtn\" data-act=\"sharemap\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg><span>共有</span></button></div><div class=\"c-sharemenu\" role=\"dialog\" aria-label=\"共有する\" hidden><div class=\"c-sharemenu-head\"><p class=\"c-sharemenu-h\">共有する<span class=\"c-sharemenu-t\"></span></p><button type=\"button\" class=\"c-sharemenu-x\" data-act=\"shareclose\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-snsgrid\"><a class=\"c-sns c-sns-line\" data-sns=\"line\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>LINE</a><a class=\"c-sns c-sns-x\" data-sns=\"x\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>X</a><a class=\"c-sns c-sns-fb\" data-sns=\"facebook\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Facebook</a><a class=\"c-sns c-sns-th\" data-sns=\"threads\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Threads</a><a class=\"c-sns c-sns-bs\" data-sns=\"bluesky\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Bluesky</a><a class=\"c-sns c-sns-hb\" data-sns=\"hatena\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>はてな<wbr>ブックマーク</a></div><div class=\"c-sharemore\"><button type=\"button\" data-act=\"sharecopy\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/></svg>リンクをコピー</button><button type=\"button\" data-act=\"sharenative\" hidden><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg>ほかのアプリ</button></div></div><div class=\"c-stage needs-js\"><div class=\"c-map\" role=\"region\" aria-label=\"スポットと飲食店の地図\"></div><div class=\"c-cross\" aria-hidden=\"true\" hidden></div><div class=\"c-top\"><div class=\"c-purposes\" role=\"group\" aria-label=\"目的で選ぶ\"></div><div class=\"c-searchbox\" hidden><label class=\"c-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg><input type=\"search\" class=\"c-q\" placeholder=\"名前・駅・やりたいことで探す\" aria-label=\"スポットを探す\" autocomplete=\"off\" enterkeyhint=\"search\"></label></div><button type=\"button\" class=\"c-round c-searchbtn\" data-act=\"search\" aria-expanded=\"false\" aria-label=\"名前・駅・やりたいことで探す\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button></div><div class=\"c-conds\" role=\"group\" aria-label=\"種類と条件で絞る\"></div><div class=\"c-legend\" role=\"group\" aria-label=\"絞り込みの条件\" hidden></div><div class=\"c-side\"><button type=\"button\" class=\"c-round c-full2\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"locate\" aria-label=\"現在地を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></button><button type=\"button\" class=\"c-round c-rtbtn\" data-act=\"rt\" aria-pressed=\"false\" aria-label=\"都営交通で行く経路と時刻を調べる\" title=\"都営交通で行く\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"rings\" aria-pressed=\"false\" aria-label=\"徒歩圏を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"omikuji\" aria-label=\"今日の行き先おみくじ\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round c-trbtn\" data-act=\"trmenu\" aria-expanded=\"false\" aria-label=\"地図の表示を切り替える（背景の地図・鉄道とバス停）\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zin\" aria-label=\"拡大\">＋</button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zout\" aria-label=\"縮小\">−</button></div><div class=\"c-trmenu\" role=\"group\" aria-label=\"地図の表示\" hidden><p class=\"c-trmenu-h\">背景の地図</p><div class=\"c-basemenu\" role=\"group\" aria-label=\"背景の地図\"><button type=\"button\" data-act=\"base\" data-base=\"photo\" aria-pressed=\"true\"><span class=\"c-sw c-sw-photo\"></span>航空写真</button><button type=\"button\" data-act=\"base\" data-base=\"pale\" aria-pressed=\"false\"><span class=\"c-sw c-sw-pale\"></span>淡色地図</button><button type=\"button\" data-act=\"base\" data-base=\"std\" aria-pressed=\"false\"><span class=\"c-sw c-sw-std\"></span>標準地図</button></div><p class=\"c-trmenu-h\">地図に重ねて表示</p><button type=\"button\" data-act=\"tr\" data-k=\"l\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-l\"></span><span class=\"c-trtx\">鉄道の路線</span></button><button type=\"button\" data-act=\"tr\" data-k=\"s\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-s\"></span><span class=\"c-trtx\">駅<small>拡大すると表示</small></span></button><button type=\"button\" data-act=\"tr\" data-k=\"b\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-b\"></span><span class=\"c-trtx\">バス停<small>さらに拡大すると表示</small></span></button><p class=\"c-trmenu-src\">出典：「国土数値情報（<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html\" target=\"_blank\" rel=\"noopener\">鉄道データ</a>・<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P11-2022.html\" target=\"_blank\" rel=\"noopener\">バス停留所データ</a>）」（国土交通省）を加工して作成。鉄道は2025年度、バス停は2022年度のデータです。</p></div><div class=\"c-ringinfo\" aria-live=\"polite\" hidden></div><div class=\"c-rail\" aria-label=\"地図に出ている場所\"></div><button type=\"button\" class=\"c-round c-scrolldown\" data-act=\"gotoindex\" aria-label=\"地図の下の一覧へ進む\" title=\"下へ進む\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/></svg></button><div class=\"c-sheet\" role=\"region\" aria-label=\"選んだ場所の情報\" hidden></div><div class=\"c-taghint\" role=\"status\" hidden><span>目的を押すと、押した目的の場所だけが地図に出ます</span><button type=\"button\" data-act=\"taghintx\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-tut\" hidden><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-block\" hidden></div><div class=\"c-tut-ring\"></div><div class=\"c-tut-pop\" role=\"dialog\" aria-labelledby=\"itbM-tut-t\"><p class=\"c-tut-step\"></p><p class=\"c-tut-text\" id=\"itbM-tut-t\" aria-live=\"polite\"></p><div class=\"c-tut-acts\"><button type=\"button\" class=\"c-tut-skip\" data-act=\"tutskip\">スキップ</button><button type=\"button\" class=\"c-tut-done\" data-act=\"tutdone\" hidden>終わる</button></div></div></div></div><div class=\"c-index needs-js\"><div class=\"c-index-head\"><h3 class=\"c-index-h\">一覧から探す</h3><p class=\"c-index-count\"></p></div><p class=\"c-index-note\">地図と同じ条件で絞り込まれます。町名やエリアを開くと、分類の順に並んでいます。行を押すと、詳しい情報が開きます。</p><p class=\"c-index-empty\" hidden>条件に合う場所が見つかりませんでした。言葉を短くするか、条件を外してください。</p><div class=\"c-groups\"></div></div>";
+  var SKELETON = "<section class=\"c-guide needs-js\" aria-labelledby=\"itbM-guide-h\"><div class=\"c-guide-head\"><h3 class=\"c-guide-h\" id=\"itbM-guide-h\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 11v5.5M12 7.8v.01\"/></svg>まちあるき地図の使い方</h3><button type=\"button\" class=\"c-guide-tg\" data-act=\"guide\" aria-expanded=\"true\" aria-controls=\"itbM-guide-b\"><span>閉じる</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><div class=\"c-guide-body\" id=\"itbM-guide-b\"><p class=\"c-guide-lead\">スポット794か所と飲食店1,881店を、1つの地図と一覧から探せます。</p><ol class=\"c-guide-steps\"><li><span class=\"c-guide-n\">1</span><b>探す</b><span class=\"c-guide-d\">目的を選び、種類や条件で絞る</span></li><li><span class=\"c-guide-n\">2</span><b>見る</b><span class=\"c-guide-d\">ピンか一覧で詳しい情報</span></li><li><span class=\"c-guide-n\">3</span><b>残す・送る</b><span class=\"c-guide-d\">コースにまとめて共有</span></li></ol><div class=\"c-guide-row\"><button type=\"button\" class=\"c-guide-try\" data-act=\"tutorial\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.5 5.8v12.4l9.8-6.2z\"/></svg><span class=\"c-guide-try-t\">30秒で試す</span></button><button type=\"button\" class=\"c-guide-more\" data-act=\"guidebtns\" aria-expanded=\"false\" aria-controls=\"itbM-guide-l\">地図のボタンの説明<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><ul class=\"c-guide-list\" id=\"itbM-guide-l\" hidden><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M7 3.5v5.5a2 2 0 0 0 2 2v9.5M11 3.5V9a2 2 0 0 1-2 2M9 3.5v5\"/><path d=\"M17.5 20.5v-17c-2.2 1.6-3.2 4.2-3.2 7.2v3.3h3.2\"/></svg></span><b>目的</b><span>最初に出る「何をしに行きますか」か、検索欄の下の段で選ぶ。選んだ目的の場所だけが地図に出る。別の目的を押すと入れ替わり、同じ目的をもう一度押すと最初の画面に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.5M4.5 12h.5M4.5 17.5h.5\"/></svg></span><b>種類</b><span>目的を選ぶと一覧の上に出る段。ラーメン・カフェ、公園・遊び場などで、さらに絞る。押した種類をもう一度押すと、目的の全部に戻る</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 7h9M17 7h3M4 17h3M11 17h9\"/><circle cx=\"15\" cy=\"7\" r=\"2\"/><circle cx=\"9\" cy=\"17\" r=\"2\"/></svg></span><b>条件</b><span>種類の下の段。雨の日・子連れ・ドリンクバーなどの条件とエリアで絞る。条件は1つずつ選ぶ。数字は当てはまる件数</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></span><b>検索</b><span>いちばん上の検索欄に、名前・駅・やりたいことを入れて探す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"5.5\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg></span><b>ピンの大きさ</b><span>Googleマップの口コミ件数の3段階。100件以上は大きく縁取りのあるピン、20件未満は小さく薄いピン。件数がわからない場所と飲食店は、ふつうの大きさ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></span><b>メニュー</b><span>検索欄の左の三本線。自分のコース・行った場所・一覧・文字の大きさ・共有・使い方と、ブログの記事に戻るボタン</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></span><b>現在地</b><span>いまいる場所と向きを地図に出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/></svg></span><b>都営で行く</b><span>都営地下鉄・都バス・東京さくらトラム・日暮里・舎人ライナーだけで行く経路と時刻を、時刻表から調べる。場所の詳しい情報にある「都営で行く」からも使える</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></span><b>徒歩圏</b><span>選んだ場所や現在地から、徒歩5・10・20分の範囲を出す</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></span><b>行き先おみくじ</b><span>地図に出ている場所から1か所を選ぶ。最初の画面では、全部の場所から選ぶ</span></li><li><span class=\"c-guide-ic\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></span><b>地図の表示</b><span>背景の地図（航空写真・淡色地図・標準地図）を切り替え、鉄道の路線・駅・バス停を重ねる</span></li></ul><p class=\"c-guide-note\">営業時間や料金は、公式ページで確かめてください。</p></div></section><div class=\"c-bar needs-js\"><button type=\"button\" class=\"c-stat\" data-act=\"course\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5.5 21V4.5M5.5 5c4-2 7 2 13 0v8c-6 2-9-2-13 0\"/></svg><span>自分のコース</span><b class=\"c-stat-course\">0</b><span>か所</span></button><button type=\"button\" class=\"c-stat\" data-act=\"gotoindex\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg><span>行った場所</span><b class=\"c-stat-went\">0</b><span>/2675か所</span></button><div class=\"c-textsize\" role=\"group\" aria-label=\"文字の大きさ\"><span class=\"c-textsize-lb\">文字</span><button type=\"button\" data-act=\"text\" data-size=\"1\" aria-pressed=\"true\">標準</button><button type=\"button\" data-act=\"text\" data-size=\"2\" aria-pressed=\"false\">大きく</button></div><button type=\"button\" class=\"c-sharebtn\" data-act=\"sharemap\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg><span>共有</span></button></div><div class=\"c-sharemenu\" role=\"dialog\" aria-label=\"共有する\" hidden><div class=\"c-sharemenu-head\"><p class=\"c-sharemenu-h\">共有する<span class=\"c-sharemenu-t\"></span></p><button type=\"button\" class=\"c-sharemenu-x\" data-act=\"shareclose\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-snsgrid\"><a class=\"c-sns c-sns-line\" data-sns=\"line\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>LINE</a><a class=\"c-sns c-sns-x\" data-sns=\"x\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>X</a><a class=\"c-sns c-sns-fb\" data-sns=\"facebook\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Facebook</a><a class=\"c-sns c-sns-th\" data-sns=\"threads\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Threads</a><a class=\"c-sns c-sns-bs\" data-sns=\"bluesky\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>Bluesky</a><a class=\"c-sns c-sns-hb\" data-sns=\"hatena\" href=\"#\" target=\"_blank\" rel=\"noopener\"><span class=\"c-sns-dot\"></span>はてな<wbr>ブックマーク</a></div><div class=\"c-sharemore\"><button type=\"button\" data-act=\"sharecopy\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"8.5\" y=\"8.5\" width=\"11\" height=\"11\" rx=\"1.6\"/><path d=\"M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5\"/></svg>リンクをコピー</button><button type=\"button\" data-act=\"sharenative\" hidden><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"17.5\" cy=\"5.5\" r=\"2.2\"/><circle cx=\"6.5\" cy=\"12\" r=\"2.2\"/><circle cx=\"17.5\" cy=\"18.5\" r=\"2.2\"/><path d=\"M8.5 10.9l7-4.2M8.5 13.1l7 4.2\"/></svg>ほかのアプリ</button></div></div><div class=\"c-stage needs-js\"><div class=\"c-map\" role=\"region\" aria-label=\"スポットと飲食店の地図\"></div><div class=\"c-cross\" aria-hidden=\"true\" hidden></div><div class=\"c-top\"><div class=\"c-purposes\" role=\"group\" aria-label=\"目的で選ぶ\"></div><div class=\"c-searchbox\" hidden><label class=\"c-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg><input type=\"search\" class=\"c-q\" placeholder=\"名前・駅・やりたいことで探す\" aria-label=\"スポットを探す\" autocomplete=\"off\" enterkeyhint=\"search\"></label></div><button type=\"button\" class=\"c-round c-searchbtn\" data-act=\"search\" aria-expanded=\"false\" aria-label=\"名前・駅・やりたいことで探す\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"M15 15l5 5\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button></div><div class=\"c-conds\" role=\"group\" aria-label=\"種類と条件で絞る\"></div><div class=\"c-legend\" role=\"group\" aria-label=\"絞り込みの条件\" hidden></div><div class=\"c-side\"><button type=\"button\" class=\"c-round c-full2\" data-act=\"full\" aria-pressed=\"false\" aria-label=\"地図を大きく表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4.5 9V4.5H9M19.5 9V4.5H15M4.5 15v4.5H9M19.5 15v4.5H15\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"locate\" aria-label=\"現在地を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22\"/></svg></button><button type=\"button\" class=\"c-round c-rtbtn\" data-act=\"rt\" aria-pressed=\"false\" aria-label=\"都営交通で行く経路と時刻を調べる\" title=\"都営交通で行く\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"6\" y=\"3.5\" width=\"12\" height=\"13.5\" rx=\"3\"/><path d=\"M6 10.5h12M9.5 6.6h5M9 17l-2.2 3.5M15 17l2.2 3.5M7.8 19.2h8.4\"/><path d=\"M9.3 13.7h.01M14.7 13.7h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"rings\" aria-pressed=\"false\" aria-label=\"徒歩圏を表示\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"13.5\" cy=\"4.5\" r=\"1.7\"/><path d=\"M10 20.5l1.8-5.5 2.7 2.6v2.9M9 12.2l1.6-3.6 3 .8 1.7 2.8 2.7 1M11.8 15l-1-4.6\"/></svg></button><button type=\"button\" class=\"c-round\" data-act=\"omikuji\" aria-label=\"今日の行き先おみくじ\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3.5\"/><path d=\"M8.6 8.6h.01M15.4 8.6h.01M12 12h.01M8.6 15.4h.01M15.4 15.4h.01\" stroke-width=\"2.6\"/></svg></button><button type=\"button\" class=\"c-round c-trbtn\" data-act=\"trmenu\" aria-expanded=\"false\" aria-label=\"地図の表示を切り替える（背景の地図・鉄道とバス停）\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 4l8.5 4.5L12 13 3.5 8.5z\"/><path d=\"M3.5 12.5L12 17l8.5-4.5M3.5 16.5L12 21l8.5-4.5\"/></svg></button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zin\" aria-label=\"拡大\">＋</button><button type=\"button\" class=\"c-round c-zoom\" data-act=\"zout\" aria-label=\"縮小\">−</button></div><div class=\"c-trmenu\" role=\"group\" aria-label=\"地図の表示\" hidden><p class=\"c-trmenu-h\">背景の地図</p><div class=\"c-basemenu\" role=\"group\" aria-label=\"背景の地図\"><button type=\"button\" data-act=\"base\" data-base=\"photo\" aria-pressed=\"true\"><span class=\"c-sw c-sw-photo\"></span>航空写真</button><button type=\"button\" data-act=\"base\" data-base=\"pale\" aria-pressed=\"false\"><span class=\"c-sw c-sw-pale\"></span>淡色地図</button><button type=\"button\" data-act=\"base\" data-base=\"std\" aria-pressed=\"false\"><span class=\"c-sw c-sw-std\"></span>標準地図</button></div><p class=\"c-trmenu-h\">地図に重ねて表示</p><button type=\"button\" data-act=\"tr\" data-k=\"l\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-l\"></span><span class=\"c-trtx\">鉄道の路線</span></button><button type=\"button\" data-act=\"tr\" data-k=\"s\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-s\"></span><span class=\"c-trtx\">駅<small>拡大すると表示</small></span></button><button type=\"button\" data-act=\"tr\" data-k=\"b\" aria-pressed=\"false\"><span class=\"c-trsw c-trsw-b\"></span><span class=\"c-trtx\">バス停<small>さらに拡大すると表示</small></span></button><p class=\"c-trmenu-src\">出典：「国土数値情報（<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html\" target=\"_blank\" rel=\"noopener\">鉄道データ</a>・<a href=\"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P11-2022.html\" target=\"_blank\" rel=\"noopener\">バス停留所データ</a>）」（国土交通省）を加工して作成。鉄道は2025年度、バス停は2022年度のデータです。</p></div><div class=\"c-ringinfo\" aria-live=\"polite\" hidden></div><div class=\"c-rail\" aria-label=\"地図に出ている場所\"></div><button type=\"button\" class=\"c-round c-scrolldown\" data-act=\"gotoindex\" aria-label=\"地図の下の一覧へ進む\" title=\"下へ進む\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 6v12M6.5 12.5L12 18l5.5-5.5\"/></svg></button><div class=\"c-sheet\" role=\"region\" aria-label=\"選んだ場所の情報\" hidden></div><div class=\"c-taghint\" role=\"status\" hidden><span>目的を押すと、押した目的の場所だけが地図に出ます</span><button type=\"button\" data-act=\"taghintx\" aria-label=\"閉じる\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\"/></svg></button></div><div class=\"c-tut\" hidden><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-dim\"></div><div class=\"c-tut-block\" hidden></div><div class=\"c-tut-ring\"></div><div class=\"c-tut-pop\" role=\"dialog\" aria-labelledby=\"itbM-tut-t\"><p class=\"c-tut-step\"></p><p class=\"c-tut-text\" id=\"itbM-tut-t\" aria-live=\"polite\"></p><div class=\"c-tut-acts\"><button type=\"button\" class=\"c-tut-skip\" data-act=\"tutskip\">スキップ</button><button type=\"button\" class=\"c-tut-done\" data-act=\"tutdone\" hidden>終わる</button></div></div></div></div><div class=\"c-index needs-js\"><div class=\"c-index-head\"><h3 class=\"c-index-h\">一覧から探す</h3><p class=\"c-index-count\"></p></div><p class=\"c-index-note\">地図と同じ条件で絞り込まれます。町名やエリアを開くと、分類の順に並んでいます。行を押すと、詳しい情報が開きます。</p><p class=\"c-index-empty\" hidden>条件に合う場所が見つかりませんでした。言葉を短くするか、条件を外してください。</p><div class=\"c-groups\"></div></div>";
 
   function $(s, b) { return (b || root).querySelector(s); }
   function $$(s, b) { return Array.prototype.slice.call((b || root).querySelectorAll(s)); }
@@ -92,10 +92,31 @@
     setTimeout(function () { el.classList.remove("is-flash"); }, 1600);
   }
 
+  var appMark = null, appHooks = { enter: null };
+  function appEnter() {
+    if (!appMark && root.parentNode) { appMark = document.createComment(P); root.parentNode.insertBefore(appMark, root); }
+    if (root.parentNode !== document.body) { document.body.appendChild(root); }
+    root.classList.remove("is-inline");
+    root.classList.add("is-app");
+    root.style.width = ""; root.style.marginLeft = ""; root.style.maxWidth = "";
+    document.documentElement.classList.add(P + "-lock");
+    if (appHooks.enter) { appHooks.enter(); }
+  }
+  function appExit() {
+    root.classList.remove("is-app");
+    root.classList.add("is-inline");
+    document.documentElement.classList.remove(P + "-lock");
+    if (appMark && appMark.parentNode) { appMark.parentNode.insertBefore(root, appMark.nextSibling); }
+    root.style.width = ""; root.style.marginLeft = ""; root.style.maxWidth = "";
+    try { root.scrollIntoView({ block: "center" }); } catch (e) {}
+  }
+  // 記事のページ（.html）や共有リンクで開いたときは、最初から画面いっぱいにする
+  if (/\.html$/.test(location.pathname) || new RegExp("^#(c=|" + P + "-)").test(location.hash)) { appEnter(); }
   var WIDE_GUT = 16, WIDE_MAX = 1920, WIDE_MIN_GAIN = 24;
   function widen() {
     var s = root.style;
     s.width = ""; s.marginLeft = ""; s.maxWidth = "";
+    if (root.classList.contains("is-app") || root.classList.contains("is-inline")) { return; }
     var vw = document.documentElement.clientWidth, r = root.getBoundingClientRect();
     var w = Math.min(vw - 2 * WIDE_GUT, WIDE_MAX);
     if (w - r.width < WIDE_MIN_GAIN) { return; }
@@ -120,7 +141,10 @@
   }
 
   function giveUp() {
-    root.className = "is-nojs";
+    root.classList.remove("is-js", "is-app", "is-inline");
+    root.classList.add("is-nojs");
+    document.documentElement.classList.remove(P + "-lock");
+    if (appMark && appMark.parentNode) { appMark.parentNode.insertBefore(root, appMark.nextSibling); }
     root.innerHTML = '<p class="c-fail">地図を読み込めませんでした。通信の状態を確かめて、ページを読み込み直してください。</p>';
   }
   function addLink(id, rel, href, sri) {
@@ -159,7 +183,8 @@
     window.L && window.L.map ? null : loadScript(LF + "leaflet.js", "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=").catch(function () { return null; }),
     cssReady(),
   ]).then(function (a) {
-    root.className = "is-js";
+    root.classList.remove("is-nojs");
+    root.classList.add("is-js");
     root.innerHTML = SKELETON;
     try { start(a[0]); } catch (e) { if (window.console) { window.console.error(e); } giveUp(); }
   }, giveUp);
@@ -769,14 +794,9 @@
     }
     function fitTo(list) {
       if (!map || !list.length) { return; }
-      var pts = list.map(function (it) { return [it.lat, it.lng]; });
-      var open = !sheet.hidden, wide = isWide();
-      var opt = {
-        paddingTopLeft: [24, 140],
-        paddingBottomRight: [open && wide ? 430 : 72, open && !wide ? sheet.offsetHeight + 24 : 150],
-        maxZoom: 15,
-      };
-      if (pts.length === 1) { map.setView(pts[0], 15); } else { map.fitBounds(pts, opt); }
+      var pts = list.map(function (it) { return [it.lat, it.lng]; }), pd = mapPad();
+      if (pts.length === 1) { viewPoint(pts[0][0], pts[0][1], 15); return; }
+      map.fitBounds(pts, { paddingTopLeft: [pd.l, pd.t], paddingBottomRight: [pd.r, pd.b], maxZoom: 15 });
     }
     function pinClass(id, cls, on) {
       var st = pinState[id] || (pinState[id] = {});
@@ -962,6 +982,7 @@
       condSels.forEach(function (s) { s.value = co ? S.cond : ""; s.parentNode.classList.toggle("is-on", co); });
       areaSel.value = S.town ? "t:" + S.town : S.area ? "a:" + S.area : "";
       areaSel.parentNode.classList.toggle("is-on", !!(S.area || S.town));
+      appTop(home, n, f);
     }
 
     function sortKey(a, b) { return CAT_RANK[a.cat] - CAT_RANK[b.cat] || a.i - b.i; }
@@ -1191,7 +1212,7 @@
       if (selId() && !visSet[selId()]) { closePanel(); }
       if (fit) {
         var vp = visible().filter(function (it) { return it.pin; });
-        if (vp.length) { fitTo(vp); } else if (n) { toast("条件に合う" + n + "件は、地図に位置がない場所です。下の一覧で見られます。"); }
+        if (vp.length) { fitTo(vp); } else if (n) { toast("条件に合う" + n + "件は、地図に位置がない場所です。一覧で見られます。"); }
       }
       if (S.rings) { drawRings(); } else { paintDist(); buildRail(); }
       saveHash();
@@ -1347,6 +1368,7 @@
       sheet.innerHTML = html;
       sheet.hidden = false;
       stage.classList.add("has-sheet");
+      if (narrow()) { setSnap(PS.snap === "full" ? "full" : "half"); } else { pcOpen(true); }
       sheet.scrollTop = 0;
       if (prev && prev !== selId()) {
         pinClass(prev, "is-sel", false);
@@ -1365,6 +1387,7 @@
       sheet.hidden = true;
       sheet.innerHTML = "";
       stage.classList.remove("has-sheet");
+      if (narrow()) { setSnap(PS.base || (atHome() ? "half" : "peek")); }
       if (prev) {
         pinClass(prev, "is-sel", false);
         if (cards[prev]) { cards[prev].classList.remove("is-sel"); }
@@ -1405,10 +1428,8 @@
       viewPoint(it.lat, it.lng, Math.max(map.getZoom(), 15));
     }
     function viewPoint(lat, lng, z) {
-      var W = stage.clientWidth, H = stage.clientHeight, top = 172, xv = W / 2, yv = H / 2;
-      if (!sheet.hidden) {
-        if (isWide()) { xv = (W - 340 - 82) / 2; yv = (top + H - 150) / 2; } else { yv = (top + H - sheet.offsetHeight) / 2; }
-      }
+      var W = stage.clientWidth, H = stage.clientHeight, pd = mapPad();
+      var xv = (pd.l + W - pd.r) / 2, yv = (pd.t + H - pd.b) / 2;
       var p = map.project([lat, lng], z).add([Math.round(W / 2 - xv), Math.round(H / 2 - yv)]);
       map.setView(map.unproject(p, z), z);
     }
@@ -1446,6 +1467,10 @@
     function openRow(it, scroll) {
       var r = rowEl[it.id];
       if (!r) { return; }
+      if (scroll && root.classList.contains("is-app")) {
+        if (S.panel) { closePanel(); }
+        if (narrow()) { setSnap("full"); } else { pcOpen(true); }
+      }
       if (r.hidden) { clearFilters(); }
       var g = r.closest(".c-grp");
       if (g && !g.open) { g.open = true; }
@@ -2465,6 +2490,7 @@
     }
     function rtPickEnd(ll) {
       var k = RT.pick;
+      PS.pickAt = Date.now();
       rtPickStop();
       if (ll && k) { RT[k] = { lat: ll.lat, lng: ll.lng, name: "地図で選んだ地点" }; RT.res = null; }
       rtOpen();
@@ -2504,17 +2530,9 @@
       if (fit && pts.length) { rtFit(pts); }
     }
     function rtFit(pts) {
-      var sr = stage.getBoundingClientRect(), top = 16, open = !sheet.hidden, wide = isWide();
-      $$(".c-top, .c-kinds, .c-conds", stage).forEach(function (el) {
-        var r = el.getBoundingClientRect();
-        if (r.height && el.offsetParent !== null) { top = Math.max(top, r.bottom - sr.top + 12); }
-      });
-      var ll = pts.map(function (p) { return [p.lat, p.lng]; });
-      map.fitBounds(ll, {
-        paddingTopLeft: [28, top + 30],
-        paddingBottomRight: [open && wide ? 430 : 72, open && !wide ? sheet.offsetHeight + 20 : 48],
-        maxZoom: 16,
-      });
+      var pd = mapPad(), ll = pts.map(function (p) { return [p.lat, p.lng]; });
+      if (ll.length === 1) { viewPoint(ll[0][0], ll[0][1], 15); return; }
+      map.fitBounds(ll, { paddingTopLeft: [pd.l, pd.t], paddingBottomRight: [pd.r, pd.b], maxZoom: 16 });
     }
     function rtClick(act, b) {
       var k = b.getAttribute("data-k");
@@ -2749,13 +2767,8 @@
       { enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 });
     }
 
-    function searchOpen(on, refocus) {
-      if (on === !searchBox.hidden) { return; }
-      searchBox.hidden = !on;
-      topBar.classList.toggle("is-search", on);
-      searchBtn.setAttribute("aria-expanded", on ? "true" : "false");
-      searchBtn.setAttribute("aria-label", on ? "検索を閉じる" : "名前・駅・やりたいことで探す");
-      if (on) { fitPlaceholder(); qIn.focus(); } else if (refocus) { searchBtn.focus(); }
+    function searchOpen(on) {
+      if (on) { qIn.focus(); } else if (document.activeElement === qIn) { qIn.blur(); }
     }
     function paintSearch() { searchBtn.classList.toggle("is-on", !!S.q); }
 
@@ -2815,7 +2828,7 @@
     }
     function hideTagHint() { if (tagHint) { tagHint.hidden = true; } clearTimeout(tagHintTimer); }
     function showTagHint() {
-      if (!tagHint || T || store.get(KEY.taghint, 0) || S.panel || !searchBox.hidden) { return; }
+      if (!tagHint || T || root.classList.contains("is-app") || store.get(KEY.taghint, 0) || S.panel) { return; }
       store.set(KEY.taghint, 1);
       tagHint.hidden = false;
       tagHintTimer = setTimeout(hideTagHint, 9000);
@@ -2825,14 +2838,15 @@
       { no: 1, get: function () { return atHome() ? $('.c-homebtn[data-key="' + CFG.tutPurp + '"]', homeEl) : $('.c-purp[data-key="' + CFG.tutPurp + '"]', chips); },
         text: function () { var p = PURP[CFG.tutPurp]; return "「" + p.label + "」を押してみてください。" + p.name + "だけが地図に出ます。"; } },
       { no: 1, get: function () { var c = $('.c-kind[data-key="' + CFG.tutKind + '"]', kindsEl); return c && !kindsEl.hidden ? c : null; },
-        text: function () { var k = kindName(CFG.tutKind); return "2段目の「" + k + "」を押してみてください。" + k + "の店だけに絞れます。もう一度押すと、飲食店すべてに戻ります。"; } },
-      { no: 2, get: function () { return $(".c-card", rail) || $(".c-map"); },
-        text: function () { return ($(".c-card", rail) ? "下のカード" : "地図のピン") + "を押してみてください。住所や営業時間などの詳しい情報が開きます。"; } },
+        text: function () { var k = kindName(CFG.tutKind); return "一覧の上の「" + k + "」を押してみてください。" + k + "の店だけに絞れます。もう一度押すと、飲食店すべてに戻ります。"; } },
+      { no: 2, get: function () { return $(".c-map"); },
+        text: function () { return "地図のピンを押してみてください。住所や営業時間などの詳しい情報が開きます。"; } },
       { no: 3, get: function () { return sheet.hidden ? null : $(".c-item-acts", sheet); }, block: true,
         text: function () { return "行きたい場所は「コースに入れる」でまとめられます。「共有」を押すと、LINEなどで送れます。"; } },
     ];
     function tutStart() {
       if (T) { return; }
+      drawerOpen(false);
       if (!map) { toast("地図を表示できないため、試せません"); return; }
       shareClose();
       searchOpen(false);
@@ -2855,7 +2869,7 @@
       var st = TUT[n];
       if (n === 3) { rail.scrollLeft = 0; }
       if (CATS_TUT && (n === 1 || n === 2)) {
-        var cc = st.get(), row = cc && cc.closest(".c-areas, .c-conds");
+        var cc = st.get(), row = cc && cc.closest(".c-areas, .c-conds, .c-kinds");
         if (row) {
           var ar = row.getBoundingClientRect(), cr = cc.getBoundingClientRect();
           if (cr.left < ar.left || cr.right > ar.right - 24) { row.scrollLeft += cr.left - ar.left - 8; }
@@ -2946,7 +2960,7 @@
       apply(true);
     });
     function toStage() {
-      if (stage.classList.contains("is-full")) { return; }
+      if (stage.classList.contains("is-full") || root.classList.contains("is-app")) { return; }
       var r = stage.getBoundingClientRect();
       if (r.top < -10 || r.bottom > window.innerHeight + 10) { stage.scrollIntoView({ behavior: "smooth", block: "start" }); }
     }
@@ -2965,6 +2979,7 @@
       if (!b || !root.contains(b)) { return; }
       var act = b.getAttribute("data-act"), id = b.getAttribute("data-id");
       if (act.slice(0, 2) === "rt") { rtClick(act, b); return; }
+      if (appClick(act, b)) { return; }
       if (act === "select") { select(id, { fromRail: b.classList.contains("c-card") }); }
       else if (act === "row") { toggleRow(byId[id]); }
       else if (act === "close") { closePanel(); }
@@ -3137,6 +3152,7 @@
       if (e.key !== "Escape") { return; }
       if (T) { tutEnd(); return; }
       if (RT.pick) { rtPickEnd(null); return; }
+      if (!drawer.hidden) { drawerOpen(false); menuBtn.focus(); return; }
       if (shareNow) { shareClose(true); return; }
       if (!searchBox.hidden && document.activeElement === qIn) { searchOpen(false, true); return; }
       if (!legend.hidden) { menu(legend, false); if ($(".c-filterbtn", topBar)) { $(".c-filterbtn", topBar).focus(); } }
@@ -3174,6 +3190,230 @@
       }
       if (st.r === 1) { setRings(true); }
     }
+    // ---- 全画面の画面：上に検索欄と目的、スマホは下から引き出すパネル、PCは左のパネル ----
+    var side = $(".c-side"), PS = { snap: "half", base: "half", home: true, px: 0 };
+    var panel = document.createElement("div");
+    panel.className = "c-panel";
+    panel.setAttribute("role", "region");
+    panel.setAttribute("aria-label", "一覧と詳しい情報");
+    panel.innerHTML = '<div class="c-panel-grip" role="button" tabindex="0" aria-label="パネルの大きさを変える"></div><div class="c-panel-body"><div class="c-panel-base"></div></div>';
+    var pgrip = $(".c-panel-grip", panel), pbody = $(".c-panel-body", panel), pbase = $(".c-panel-base", panel);
+    var lhead = document.createElement("div");
+    lhead.className = "c-lhead";
+    lhead.innerHTML = '<div class="c-lhead-top"><span class="c-lhead-ic"></span><p class="c-lhead-t"><b class="c-lhead-name"></b><span class="c-lhead-n"></span></p>' +
+      '<button type="button" class="c-lhead-x" data-act="clear" aria-label="条件を外して、最初の画面に戻る">' + icon("close") + "</button></div>";
+    lhead.appendChild(kindsEl);
+    lhead.appendChild(condsEl);
+    pbase.appendChild(homeEl);
+    pbase.appendChild(lhead);
+    pbase.appendChild($(".c-index"));
+    pbody.appendChild(sheet);
+    stage.appendChild(panel);
+    $(".c-home-f", homeEl).textContent = "名前や駅名で探すときは、上の検索欄に入力してください。";
+    // 検索欄：メニュー・入力・消すボタン
+    stage.insertBefore(chips, topBar.nextSibling);
+    var menuBtn = document.createElement("button");
+    menuBtn.type = "button";
+    menuBtn.className = "c-menubtn";
+    menuBtn.setAttribute("data-act", "menu");
+    menuBtn.setAttribute("aria-label", "メニューを開く");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.innerHTML = icon("menu");
+    topBar.insertBefore(menuBtn, topBar.firstChild);
+    var qx = document.createElement("button");
+    qx.type = "button";
+    qx.className = "c-qx";
+    qx.setAttribute("data-act", "qclear");
+    qx.setAttribute("aria-label", "検索の言葉を消す");
+    qx.innerHTML = icon("close");
+    qx.hidden = true;
+    topBar.insertBefore(qx, searchBox.nextSibling);
+    searchBox.hidden = false;
+    qIn.addEventListener("input", function () { qx.hidden = !qIn.value; });
+    // 現在地・経路・拡大縮小は右下へ
+    var fab = document.createElement("div");
+    fab.className = "c-fab";
+    ["rt", "locate", "zin", "zout"].forEach(function (a) { var b = $('[data-act="' + a + '"]', side); if (b) { fab.appendChild(b); } });
+    stage.appendChild(fab);
+    // PCで左のパネルを閉じる・開くつまみ
+    var pcTg = document.createElement("button");
+    pcTg.type = "button";
+    pcTg.className = "c-panel-tg";
+    pcTg.setAttribute("data-act", "pctoggle");
+    pcTg.setAttribute("aria-expanded", "true");
+    pcTg.setAttribute("aria-label", "左のパネルを閉じる");
+    pcTg.innerHTML = icon("chevron");
+    stage.appendChild(pcTg);
+    // メニュー：コース・行った場所・一覧・文字・共有・使い方・記事に戻る
+    var drawer = document.createElement("div");
+    drawer.className = "c-drawer";
+    drawer.hidden = true;
+    drawer.innerHTML = '<div class="c-drawer-scrim" data-act="menu"></div><nav class="c-drawer-box" aria-label="メニュー">' +
+      '<div class="c-drawer-head"><p class="c-drawer-t">' + esc(CFG.mapName) + '</p><button type="button" class="c-drawer-x" data-act="menu" aria-label="メニューを閉じる">' + icon("close") + "</button></div>" +
+      '<div class="c-drawer-main"></div><div class="c-drawer-foot"><button type="button" class="c-drawer-exit" data-act="exitapp">' + icon("shrink") + "地図を閉じて、ブログの記事を見る</button></div></nav>";
+    var dmain = $(".c-drawer-main", drawer), dbar = $(".c-bar");
+    dmain.appendChild(dbar);
+    var dlist = document.createElement("button");
+    dlist.type = "button";
+    dlist.className = "c-drawer-list";
+    dlist.setAttribute("data-act", "listall");
+    dlist.innerHTML = icon("list") + "<span>一覧から探す（町名・エリアごと）</span>";
+    dbar.insertBefore(dlist, $(".c-textsize", dbar));
+    if (guide) { dmain.appendChild(guide); }
+    stage.appendChild(drawer);
+    // 記事に戻ったときに出す、地図を開くボタン
+    var launch = document.createElement("div");
+    launch.className = "c-launch";
+    launch.innerHTML = '<p class="c-launch-h">' + esc(CFG.mapName) + '</p><p class="c-launch-d">' + esc(($(".c-guide-lead") || {}).textContent || "") + "</p>" +
+      '<button type="button" class="c-btn is-main c-launch-go" data-act="enterapp">' + icon("expand") + "地図を画面いっぱいに開く</button>";
+    root.insertBefore(launch, root.firstChild);
+    if (!root.classList.contains("is-app")) { root.classList.add("is-inline"); }
+
+    function narrow() { return !isWide(); }
+    function snapPx(s) {
+      var H = stage.clientHeight, sr = stage.getBoundingClientRect(), top = topBar.getBoundingClientRect().bottom - sr.top + 8;
+      if (s === "full") { return Math.max(160, Math.round(H - top)); }
+      if (s === "half") { return Math.max(260, Math.min(Math.round(H - top), Math.round(H * 0.5))); }
+      var el = !sheet.hidden ? $(".c-sh-head", sheet) : PS.home ? $(".c-home-h", homeEl) : lhead;
+      return Math.max(84, Math.min(24 + (el ? el.offsetHeight : 60) + 4, Math.round(H * 0.45)));
+    }
+    function setSnap(s) {
+      ["peek", "half", "full"].forEach(function (k) { stage.classList.toggle("ps-" + k, narrow() && k === s); });
+      if (!narrow()) { stage.style.removeProperty("--ph"); PS.px = 0; return; }
+      PS.snap = s;
+      if (sheet.hidden) { PS.base = s; }
+      PS.px = snapPx(s);
+      stage.style.setProperty("--ph", PS.px + "px");
+    }
+    function pcOpen(on) {
+      stage.classList.toggle("is-pcclosed", !on);
+      pcTg.setAttribute("aria-expanded", on ? "true" : "false");
+      pcTg.setAttribute("aria-label", on ? "左のパネルを閉じる" : "左のパネルを開く");
+    }
+    // 地図の見えている範囲（検索欄・目的の段・パネル・右のボタンをよけた範囲）
+    function mapPad() {
+      var sr = stage.getBoundingClientRect(), t = 0, l = 0, b = 0;
+      [topBar, chips].forEach(function (el) {
+        if (!el || el.offsetParent === null) { return; }
+        var r = el.getBoundingClientRect();
+        if (!r.height || (!narrow() && el === topBar && !stage.classList.contains("is-pcclosed"))) { return; }
+        t = Math.max(t, r.bottom - sr.top);
+      });
+      if (narrow()) { b = PS.px || panel.offsetHeight; }
+      else if (!stage.classList.contains("is-pcclosed")) { l = panel.offsetWidth; }
+      return { t: t + 14, l: l + 18, r: 66, b: b + 14 };
+    }
+    function appTop(home, n, f) {
+      var p = curPurp(), name = "", ic = "";
+      if (S.ws.length) { name = "「" + S.q.trim() + "」の検索結果"; ic = icon("search"); }
+      else if (S.hint && hint()) { name = hint().label; ic = icon("walk"); }
+      else if (S.tag) { name = tagText(S.tag); ic = icon("tag"); }
+      else if (p) { name = p.name; ic = icon(p.icon); }
+      else { name = "条件に合う場所"; ic = icon("list"); }
+      $(".c-lhead-ic", lhead).innerHTML = ic;
+      $(".c-lhead-ic", lhead).style.setProperty("--c", p && !S.ws.length && !S.tag && !S.hint ? p.color : "var(--ink)");
+      $(".c-lhead-name", lhead).textContent = name;
+      var np = 0;
+      for (var id in visSet) { if (visSet[id] && byId[id] && byId[id].pin) { np++; } }
+      $(".c-lhead-n", lhead).innerHTML = "<b>" + n.toLocaleString("ja-JP") + "</b>" + esc(unitWord()) + (np < n ? "（地図に出ているのは" + np + "）" : "");
+      if (home !== PS.home) {
+        PS.home = home;
+        if (sheet.hidden) { setSnap(home ? "half" : "peek"); }
+      }
+    }
+    function appList() {
+      if (S.panel) { closePanel(); }
+      if (narrow()) { setSnap("full"); } else { pcOpen(true); }
+      var ix = $(".c-index", pbase);
+      setTimeout(function () { pbase.scrollTop = Math.max(0, ix.offsetTop - (PS.home ? 0 : lhead.offsetHeight) - 8); }, 30);
+    }
+    function drawerOpen(on) {
+      drawer.hidden = !on;
+      menuBtn.setAttribute("aria-expanded", on ? "true" : "false");
+      if (on) { try { $(".c-drawer-x", drawer).focus({ preventScroll: true }); } catch (e) {} }
+    }
+    // スマホのパネル：つまみ・見出しを上下にドラッグして、小・中・大の3段階に合わせる
+    var drag = null, eatClick = false;
+    panel.addEventListener("pointerdown", function (e) {
+      if (!narrow() || (e.button && e.button > 0)) { return; }
+      var h = e.target.closest(".c-panel-grip, .c-lhead-top, .c-home-h, .c-sh-head");
+      if (!h || (h !== pgrip && e.target.closest("button, a, select, input"))) { return; }
+      drag = { id: e.pointerId, y: e.clientY, h0: panel.getBoundingClientRect().height, moved: false, grip: h === pgrip, hist: [{ y: e.clientY, t: Date.now() }] };
+    });
+    window.addEventListener("pointermove", function (e) {
+      if (!drag || e.pointerId !== drag.id) { return; }
+      var dy = e.clientY - drag.y;
+      if (!drag.moved) {
+        if (Math.abs(dy) < 8) { return; }
+        drag.moved = true;
+        panel.classList.add("is-drag");
+        try { panel.setPointerCapture(drag.id); } catch (x) {}
+      }
+      drag.hist.push({ y: e.clientY, t: Date.now() });
+      if (drag.hist.length > 6) { drag.hist.shift(); }
+      var hmax = snapPx("full"), hmin = Math.min(snapPx("peek"), 84);
+      PS.px = Math.max(hmin, Math.min(hmax, drag.h0 - dy));
+      stage.style.setProperty("--ph", PS.px + "px");
+      if (e.cancelable) { e.preventDefault(); }
+    }, { passive: false });
+    function dragEnd(e) {
+      if (!drag || e.pointerId !== drag.id) { return; }
+      var d = drag;
+      drag = null;
+      panel.classList.remove("is-drag");
+      if (!d.moved) {
+        if (d.grip) { setSnap(PS.snap === "full" ? "half" : PS.snap === "half" ? "full" : "half"); }
+        return;
+      }
+      eatClick = true;
+      setTimeout(function () { eatClick = false; }, 60);
+      // 速さは、離す直前の動きから出す（上向きが正）
+      var now = Date.now(), h = PS.px, s0 = d.hist[0];
+      for (var i = d.hist.length - 1; i >= 0; i--) { if (now - d.hist[i].t <= 120) { s0 = d.hist[i]; } }
+      var v = now - s0.t > 0 ? (s0.y - (d.hist[d.hist.length - 1] || s0).y) / (now - s0.t) : 0;
+      var cand = ["peek", "half", "full"].map(function (s) { return { s: s, px: snapPx(s) }; });
+      var pick = cand.reduce(function (a, c) { return Math.abs(c.px - h) < Math.abs(a.px - h) ? c : a; });
+      if (Math.abs(v) > 0.6) {
+        var up = v > 0, list = cand.filter(function (c) { return up ? c.px > h + 4 : c.px < h - 4; });
+        if (list.length) { pick = up ? list[0] : list[list.length - 1]; }
+      }
+      setSnap(pick.s);
+    }
+    window.addEventListener("pointerup", dragEnd);
+    window.addEventListener("pointercancel", dragEnd);
+    root.addEventListener("click", function (e) { if (eatClick) { eatClick = false; e.stopPropagation(); e.preventDefault(); } }, true);
+    pgrip.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSnap(PS.snap === "full" ? "half" : PS.snap === "half" ? "full" : "half"); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); setSnap(PS.snap === "peek" ? "half" : "full"); }
+      else if (e.key === "ArrowDown") { e.preventDefault(); setSnap(PS.snap === "full" ? "half" : "peek"); }
+    });
+    qIn.addEventListener("keydown", function (e) { if (e.key === "Enter" && narrow() && !atHome() && sheet.hidden) { setTimeout(function () { setSnap("half"); }, 50); } });
+    window.addEventListener("resize", debounce(function () { setSnap(PS.snap); }, 120));
+    // スマホで地図の何もないところを押したら、パネルを小さくして地図を広く見せる
+    if (map) {
+      map.on("click", function (e) {
+        if (!narrow() || RT.pick || Date.now() - (PS.pickAt || 0) < 400 || (e.sourceTarget && e.sourceTarget !== map)) { return; }
+        if (PS.snap !== "peek" && !(PS.home && sheet.hidden)) { setSnap("peek"); }
+      });
+    }
+    appHooks.enter = function () {
+      setTimeout(function () { if (map) { map.invalidateSize(); } setSnap(PS.snap); }, 40);
+    };
+    function appClick(act, b) {
+      if (b.closest(".c-drawer") && (act === "course" || act === "tutorial" || act === "gotoindex")) { drawerOpen(false); }
+      if (act === "menu") { drawerOpen(drawer.hidden); return true; }
+      if (act === "listall" || act === "gotoindex") { drawerOpen(false); appList(); return true; }
+      if (act === "exitapp") { drawerOpen(false); appExit(); return true; }
+      if (act === "enterapp") { appEnter(); return true; }
+      if (act === "pctoggle") { pcOpen(stage.classList.contains("is-pcclosed")); return true; }
+      if (act === "qclear") { qIn.value = ""; qx.hidden = true; S.q = ""; S.ws = []; apply(false); qIn.focus(); return true; }
+      if (act === "row") {
+        var it = byId[b.getAttribute("data-id")];
+        if (it && it.pin) { select(it.id); return true; }
+      }
+      return false;
+    }
+
     takeState(st0);
     guideOpen(!store.get(KEY.guide, 0));
     paintTry();
@@ -3188,6 +3428,7 @@
     paintFavs();
     apply(false);
     paintWent();
+    setSnap(atHome() ? "half" : "peek");
     ready = true;
     if (map) {
       stage.classList.toggle("is-far", map.getZoom() < 14);

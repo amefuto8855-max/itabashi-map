@@ -199,3 +199,161 @@
 #itbM .c-rt-sumrow.is-to .c-rt-lb{background:#b4441a}
 #itbM .c-rt-sumwhen{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin-top:2px;font-size:calc(13.5px*var(--tz,1));font-weight:700;color:var(--ink2)}
 #itbM .c-rt-sumgo{margin-left:auto;padding:0 12px;border-radius:999px;background:var(--bg);box-shadow:inset 0 0 0 1.5px var(--forest);color:var(--forest2);line-height:2}
+
+/* ===== 全画面の画面（スマホは下から引き出すパネル、PCは左のパネル） ===== */
+html.itbM-lock,html.itbM-lock body{overflow:hidden!important;overscroll-behavior:none}
+#itbM.is-app{position:fixed!important;inset:0!important;z-index:2147480000;width:auto!important;max-width:none!important;height:auto!important;margin:0!important;padding:0!important;background:#e9ede6;overflow:hidden}
+#itbM.is-app.is-nojs{display:flex;align-items:center;justify-content:center;padding:16px!important}
+#itbM.is-inline>:not(.c-launch):not(.c-toast){display:none!important}
+#itbM:not(.is-inline) .c-launch{display:none}
+#itbM .c-launch{padding:18px 18px 20px;border-radius:18px;background:var(--panel);text-align:center}
+#itbM .c-launch-h{font-size:calc(19px*var(--tz,1));font-weight:900;line-height:1.45}
+#itbM .c-launch-d{margin:6px 0 0;font-size:calc(14px*var(--tz,1));line-height:1.7;color:var(--ink2)}
+#itbM .c-launch .c-launch-go{margin:14px 0 0;min-height:52px;padding:6px 26px;font-size:calc(16px*var(--tz,1))}
+#itbM.is-app>.c-guide,#itbM.is-app>.c-bar,#itbM.is-app>.c-index{display:none}
+#itbM.is-app .c-stage{position:absolute;inset:0;height:auto;max-height:none;min-height:0;border-radius:0}
+#itbM.is-app .c-stage .c-rail,#itbM.is-app .c-stage .c-scrolldown,#itbM.is-app .c-stage .c-legend,#itbM.is-app .c-stage [data-act="full"],#itbM.is-app .c-stage .c-searchbtn{display:none!important}
+
+/* 検索欄 */
+#itbM.is-app .c-stage .c-top{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));left:10px;right:10px;z-index:1150;display:flex;flex-wrap:nowrap;align-items:center;gap:0;height:50px;padding:0 4px;border-radius:999px;background:var(--bg);box-shadow:0 2px 10px rgba(20,40,30,.22)}
+#itbM.is-app .c-stage .c-top:focus-within{box-shadow:0 0 0 3px var(--forest),0 2px 10px rgba(20,40,30,.22)}
+#itbM.is-app .c-stage .c-top .c-searchbox{display:flex;flex:1 1 auto;min-width:0}
+#itbM.is-app .c-stage .c-top .c-search{height:50px;padding:0 6px 0 4px;border-radius:0;background:none;box-shadow:none}
+#itbM.is-app .c-stage .c-top .c-search:focus-within{box-shadow:none}
+#itbM.is-app .c-stage .c-top .c-search>svg{display:none}
+#itbM.is-app .c-stage .c-top .c-q{font-size:16px;font-weight:700}
+#itbM .c-menubtn,#itbM .c-qx{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;flex:none;border-radius:50%;color:var(--ink)}
+#itbM .c-menubtn:hover,#itbM .c-qx:hover{background:var(--panel)}
+#itbM .c-menubtn svg{width:22px;height:22px}
+#itbM .c-qx svg{width:20px;height:20px;color:var(--ink2)}
+
+/* 目的のボタン（検索欄の下の段） */
+#itbM.is-app .c-stage .c-purposes{position:absolute;top:calc(68px + env(safe-area-inset-top,0px));left:0;right:0;z-index:1050;display:flex;flex:none;align-items:center;gap:6px;max-width:none;margin:0;padding:2px 10px 8px;border-radius:0;background:none;box-shadow:none;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+#itbM.is-app .c-stage .c-purposes::-webkit-scrollbar{display:none}
+#itbM.is-app .c-stage.is-home .c-purposes,#itbM.is-app .c-stage.has-rt .c-purposes{display:none}
+#itbM.is-app .c-stage .c-purp{flex:none;flex-direction:row;gap:6px;min-height:38px;padding:0 14px 0 5px;border-radius:999px;background:var(--bg);box-shadow:0 1px 6px rgba(20,40,30,.2);line-height:1.2}
+#itbM.is-app .c-stage .c-purp:hover{background:var(--panel)}
+#itbM.is-app .c-stage .c-purp[aria-pressed="true"]{background:var(--ink);color:#fff}
+#itbM.is-app .c-stage .c-purp-ic{width:28px;height:28px}
+#itbM.is-app .c-stage .c-purp-l{display:inline;font-size:calc(14px*var(--tz,1));white-space:nowrap}
+#itbM.is-app .c-stage .c-purp-s,#itbM.is-app .c-stage .c-purposes .c-purpall{display:none}
+
+/* 地図の右のボタン */
+#itbM.is-app .c-stage .c-side{position:absolute;top:calc(120px + env(safe-area-inset-top,0px));right:10px;left:auto;z-index:1000;display:flex;flex-direction:column;gap:8px}
+#itbM.is-app .c-stage.is-home .c-side,#itbM.is-app .c-stage.has-rt .c-side{top:calc(70px + env(safe-area-inset-top,0px))}
+#itbM.is-app .c-stage .c-round{width:44px;height:44px}
+#itbM .c-fab{position:absolute;right:10px;bottom:calc(var(--ph,0px) + 12px);z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:10px;transition:bottom .25s cubic-bezier(.2,.8,.2,1),opacity .2s}
+#itbM.is-app .c-stage .c-fab .c-round{width:50px;height:50px}
+#itbM.is-app .c-stage .c-fab .c-rtbtn{background:var(--forest);color:#fff}
+#itbM.is-app .c-stage .c-fab .c-rtbtn[aria-pressed="true"]{background:var(--ink)}
+#itbM.is-app .c-stage .c-fab .c-zoom{width:44px;height:44px}
+#itbM.is-app .c-stage.ps-full .c-fab,#itbM.is-app .c-stage.is-rtpick .c-fab{opacity:0;pointer-events:none}
+#itbM.is-app .c-stage .leaflet-bottom{bottom:var(--ph,0px);transition:bottom .25s cubic-bezier(.2,.8,.2,1)}
+#itbM.is-app .c-stage.is-rtpick .leaflet-bottom{bottom:0}
+#itbM.is-app .c-stage .c-trmenu{top:calc(120px + env(safe-area-inset-top,0px));right:64px;max-height:calc(100% - 132px - var(--ph,0px))}
+#itbM.is-app .c-stage.is-home .c-trmenu{top:calc(70px + env(safe-area-inset-top,0px));max-height:calc(100% - 82px - var(--ph,0px))}
+#itbM.is-app .c-stage .c-ringinfo,#itbM.is-app .c-stage .c-taghint{top:calc(120px + env(safe-area-inset-top,0px));left:10px;max-width:calc(100% - 76px)}
+#itbM.is-app .c-stage.is-home .c-ringinfo{top:calc(70px + env(safe-area-inset-top,0px))}
+#itbM.is-app .c-stage .c-rtbar{top:calc(70px + env(safe-area-inset-top,0px))}
+
+/* パネル（スマホ：下から引き出す） */
+#itbM .c-panel{position:absolute;left:0;right:0;bottom:0;z-index:1100;display:flex;flex-direction:column;height:var(--ph,50%);background:var(--bg);border-radius:20px 20px 0 0;box-shadow:0 -4px 22px rgba(20,40,30,.24);transition:height .25s cubic-bezier(.2,.8,.2,1)}
+#itbM .c-panel.is-drag{transition:none}
+#itbM.is-app .c-stage.is-rtpick .c-panel{display:none}
+#itbM .c-panel-grip{flex:none;display:flex;align-items:center;justify-content:center;height:24px;cursor:grab;touch-action:none}
+#itbM .c-panel-grip::before{content:"";width:42px;height:5px;border-radius:3px;background:#c3ccc7}
+#itbM .c-panel-grip:focus-visible{outline-offset:-3px}
+#itbM .c-panel-body{position:relative;flex:1 1 auto;min-height:0}
+#itbM .c-panel-base{position:absolute;inset:0;padding:0 16px calc(20px + env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain}
+#itbM.is-app .c-stage.has-sheet .c-panel-base{visibility:hidden;pointer-events:none}
+#itbM.is-app .c-stage .c-panel .c-sheet{position:absolute;inset:0;top:0;left:0;right:0;bottom:0;width:auto;max-height:none;z-index:auto;padding:0 18px calc(18px + env(safe-area-inset-bottom,0px));border-radius:0;background:var(--bg);box-shadow:none;overflow-y:auto;overscroll-behavior:contain}
+#itbM.is-app .c-stage .c-panel .c-sh-head{touch-action:none}
+#itbM.is-app .c-stage .c-panel .c-home{position:static;top:auto;left:auto;right:auto;max-width:none;margin:0;padding:2px 0 6px;transform:none;border-radius:0;background:none;box-shadow:none;text-align:left}
+#itbM.is-app .c-stage .c-panel .c-home-h{margin:0;padding:4px 0 12px;font-size:calc(18px*var(--tz,1));touch-action:none}
+#itbM.is-app .c-stage .c-panel .c-home-grid{gap:8px}
+#itbM.is-app .c-stage .c-panel .c-homebtn{min-height:90px}
+#itbM.is-app .c-stage .c-panel .c-home-f{text-align:center}
+
+/* 一覧の見出し（目的・件数・種類・条件） */
+#itbM .c-lhead{position:sticky;top:0;z-index:2;margin:0 -16px;padding:0 16px 6px;background:var(--bg);border-bottom:1px solid var(--line)}
+#itbM.is-app .c-stage.is-home .c-lhead{display:none}
+#itbM .c-lhead-top{display:flex;align-items:center;gap:10px;min-height:48px;padding:2px 0 4px;touch-action:none}
+#itbM .c-lhead-ic{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex:none;border-radius:50%;background:var(--c,var(--ink));color:#fff}
+#itbM .c-lhead-ic svg{width:19px;height:19px;stroke-width:2}
+#itbM .c-lhead-t{flex:1 1 auto;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;line-height:1.35}
+#itbM .c-lhead-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:calc(17px*var(--tz,1));font-weight:900}
+#itbM .c-lhead-n{font-size:calc(13px*var(--tz,1));font-weight:700;color:var(--ink2)}
+#itbM .c-lhead-n b{font-size:calc(16px*var(--tz,1));font-weight:900;color:var(--forest2)}
+#itbM .c-lhead-x{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border-radius:50%;background:var(--panel);color:var(--ink2)}
+#itbM .c-lhead-x:hover{background:var(--fwash);color:var(--ink)}
+#itbM.is-app .c-stage .c-lhead .c-kinds,#itbM.is-app .c-stage .c-lhead .c-conds{position:static;top:auto;left:auto;right:auto;display:flex;align-items:center;gap:6px;margin:0 -16px;padding:4px 16px 6px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;-webkit-mask-image:none;mask-image:none}
+#itbM.is-app .c-stage .c-lhead .c-kinds[hidden],#itbM.is-app .c-stage .c-lhead .c-conds[hidden]{display:none}
+#itbM.is-app .c-stage .c-lhead .c-kinds::-webkit-scrollbar,#itbM.is-app .c-stage .c-lhead .c-conds::-webkit-scrollbar{display:none}
+#itbM.is-app .c-stage .c-lhead .c-chip{box-shadow:inset 0 0 0 1px var(--line)}
+#itbM.is-app .c-stage .c-lhead .c-chip[aria-pressed="true"],#itbM.is-app .c-stage .c-lhead .c-selchip.is-on{box-shadow:none}
+#itbM.is-app .c-stage .c-lhead .c-count{display:none!important}
+#itbM.is-app .c-stage .c-panel .c-index{margin:16px 0 0}
+#itbM.is-app .c-stage:not(.is-home) .c-panel .c-index-head,#itbM.is-app .c-stage:not(.is-home) .c-panel .c-index-note{display:none}
+#itbM.is-app .c-stage .c-panel .c-index-h{font-size:calc(18px*var(--tz,1))}
+#itbM.is-app .c-stage .c-panel .c-grp-h{font-size:calc(17px*var(--tz,1))}
+#itbM.is-app .c-stage .c-panel .c-rows{grid-template-columns:minmax(0,1fr);column-gap:0}
+#itbM.is-app .c-stage .c-panel .c-row-more{padding-left:0}
+
+/* メニュー */
+#itbM .c-drawer{position:absolute;inset:0;z-index:1250}
+#itbM .c-drawer-scrim{position:absolute;inset:0;background:rgba(16,28,22,.42)}
+#itbM .c-drawer-box{position:absolute;left:0;top:0;bottom:0;display:flex;flex-direction:column;width:min(340px,88%);background:var(--bg);box-shadow:4px 0 24px rgba(0,0,0,.25);overflow-y:auto;overscroll-behavior:contain;animation:itbM-drawer .22s cubic-bezier(.2,.8,.2,1)}
+@keyframes itbM-drawer{from{transform:translateX(-100%)}to{transform:none}}
+#itbM .c-drawer-head{display:flex;align-items:center;gap:8px;padding:calc(12px + env(safe-area-inset-top,0px)) 8px 10px 18px;border-bottom:1px solid var(--line)}
+#itbM .c-drawer-t{flex:1;min-width:0;font-size:calc(15.5px*var(--tz,1));font-weight:900;line-height:1.45}
+#itbM .c-drawer-x{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;flex:none;border-radius:50%;color:var(--ink2)}
+#itbM .c-drawer-x:hover{background:var(--panel)}
+#itbM .c-drawer-main{flex:1 1 auto;padding:10px 14px 14px}
+#itbM .c-drawer .c-bar{display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:0}
+#itbM .c-drawer .c-stat,#itbM .c-drawer .c-sharebtn,#itbM .c-drawer .c-drawer-list{display:flex;align-items:center;gap:10px;width:100%;min-height:48px;padding:0 14px;border-radius:14px;background:var(--panel);font-size:calc(15px*var(--tz,1));font-weight:700;color:var(--ink);text-align:left}
+#itbM .c-drawer .c-stat:hover,#itbM .c-drawer .c-sharebtn:hover,#itbM .c-drawer .c-drawer-list:hover{background:var(--fwash)}
+#itbM .c-drawer .c-stat svg,#itbM .c-drawer .c-sharebtn svg,#itbM .c-drawer .c-drawer-list svg{display:inline;color:var(--forest)}
+#itbM .c-drawer .c-stat>span:first-of-type{flex:1}
+#itbM .c-drawer .c-textsize{justify-content:space-between;margin:2px 0 0;padding:4px 4px 4px 14px;border-radius:14px}
+#itbM .c-drawer .c-textsize-lb{padding:0;font-size:calc(15px*var(--tz,1));color:var(--ink)}
+#itbM .c-drawer .c-guide{margin:12px 0 0;padding:8px 12px 12px;border-radius:14px}
+#itbM .c-drawer .c-guide-list{grid-template-columns:none}
+#itbM .c-drawer .c-guide-steps{grid-template-columns:none;gap:2px}
+#itbM .c-drawer .c-guide-steps li{display:grid;grid-template-columns:22px 5em minmax(0,1fr);align-items:center;padding:0;background:none}
+#itbM .c-drawer .c-guide-steps .c-guide-n{grid-row:auto;width:22px;height:22px;font-size:calc(12.5px*var(--tz,1))}
+#itbM .c-drawer .c-guide-steps .c-guide-d{grid-column:auto}
+#itbM .c-drawer-foot{padding:6px 14px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+#itbM .c-drawer-exit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:48px;margin:8px 0 0;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--ink3);font-size:calc(15px*var(--tz,1));font-weight:700;color:var(--ink)}
+#itbM .c-drawer-exit:hover{background:var(--panel)}
+#itbM.is-app .c-stage .c-sharemenu{z-index:1300}
+#itbM .c-panel-tg{display:none}
+#itbM.is-app .c-toast{top:calc(122px + env(safe-area-inset-top,0px));bottom:auto;transform:translate(-50%,-10px);max-width:calc(100vw - 40px);border-radius:16px;line-height:1.55;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+#itbM.is-app .c-toast.is-on{transform:translate(-50%,0)}
+
+/* PC：左のパネル */
+@container (min-width: 760px){
+  #itbM.is-app .c-stage{--pw:min(408px,40%)}
+  #itbM.is-app .c-stage .c-top{top:12px;left:12px;right:auto;width:calc(var(--pw) - 24px);height:48px}
+  #itbM.is-app .c-stage .c-top .c-search{height:48px}
+  #itbM.is-app .c-stage .c-purposes{top:12px;left:calc(var(--pw) + 12px);right:64px;padding:4px 2px 10px;z-index:1050}
+  #itbM .c-panel{top:0;bottom:0;right:auto;width:var(--pw);height:auto;border-radius:0;box-shadow:2px 0 16px rgba(20,40,30,.18);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+  #itbM.is-app .c-stage.is-pcclosed .c-panel{transform:translateX(-100%);box-shadow:none}
+  #itbM .c-panel-grip{display:none}
+  #itbM .c-panel-body{margin-top:72px;border-top:1px solid var(--line)}
+  #itbM.is-app .c-stage .c-panel .c-home-h,#itbM .c-lhead-top,#itbM.is-app .c-stage .c-panel .c-sh-head{touch-action:auto}
+  #itbM .c-panel-tg{position:absolute;top:84px;left:var(--pw);z-index:1120;display:inline-flex;align-items:center;justify-content:center;width:26px;height:52px;border-radius:0 10px 10px 0;background:var(--bg);box-shadow:3px 1px 8px rgba(20,40,30,.18);color:var(--ink2);transition:left .25s cubic-bezier(.2,.8,.2,1)}
+  #itbM .c-panel-tg svg{transform:rotate(180deg)}
+  #itbM.is-app .c-stage.is-pcclosed .c-panel-tg{left:0}
+  #itbM.is-app .c-stage.is-pcclosed .c-panel-tg svg{transform:none}
+  #itbM .c-panel-tg:hover{color:var(--ink);background:var(--panel)}
+  #itbM.is-app .c-stage .c-side,#itbM.is-app .c-stage.is-home .c-side,#itbM.is-app .c-stage.has-rt .c-side{top:12px;right:12px}
+  #itbM.is-app .c-stage .c-round{width:46px;height:46px}
+  #itbM .c-fab{right:12px;bottom:28px}
+  #itbM.is-app .c-stage .c-trmenu,#itbM.is-app .c-stage.is-home .c-trmenu{top:12px;right:68px;max-height:calc(100% - 24px)}
+  #itbM.is-app .c-stage .c-ringinfo,#itbM.is-app .c-stage.is-home .c-ringinfo,#itbM.is-app .c-stage .c-taghint{top:66px;left:calc(var(--pw) + 14px);max-width:calc(100% - var(--pw) - 90px)}
+  #itbM.is-app .c-stage.is-pcclosed .c-ringinfo{left:14px;top:72px}
+  #itbM.is-app .c-stage .c-rtbar{top:16px;left:calc(var(--pw) + (100% - var(--pw)) / 2)}
+  #itbM.is-app .c-stage .leaflet-bottom{bottom:0}
+  #itbM.is-app .c-toast{top:70px;left:calc(var(--pw-px,408px) + (100vw - var(--pw-px,408px)) / 2)}
+}
+@media (prefers-reduced-motion:reduce){#itbM .c-panel,#itbM .c-fab,#itbM .c-panel-tg,#itbM.is-app .c-stage .leaflet-bottom{transition:none}#itbM .c-drawer-box{animation:none}}
