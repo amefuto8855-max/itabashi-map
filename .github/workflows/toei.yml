@@ -1,0 +1,29 @@
+name: 都営交通の時刻表を取得
+on:
+  push:
+    branches: [machi]
+    paths: ['.github/workflows/toei.yml', 'tools/toei/**']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 東京都交通局のGTFSを取得
+        run: |
+          mkdir raw && cd raw
+          for f in Toei-Train-GTFS.zip ToeiBus-GTFS.zip; do
+            curl -fsSL --retry 4 --retry-delay 5 -o "$f" "https://api-public.odpt.org/api/v4/files/Toei/data/$f"
+          done
+          ls -la
+          sha256sum *.zip
+      - name: 作業用ブランチへ置く
+        run: |
+          cd raw
+          printf '東京都交通局のGTFS（公共交通オープンデータセンター）。ライセンス CC BY 4.0。\n' > README.md
+          git init -q -b toei-src
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "東京都交通局のGTFS（公共交通オープンデータセンター、CC BY 4.0）"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" toei-src
