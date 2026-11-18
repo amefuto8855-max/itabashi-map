@@ -157,6 +157,8 @@
 #itbM .c-rt-chips{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:6px 0 0}
 #itbM .c-rt-chip{display:inline-flex;align-items:center;gap:3px;padding:1px 8px 1px 6px;border-radius:6px;background:var(--c);color:var(--t,#fff);font-size:calc(12.5px*var(--tz,1));font-weight:700;line-height:1.6;white-space:nowrap}
 #itbM .c-rt-chip svg{width:14px;height:14px}
+#itbM .c-gk-bg{display:none}
+#itbM .c-round[aria-pressed="true"] .c-gk-bg,#itbM.is-app .c-stage .c-fab .c-rtbtn .c-gk-bg,#itbM .c-item-pict .c-gk-bg,#itbM .c-rt-chip .c-gk-bg{display:inline}
 #itbM .c-rt-sep{width:10px;height:2px;border-radius:1px;background:var(--ink3)}
 #itbM .c-rt-legs{padding:6px 14px 14px}
 #itbM .c-rt-legs>li{display:grid;grid-template-columns:3em 18px minmax(0,1fr);column-gap:8px;align-items:stretch}
