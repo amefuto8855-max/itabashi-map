@@ -7,7 +7,6 @@
   items.json      23区にあり、位置と日本語版ウィキペディアの記事がある Wikidata の項目（区ごと）
   classes.json    項目の種類（P31）の名前と、どの大きな種類に入るか
   details.json    観光スポットの候補の名前・説明・読み・公式サイトなど
-  stations.json   駅と停留所（最寄り駅を出すため）
   ckan/           東京都オープンデータカタログにある、各区の観光施設の一覧
   log.txt         取得の記録
 """
@@ -61,7 +60,7 @@ def get(url, data=None, headers=None, tries=6, timeout=120):
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read()
         except urllib.error.HTTPError as e:
-            err = e
+            err = "%s %s" % (e, e.read()[:200])
             wait = 5 * (k + 1)
             if e.code == 429:
                 ra = e.headers.get("Retry-After")
@@ -148,10 +147,11 @@ SELECT ?item (SAMPLE(?c) AS ?coord) (SAMPLE(?a) AS ?article) (SAMPLE(?lb) AS ?la
   (GROUP_CONCAT(DISTINCT ?t; separator=" ") AS ?types)
   (GROUP_CONCAT(DISTINCT ?h; separator=" ") AS ?heritage)
   (GROUP_CONCAT(DISTINCT ?u; separator=" ") AS ?use)
-  (SAMPLE(?e) AS ?end) (SAMPLE(?e2) AS ?closed)
+  (SAMPLE(?e) AS ?end) (SAMPLE(?e2) AS ?closed) (SAMPLE(?n) AS ?sitelinks)
 WHERE {
   ?item %s wd:%s ; wdt:P625 ?c .
   ?a schema:about ?item ; schema:isPartOf <https://ja.wikipedia.org/> .
+  OPTIONAL { ?item wikibase:sitelinks ?n }
   OPTIONAL { ?item rdfs:label ?lb . FILTER(LANG(?lb) = "ja") }
   OPTIONAL { ?item wdt:P31 ?tt . BIND(STRAFTER(STR(?tt), "entity/") AS ?t) }
   OPTIONAL { ?item wdt:P1435 ?hh . BIND(STRAFTER(STR(?hh), "entity/") AS ?h) }
@@ -184,7 +184,7 @@ def fetch_items(wards):
             out[i] = {
                 "id": i, "label": r.get("label", ""), "coord": r.get("coord", ""), "article": r.get("article", ""),
                 "types": r.get("types", "").split(), "heritage": r.get("heritage", "").split(), "use": r.get("use", "").split(),
-                "end": r.get("end", ""), "closed": r.get("closed", ""), "wards": [w["name"]],
+                "end": r.get("end", ""), "closed": r.get("closed", ""), "sitelinks": int(r.get("sitelinks") or 0), "wards": [w["name"]],
             }
         log("  ", w["name"], len(rows), "件")
     items = list(out.values())
@@ -264,49 +264,6 @@ def fetch_details(items, info):
     save("details.json", det)
 
 
-# ---- 駅と停留所 ----
-def fetch_stations():
-    cls = set()
-    for root in ("Q55488", "Q2175765"):
-        for r in sparql("SELECT DISTINCT ?c WHERE { ?c wdt:P279* wd:%s . }" % root):
-            cls.add(qid(r["c"]))
-    log("駅の種類", len(cls))
-    rows = []
-    for part in chunks(sorted(cls), 150):
-        rows += sparql("""
-SELECT ?st ?label ?coord ?cls ?end WHERE {
-  SERVICE wikibase:box {
-    ?st wdt:P625 ?coord .
-    bd:serviceParam wikibase:cornerSouthWest "Point(139.50 35.47)"^^geo:wktLiteral .
-    bd:serviceParam wikibase:cornerNorthEast "Point(139.97 35.86)"^^geo:wktLiteral .
-  }
-  VALUES ?cls { %s }
-  ?st wdt:P31 ?cls .
-  OPTIONAL { ?st rdfs:label ?label . FILTER(LANG(?label) = "ja") }
-  OPTIONAL { ?st wdt:P576 ?end }
-}""" % values(part))
-    st = {}
-    for r in rows:
-        i = qid(r["st"])
-        o = st.setdefault(i, {"id": i, "label": r.get("label", ""), "coord": r.get("coord", ""), "types": [], "end": r.get("end", "")})
-        c = qid(r["cls"])
-        if c not in o["types"]:
-            o["types"].append(c)
-    ids = sorted(st)
-    for part in chunks(ids, 200):
-        for r in sparql("""
-SELECT ?st (GROUP_CONCAT(DISTINCT ?ll; separator="|||") AS ?lines) (GROUP_CONCAT(DISTINCT ?ol; separator="|||") AS ?ops) WHERE {
-  VALUES ?st { %s }
-  OPTIONAL { ?st wdt:P81 ?line . ?line rdfs:label ?ll . FILTER(LANG(?ll) = "ja") }
-  OPTIONAL { ?st wdt:P137 ?op . ?op rdfs:label ?ol . FILTER(LANG(?ol) = "ja") }
-} GROUP BY ?st""" % values(part)):
-            o = st[qid(r["st"])]
-            o["lines"] = [x for x in r.get("lines", "").split("|||") if x]
-            o["ops"] = [x for x in r.get("ops", "").split("|||") if x]
-    log("駅と停留所", len(st))
-    save("stations.json", list(st.values()))
-
-
 # ---- 各区の観光施設の一覧（東京都オープンデータカタログ） ----
 def fetch_ckan():
     pk = {}
@@ -351,7 +308,7 @@ def fetch_ckan():
                     f.write(data)
                 files.append({"file": name, "name": r.get("name", ""), "url": url, "format": ext, "bytes": len(data)})
             except Exception as e:  # noqa: BLE001
-                log("  ファイルを取れませんでした", ward, title, url[:120], repr(e)[:120])
+                log("  ファイルを取れませんでした", ward, title, url, repr(e)[-300:])
             time.sleep(0.5)
         keep.append({"ward": ward, "org": org, "title": title, "name": p["name"], "id": p["id"], "license": p.get("license_title", ""),
                      "license_id": p.get("license_id", ""), "license_url": p.get("license_url", ""), "notes": (p.get("notes") or "")[:400],
@@ -373,7 +330,7 @@ def main():
         fetch_details(items, info)
     except Exception:  # noqa: BLE001
         log("Wikidata の取得でエラー\n" + traceback.format_exc())
-    for name, fn in (("駅", fetch_stations), ("カタログ", fetch_ckan)):
+    for name, fn in (("カタログ", fetch_ckan),):
         try:
             fn()
         except Exception:  # noqa: BLE001
