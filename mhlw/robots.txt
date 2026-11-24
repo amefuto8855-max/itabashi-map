@@ -1,0 +1,9 @@
+User-Agent:*
+Disallow:/faspub/
+Disallow:/faspte/
+Disallow:/image/
+Disallow:/manual/
+Disallow:/script/
+Disallow:/style/
+Allow:/faspte/page/login.jsp
+

@@ -1,0 +1,8213 @@
+{
+"version": 0.6,
+"generator": "Overpass API 0.7.62.4 2390de5a",
+"osm3s": {
+"timestamp_osm_base": "2026-11-24T14:26:33Z",
+"timestamp_areas_base": "2026-11-24T12:51:51Z",
+"copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+},
+"elements": [
+{
+"type": "node",
+"id": 275605844,
+"lat": 35.7482853,
+"lon": 139.7196284,
+"tags": {
+"amenity": "cafe",
+"brand": "珈琲館",
+"brand:en": "Kohikan",
+"brand:ja": "珈琲館",
+"brand:wikidata": "Q11573290",
+"brand:wikipedia": "ja:珈琲館",
+"cuisine": "coffee_shop",
+"name": "珈琲館",
+"name:en": "Kohikan",
+"name:ja": "珈琲館",
+"name:ja_rm": "Kohi-kan",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 476523624,
+"lat": 35.7603418,
+"lon": 139.674597,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "東京ラーメン 大番",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 587709570,
+"lat": 35.7637696,
+"lon": 139.6770539,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "ramen",
+"name": "大番"
+}
+},
+{
+"type": "node",
+"id": 599434758,
+"lat": 35.7537342,
+"lon": 139.7096145,
+"tags": {
+"amenity": "pub",
+"name": "おやまだ",
+"name:en": "Oyamada"
+}
+},
+{
+"type": "node",
+"id": 599435066,
+"lat": 35.7530171,
+"lon": 139.71001,
+"tags": {
+"amenity": "restaurant",
+"brand": "ジョナサン",
+"brand:en": "Jonathan's",
+"brand:ja": "ジョナサン",
+"brand:wikidata": "Q11310628",
+"brand:wikipedia": "ja:ジョナサン (ファミリーレストラン)",
+"cuisine": "italian;japanese",
+"name": "ジョナサン",
+"name:en": "Jonathan's",
+"name:ja": "ジョナサン",
+"name:ja_rm": "jonasan"
+}
+},
+{
+"type": "node",
+"id": 599435071,
+"lat": 35.7526948,
+"lon": 139.7100099,
+"tags": {
+"addr:block_number": "63",
+"addr:city": "板橋区",
+"addr:floor": "1F",
+"addr:housename": "カネモビル",
+"addr:housenumber": "7",
+"addr:neighbourhood": "仲宿",
+"addr:postcode": "173-0005",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "仲宿店",
+"brand": "カフェ・ベローチェ",
+"brand:en": "CAFFÈ VELOCE",
+"brand:ja": "カフェ・ベローチェ",
+"brand:wikidata": "Q11294597",
+"brand:wikipedia": "ja:カフェ・ベローチェ",
+"cuisine": "coffee_shop",
+"level": "0",
+"name": "カフェ・ベローチェ",
+"name:en": "CAFE VELOCE",
+"name:ja": "カフェ・ベローチェ",
+"name:ja_rm": "Kafe Berōche",
+"opening_hours": "Mo-Fr 06:45-22:00; Sa-Su,PH 07:00-22:00",
+"operator": "シャノアール",
+"phone": "+81 3-5943-1181",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://chatnoir-company.com/chatnoir/html/brand/brand_veloce.html"
+}
+},
+{
+"type": "node",
+"id": 599435252,
+"lat": 35.7520937,
+"lon": 139.7104269,
+"tags": {
+"amenity": "fast_food",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ko": "맥도날드",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 599439989,
+"lat": 35.7542466,
+"lon": 139.7092804,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "ナンカレー",
+"name:en": "Nan Curry"
+}
+},
+{
+"type": "node",
+"id": 656272843,
+"lat": 35.7606917,
+"lon": 139.6755153,
+"tags": {
+"amenity": "restaurant",
+"brand": "Red Lobster",
+"brand:wikidata": "Q846301",
+"brand:wikipedia": "en:Red Lobster",
+"cuisine": "seafood",
+"name": "Red Lobster",
+"name:en": "Red Lobster",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 727533978,
+"lat": 35.7779505,
+"lon": 139.6293452,
+"tags": {
+"amenity": "restaurant",
+"brand": "Big Boy",
+"brand:wikidata": "Q4386779",
+"brand:wikipedia": "en:Big Boy Restaurants",
+"cuisine": "burger",
+"name": "Big Boy",
+"official_name": "Big Boy Restaurant & Bakery"
+}
+},
+{
+"type": "node",
+"id": 942596804,
+"lat": 35.7632292,
+"lon": 139.6762097,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;ramen",
+"name": "麺処 まんだら屋",
+"phone": "+81 339316322"
+}
+},
+{
+"type": "node",
+"id": 1670582430,
+"lat": 35.759276,
+"lon": 139.6900177,
+"tags": {
+"addr:block_number": "2",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "常盤台一丁目",
+"addr:postcode": "174-0071",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "常盤台駅前店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ko": "맥도날드",
+"phone": "+81-3-5994-7361",
+"takeaway": "yes",
+"wheelchair": "no"
+}
+},
+{
+"type": "node",
+"id": 1682838049,
+"lat": 35.7773793,
+"lon": 139.632722,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "noodle;ramen",
+"cuisine:ja": "そば、うどん",
+"name": "だるま",
+"name:en": "Daruma",
+"name:ja": "だるま",
+"name:ja-Hira": "だるま",
+"name:ja_rm": "Daruma"
+}
+},
+{
+"type": "node",
+"id": 1682838429,
+"lat": 35.7766661,
+"lon": 139.6327423,
+"tags": {
+"amenity": "restaurant",
+"name": "フクラ家食堂",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 1682838435,
+"lat": 35.7761328,
+"lon": 139.6320054,
+"tags": {
+"amenity": "fast_food",
+"brand": "ミスタードーナツ",
+"brand:en": "Mister Donut",
+"brand:ja": "ミスタードーナツ",
+"brand:wikidata": "Q1065819",
+"brand:wikipedia": "en:Mister Donut",
+"cuisine": "donut",
+"name": "ミスタードーナツ",
+"name:en": "Mister Donut",
+"name:ja": "ミスタードーナツ",
+"name:ja_rm": "Misuta Dohnatsu",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1682838436,
+"lat": 35.7773408,
+"lon": 139.6326894,
+"tags": {
+"brand": "京樽",
+"brand:en": "Kyotaru",
+"brand:ja": "京樽",
+"brand:wikidata": "Q11374503",
+"brand:wikipedia": "ja:京樽",
+"name": "京樽",
+"name:en": "Kyotaru",
+"name:ja": "京樽",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 1682838437,
+"lat": 35.7762359,
+"lon": 139.6318164,
+"tags": {
+"amenity": "fast_food",
+"brand": "吉野家",
+"brand:en": "Yoshinoya",
+"brand:ja": "吉野家",
+"brand:wikidata": "Q776272",
+"brand:wikipedia": "ja:吉野家",
+"brand:zh": "吉野家",
+"brand:zh-Hans": "吉野家",
+"brand:zh-Hant": "吉野家",
+"cuisine": "beef_bowl",
+"cuisine:ja": "牛丼",
+"name": "吉野家",
+"name:en": "Yoshinoya",
+"name:ja": "吉野家",
+"name:ja_rm": "Yoshinoya",
+"name:zh": "吉野家",
+"name:zh-Hans": "吉野家",
+"name:zh-Hant": "吉野家",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1682838469,
+"lat": 35.7759799,
+"lon": 139.6322498,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "sushi",
+"name": "海鮮三崎港",
+"opening_hours": "PH,Mo-Su 11:00-22:00"
+}
+},
+{
+"type": "node",
+"id": 1685928194,
+"lat": 35.7814853,
+"lon": 139.6464423,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"cuisine:ja": "そば",
+"name": "大仏そば"
+}
+},
+{
+"type": "node",
+"id": 1687225467,
+"lat": 35.7793706,
+"lon": 139.6451254,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"cuisine:ja": "蕎麦",
+"name": "そば処 松月"
+}
+},
+{
+"type": "node",
+"id": 1691565235,
+"lat": 35.7775653,
+"lon": 139.6299089,
+"tags": {
+"amenity": "restaurant",
+"brand": "はなまるうどん",
+"brand:en": "Hanamarūdon",
+"brand:ja": "はなまるうどん",
+"brand:wikidata": "Q11275674",
+"brand:wikipedia": "ja:はなまるうどん",
+"check_date": "2026-10-31",
+"cuisine": "japanese;udon",
+"name": "はなまるうどん",
+"name:en": "Hanamarūdon",
+"name:ja": "はなまるうどん",
+"name:ja_rm": "Hanamaru Udon"
+}
+},
+{
+"type": "node",
+"id": 1691729350,
+"lat": 35.7774806,
+"lon": 139.6323581,
+"tags": {
+"amenity": "fast_food",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"check_date": "2026-10-31",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1691729428,
+"lat": 35.7777146,
+"lon": 139.6311377,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"cuisine": "japanese",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja_rm": "Matsuya",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"takeaway": "yes",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 1691729509,
+"lat": 35.7776982,
+"lon": 139.6309164,
+"tags": {
+"amenity": "restaurant",
+"brand": "リンガーハット",
+"brand:en": "Ringer Hut",
+"brand:ja": "リンガーハット",
+"brand:wikidata": "Q7334856",
+"brand:wikipedia": "en:Ringer Hut",
+"cuisine": "japanese",
+"name": "リンガーハット",
+"name:en": "Ringer Hut",
+"name:ja": "リンガーハット"
+}
+},
+{
+"type": "node",
+"id": 1691729527,
+"lat": 35.7778364,
+"lon": 139.6312383,
+"tags": {
+"amenity": "cafe",
+"check_date": "2026-10-31",
+"name": "カフェ・ディ・エスプレッソ珈琲館"
+}
+},
+{
+"type": "node",
+"id": 1691729575,
+"lat": 35.7778147,
+"lon": 139.630958,
+"tags": {
+"amenity": "fast_food",
+"brand": "かつや",
+"brand:en": "Katsuya",
+"brand:ja": "かつや",
+"brand:wikidata": "Q2855257",
+"brand:wikipedia": "ja:かつや",
+"check_date": "2026-10-31",
+"cuisine": "fried_food",
+"name": "かつや",
+"name:en": "Katsuya",
+"name:ja": "かつや",
+"name:ko": "카쯔야",
+"name:zh": "吉豚屋",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1691729744,
+"lat": 35.7777265,
+"lon": 139.6302043,
+"tags": {
+"addr:block_number": "21",
+"addr:city": "板橋区",
+"addr:housenumber": "3",
+"addr:neighbourhood": "成増二丁目",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "成増2丁目店",
+"brand": "DOUTOR",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトールコーヒーショップ",
+"name:en": "DOUTOR",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotoru Kohi Shoppu",
+"opening_hours": "Mo-Fr 07:30-19:00; Sa,Su,PH 08:00-18:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-3930-9399",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 1691729778,
+"lat": 35.7778255,
+"lon": 139.6310881,
+"tags": {
+"amenity": "fast_food",
+"brand": "てんや",
+"brand:en": "Tenya",
+"brand:ja": "てんや",
+"brand:wikidata": "Q11319830",
+"brand:wikipedia": "ja:テンコーポレーション",
+"check_date": "2026-10-31",
+"cuisine": "fries",
+"name": "てんや",
+"name:en": "Tenya",
+"name:ja": "てんや",
+"official_name": "天丼てんや",
+"official_name:en": "Tendon Tenya",
+"official_name:ja": "天丼てんや",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1691729824,
+"lat": 35.7778114,
+"lon": 139.6308963,
+"tags": {
+"amenity": "ice_cream",
+"brand": "バスキン・ロビンス",
+"brand:en": "Baskin-Robbins",
+"brand:ja": "バスキン・ロビンス",
+"brand:wikidata": "Q584601",
+"brand:wikipedia": "ja:バスキン・ロビンス",
+"cuisine": "ice_cream",
+"name": "サーティワンアイスクリーム",
+"name:en": "Baskin-Robbins",
+"name:ja": "サーティワンアイスクリーム",
+"name:ja_rm": "Sathiwan Aisukurimu"
+}
+},
+{
+"type": "node",
+"id": 1691729951,
+"lat": 35.777745,
+"lon": 139.6314542,
+"tags": {
+"amenity": "fast_food",
+"brand": "すき家",
+"brand:en": "Sukiya",
+"brand:ja": "すき家",
+"brand:wikidata": "Q6137375",
+"brand:wikipedia": "ja:すき家",
+"cuisine": "beef_bowl",
+"name": "すき家",
+"name:en": "Sukiya",
+"name:ja": "すき家",
+"name:ja_rm": "Sukiya",
+"takeaway": "yes",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 1691729983,
+"lat": 35.7776895,
+"lon": 139.6307863,
+"tags": {
+"alt_name:en": "Saint Marc Café",
+"amenity": "cafe",
+"brand": "サンマルクカフェ",
+"brand:en": "ST.MARC CAFÉ",
+"brand:ja": "サンマルクカフェ",
+"brand:wikidata": "Q11305989",
+"brand:wikipedia": "ja:サンマルクホールディングス",
+"cuisine": "coffee_shop",
+"name": "サンマルクカフェ",
+"name:en": "ST.MARC CAFÉ",
+"name:ja": "サンマルクカフェ",
+"name:ja_rm": "Sanmaruku Kafe",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1691994328,
+"lat": 35.7776153,
+"lon": 139.6292148,
+"tags": {
+"amenity": "fast_food",
+"brand": "なか卯",
+"brand:en": "Nakau",
+"brand:ja": "なか卯",
+"brand:wikidata": "Q11274132",
+"brand:wikipedia": "ja:なか卯",
+"cuisine": "udon",
+"name": "なか卯",
+"name:en": "Nakau",
+"name:ja": "なか卯",
+"name:ja_rm": "Nakau",
+"takeaway": "yes",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 1692706339,
+"lat": 35.7786122,
+"lon": 139.6325137,
+"tags": {
+"amenity": "fast_food",
+"branch": "成増駅北口店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"operator": "日本マクドナルド",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1692706365,
+"lat": 35.7786836,
+"lon": 139.632556,
+"tags": {
+"amenity": "restaurant",
+"branch": "成増駅前店",
+"brand": "ジョナサン",
+"brand:en": "Jonathan's",
+"brand:ja": "ジョナサン",
+"brand:wikidata": "Q11310628",
+"brand:wikipedia": "ja:ジョナサン (ファミリーレストラン)",
+"cuisine": "italian;japanese",
+"name": "ジョナサン",
+"name:en": "Jonathan's",
+"name:ja": "ジョナサン",
+"name:ja_rm": "jonasan",
+"operator": "すかいらーく"
+}
+},
+{
+"type": "node",
+"id": 1692823377,
+"lat": 35.7777459,
+"lon": 139.6315165,
+"tags": {
+"amenity": "restaurant",
+"check_date": "2026-10-31",
+"name": "福しん"
+}
+},
+{
+"type": "node",
+"id": 1692823378,
+"lat": 35.7777404,
+"lon": 139.6318987,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "High5"
+}
+},
+{
+"type": "node",
+"id": 1692823389,
+"lat": 35.7778482,
+"lon": 139.6316466,
+"tags": {
+"amenity": "restaurant",
+"name": "やまだや"
+}
+},
+{
+"type": "node",
+"id": 1692823412,
+"lat": 35.7776251,
+"lon": 139.6306582,
+"tags": {
+"amenity": "restaurant",
+"brand": "ガスト",
+"brand:en": "Gusto",
+"brand:ja": "ガスト",
+"brand:wikidata": "Q87724117",
+"cuisine": "western;japanese",
+"name": "ガスト",
+"name:en": "Gusto",
+"name:ja": "ガスト",
+"name:ja_rm": "Gasuto"
+}
+},
+{
+"type": "node",
+"id": 1692823415,
+"lat": 35.7778014,
+"lon": 139.6308151,
+"tags": {
+"amenity": "fast_food",
+"brand": "日高屋",
+"brand:en": "Hidakaya",
+"brand:ja": "日高屋",
+"brand:wikidata": "Q11326050",
+"brand:wikipedia": "ja:ハイデイ日高",
+"cuisine": "noodle",
+"name": "日高屋",
+"name:en": "Hidakaya",
+"name:ja": "日高屋",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1692823417,
+"lat": 35.7777045,
+"lon": 139.6317828,
+"tags": {
+"amenity": "restaurant",
+"name": "串かつ　でんがな"
+}
+},
+{
+"type": "node",
+"id": 1692823435,
+"lat": 35.7776729,
+"lon": 139.6307078,
+"tags": {
+"amenity": "restaurant",
+"check_date": "2026-10-31",
+"name": "らあめん花月嵐"
+}
+},
+{
+"type": "node",
+"id": 1692823468,
+"lat": 35.7780799,
+"lon": 139.6331942,
+"tags": {
+"addr:block_number": "11",
+"addr:city": "板橋区",
+"addr:housenumber": "3",
+"addr:neighbourhood": "成増三丁目",
+"addr:postcode": "175-0094",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "西友成増店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bahga",
+"opening_hours": "Mo-Su 09:00-22:00",
+"operator": "モスフードサービス",
+"phone": "+81-3-39302601",
+"smoking": "no",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 1694658512,
+"lat": 35.7725708,
+"lon": 139.6427294,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "sushi",
+"name": "すし田むら"
+}
+},
+{
+"type": "node",
+"id": 1694659593,
+"lat": 35.7710262,
+"lon": 139.6438505,
+"tags": {
+"amenity": "pub",
+"name": "酒楽"
+}
+},
+{
+"type": "node",
+"id": 1694725237,
+"lat": 35.7711692,
+"lon": 139.6449092,
+"tags": {
+"addr:block_number": "2",
+"addr:city": "板橋区",
+"addr:housenumber": "6",
+"addr:neighbourhood": "赤塚二丁目",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "下赤塚店",
+"brand": "ドトール",
+"brand:en": "DOUTOR",
+"brand:ja": "ドトール",
+"brand:wikidata": "Q11322732",
+"brand:wikipedia": "ja:ドトールコーヒーショップ",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトールコーヒーショップ",
+"name:en": "Doutor Coffee Shop",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotoru Kohi Shoppu",
+"opening_hours": "Mo-Fr 07:30-20:00; Sa-Su,PH 08:00-20:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-5968-8650",
+"short_name": "DCS",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 1694725557,
+"lat": 35.7710856,
+"lon": 139.6449795,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "福しん 下赤塚北口店"
+}
+},
+{
+"type": "node",
+"id": 1694725564,
+"lat": 35.7708467,
+"lon": 139.6451549,
+"tags": {
+"amenity": "fast_food",
+"name": "立食処 どん亭"
+}
+},
+{
+"type": "node",
+"id": 1694791686,
+"lat": 35.7696991,
+"lon": 139.6453422,
+"tags": {
+"amenity": "restaurant",
+"branch": "東武下赤塚駅前店",
+"brand": "CoCo壱番屋",
+"brand:en": "CoCo ICHIBANYA",
+"brand:ja": "CoCo壱番屋",
+"brand:wikidata": "Q5986105",
+"brand:wikipedia": "en:Ichibanya",
+"cuisine": "curry;japanese",
+"name": "CoCo壱番屋",
+"name:en": "CoCo ICHIBANYA",
+"name:ja": "CoCo壱番屋",
+"name:ja_rm": "Koko Ichiban-ya",
+"short_name": "ココイチ",
+"short_name:en": "CoCoICHI",
+"short_name:ja": "ココイチ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1694791725,
+"lat": 35.7702934,
+"lon": 139.6447818,
+"tags": {
+"amenity": "pub",
+"brand": "はなの舞",
+"brand:en": "Hananomai",
+"brand:ja": "はなの舞",
+"brand:wikidata": "Q88384850",
+"name": "はなの舞 下赤塚店",
+"name:en": "Hananomai",
+"name:ja": "はなの舞"
+}
+},
+{
+"type": "node",
+"id": 1694792182,
+"lat": 35.7706759,
+"lon": 139.6454842,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0092",
+"air_conditioning": "yes",
+"amenity": "fast_food",
+"branch": "下赤塚駅前店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"capacity": "53",
+"check_date": "2026-08-30",
+"cuisine": "burger",
+"drive_through": "no",
+"highchair": "yes",
+"internet_access": "wlan",
+"internet_access:fee": "customers",
+"level": "0",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"opening_hours": "06:00-24:00",
+"outdoor_seating": "no",
+"payment:cash": "yes",
+"payment:credit_cards": "yes",
+"payment:debit_cards": "yes",
+"phone": "+81 369098193",
+"smoking": "no",
+"takeaway": "yes",
+"website": "https://map.mcdonalds.co.jp/map/70506",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 1694792207,
+"lat": 35.7703858,
+"lon": 139.6454393,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0092",
+"air_conditioning": "yes",
+"amenity": "fast_food",
+"branch": "下赤塚店",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"check_date": "2026-08-30",
+"cuisine": "beef_bowl;curry",
+"drive_through": "no",
+"internet_access": "wlan",
+"internet_access:fee": "customers",
+"level": "0",
+"name": "松屋(マイカリー食堂併設)",
+"name:en": "Matsuya& My Curry Shokudo",
+"name:ja": "松屋",
+"name:ja_rm": "Matsuya",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"opening_hours": "24/7",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"outdoor_seating": "no",
+"payment:cash": "yes",
+"payment:credit_cards": "yes",
+"payment:debit_cards": "yes",
+"phone": "+81 90-2098-6942",
+"smoking": "no",
+"stroller": "limited",
+"takeaway": "yes",
+"website": "https://pkg.navitime.co.jp/matsuyafoods/spot/detail?code=0000002200",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 1695788948,
+"lat": 35.770619,
+"lon": 139.6448632,
+"tags": {
+"amenity": "restaurant",
+"name": "ぎょうざの満州"
+}
+},
+{
+"type": "node",
+"id": 1702284495,
+"lat": 35.7562605,
+"lon": 139.7005658,
+"tags": {
+"amenity": "pub",
+"name": "RIVER SIDE",
+"website": "http://riversidebeer.com/"
+}
+},
+{
+"type": "node",
+"id": 1702337269,
+"lat": 35.756743,
+"lon": 139.7017087,
+"tags": {
+"amenity": "restaurant",
+"name": "めんや宮田",
+"name:en": "Miyata's Noodles"
+}
+},
+{
+"type": "node",
+"id": 1702368951,
+"lat": 35.7566494,
+"lon": 139.6972562,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "昇家"
+}
+},
+{
+"type": "node",
+"id": 1702370631,
+"lat": 35.7558761,
+"lon": 139.6994474,
+"tags": {
+"amenity": "pub",
+"name": "酒飯場 十六貫"
+}
+},
+{
+"type": "node",
+"id": 1702375834,
+"lat": 35.7558108,
+"lon": 139.6957809,
+"tags": {
+"addr:block_number": "23",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "中板橋",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "中板橋北口店",
+"brand": "ドトール",
+"brand:en": "DOUTOR",
+"brand:ja": "ドトール",
+"brand:wikidata": "Q11322732",
+"brand:wikipedia": "ja:ドトールコーヒーショップ",
+"cuisine": "coffee_shop",
+"internet_access": "wlan",
+"name": "ドトールコーヒーショップ",
+"name:en": "Doutor Coffee Shop",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotōru Kōhī Shoppu",
+"opening_hours": "Mo-Sa 07:00-21:00; Su,PH 08:00-20:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-3964-6840",
+"short_name": "DCS",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 1702375835,
+"lat": 35.7563005,
+"lon": 139.6948984,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "french",
+"name": "カフェプース",
+"name:fr": "Cafe Pousse",
+"name:ja": "カフェプース"
+}
+},
+{
+"type": "node",
+"id": 1712499468,
+"lat": 35.7562941,
+"lon": 139.6977071,
+"tags": {
+"amenity": "pub",
+"name": "Bar Ponte",
+"name:en": "Bar Ponte"
+}
+},
+{
+"type": "node",
+"id": 1741662919,
+"lat": 35.7770135,
+"lon": 139.6872001,
+"tags": {
+"amenity": "cafe"
+}
+},
+{
+"type": "node",
+"id": 1741662958,
+"lat": 35.7762627,
+"lon": 139.6901715,
+"tags": {
+"amenity": "restaurant",
+"brand": "サイゼリヤ",
+"brand:en": "Saizeriya",
+"brand:ja": "サイゼリヤ",
+"brand:wikidata": "Q886564",
+"brand:wikipedia": "en:Saizeriya",
+"cuisine": "italian",
+"name": "サイゼリヤ",
+"name:en": "Saizeriya",
+"name:ja": "サイゼリヤ",
+"name:ja_rm": "Saizeriya"
+}
+},
+{
+"type": "node",
+"id": 1741662991,
+"lat": 35.7787021,
+"lon": 139.6860199,
+"tags": {
+"amenity": "cafe"
+}
+},
+{
+"type": "node",
+"id": 1741662996,
+"lat": 35.7772006,
+"lon": 139.6856819,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "拉麺アイオイ",
+"name:ja-Hira": "サンドリアン",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1741663041,
+"lat": 35.7855171,
+"lon": 139.6744971,
+"tags": {
+"amenity": "restaurant",
+"name": "魚屋路"
+}
+},
+{
+"type": "node",
+"id": 1741663061,
+"lat": 35.7775983,
+"lon": 139.6865821,
+"tags": {
+"amenity": "fast_food",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja-Hira": "マクドナルド",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"opening_hours": "24/7",
+"source": "image;Bing,2007-03-28",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1742505141,
+"lat": 35.7804621,
+"lon": 139.6952014,
+"tags": {
+"alt_name:en": "Kurazushi",
+"amenity": "fast_food",
+"brand": "くら寿司",
+"brand:en": "Kura Sushi",
+"brand:ja": "くら寿司",
+"brand:wikidata": "Q6445491",
+"cuisine": "sushi",
+"name": "くら寿司",
+"name:en": "Kura Sushi",
+"name:ja": "くら寿司",
+"name:ja_rm": "Kura-zushi",
+"official_name": "無添くら寿司",
+"official_name:en": "Muten Kura Sushi",
+"official_name:ja": "無添くら寿司",
+"takeaway": "yes",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 1742505172,
+"lat": 35.780835,
+"lon": 139.6943361,
+"tags": {
+"amenity": "restaurant",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 1744463743,
+"lat": 35.7774242,
+"lon": 139.6859035,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "japanese",
+"name": "ことぶき",
+"name:ja": "ことぶき"
+}
+},
+{
+"type": "node",
+"id": 1744463747,
+"lat": 35.7814705,
+"lon": 139.6889532,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese"
+}
+},
+{
+"type": "node",
+"id": 1744463751,
+"lat": 35.776081,
+"lon": 139.6953402,
+"tags": {
+"addr:block_number": "18",
+"addr:city": "板橋区",
+"addr:housenumber": "7",
+"addr:neighbourhood": "小豆沢二丁目",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "志村坂上店",
+"brand": "ドトールコーヒーショップ",
+"brand:en": "Doutor",
+"brand:wikidata": "Q11322732",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトールコーヒーショップ",
+"name:en": "Doutor Coffee Shop",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotōru Kōhī Shoppu",
+"opening_hours": "Mo-Sa 07:15-21:00; Su,PH 08:20-20:00",
+"operator": "ドトールコーヒー",
+"phone": "+81 3-3960-4471",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 1744463754,
+"lat": 35.781353,
+"lon": 139.6892536,
+"tags": {
+"amenity": "restaurant",
+"brand": "華屋与兵衛",
+"brand:en": "Hanaya Yohei",
+"brand:ja": "華屋与兵衛",
+"brand:wikidata": "Q11620063",
+"brand:wikipedia": "ja:華屋与兵衛 (レストラン)",
+"cuisine": "japanese",
+"name": "華屋与兵衛",
+"name:en": "Hanaya Yohei",
+"name:ja": "華屋与兵衛"
+}
+},
+{
+"type": "node",
+"id": 1749476130,
+"lat": 35.7777327,
+"lon": 139.6859828,
+"tags": {
+"amenity": "restaurant"
+}
+},
+{
+"type": "node",
+"id": 1749476148,
+"lat": 35.7784682,
+"lon": 139.68528,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "steak_house"
+}
+},
+{
+"type": "node",
+"id": 1749476158,
+"lat": 35.7798217,
+"lon": 139.6905694,
+"tags": {
+"amenity": "restaurant"
+}
+},
+{
+"type": "node",
+"id": 1749476169,
+"lat": 35.7790806,
+"lon": 139.6923261,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian"
+}
+},
+{
+"type": "node",
+"id": 1749476177,
+"lat": 35.777831,
+"lon": 139.6859793,
+"tags": {
+"amenity": "restaurant"
+}
+},
+{
+"type": "node",
+"id": 1785875472,
+"lat": 35.7916272,
+"lon": 139.6915925,
+"tags": {
+"addr:block_number": "12",
+"addr:city": "板橋区",
+"addr:housenumber": "12",
+"addr:neighbourhood": "舟渡一丁目",
+"addr:postcode": "174-0041",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "浮間舟渡駅前店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"cuisine": "burger",
+"drive_through": "no",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"opening_hours": "Mo-Su 06:00-23:00",
+"phone": "+81 3 5916 7066",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1785875473,
+"lat": 35.7916762,
+"lon": 139.6916419,
+"tags": {
+"amenity": "fast_food",
+"branch": "浮間舟渡店",
+"brand": "松のや",
+"brand:en": "Matsuya",
+"brand:ja": "松のや",
+"brand:zh": "松乃屋",
+"name": "松のや",
+"name:en": "Matsunoya",
+"name:ja": "松のや",
+"name:zh": "松乃屋",
+"not:brand:wikidata": "Q848773",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1881824289,
+"lat": 35.7466854,
+"lon": 139.7195121,
+"tags": {
+"amenity": "cafe",
+"name": "COLORADO",
+"source": "image;Bing,2007-04"
+}
+},
+{
+"type": "node",
+"id": 1881824290,
+"lat": 35.7465428,
+"lon": 139.7193817,
+"tags": {
+"amenity": "pub",
+"layer": "1",
+"level": "1",
+"name": "すなっく 華",
+"name:en": "Hana",
+"source": "image;Bing,2007-04"
+}
+},
+{
+"type": "node",
+"id": 1881824291,
+"lat": 35.7465294,
+"lon": 139.7194201,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;soba",
+"name": "そば処 うえ竹",
+"name:en": "Uetake Soba",
+"source": "image;Bing,2007-04"
+}
+},
+{
+"type": "node",
+"id": 1881824294,
+"lat": 35.7465745,
+"lon": 139.7194139,
+"tags": {
+"amenity": "pub",
+"layer": "1",
+"level": "1",
+"name": "スナック ルポ",
+"name:en": "Rupo",
+"source": "image;Bing,2007-04"
+}
+},
+{
+"type": "node",
+"id": 1881824295,
+"lat": 35.7465043,
+"lon": 139.719359,
+"tags": {
+"amenity": "pub",
+"layer": "1",
+"level": "1",
+"name": "スナック 恋",
+"name:en": "Koi",
+"source": "image;Bing,2007-04"
+}
+},
+{
+"type": "node",
+"id": 1881824371,
+"lat": 35.7466102,
+"lon": 139.7194613,
+"tags": {
+"amenity": "restaurant",
+"cuisine:ja": "焼肉",
+"source": "image;Bing,2007-04"
+}
+},
+{
+"type": "node",
+"id": 1881824460,
+"lat": 35.7471919,
+"lon": 139.7194919,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"cuisine": "beef_bowl",
+"cuisine:ja": "牛丼",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja_rm": "Matsuya",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"source": "image;Bing,2007-04",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1883427747,
+"lat": 35.7634842,
+"lon": 139.6759149,
+"tags": {
+"addr:block_number": "36",
+"addr:city": "板橋区",
+"addr:housenumber": "8",
+"addr:neighbourhood": "上板橋二丁目",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "上板橋南口店",
+"brand": "ドトール",
+"brand:en": "DOUTOR",
+"brand:ja": "ドトール",
+"brand:wikidata": "Q11322732",
+"brand:wikipedia": "ja:ドトールコーヒーショップ",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトールコーヒーショップ",
+"name:en": "Doutor Coffee Shop",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotōru Kōhī Shoppu",
+"opening_hours": "Mo-Fr 07:30-21:00; Sa-Su,PH 08:00-20:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-3932-8751",
+"short_name": "DCS",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 1889528940,
+"lat": 35.7892239,
+"lon": 139.6619131,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平駅前店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "en:McDonald's",
+"cuisine": "burger",
+"drive_through": "no",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja-Hira": "まくどなるど",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"operator": "日本マクドナルド",
+"source": "GSI/KIBAN 2500;NARO",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1889528943,
+"lat": 35.7892625,
+"lon": 139.6613182,
+"tags": {
+"addr:block_number": "4",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "高島平八丁目",
+"addr:postcode": "175-0082",
+"addr:province": "東京都",
+"alt_name": "Kentucky Fried Chicken",
+"alt_name:en": "Kentucky Fried Chicken",
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "ケンタッキーフライドチキン",
+"brand:en": "KFC",
+"brand:ja": "ケンタッキーフライドチキン",
+"brand:wikidata": "Q524757",
+"brand:wikipedia": "ja:KFCコーポレーション",
+"cuisine": "chicken",
+"drive_through": "no",
+"internet_access": "wlan",
+"level": "0",
+"name": "ケンタッキーフライドチキン",
+"name:en": "KFC",
+"name:ja": "ケンタッキーフライドチキン",
+"name:ja-Hira": "けんたっきーふらいどちきん",
+"name:ja_rm": "Kentakkī Furaidochikin",
+"opening_hours": "Mo-Su 07:00-22:00",
+"operator": "日本ケンタッキー・フライド・チキン",
+"phone": "+81-3-53997531",
+"source": "Bing 2010;(URL)",
+"takeaway": "yes",
+"website": "https://www.kfc.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 1889591173,
+"lat": 35.7483501,
+"lon": 139.7020469,
+"tags": {
+"amenity": "fast_food",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"source": "Bing 2010",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 1889591188,
+"lat": 35.7487006,
+"lon": 139.7020321,
+"tags": {
+"addr:block_number": "5",
+"addr:city": "板橋区",
+"addr:housenumber": "9",
+"addr:neighbourhood": "大山町",
+"addr:postcode": "173-0023",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "大山駅前店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bahga",
+"opening_hours": "Mo-Su 06:30-02:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-5917-0780",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 1900255298,
+"lat": 35.7775459,
+"lon": 139.6870132,
+"tags": {
+"amenity": "pub",
+"brand": "はなの舞",
+"brand:en": "Hananomai",
+"brand:ja": "はなの舞",
+"brand:wikidata": "Q88384850",
+"name": "はなの舞",
+"name:en": "Hananomai",
+"name:ja": "はなの舞",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1900408925,
+"lat": 35.7778363,
+"lon": 139.685879,
+"tags": {
+"amenity": "pub",
+"layer": "1",
+"level": "1",
+"name": "スナック みやび",
+"name:ja": "スナック みやび",
+"name:ja-Hira": "スナック みやび",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1900408933,
+"lat": 35.7777766,
+"lon": 139.6856593,
+"tags": {
+"amenity": "cafe",
+"internet_access": "yes",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1900408974,
+"lat": 35.7778112,
+"lon": 139.6858854,
+"tags": {
+"amenity": "pub",
+"brand": "養老乃瀧",
+"name": "養老乃瀧",
+"name:en": "Yoronotaki",
+"name:ja": "養老乃瀧",
+"name:ja_rm": "Yoro no Taki",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1900487776,
+"lat": 35.7771363,
+"lon": 139.6853986,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "regional",
+"cuisine:ja": "お好み焼き",
+"name": "こまや",
+"name:en": "Komaya",
+"name:ja": "こまや",
+"name:ja-Hira": "こまや",
+"name:ja_rm": "Komaya",
+"opening_hours": "17:00-24:00",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1900487797,
+"lat": 35.7771717,
+"lon": 139.685534,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "noodle",
+"cuisine:ja": "札幌ラーメン",
+"name": "どさん娘",
+"name:ja": "どさん娘",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1900487811,
+"lat": 35.7771536,
+"lon": 139.6854594,
+"tags": {
+"amenity": "restaurant",
+"name": "ジロー'sテーブル",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1902292102,
+"lat": 35.7786055,
+"lon": 139.6860758,
+"tags": {
+"amenity": "restaurant",
+"name": "萬盛庵",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903147427,
+"lat": 35.776135,
+"lon": 139.6931521,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "noodle;soba;udon;ramen",
+"name": "立ち食いそば おくちゃん",
+"name:en": "Okuchan",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903178791,
+"lat": 35.7752009,
+"lon": 139.6956678,
+"tags": {
+"amenity": "pub",
+"layer": "1",
+"level": "1",
+"name": "道とん堀",
+"name:en": "Dotonbori",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903244639,
+"lat": 35.7725483,
+"lon": 139.6987623,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903244674,
+"lat": 35.7727808,
+"lon": 139.6985395,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903254302,
+"lat": 35.7719337,
+"lon": 139.6997947,
+"tags": {
+"amenity": "cafe",
+"name": "LEAVES",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903254360,
+"lat": 35.7720593,
+"lon": 139.6996672,
+"tags": {
+"amenity": "restaurant",
+"name": "親方",
+"name:en": "Oyakata",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1903923148,
+"lat": 35.7687507,
+"lon": 139.7025448,
+"tags": {
+"brand": "京樽",
+"brand:en": "Kyotaru",
+"brand:ja": "京樽",
+"brand:wikidata": "Q11374503",
+"cuisine": "sushi",
+"cuisine:ja": "寿司",
+"name": "京樽",
+"name:en": "Kyotaru",
+"name:ja": "京樽",
+"shop": "deli",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1904824676,
+"lat": 35.7668108,
+"lon": 139.7036984,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;ramen",
+"source": "image;Bing,2007-03-28"
+}
+},
+{
+"type": "node",
+"id": 1929788005,
+"lat": 35.7489469,
+"lon": 139.7019721,
+"tags": {
+"amenity": "cafe",
+"branch": "大山駅前店",
+"brand": "エクセルシオール カフェ",
+"brand:en": "EXCELSIOR CAFFÉ",
+"brand:ja": "エクセルシオール カフェ",
+"brand:wikidata": "Q11289828",
+"brand:wikipedia": "ja:エクセルシオール カフェ",
+"cuisine": "coffee_shop",
+"level": "0",
+"name": "エクセルシオール カフェ",
+"name:en": "EXCELSIOR CAFE",
+"name:ja": "エクセルシオール カフェ",
+"name:ja_rm": "Ekuserusiohru Kafe",
+"opening_hours": "Mo-Fr 07:00-22:00; Sa,Su,PH 08:00-21:00",
+"operator": "ドトールコーヒー",
+"phone": "+81-3-39737801",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "http://www.excelsiorcaffe.com/"
+}
+},
+{
+"type": "node",
+"id": 1940482628,
+"lat": 35.7775569,
+"lon": 139.6320901,
+"tags": {
+"addr:block_number": "15",
+"addr:city": "板橋区",
+"addr:housenumber": "10",
+"addr:neighbourhood": "成増二丁目",
+"addr:postcode": "175-0094",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "成増店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"level": "0",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bahga",
+"opening_hours": "Mo-Su 06:30-01:00",
+"operator": "モスフードサービス",
+"phone": "+81-3-39751582",
+"smoking": "separated",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 1944041730,
+"lat": 35.7489304,
+"lon": 139.7024247,
+"tags": {
+"addr:block_number": "59",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "大山東町",
+"addr:postcode": "173-0014",
+"addr:province": "東京都",
+"alt_name:en": "Kentucky Fried Chicken",
+"amenity": "fast_food",
+"branch": "大山店",
+"brand": "ケンタッキーフライドチキン",
+"brand:en": "KFC",
+"brand:ja": "ケンタッキーフライドチキン",
+"brand:wikidata": "Q524757",
+"brand:wikipedia": "ja:KFCコーポレーション",
+"cuisine": "chicken",
+"drive_through": "no",
+"internet_access": "no",
+"level": "0",
+"name": "ケンタッキーフライドチキン",
+"name:en": "KFC",
+"name:ja": "ケンタッキーフライドチキン",
+"name:ja_rm": "Kentakki Furaidochikin",
+"opening_hours": "Mo-Fr 10:00-22:30; Sa,Su 10:00-22:00",
+"operator": "日本ケンタッキー・フライド・チキン",
+"phone": "+81-3-52487068",
+"source": "Bing 2010;(URL)",
+"takeaway": "yes",
+"website": "https://www.kfc.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 1998917572,
+"lat": 35.7844097,
+"lon": 139.6668362,
+"tags": {
+"addr:block_number": "42",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "高島平一丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "高島平1丁目店",
+"brand": "ほっともっと",
+"brand:en": "Hotto Motto",
+"brand:ja": "ほっともっと",
+"brand:wikidata": "Q10850949",
+"brand:wikipedia": "ja:ほっともっと",
+"cuisine": "japanese",
+"fax": "+81-3-53982091",
+"level": "0",
+"name": "ほっともっと",
+"name:en": "Hotto Motto",
+"name:ja": "ほっともっと",
+"name:ja-Hira": "ほっともっと",
+"name:ja_rm": "Hottomotto",
+"opening_hours": "Mo-Su 09:00-23:00",
+"operator": "プレナス",
+"phone": "+81-3-53982141",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.hottomotto.com/"
+}
+},
+{
+"type": "node",
+"id": 1999066907,
+"lat": 35.7619662,
+"lon": 139.6750688,
+"tags": {
+"addr:block_number": "31",
+"addr:city": "板橋区",
+"addr:housenumber": "16",
+"addr:neighbourhood": "上板橋二丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "上板橋店",
+"brand": "ほっともっと",
+"brand:en": "Hotto Motto",
+"brand:ja": "ほっともっと",
+"brand:wikidata": "Q10850949",
+"brand:wikipedia": "ja:ほっともっと",
+"cuisine": "japanese",
+"fax": "+81-3-59451232",
+"level": "0",
+"name": "ほっともっと",
+"name:en": "Hotto Motto",
+"name:ja": "ほっともっと",
+"name:ja_rm": "Hottomotto",
+"opening_hours": "Mo-Su 07:00-23:00",
+"operator": "プレナス",
+"phone": "+81-3-59451231",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.hottomotto.com/"
+}
+},
+{
+"type": "node",
+"id": 1999073980,
+"lat": 35.7518575,
+"lon": 139.7108268,
+"tags": {
+"addr:block_number": "9",
+"addr:city": "板橋区",
+"addr:housenumber": "12",
+"addr:neighbourhood": "板橋三丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "板橋仲宿店",
+"brand": "ほっともっと",
+"brand:en": "Hotto Motto",
+"brand:ja": "ほっともっと",
+"brand:wikidata": "Q10850949",
+"brand:wikipedia": "ja:ほっともっと",
+"cuisine": "japanese",
+"fax": "+81-3-59443816",
+"level": "0",
+"name": "ほっともっと",
+"name:en": "Hotto Motto",
+"name:ja": "ほっともっと",
+"name:ja_rm": "Hottomotto",
+"opening_hours": "Mo-Su 10:00-22:00",
+"operator": "プレナス",
+"phone": "+81-3-59443815",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.hottomotto.com/"
+}
+},
+{
+"type": "node",
+"id": 1999168235,
+"lat": 35.7910077,
+"lon": 139.657204,
+"tags": {
+"addr:block_number": "19",
+"addr:city": "板橋区",
+"addr:housenumber": "13",
+"addr:neighbourhood": "高島平七丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "高島平7丁目",
+"brand": "ほっかほっか亭",
+"brand:en": "Hokka Hokka Tei",
+"brand:ja": "ほっかほっか亭",
+"brand:wikidata": "Q5878035",
+"cuisine": "japanese",
+"fax": "+81-3-59042051",
+"level": "0",
+"name": "ほっかほっか亭",
+"name:en": "Hokka Hokka Tei",
+"name:ja": "ほっかほっか亭",
+"name:ja_rm": "Hokkahokka-tei",
+"opening_hours": "Mo-Su 09:00-23:00",
+"operator": "ほっかほっか亭総本部",
+"phone": "+81-3-59042050",
+"shop": "deli",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.hokkahokkatei.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 1999305638,
+"lat": 35.7836477,
+"lon": 139.672589,
+"tags": {
+"addr:block_number": "30",
+"addr:city": "板橋区",
+"addr:housenumber": "10",
+"addr:neighbourhood": "高島平一丁目",
+"addr:province": "東京都",
+"alt_name": "かまどや",
+"amenity": "fast_food",
+"branch": "高島平1丁目店",
+"brand": "本家かまどや",
+"brand:en": "Honke Kamadoya",
+"brand:ja": "本家かまどや",
+"brand:wikidata": "Q11520140",
+"brand:wikipedia": "ja:本家かまどや",
+"cuisine": "japanese",
+"level": "0",
+"name": "本家かまどや",
+"name:en": "Honke Kamadoya",
+"name:ja": "本家かまどや",
+"name:ja_rm": "Honke Kamado-ya",
+"operator": "本家かまどや",
+"phone": "+81-3-5398-2731",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.honkekamadoya.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 1999374934,
+"lat": 35.7746338,
+"lon": 139.704525,
+"tags": {
+"addr:block_number": "1",
+"addr:city": "板橋区",
+"addr:housenumber": "21",
+"addr:neighbourhood": "小豆沢一丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "赤羽西六郵便局前店",
+"brand": "本家かまどや",
+"cuisine": "japanese",
+"level": "0",
+"name": "本家かまどや",
+"name:en": "Honkekamadoya",
+"name:ja": "本家かまどや",
+"name:ja_rm": "Honke Kamado-ya",
+"operator": "本家かまどや",
+"phone": "+81-3-39606877",
+"source": "(URL)",
+"website": "https://www.honkekamadoya.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 2010194456,
+"lat": 35.7699681,
+"lon": 139.6610971,
+"tags": {
+"addr:block_number": "6",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "徳丸二丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "イオン板橋店",
+"brand": "サブウェイ",
+"brand:en": "Subway",
+"brand:ja": "サブウェイ",
+"brand:wikidata": "Q244457",
+"brand:wikipedia": "ja:サブウェイ",
+"cuisine": "sandwich",
+"fax": "+81-3-69066615",
+"level": "4",
+"name": "サブウェイ",
+"name:en": "Subway",
+"name:ja": "サブウェイ",
+"name:ja_rm": "Sabuwei",
+"opening_hours": "Mo-Su 10:00-22:00",
+"operator": "日本サブウェイ",
+"phone": "+81-3-69066615",
+"source": "(URL)",
+"takeaway": "yes",
+"website": "https://www.subway.co.jp/",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 2016095062,
+"lat": 35.7802726,
+"lon": 139.6514933,
+"tags": {
+"addr:block_number": "6",
+"addr:city": "板橋区",
+"addr:housenumber": "10",
+"addr:neighbourhood": "四葉二丁目",
+"addr:postcode": "175-0084",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "板橋四葉店",
+"brand": "コメダ珈琲店",
+"brand:en": "KOMEDA'S Coffee",
+"brand:ja": "コメダ珈琲店",
+"brand:wikidata": "Q11302679",
+"brand:wikipedia": "ja:コメダ",
+"cuisine": "coffee_shop",
+"name": "コメダ珈琲店",
+"name:en": "Komeda's Coffee",
+"name:ja": "コメダ珈琲店",
+"name:ja-Hira": "こめだこーひーてん",
+"name:ja_rm": "Komeda Kohīten",
+"opening_hours": "Mo-Su 07:00-23:00",
+"operator": "コメダ",
+"phone": "+81-3-59671555",
+"source": "Bing 2009; (URL)",
+"takeaway": "yes",
+"website": "https://www.komeda.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 2164196868,
+"lat": 35.7805119,
+"lon": 139.6523555,
+"tags": {
+"amenity": "restaurant",
+"branch": "四葉店",
+"brand": "サイゼリヤ",
+"brand:en": "Saizeriya",
+"brand:ja": "サイゼリヤ",
+"brand:wikidata": "Q886564",
+"brand:wikipedia": "en:Saizeriya",
+"cuisine": "italian",
+"name": "サイゼリヤ",
+"name:en": "Saizeriya",
+"name:ja": "サイゼリヤ",
+"name:ja-Hira": "さいぜりや",
+"name:ja_rm": "Saizeriya",
+"operator": "サイゼリヤ"
+}
+},
+{
+"type": "node",
+"id": 2164225136,
+"lat": 35.7802178,
+"lon": 139.6505233,
+"tags": {
+"amenity": "restaurant",
+"branch": "板橋四葉店",
+"brand": "ココス",
+"brand:en": "Coco's",
+"brand:ja": "ココス",
+"brand:wikidata": "Q11301951",
+"brand:wikipedia": "ja:ココスジャパン",
+"cuisine": "western;japanese",
+"name": "ココス",
+"name:en": "Coco's",
+"name:ja": "ココス",
+"name:ja-Hira": "ここす",
+"name:ja_rm": "Kokosu",
+"operator": "ココスジャパン"
+}
+},
+{
+"type": "node",
+"id": 2166406334,
+"lat": 35.7814512,
+"lon": 139.6693958,
+"tags": {
+"amenity": "restaurant",
+"branch": "高島平店",
+"name": "味の民芸"
+}
+},
+{
+"type": "node",
+"id": 2166927833,
+"lat": 35.7825501,
+"lon": 139.6656285,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "銚子丸",
+"brand:en": "Choushimaru",
+"brand:ja": "銚子丸",
+"brand:wikidata": "Q11650214",
+"brand:wikipedia": "ja:銚子丸",
+"cuisine": "sushi",
+"name": "銚子丸",
+"name:en": "Choushimaru",
+"name:ja": "銚子丸",
+"official_name": "すし銚子丸",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2166927872,
+"lat": 35.7824192,
+"lon": 139.6655665,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"cuisine": "beef_bowl",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja-Hira": "まつや",
+"name:ja_rm": "Matsuya",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2228720110,
+"lat": 35.7794049,
+"lon": 139.6825336,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "台北餃子専門店"
+}
+},
+{
+"type": "node",
+"id": 2266782486,
+"lat": 35.7758385,
+"lon": 139.6808664,
+"tags": {
+"amenity": "restaurant",
+"branch": "板橋店",
+"brand": "ロイヤルホスト",
+"brand:en": "Royal Host",
+"brand:ja": "ロイヤルホスト",
+"brand:wikidata": "Q11120884",
+"cuisine": "japanese;italian;french",
+"name": "ロイヤルホスト",
+"name:en": "Royal Host",
+"name:ja": "ロイヤルホスト",
+"website": "https://locations.royalhost.jp/detail/109207/"
+}
+},
+{
+"type": "node",
+"id": 2397987559,
+"lat": 35.756333,
+"lon": 139.696662,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "らあめん つけそば 頂",
+"name:en": "Ramen Itadaki",
+"outdoor_seating": "no",
+"smoking": "yes"
+}
+},
+{
+"type": "node",
+"id": 2419413110,
+"lat": 35.7776446,
+"lon": 139.6867847,
+"tags": {
+"amenity": "pub",
+"name": "妻籠"
+}
+},
+{
+"type": "node",
+"id": 2419413111,
+"lat": 35.777662,
+"lon": 139.6868277,
+"tags": {
+"amenity": "pub",
+"name": "いろは"
+}
+},
+{
+"type": "node",
+"id": 2419413242,
+"lat": 35.7776882,
+"lon": 139.6869349,
+"tags": {
+"amenity": "fast_food",
+"name": "金太郎"
+}
+},
+{
+"type": "node",
+"id": 2419413778,
+"lat": 35.777662,
+"lon": 139.6867204,
+"tags": {
+"amenity": "fast_food",
+"name": "丼丸"
+}
+},
+{
+"type": "node",
+"id": 2419414093,
+"lat": 35.7772704,
+"lon": 139.685905,
+"tags": {
+"amenity": "pub",
+"name": "三丁目"
+}
+},
+{
+"type": "node",
+"id": 2446038045,
+"lat": 35.7898185,
+"lon": 139.6633385,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平駅前店",
+"brand": "すき家",
+"brand:en": "Sukiya",
+"brand:ja": "すき家",
+"brand:wikidata": "Q6137375",
+"brand:wikipedia": "ja:すき家",
+"cuisine": "beef_bowl",
+"name": "すき家",
+"name:en": "Sukiya",
+"name:ja": "すき家",
+"name:ja-Hira": "すきや",
+"name:ja_rm": "Sukiya",
+"operator": "ゼンショー",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2466722963,
+"lat": 35.7772615,
+"lon": 139.6810165,
+"tags": {
+"amenity": "restaurant",
+"branch": "板橋相生店",
+"brand": "バーミヤン",
+"brand:en": "Bamiyan",
+"brand:ja": "バーミヤン",
+"brand:wikidata": "Q11328598",
+"brand:wikipedia": "ja:バーミヤン (レストランチェーン)",
+"cuisine": "chinese",
+"name": "バーミヤン",
+"name:en": "Bamiyan",
+"name:ja": "バーミヤン"
+}
+},
+{
+"type": "node",
+"id": 2466722964,
+"lat": 35.7780965,
+"lon": 139.6822818,
+"tags": {
+"amenity": "restaurant",
+"branch": "板橋坂下店",
+"brand": "ガスト",
+"brand:en": "Gusto",
+"brand:ja": "ガスト",
+"brand:wikidata": "Q87724117",
+"cuisine": "western;japanese",
+"name": "ガスト",
+"name:en": "Gusto",
+"name:ja": "ガスト"
+}
+},
+{
+"type": "node",
+"id": 2467354204,
+"lat": 35.7802067,
+"lon": 139.6593626,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "爽風庵 槇"
+}
+},
+{
+"type": "node",
+"id": 2577031197,
+"lat": 35.7522495,
+"lon": 139.6925635,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese"
+}
+},
+{
+"type": "node",
+"id": 2577031571,
+"lat": 35.7542227,
+"lon": 139.6891759,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "thai"
+}
+},
+{
+"type": "node",
+"id": 2594264269,
+"lat": 35.7799191,
+"lon": 139.6463873,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "french",
+"name": "blanc clochette"
+}
+},
+{
+"type": "node",
+"id": 2602827760,
+"lat": 35.7688896,
+"lon": 139.7025251,
+"tags": {
+"amenity": "fast_food",
+"branch": "本蓮沼店",
+"brand": "松乃家",
+"capacity": "33",
+"level": "0",
+"name": "松乃家",
+"name:en": "Matsunoya",
+"name:ja": "松乃家",
+"name:ja_rm": "Matsunoya",
+"phone": "+81-3-5916-6150",
+"source": "survey"
+}
+},
+{
+"type": "node",
+"id": 2602850798,
+"lat": 35.7683698,
+"lon": 139.7022279,
+"tags": {
+"amenity": "fast_food",
+"branch": "本蓮沼店",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"capacity": "20",
+"cuisine": "beef_bowl",
+"level": "0",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja_rm": "Matsuya",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"phone": "+81-3-5914-2322",
+"source": "survey",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2609741892,
+"lat": 35.7878952,
+"lon": 139.6611087,
+"tags": {
+"addr:block_number": "33",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "高島平二丁目",
+"addr:postcode": "175-0082",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"level": "1",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bahga",
+"opening_hours": "Mo-Su 09:00-21:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-3559-7005",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 2609853250,
+"lat": 35.783062,
+"lon": 139.6662007,
+"tags": {
+"amenity": "restaurant",
+"branch": "高島平店",
+"brand": "丸源ラーメン",
+"brand:en": "Marugen Ramen",
+"brand:ja": "丸源ラーメン",
+"brand:wikidata": "Q99735903",
+"cuisine": "ramen",
+"name": "丸源ラーメン",
+"name:en": "Marugen Ramen",
+"name:ja": "丸源ラーメン"
+}
+},
+{
+"type": "node",
+"id": 2612564454,
+"lat": 35.7848843,
+"lon": 139.6589101,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平南店",
+"brand": "オリジン弁当",
+"name": "オリジン弁当",
+"name:en": "Origin Bento",
+"name:ja": "オリジン弁当",
+"name:ja-Hira": "おりじんべんとう",
+"name:ja_rm": "Origin Bentō",
+"operator": "オリジン東秀",
+"shop": "deli",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2623353456,
+"lat": 35.7813931,
+"lon": 139.6554276,
+"tags": {
+"amenity": "fast_food",
+"branch": "板橋徳丸店",
+"brand": "はま寿司",
+"brand:en": "Hamazushi",
+"brand:ja": "はま寿司",
+"brand:wikidata": "Q17220385",
+"brand:wikipedia": "ja:はま寿司",
+"cuisine": "sushi",
+"name": "はま寿司",
+"name:en": "Hamazushi",
+"name:ja": "はま寿司",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452799,
+"lat": 35.7690218,
+"lon": 139.6611622,
+"tags": {
+"amenity": "restaurant",
+"branch": "東武練馬駅前店",
+"brand": "CoCo壱番屋",
+"brand:en": "CoCo ICHIBANYA",
+"brand:ja": "CoCo壱番屋",
+"brand:wikidata": "Q5986105",
+"brand:wikipedia": "ja:壱番屋",
+"cuisine": "curry;japanese",
+"name": "CoCo壱番屋",
+"name:en": "CoCo ICHIBANYA",
+"name:ja": "CoCo壱番屋",
+"name:ja-Hira": "ここいちばんや",
+"name:ja_rm": "Koko Ichiban-ya",
+"operator": "壱番屋",
+"short_name": "ココイチ",
+"short_name:en": "CoCoICHI",
+"short_name:ja": "ココイチ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452800,
+"lat": 35.7689387,
+"lon": 139.661708,
+"tags": {
+"amenity": "restaurant",
+"branch": "東武練馬駅前店",
+"brand": "ガスト",
+"brand:en": "Gusto",
+"brand:ja": "ガスト",
+"brand:wikidata": "Q87724117",
+"cuisine": "western;japanese",
+"name": "ガスト",
+"name:en": "Gusto",
+"name:ja": "ガスト",
+"name:ja-Hira": "がすと",
+"name:ja_rm": "Gasuto",
+"operator": "すかいらーく"
+}
+},
+{
+"type": "node",
+"id": 2639452801,
+"lat": 35.769072,
+"lon": 139.6613572,
+"tags": {
+"alt_name:en": "Kentucky Fried Chicken",
+"amenity": "fast_food",
+"branch": "東武練馬駅前店",
+"brand": "ケンタッキーフライドチキン",
+"brand:en": "KFC",
+"brand:ja": "ケンタッキーフライドチキン",
+"brand:wikidata": "Q524757",
+"brand:wikipedia": "ja:KFCコーポレーション",
+"cuisine": "chicken",
+"name": "ケンタッキーフライドチキン",
+"name:en": "KFC",
+"name:ja": "ケンタッキーフライドチキン",
+"name:ja-Hira": "けんたっきーふらいどちきん",
+"name:ja_rm": "Kentakkī Furaidochikin",
+"operator": "日本ケンタッキー・フライド・チキン",
+"phone": "+81 3-5922-1557",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452923,
+"lat": 35.7690719,
+"lon": 139.6611044,
+"tags": {
+"amenity": "fast_food",
+"branch": "東武練馬店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"drive_through": "no",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"name:ja-Hira": "まくどなるど",
+"name:ja_rm": "Makudonarudo",
+"name:ko": "맥도날드",
+"operator": "日本マクドナルド",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452924,
+"lat": 35.7692137,
+"lon": 139.6609423,
+"tags": {
+"amenity": "fast_food",
+"branch": "東武練馬ショップ",
+"brand": "ミスタードーナツ",
+"brand:en": "Mister Donut",
+"brand:ja": "ミスタードーナツ",
+"brand:wikidata": "Q1065819",
+"brand:wikipedia": "en:Mister Donut",
+"cuisine": "donut",
+"name": "ミスタードーナツ",
+"name:en": "Mister Donut",
+"name:ja": "ミスタードーナツ",
+"name:ja-Hira": "みすたーどーなつ",
+"name:ja_rm": "Misutā Dōnatsu",
+"operator": "ダスキン",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452925,
+"lat": 35.7691131,
+"lon": 139.6615531,
+"tags": {
+"amenity": "restaurant",
+"branch": "東武練馬駅前店",
+"brand": "大戸屋",
+"brand:en": "Ootoya",
+"brand:ja": "大戸屋",
+"brand:wikidata": "Q11435522",
+"brand:wikipedia": "ja:大戸屋ホールディングス",
+"brand:zh": "大戶屋",
+"cuisine": "japanese",
+"name": "大戸屋",
+"name:en": "Ootoya",
+"name:ja": "大戸屋",
+"name:zh": "大戶屋"
+}
+},
+{
+"type": "node",
+"id": 2639452926,
+"lat": 35.7692436,
+"lon": 139.6606616,
+"tags": {
+"amenity": "fast_food",
+"branch": "東武練馬店",
+"brand": "てんや",
+"brand:en": "Tenya",
+"brand:ja": "てんや",
+"brand:wikidata": "Q11319830",
+"brand:wikipedia": "ja:テンコーポレーション",
+"cuisine": "fries",
+"name": "てんや",
+"name:en": "Tenya",
+"name:ja": "てんや",
+"official_name": "天丼てんや",
+"official_name:en": "Tendon Tenya",
+"official_name:ja": "天丼てんや",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452927,
+"lat": 35.7691627,
+"lon": 139.6610036,
+"tags": {
+"amenity": "fast_food",
+"branch": "東武練馬店",
+"brand": "日高屋",
+"brand:en": "Hidakaya",
+"brand:ja": "日高屋",
+"brand:wikidata": "Q11326050",
+"brand:wikipedia": "ja:ハイデイ日高",
+"cuisine": "noodle",
+"name": "日高屋",
+"name:en": "Hidakaya",
+"name:ja": "日高屋",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452928,
+"lat": 35.7689981,
+"lon": 139.6609695,
+"tags": {
+"amenity": "fast_food",
+"branch": "東武練馬店",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"cuisine": "beef_bowl",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja-Hira": "まつや",
+"name:ja_rm": "Matsuya",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639452929,
+"lat": 35.7691173,
+"lon": 139.6613043,
+"tags": {
+"amenity": "restaurant",
+"branch": "徳丸店",
+"cuisine": "chinese",
+"name": "水晶楼"
+}
+},
+{
+"type": "node",
+"id": 2639452931,
+"lat": 35.7689054,
+"lon": 139.6614478,
+"tags": {
+"amenity": "pub",
+"branch": "東武練馬北口駅前店",
+"brand": "魚民",
+"brand:en": "Uotami",
+"brand:ja": "魚民",
+"brand:wikidata": "Q11673981",
+"name": "魚民",
+"name:en": "Uotami",
+"name:ja": "魚民",
+"name:ja-Hira": "うおたみ",
+"name:ja_rm": "Uotami",
+"operator": "モンテローザ"
+}
+},
+{
+"type": "node",
+"id": 2639548539,
+"lat": 35.7695542,
+"lon": 139.6609514,
+"tags": {
+"addr:block_number": "6",
+"addr:city": "板橋区",
+"addr:housename": "イオン板橋",
+"addr:housenumber": "1",
+"addr:neighbourhood": "徳丸二丁目",
+"addr:postcode": "175-0083",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "イオン板橋店",
+"brand": "スターバックス",
+"brand:en": "Starbucks",
+"brand:ja": "スターバックス",
+"brand:wikidata": "Q37158",
+"brand:wikipedia": "ja:スターバックス",
+"cuisine": "coffee_shop",
+"drive_through": "no",
+"internet_access": "wlan",
+"name": "スターバックス",
+"name:en": "Starbucks",
+"name:ja": "スターバックス",
+"name:ja_rm": "Sutah-bakkusu",
+"official_name": "スターバックスコーヒー",
+"official_name:en": "Starbucks Coffee",
+"official_name:ja": "スターバックスコーヒー",
+"opening_hours": "Mo-Th 08:00-22:00; Fr-Su,PH 08:00-22:30",
+"operator": "スターバックスコーヒージャパン",
+"phone": "+81 3-3933-1067",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.starbucks.co.jp/",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 2639548544,
+"lat": 35.7691297,
+"lon": 139.6610398,
+"tags": {
+"amenity": "pub",
+"branch": "東武練馬店",
+"name": "庄や"
+}
+},
+{
+"type": "node",
+"id": 2639548546,
+"lat": 35.7690229,
+"lon": 139.6609084,
+"tags": {
+"amenity": "pub",
+"name": "炭屋 えんけい"
+}
+},
+{
+"type": "node",
+"id": 3063151988,
+"lat": 35.7849153,
+"lon": 139.6522044,
+"tags": {
+"amenity": "restaurant",
+"branch": "高島平店",
+"brand": "ジョリーパスタ",
+"brand:en": "Jolly-Pasta",
+"brand:ja": "ジョリーパスタ",
+"brand:wikidata": "Q10852718",
+"cuisine": "pasta",
+"name": "ジョリーパスタ",
+"name:en": "Jolly-Pasta",
+"name:ja": "ジョリーパスタ",
+"name:ja_rm": "Jorī Pasuta",
+"operator": "ジョリーパスタ"
+}
+},
+{
+"type": "node",
+"id": 3063151991,
+"lat": 35.785279,
+"lon": 139.651192,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "焼肉キャンプ"
+}
+},
+{
+"type": "node",
+"id": 3063481707,
+"lat": 35.7897958,
+"lon": 139.66363,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "なか卯",
+"brand:en": "Nakau",
+"brand:ja": "なか卯",
+"brand:wikidata": "Q11274132",
+"brand:wikipedia": "ja:なか卯",
+"cuisine": "udon",
+"name": "なか卯",
+"name:en": "Nakau",
+"name:ja": "なか卯",
+"name:ja-Hira": "なかう",
+"name:ja_rm": "Nakau",
+"operator": "ゼンショー",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 3063481708,
+"lat": 35.7903413,
+"lon": 139.6607588,
+"tags": {
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "オリジン弁当",
+"brand:en": "Origin Bentō",
+"brand:ja": "オリジン弁当",
+"brand:wikidata": "Q11292632",
+"cuisine": "japanese",
+"name": "オリジン弁当",
+"name:en": "Origin Bentō",
+"name:ja": "オリジン弁当",
+"name:ja-Hira": "おりじんべんとう",
+"name:ja_rm": "Origin Bentō",
+"operator": "オリジン東秀",
+"shop": "deli",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 3274578479,
+"lat": 35.7429703,
+"lon": 139.6809314,
+"tags": {
+"amenity": "fast_food",
+"brand": "ほっともっと",
+"brand:en": "Hotto Motto",
+"brand:ja": "ほっともっと",
+"brand:wikidata": "Q10850949",
+"brand:wikipedia": "ja:ほっともっと",
+"cuisine": "japanese",
+"name": "ほっともっと",
+"name:en": "Hotto Motto",
+"name:ja": "ほっともっと",
+"shop": "deli",
+"takeaway": "only"
+}
+},
+{
+"type": "node",
+"id": 3617756825,
+"lat": 35.7498113,
+"lon": 139.6916198,
+"tags": {
+"addr:block_number": "30",
+"addr:city": "板橋区",
+"addr:housename": "日本大学医学部附属板橋病院",
+"addr:housenumber": "1",
+"addr:neighbourhood": "大谷口上町",
+"addr:postcode": "173-0032",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "日本大学板橋病院店",
+"brand": "スターバックス",
+"brand:en": "Starbucks",
+"brand:ja": "スターバックス",
+"brand:wikidata": "Q37158",
+"brand:wikipedia": "ja:スターバックス",
+"cuisine": "coffee_shop",
+"drive_through": "no",
+"name": "スターバックス",
+"name:en": "Starbucks",
+"name:ja": "スターバックス",
+"name:ja_rm": "Sutābakkusu",
+"official_name": "スターバックスコーヒー",
+"official_name:en": "Starbucks Coffee",
+"official_name:ja": "スターバックスコーヒー",
+"opening_hours": "Mo-Fr 07:00-21:00; Sa 07:00-20:00; Su,PH 10:00-20:00",
+"operator": "スターバックスコーヒージャパン",
+"phone": "+81 3-5917-4730",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.starbucks.co.jp/",
+"wheelchair": "yes",
+"wifi": "no"
+}
+},
+{
+"type": "node",
+"id": 3645361738,
+"lat": 35.7586039,
+"lon": 139.6899535,
+"tags": {
+"addr:block_number": "43",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "常盤台一丁目",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "ときわ台北口店",
+"brand": "DOUTOR",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトール",
+"name:en": "DOUTOR",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotōru Kōhī Shoppu",
+"opening_hours": "Mo-Fr 07:00-21:00; Sa-Su,PH 08:00-21:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-3967-6221",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 3645423333,
+"lat": 35.7490227,
+"lon": 139.7040917,
+"tags": {
+"addr:block_number": "52",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "大山東町",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "大山サンロード店",
+"brand": "ドトールコーヒーショップ",
+"brand:en": "Doutor",
+"brand:ja": "ドトールコーヒーショップ",
+"brand:wikidata": "Q11322732",
+"brand:wikipedia": "ja:ドトールコーヒーショップ",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトールコーヒーショップ",
+"name:en": "Doutor Coffee Shop",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotōru Kōhī Shoppu",
+"opening_hours": "Mo-Fr 07:00-20:00; Sa-Su,PH 08:00-20:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-3579-9860",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 3645431212,
+"lat": 35.7593107,
+"lon": 139.7137872,
+"tags": {
+"addr:block_number": "11",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "加賀二丁目",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "帝京大学医学部附属病院店",
+"brand": "ドトール",
+"brand:en": "DOUTOR",
+"brand:ja": "ドトール",
+"brand:wikidata": "Q11322732",
+"cuisine": "coffee_shop",
+"internet_access": "no",
+"name": "ドトールコーヒーショップ",
+"name:en": "Doutor Coffee Shop",
+"name:ja": "ドトールコーヒーショップ",
+"name:ja_rm": "Dotōru Kōhī Shoppu",
+"opening_hours": "Mo-Sa 07:30-18:00; Su,PH 09:00-18:00",
+"operator": "ドトールコーヒー",
+"operator:wikidata": "Q11322732",
+"operator:wikipedia": "ja:ドトールコーヒーショップ",
+"phone": "+81 3-3579-9730",
+"short_name": "DCS",
+"smoking": "no",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.doutor.co.jp/dcs/"
+}
+},
+{
+"type": "node",
+"id": 3666644720,
+"lat": 35.7617247,
+"lon": 139.7068029,
+"tags": {
+"addr:block_number": "13",
+"addr:city": "板橋区",
+"addr:floor": "1F",
+"addr:housename": "中村ビル",
+"addr:housenumber": "6",
+"addr:neighbourhood": "本町",
+"addr:postcode": "173-0001",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "板橋店",
+"brand": "カフェ・ベローチェ",
+"brand:en": "CAFFÈ VELOCE",
+"brand:ja": "カフェ・ベローチェ",
+"brand:wikidata": "Q11294597",
+"brand:wikipedia": "ja:カフェ・ベローチェ",
+"cuisine": "coffee_shop",
+"level": "0",
+"name": "カフェ・ベローチェ",
+"name:en": "CAFE VELOCE",
+"name:ja": "カフェ・ベローチェ",
+"name:ja_rm": "Kafe Berōche",
+"opening_hours": "Mo-Su 07:00-23:00",
+"operator": "シャノアール",
+"phone": "+81 3-3961-2993",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://chatnoir-company.com/chatnoir/html/brand/brand_veloce.html"
+}
+},
+{
+"type": "node",
+"id": 3688724387,
+"lat": 35.7714223,
+"lon": 139.6458806,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "タイ料理",
+"name": "バイケーオ",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 3688724388,
+"lat": 35.7722095,
+"lon": 139.6463279,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "焼肉",
+"name": "さが壱 赤塚店",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 3688724389,
+"lat": 35.7701875,
+"lon": 139.6445887,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "カリカ"
+}
+},
+{
+"type": "node",
+"id": 3688724390,
+"lat": 35.7699911,
+"lon": 139.644466,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "風風ラーメン"
+}
+},
+{
+"type": "node",
+"id": 3688724391,
+"lat": 35.7700939,
+"lon": 139.6447663,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "東京ラーメン大番"
+}
+},
+{
+"type": "node",
+"id": 3688752250,
+"lat": 35.7701561,
+"lon": 139.6479116,
+"tags": {
+"amenity": "bar",
+"name": "居酒屋　呑（どん）"
+}
+},
+{
+"type": "node",
+"id": 3688772044,
+"lat": 35.7703393,
+"lon": 139.6412008,
+"tags": {
+"addr:block_number": "3",
+"addr:city": "板橋区",
+"addr:housenumber": "20",
+"addr:neighbourhood": "3丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"cuisine": "chinese",
+"cuisine:ja": "中華料理",
+"name": "芝蘭板橋本店",
+"phone": "03-3939-4465",
+"website": "https://tiranitabashi.com/"
+}
+},
+{
+"type": "node",
+"id": 3688772412,
+"lat": 35.7703903,
+"lon": 139.6453546,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"cuisine:ja": "中華料理",
+"name": "上海一家",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 3688773288,
+"lat": 35.7717064,
+"lon": 139.6396014,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "ramen",
+"name": "一笑",
+"name:en": "Issho Ramen"
+}
+},
+{
+"type": "node",
+"id": 3689237812,
+"lat": 35.7716802,
+"lon": 139.6460159,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "寿司",
+"name": "二葉鮨",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 3689237813,
+"lat": 35.7710948,
+"lon": 139.6456035,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "焼肉",
+"name": "山陽"
+}
+},
+{
+"type": "node",
+"id": 3689243445,
+"lat": 35.7714954,
+"lon": 139.6447108,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "お好み焼き",
+"name": "みりおんバンブー"
+}
+},
+{
+"type": "node",
+"id": 3689243447,
+"lat": 35.771174,
+"lon": 139.6419264,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0093",
+"air_conditioning": "yes",
+"amenity": "restaurant",
+"check_date": "2026-08-29",
+"cuisine": "ramen",
+"delivery": "no",
+"level": "0",
+"name": "麺や河野",
+"opening_hours": "Mo 11:00-14:00; Tu off; We-Su 11:00-14:30,18:00-22:00",
+"outdoor_seating": "no",
+"toilets": "yes",
+"website": "https://x.com/menya_kouno"
+}
+},
+{
+"type": "node",
+"id": 3698313454,
+"lat": 35.7592554,
+"lon": 139.6890271,
+"tags": {
+"addr:block_number": "5",
+"addr:city": "板橋区",
+"addr:housenumber": "23",
+"addr:neighbourhood": "常盤台二丁目",
+"addr:postcode": "174-0071",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "ときわ台店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"check_date": "2024-08-17",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bāgā",
+"opening_hours": "Mo-Su 07:00-02:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-3965-6107",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 3698320079,
+"lat": 35.7699067,
+"lon": 139.6612154,
+"tags": {
+"addr:block_number": "6",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "徳丸二丁目",
+"addr:postcode": "175-0083",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "イオン板橋店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bāgā",
+"opening_hours": "Mo-Su 09:00-22:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-5920-6028",
+"smoking": "no",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 3705912571,
+"lat": 35.7642737,
+"lon": 139.6768339,
+"tags": {
+"addr:block_number": "31",
+"addr:city": "板橋区",
+"addr:housenumber": "5",
+"addr:neighbourhood": "常盤台四丁目",
+"addr:postcode": "174-0071",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "上板橋北口店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bāgā",
+"opening_hours": "Mo-Su 07:00-02:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-3932-3890",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 3705928173,
+"lat": 35.7553553,
+"lon": 139.6955923,
+"tags": {
+"addr:block_number": "32",
+"addr:city": "板橋区",
+"addr:housename": "白扇ビル",
+"addr:housenumber": "8",
+"addr:neighbourhood": "弥生町",
+"addr:postcode": "173-0021",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "中板橋駅前店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bāgā",
+"opening_hours": "Mo-Su 07:00-23:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-5964-5871",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 3705950705,
+"lat": 35.7756138,
+"lon": 139.6957973,
+"tags": {
+"addr:block_number": "17",
+"addr:city": "板橋区",
+"addr:housenumber": "6",
+"addr:neighbourhood": "小豆沢二丁目",
+"addr:postcode": "174-0051",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "志村坂上店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "MOS BURGER",
+"opening_hours": "24/7",
+"operator": "モスフードサービス",
+"phone": "+81 3-5392-2023",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 3705963253,
+"lat": 35.7836753,
+"lon": 139.6740694,
+"tags": {
+"addr:block_number": "27",
+"addr:city": "板橋区",
+"addr:housenumber": "14",
+"addr:neighbourhood": "蓮根二丁目",
+"addr:postcode": "174-0046",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "西台店",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"brand:wikipedia": "ja:モスバーガー",
+"cuisine": "burger",
+"internet_access": "wlan",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"name:ja_rm": "Mosu Bāgā",
+"opening_hours": "Mo-Su 08:00-22:00",
+"operator": "モスフードサービス",
+"phone": "+81 3-3965-8600",
+"smoking": "separated",
+"source": "(URL) 2015",
+"takeaway": "yes",
+"website": "https://www.mos.jp/"
+}
+},
+{
+"type": "node",
+"id": 3722250060,
+"lat": 35.7692443,
+"lon": 139.6672606,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "そば",
+"name": "そば柳川家"
+}
+},
+{
+"type": "node",
+"id": 3840615473,
+"lat": 35.7442025,
+"lon": 139.6803499,
+"tags": {
+"addr:block_number": "9",
+"addr:city": "板橋区",
+"addr:housenumber": "5",
+"addr:neighbourhood": "小茂根一丁目",
+"addr:province": "東京都",
+"amenity": "restaurant",
+"name": "サイマーケット",
+"name:en": "Sai Market",
+"opening_hours": "11:00-21:30",
+"smoking": "no",
+"toilets:wheelchair": "no",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 3842182729,
+"lat": 35.7716989,
+"lon": 139.6396727,
+"tags": {
+"amenity": "bar",
+"name": "Space-cafe"
+}
+},
+{
+"type": "node",
+"id": 4207956203,
+"lat": 35.7565694,
+"lon": 139.6956906,
+"tags": {
+"addr:block_number": "25",
+"addr:city": "板橋区",
+"addr:housenumber": "11",
+"addr:neighbourhood": "中板橋",
+"addr:postcode": "173-0016",
+"addr:province": "東京都",
+"amenity": "pub",
+"level": "1",
+"name": "やきとん炭火や",
+"opening_hours": "17:30-23:30",
+"smoking": "separated"
+}
+},
+{
+"type": "node",
+"id": 4207977702,
+"lat": 35.7542022,
+"lon": 139.6915454,
+"tags": {
+"addr:city": "板橋区弥生町57-8",
+"addr:postcode": "173-0021",
+"amenity": "restaurant",
+"cuisine": "chinese",
+"cuisine:ja": "中華料理",
+"delivery": "no",
+"name": "博龍",
+"name:en": "Haku Ryu",
+"name:ja": "博龍"
+}
+},
+{
+"type": "node",
+"id": 4210061638,
+"lat": 35.7549933,
+"lon": 139.6920231,
+"tags": {
+"addr:city": "板橋区弥生町58-3",
+"addr:postcode": "173-0021",
+"amenity": "restaurant",
+"cuisine": "定食",
+"name": "かどや",
+"name:en": "Kadoya",
+"name:ja": "かどや"
+}
+},
+{
+"type": "node",
+"id": 4210072804,
+"lat": 35.7548797,
+"lon": 139.6930742,
+"tags": {
+"addr:city": "板橋区弥生町44-4",
+"addr:postcode": "173-0021",
+"amenity": "restaurant",
+"cuisine": "定食",
+"name": "ときわ食堂",
+"name:en": "Tokiwa Shokudo Restaurant",
+"name:ja": "ときわ食堂"
+}
+},
+{
+"type": "node",
+"id": 4210075157,
+"lat": 35.7546612,
+"lon": 139.6959952,
+"tags": {
+"addr:city": "板橋区仲町37-7",
+"addr:postcode": "173-0022",
+"amenity": "restaurant",
+"cuisine": "日本蕎麦",
+"name": "長岡屋"
+}
+},
+{
+"type": "node",
+"id": 4210078440,
+"lat": 35.7580105,
+"lon": 139.6826701,
+"tags": {
+"addr:city": "板橋区東新町1-38-4",
+"addr:postcode": "174-0074",
+"amenity": "restaurant",
+"cuisine": "回転ずし",
+"name": "銚子丸",
+"name:en": "Sushi Choshimaru",
+"opening_hours": "11:00-22:00",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 4210081042,
+"lat": 35.7514169,
+"lon": 139.6897957,
+"tags": {
+"addr:city": "板橋区大谷口北町20-12",
+"addr:postcode": "173-0031",
+"amenity": "restaurant",
+"cuisine": "日本蕎麦",
+"name": "富田屋",
+"name:en": "Tomitaya"
+}
+},
+{
+"type": "node",
+"id": 4210087389,
+"lat": 35.7506927,
+"lon": 139.6942669,
+"tags": {
+"addr:city": "板橋区大谷口上町6-16",
+"addr:postcode": "173-0032",
+"amenity": "restaurant",
+"cuisine": "ステーキハウス",
+"name": "ビリー・サ・キッド",
+"name:en": "Billy the Kid"
+}
+},
+{
+"type": "node",
+"id": 4210090389,
+"lat": 35.756555,
+"lon": 139.6898629,
+"tags": {
+"addr:city": "板橋区南常盤台1-20-4",
+"addr:postcode": "174-0072",
+"amenity": "restaurant",
+"cuisine": "chinese",
+"cuisine:ja": "中華料理",
+"name": "長秀龍",
+"name:en": "Cho Shu Ryu"
+}
+},
+{
+"type": "node",
+"id": 4294109065,
+"lat": 35.7492222,
+"lon": 139.6795177,
+"tags": {
+"amenity": "restaurant",
+"brand": "びっくりドンキー",
+"brand:en": "Bikkuri Donkey",
+"brand:ja": "びっくりドンキー",
+"brand:wikidata": "Q11276815",
+"brand:wikipedia": "ja:びっくりドンキー",
+"cuisine": "burger",
+"name": "びっくりドンキー",
+"name:en": "Bikkuri Donkey",
+"name:ja": "びっくりドンキー"
+}
+},
+{
+"type": "node",
+"id": 4398607991,
+"lat": 35.7907584,
+"lon": 139.6552733,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "あぺたいと",
+"name:ja": "あぺたいと",
+"phone": "+81-3-3938-6302",
+"website": "https://www.apetaito.com/honten.html"
+}
+},
+{
+"type": "node",
+"id": 4561205055,
+"lat": 35.7487775,
+"lon": 139.7020226,
+"tags": {
+"amenity": "fast_food",
+"brand": "ロッテリア",
+"brand:en": "Lotteria",
+"brand:ja": "ロッテリア",
+"brand:wikidata": "Q249525",
+"brand:wikipedia": "ja:ロッテリア",
+"cuisine": "burger",
+"name": "ロッテリア",
+"name:en": "Lotteria",
+"name:ja": "ロッテリア",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 4561210664,
+"lat": 35.7487659,
+"lon": 139.6980642,
+"tags": {
+"amenity": "restaurant",
+"name": "ふなちゅう",
+"name:en": "Funachu"
+}
+},
+{
+"type": "node",
+"id": 4713106251,
+"lat": 35.7722991,
+"lon": 139.6440774,
+"tags": {
+"addr:city": "板橋区",
+"addr:neighbourhood": "2-10-14",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"amenity": "restaurant",
+"capacity": "15",
+"cuisine": "indian",
+"name": "ラリグラス"
+}
+},
+{
+"type": "node",
+"id": 4713112881,
+"lat": 35.7744884,
+"lon": 139.6351203,
+"tags": {
+"addr:city": "板橋区",
+"addr:neighbourhood": "2-5-3",
+"addr:province": "東京都",
+"addr:quarter": "成増",
+"amenity": "restaurant",
+"capacity": "30",
+"cuisine": "indian",
+"name": "ぷぅじゃ"
+}
+},
+{
+"type": "node",
+"id": 4729263994,
+"lat": 35.7652922,
+"lon": 139.6759452,
+"tags": {
+"amenity": "restaurant",
+"name": "Hungry heaven",
+"name:ja": "Hungry heaven"
+}
+},
+{
+"type": "node",
+"id": 4974502534,
+"lat": 35.7482769,
+"lon": 139.6783122,
+"tags": {
+"amenity": "restaurant",
+"name": "ひなもも"
+}
+},
+{
+"type": "node",
+"id": 4974526551,
+"lat": 35.7616936,
+"lon": 139.7064853,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"cuisine": "japanese",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 4974526578,
+"lat": 35.7624334,
+"lon": 139.7091126,
+"tags": {
+"amenity": "restaurant",
+"name": "香味屋",
+"name:en": "Komiya"
+}
+},
+{
+"type": "node",
+"id": 4974533985,
+"lat": 35.7625563,
+"lon": 139.709508,
+"tags": {
+"amenity": "restaurant",
+"name": "ステーキハウスCHICAGO"
+}
+},
+{
+"type": "node",
+"id": 4974534004,
+"lat": 35.7631402,
+"lon": 139.7112561,
+"tags": {
+"amenity": "restaurant",
+"brand": "ガスト",
+"brand:en": "Gusto",
+"brand:ja": "ガスト",
+"brand:wikidata": "Q87724117",
+"cuisine": "western;japanese",
+"name": "ガスト",
+"name:en": "Gusto",
+"name:ja": "ガスト"
+}
+},
+{
+"type": "node",
+"id": 4978394783,
+"lat": 35.7626901,
+"lon": 139.7114019,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "八番",
+"name:en": "Hachiban"
+}
+},
+{
+"type": "node",
+"id": 4978395145,
+"lat": 35.7582477,
+"lon": 139.6941169,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "横浜ラーメン 武蔵家"
+}
+},
+{
+"type": "node",
+"id": 4978395150,
+"lat": 35.7580971,
+"lon": 139.6934577,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese;noodle",
+"name": "山海珍"
+}
+},
+{
+"type": "node",
+"id": 4978405145,
+"lat": 35.7496803,
+"lon": 139.6808125,
+"tags": {
+"amenity": "fast_food",
+"brand": "かつや",
+"brand:en": "Katsuya",
+"brand:ja": "かつや",
+"brand:wikidata": "Q2855257",
+"brand:wikipedia": "ja:かつや",
+"cuisine": "fried_food",
+"name": "かつや",
+"name:en": "Katsuya",
+"name:ja": "かつや",
+"name:ko": "카쯔야",
+"name:zh": "吉豚屋",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 5015756724,
+"lat": 35.7576596,
+"lon": 139.6832627,
+"tags": {
+"amenity": "restaurant",
+"branch": "板橋店",
+"name": "かっぱ寿司",
+"name:en": "KAPPA SUSHI",
+"name:zh": "河童壽司",
+"opening_hours": "Mo-Su 11:00-18:00",
+"phone": "0359869621"
+}
+},
+{
+"type": "node",
+"id": 5042348411,
+"lat": 35.7496099,
+"lon": 139.702583,
+"tags": {
+"amenity": "pub",
+"name": "福助"
+}
+},
+{
+"type": "node",
+"id": 5043752525,
+"lat": 35.7477542,
+"lon": 139.7192026,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "sushi",
+"name": "鮨まつ本"
+}
+},
+{
+"type": "node",
+"id": 5047420838,
+"lat": 35.7802934,
+"lon": 139.6706969,
+"tags": {
+"amenity": "restaurant",
+"diet:vegetarian": "yes",
+"name": "おいしい野菜塾"
+}
+},
+{
+"type": "node",
+"id": 5108799303,
+"lat": 35.7473378,
+"lon": 139.6943196,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;soba",
+"name": "盛一庵"
+}
+},
+{
+"type": "node",
+"id": 5108866170,
+"lat": 35.7439765,
+"lon": 139.7035379,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "steak_house",
+"name": "ギュービック"
+}
+},
+{
+"type": "node",
+"id": 5108879956,
+"lat": 35.7429536,
+"lon": 139.7048587,
+"tags": {
+"alt_name": "かまどや",
+"amenity": "fast_food",
+"brand": "本家かまどや",
+"brand:en": "Honke Kamadoya",
+"brand:ja": "本家かまどや",
+"brand:wikidata": "Q11520140",
+"brand:wikipedia": "ja:本家かまどや",
+"cuisine": "japanese",
+"name": "本家かまどや",
+"name:en": "Honke Kamadoya",
+"name:ja": "本家かまどや",
+"takeaway": "only"
+}
+},
+{
+"type": "node",
+"id": 5134540882,
+"lat": 35.7370252,
+"lon": 139.7023235,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian",
+"name": "Osteria Lartenza"
+}
+},
+{
+"type": "node",
+"id": 5134540887,
+"lat": 35.7374288,
+"lon": 139.7027492,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "Kalika"
+}
+},
+{
+"type": "node",
+"id": 5134579602,
+"lat": 35.7376785,
+"lon": 139.7029451,
+"tags": {
+"amenity": "cafe",
+"name": "YO-KO"
+}
+},
+{
+"type": "node",
+"id": 5134579612,
+"lat": 35.7384929,
+"lon": 139.7039813,
+"tags": {
+"amenity": "restaurant",
+"name": "万来軒"
+}
+},
+{
+"type": "node",
+"id": 5134580459,
+"lat": 35.7449234,
+"lon": 139.7079155,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;ramen",
+"name": "とっしん屋"
+}
+},
+{
+"type": "node",
+"id": 5134609163,
+"lat": 35.7494042,
+"lon": 139.7080825,
+"tags": {
+"amenity": "pub",
+"name": "大山飛車角"
+}
+},
+{
+"type": "node",
+"id": 5134609168,
+"lat": 35.7495875,
+"lon": 139.7081136,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;ramen",
+"name": "まるよし"
+}
+},
+{
+"type": "node",
+"id": 5134609169,
+"lat": 35.7497013,
+"lon": 139.7081367,
+"tags": {
+"amenity": "pub",
+"name": "宮",
+"name:en": "Miya"
+}
+},
+{
+"type": "node",
+"id": 5134609178,
+"lat": 35.7509415,
+"lon": 139.7081922,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;ramen",
+"name": "笑丸",
+"name:en": "Shomaru"
+}
+},
+{
+"type": "node",
+"id": 5134609194,
+"lat": 35.7514957,
+"lon": 139.7082054,
+"tags": {
+"amenity": "pub",
+"brand": "庄や",
+"brand:en": "Shoya",
+"brand:ja": "庄や",
+"brand:wikidata": "Q122964078",
+"name": "庄や",
+"name:en": "Shoya",
+"name:ja": "庄や"
+}
+},
+{
+"type": "node",
+"id": 5134656291,
+"lat": 35.755549,
+"lon": 139.708225,
+"tags": {
+"amenity": "restaurant",
+"name": "ドンキー"
+}
+},
+{
+"type": "node",
+"id": 5134657347,
+"lat": 35.7555706,
+"lon": 139.7089182,
+"tags": {
+"name": "マツザワヤ",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 5134684267,
+"lat": 35.7548969,
+"lon": 139.7090868,
+"tags": {
+"name": "おまちどう",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 5134684268,
+"lat": 35.7548076,
+"lon": 139.7091031,
+"tags": {
+"amenity": "fast_food",
+"name": "SunSunクレール"
+}
+},
+{
+"type": "node",
+"id": 5134684309,
+"lat": 35.7546315,
+"lon": 139.7093597,
+"tags": {
+"amenity": "pub",
+"name": "新八 板橋仲宿店"
+}
+},
+{
+"type": "node",
+"id": 5134701916,
+"lat": 35.7546084,
+"lon": 139.7093676,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "takoyaki",
+"name": "いわっち！ 仲宿店"
+}
+},
+{
+"type": "node",
+"id": 5134702439,
+"lat": 35.7541855,
+"lon": 139.7095375,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "萬賓楼"
+}
+},
+{
+"type": "node",
+"id": 5134957728,
+"lat": 35.7542183,
+"lon": 139.709291,
+"tags": {
+"amenity": "restaurant",
+"name": "串焼き鳥ひで"
+}
+},
+{
+"type": "node",
+"id": 5135027100,
+"lat": 35.7538631,
+"lon": 139.7096248,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "北京飯店"
+}
+},
+{
+"type": "node",
+"id": 5135055818,
+"lat": 35.7527495,
+"lon": 139.7099647,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "steak_house",
+"name": "盛香苑"
+}
+},
+{
+"type": "node",
+"id": 5135057625,
+"lat": 35.7524904,
+"lon": 139.7102563,
+"tags": {
+"amenity": "restaurant",
+"name": "豚丼 白樺"
+}
+},
+{
+"type": "node",
+"id": 5135136563,
+"lat": 35.7524193,
+"lon": 139.710563,
+"tags": {
+"amenity": "restaurant",
+"brand": "さぼてん",
+"brand:en": "Saboten",
+"brand:ja": "さぼてん",
+"brand:wikidata": "Q93277389",
+"name": "さぼてん",
+"name:en": "Saboten",
+"name:ja": "さぼてん",
+"official_name": "新宿さぼてん",
+"official_name:en": "Shinjuku Saboten",
+"official_name:ja": "新宿さぼてん",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 5135136564,
+"lat": 35.7523689,
+"lon": 139.7106594,
+"tags": {
+"amenity": "fast_food",
+"brand": "ちよだ鮨",
+"brand:en": "Chiyoda Sushi",
+"brand:ja": "ちよだ鮨",
+"brand:wikidata": "Q11272065",
+"cuisine": "sushi",
+"name": "ちよだ鮨",
+"name:en": "Chiyoda Sushi",
+"name:ja": "ちよだ鮨",
+"takeaway": "only"
+}
+},
+{
+"type": "node",
+"id": 5135136566,
+"lat": 35.7521688,
+"lon": 139.7105239,
+"tags": {
+"amenity": "fast_food",
+"takeaway": "only"
+}
+},
+{
+"type": "node",
+"id": 5135136569,
+"lat": 35.7521239,
+"lon": 139.7104885,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;soba",
+"name": "なごみそば"
+}
+},
+{
+"type": "node",
+"id": 5135136570,
+"lat": 35.7519416,
+"lon": 139.7105637,
+"tags": {
+"amenity": "restaurant",
+"name": "あかのれん"
+}
+},
+{
+"type": "node",
+"id": 5135136576,
+"lat": 35.7519378,
+"lon": 139.7100643,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese;sushi",
+"name": "すし三崎丸"
+}
+},
+{
+"type": "node",
+"id": 5135163736,
+"lat": 35.7512941,
+"lon": 139.7098138,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"cuisine": "japanese",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 5135163754,
+"lat": 35.7511226,
+"lon": 139.7097997,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "逸園香"
+}
+},
+{
+"type": "node",
+"id": 5135163755,
+"lat": 35.7510176,
+"lon": 139.7097741,
+"tags": {
+"amenity": "restaurant",
+"level": "0",
+"name": "とんかつ松乃屋"
+}
+},
+{
+"type": "node",
+"id": 5135163765,
+"lat": 35.7505524,
+"lon": 139.7092876,
+"tags": {
+"amenity": "cafe",
+"name": "Lobby"
+}
+},
+{
+"type": "node",
+"id": 5215491267,
+"lat": 35.7877311,
+"lon": 139.674609,
+"tags": {
+"amenity": "restaurant",
+"brand": "バーミヤン",
+"brand:en": "Bamiyan",
+"brand:ja": "バーミヤン",
+"brand:wikidata": "Q11328598",
+"brand:wikipedia": "ja:バーミヤン (レストランチェーン)",
+"cuisine": "chinese",
+"name": "バーミヤン",
+"name:en": "Bamiyan",
+"name:ja": "バーミヤン"
+}
+},
+{
+"type": "node",
+"id": 5485959514,
+"lat": 35.7609281,
+"lon": 139.674692,
+"tags": {
+"addr:block_number": "22",
+"addr:city": "板橋区",
+"addr:floor": "1F",
+"addr:housename": "ノイエルハイム桜川",
+"addr:housenumber": "9",
+"addr:neighbourhood": "桜川三丁目",
+"addr:province": "東京都",
+"amenity": "fast_food",
+"branch": "板橋桜川店",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:wikipedia": "ja:松屋フーズ",
+"brand:zh": "松屋",
+"capacity": "21",
+"cuisine": "beef_bowl",
+"drive_through": "no",
+"end_date": "2018-03-26 15:00 +0900",
+"level": "0",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"payment:cash": "yes",
+"payment:icsf": "yes",
+"phone": "+81-3-5945-8981",
+"smoking": "no",
+"source": "survey, 2018-03-18",
+"takeaway": "yes",
+"toilets": "yes",
+"wheelchair": "no",
+"wheelchair:description": "入口外と中にそれぞれ段差あり。ハイカウンター・固定椅子のみ。トイレ入口に段差あり。"
+}
+},
+{
+"type": "node",
+"id": 5585719976,
+"lat": 35.7710363,
+"lon": 139.6408353,
+"tags": {
+"amenity": "restaurant",
+"brand": "バーミヤン",
+"brand:en": "Bamiyan",
+"brand:ja": "バーミヤン",
+"brand:wikidata": "Q11328598",
+"brand:wikipedia": "ja:バーミヤン (レストランチェーン)",
+"cuisine": "chinese",
+"name": "バーミヤン",
+"name:en": "Bamiyan",
+"name:ja": "バーミヤン"
+}
+},
+{
+"type": "node",
+"id": 5585719991,
+"lat": 35.7712628,
+"lon": 139.6400324,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle;ramen",
+"name": "麺処いのこ"
+}
+},
+{
+"type": "node",
+"id": 5599082322,
+"lat": 35.7596932,
+"lon": 139.6891218,
+"tags": {
+"addr:housenumber": "板橋区常盤台2-5-21",
+"addr:postcode": "174-0071",
+"amenity": "restaurant",
+"brand": "バーミヤン",
+"brand:en": "Bamiyan",
+"brand:ja": "バーミヤン",
+"brand:wikidata": "Q11328598",
+"brand:wikipedia": "ja:バーミヤン (レストランチェーン)",
+"cuisine": "chinese",
+"name": "バーミヤン",
+"name:en": "Bamiyan",
+"name:ja": "バーミヤン",
+"opening_hours": "Mo-Su 10:00-01:00",
+"phone": "03-5916-3905",
+"website": "http://skylark.co.jp/bamiyan"
+}
+},
+{
+"type": "node",
+"id": 5604957490,
+"lat": 35.7521066,
+"lon": 139.7096672,
+"tags": {
+"amenity": "restaurant",
+"brand": "CoCo壱番屋",
+"brand:en": "CoCo ICHIBANYA",
+"brand:ja": "CoCo壱番屋",
+"brand:wikidata": "Q5986105",
+"brand:wikipedia": "en:Ichibanya",
+"cuisine": "curry;japanese",
+"name": "CoCo壱番屋",
+"name:en": "CoCo ICHIBANYA",
+"name:ja": "CoCo壱番屋",
+"short_name": "ココイチ",
+"short_name:en": "CoCoICHI",
+"short_name:ja": "ココイチ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 5773354471,
+"lat": 35.7424669,
+"lon": 139.6808702,
+"tags": {
+"amenity": "restaurant",
+"brand": "ジョナサン",
+"brand:en": "Jonathan's",
+"brand:ja": "ジョナサン",
+"brand:wikidata": "Q11310628",
+"brand:wikipedia": "ja:ジョナサン (ファミリーレストラン)",
+"cuisine": "italian;japanese",
+"name": "ジョナサン",
+"name:en": "Jonathan's",
+"name:ja": "ジョナサン"
+}
+},
+{
+"type": "node",
+"id": 5773354472,
+"lat": 35.7423494,
+"lon": 139.6810839,
+"tags": {
+"amenity": "fast_food",
+"brand": "オリジン弁当",
+"brand:en": "Origin Bentō",
+"brand:ja": "オリジン弁当",
+"brand:wikidata": "Q11292632",
+"cuisine": "japanese",
+"name": "オリジン弁当",
+"name:en": "Origin Bentō",
+"name:ja": "オリジン弁当",
+"shop": "deli",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 5776803530,
+"lat": 35.7638768,
+"lon": 139.6773017,
+"tags": {
+"alt_name": "Kentucky Fried Chicken",
+"alt_name:en": "Kentucky Fried Chicken",
+"amenity": "fast_food",
+"brand": "ケンタッキーフライドチキン",
+"brand:en": "KFC",
+"brand:ja": "ケンタッキーフライドチキン",
+"brand:wikidata": "Q524757",
+"brand:wikipedia": "en:KFC",
+"cuisine": "chicken",
+"name": "ケンタッキーフライドチキン",
+"name:en": "KFC",
+"name:ja": "ケンタッキーフライドチキン",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 5777720756,
+"lat": 35.7816289,
+"lon": 139.6849228,
+"tags": {
+"amenity": "restaurant",
+"name": "ル・オブジェ"
+}
+},
+{
+"type": "node",
+"id": 5782515522,
+"lat": 35.786351,
+"lon": 139.6739509,
+"tags": {
+"amenity": "fast_food",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 5916406664,
+"lat": 35.7836268,
+"lon": 139.6325205,
+"tags": {
+"amenity": "restaurant"
+}
+},
+{
+"type": "node",
+"id": 5926339785,
+"lat": 35.7472266,
+"lon": 139.7154305,
+"tags": {
+"amenity": "restaurant",
+"name": "タカセ 板橋店",
+"payment:cash": "yes",
+"payment:icsf": "no"
+}
+},
+{
+"type": "node",
+"id": 5938105285,
+"lat": 35.7497444,
+"lon": 139.7141855,
+"tags": {
+"amenity": "restaurant",
+"name": "レストランせんごく"
+}
+},
+{
+"type": "node",
+"id": 5938112685,
+"lat": 35.7521111,
+"lon": 139.7109278,
+"tags": {
+"amenity": "restaurant",
+"name": "錦寿司"
+}
+},
+{
+"type": "node",
+"id": 6180940459,
+"lat": 35.7639565,
+"lon": 139.6870611,
+"tags": {
+"amenity": "ice_cream",
+"brand": "バスキン・ロビンス",
+"brand:en": "Baskin-Robbins",
+"brand:ja": "バスキン・ロビンス",
+"brand:wikidata": "Q584601",
+"name": "サーティワンアイスクリーム",
+"name:en": "Baskin-Robbins",
+"name:ja": "サーティワンアイスクリーム"
+}
+},
+{
+"type": "node",
+"id": 6191298833,
+"lat": 35.7869099,
+"lon": 139.674947,
+"tags": {
+"addr:city": "板橋区",
+"addr:housenumber": "3-9-7",
+"addr:province": "東京都",
+"addr:quarter": "蓮根",
+"amenity": "fast_food",
+"branch": "西台駅前店",
+"brand": "ラーメン二郎",
+"brand:en": "Ramen Jiro",
+"brand:ja": "ラーメン二郎",
+"brand:wikidata": "Q11347765",
+"brand:wikipedia": "ja:ラーメン二郎",
+"cuisine": "ramen",
+"delivery": "no",
+"name": "ラーメン二郎",
+"name:en": "Ramen Jiro",
+"name:ja": "ラーメン二郎",
+"opening_hours": "Mo-Fr 11:00-13:30,17:30-21:30; We 11:00-14:00; Sa 09:30-12:30; PH off",
+"outdoor_seating": "no",
+"smoking": "no",
+"source": "survey",
+"takeaway": "no",
+"wikipedia": "Ramen_Jiro"
+}
+},
+{
+"type": "node",
+"id": 6191775967,
+"lat": 35.7914824,
+"lon": 139.6691214,
+"tags": {
+"alt_name": "Pizzaria Monica",
+"amenity": "restaurant",
+"cuisine": "pizza",
+"name": "Pizzeria Monica"
+}
+},
+{
+"type": "node",
+"id": 6199638760,
+"lat": 35.7891302,
+"lon": 139.6734168,
+"tags": {
+"amenity": "pub",
+"name": "もが海"
+}
+},
+{
+"type": "node",
+"id": 6199638761,
+"lat": 35.7892042,
+"lon": 139.6734282,
+"tags": {
+"amenity": "pub",
+"cuisine": "japanese",
+"name": "飛鳥"
+}
+},
+{
+"type": "node",
+"id": 6217529533,
+"lat": 35.7900372,
+"lon": 139.6658304,
+"tags": {
+"amenity": "restaurant",
+"brand": "ジョナサン",
+"brand:en": "Jonathan's",
+"brand:ja": "ジョナサン",
+"brand:wikidata": "Q11310628",
+"brand:wikipedia": "ja:ジョナサン (ファミリーレストラン)",
+"cuisine": "italian;japanese",
+"name": "ジョナサン",
+"name:en": "Jonathan's",
+"name:ja": "ジョナサン",
+"name:ja-Hira": "ジョナサン",
+"opening_hours": "07:00-24:00"
+}
+},
+{
+"type": "node",
+"id": 6228438562,
+"lat": 35.7867635,
+"lon": 139.6736375,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "donut",
+"name": "Mister Donuts"
+}
+},
+{
+"type": "node",
+"id": 6237548510,
+"lat": 35.7900081,
+"lon": 139.6661113,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "高島平食堂",
+"opening_hours": "Mo-Sa 11:30-21:30; Su,PH 10:00-21:00"
+}
+},
+{
+"type": "node",
+"id": 6237548511,
+"lat": 35.7900625,
+"lon": 139.6662253,
+"tags": {
+"amenity": "fast_food",
+"branch": "メトロエム店",
+"brand": "マクドナルド",
+"brand:en": "McDonald's",
+"brand:ja": "マクドナルド",
+"brand:wikidata": "Q38076",
+"brand:wikipedia": "ja:マクドナルド",
+"cuisine": "burger",
+"drive_through": "no",
+"name": "マクドナルド",
+"name:en": "McDonald's",
+"name:ja": "マクドナルド",
+"opening_hours": "10:00-20:00",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 6256039744,
+"lat": 35.7847096,
+"lon": 139.6838441,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "珍珍珍"
+}
+},
+{
+"type": "node",
+"id": 6256898507,
+"lat": 35.7868826,
+"lon": 139.674562,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "かぶら屋"
+}
+},
+{
+"type": "node",
+"id": 6257629014,
+"lat": 35.779999,
+"lon": 139.6940646,
+"tags": {
+"amenity": "fast_food",
+"brand": "ミスタードーナツ",
+"brand:en": "Mister Donut",
+"brand:ja": "ミスタードーナツ",
+"brand:wikidata": "Q1065819",
+"cuisine": "donut",
+"name": "ミスタードーナツ",
+"name:en": "Mister Donut",
+"name:ja": "ミスタードーナツ",
+"takeaway": "yes",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 6257629015,
+"lat": 35.7800128,
+"lon": 139.694205,
+"tags": {
+"amenity": "ice_cream",
+"brand": "バスキン・ロビンス",
+"brand:en": "Baskin-Robbins",
+"brand:ja": "バスキン・ロビンス",
+"brand:wikidata": "Q584601",
+"brand:wikipedia": "ja:バスキン・ロビンス",
+"cuisine": "ice_cream",
+"name": "サーティワンアイスクリーム",
+"name:en": "Baskin-Robbins",
+"name:ja": "サーティワンアイスクリーム"
+}
+},
+{
+"type": "node",
+"id": 6257769405,
+"lat": 35.7896349,
+"lon": 139.6735117,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "おがた"
+}
+},
+{
+"type": "node",
+"id": 6307293183,
+"lat": 35.7899833,
+"lon": 139.6684408,
+"tags": {
+"amenity": "pub",
+"cuisine": "japanese",
+"name": "きくがみ"
+}
+},
+{
+"type": "node",
+"id": 6311959088,
+"lat": 35.7899653,
+"lon": 139.666151,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese;seafood",
+"name": "えびすだこ",
+"opening_hours": "10:00-21:00"
+}
+},
+{
+"type": "node",
+"id": 6342479686,
+"lat": 35.7503513,
+"lon": 139.7018108,
+"tags": {
+"addr:block_number": "35",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "栄町",
+"addr:postcode": "173-0015",
+"addr:province": "東京都",
+"amenity": "cafe",
+"branch": "健康長寿医療センター店",
+"brand": "カフェ・ド・クリエ",
+"brand:en": "Cafe de CRIE",
+"brand:ja": "カフェ・ド・クリエ",
+"brand:wikidata": "Q17219077",
+"brand:wikipedia": "ja:ポッカクリエイト",
+"cuisine": "coffee_shop",
+"internet_access": "wlan",
+"name": "カフェ・ド・クリエ",
+"name:en": "Cafe de CRIE",
+"name:ja": "カフェ・ド・クリエ",
+"takeaway": "yes",
+"website": "https://www.pokkacreate.co.jp/shops/detail/187"
+}
+},
+{
+"type": "node",
+"id": 6360105970,
+"lat": 35.7869344,
+"lon": 139.6745682,
+"tags": {
+"amenity": "cafe",
+"cuisine": "tea",
+"name": "June's Tea 六月居",
+"outdoor_seating": "no"
+}
+},
+{
+"type": "node",
+"id": 6464774718,
+"lat": 35.7563143,
+"lon": 139.673886,
+"tags": {
+"amenity": "restaurant"
+}
+},
+{
+"type": "node",
+"id": 6466665057,
+"lat": 35.7537104,
+"lon": 139.6837176,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "burger",
+"name": "六文銭"
+}
+},
+{
+"type": "node",
+"id": 6466665058,
+"lat": 35.7536478,
+"lon": 139.6836077,
+"tags": {
+"amenity": "fast_food",
+"cuisine": "japanese",
+"name": "RIZO・AMO",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 6600883408,
+"lat": 35.7542263,
+"lon": 139.6837337,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "sushi",
+"name": "小名浜港"
+}
+},
+{
+"type": "node",
+"id": 6760356201,
+"lat": 35.784954,
+"lon": 139.6789999,
+"tags": {
+"addr:block_number": "31",
+"addr:city": "板橋区",
+"addr:housenumber": "27",
+"addr:neighbourhood": "２丁目",
+"addr:postcode": "174-0046",
+"addr:province": "東京都",
+"addr:quarter": "蓮根",
+"amenity": "bar",
+"name": "蓮根小樰（こゆき）",
+"outdoor_seating": "yes"
+}
+},
+{
+"type": "node",
+"id": 6796398825,
+"lat": 35.7763498,
+"lon": 139.6925214,
+"tags": {
+"addr:block_number": "8",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "志村二丁目",
+"addr:province": "東京都",
+"amenity": "restaurant",
+"cuisine": "asian;indian",
+"name": "サハラ",
+"phone": "+81-3-6279-8550"
+}
+},
+{
+"type": "node",
+"id": 7095120193,
+"lat": 35.7511405,
+"lon": 139.7118852,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "はちどり"
+}
+},
+{
+"type": "node",
+"id": 7095120196,
+"lat": 35.7507921,
+"lon": 139.7121266,
+"tags": {
+"amenity": "restaurant",
+"name": "いたばし家"
+}
+},
+{
+"type": "node",
+"id": 7095120198,
+"lat": 35.7506722,
+"lon": 139.7122574,
+"tags": {
+"amenity": "restaurant",
+"name": "妃竜"
+}
+},
+{
+"type": "node",
+"id": 7095120200,
+"lat": 35.7507457,
+"lon": 139.7124652,
+"tags": {
+"amenity": "pub",
+"name": "酒楽屋ちろる"
+}
+},
+{
+"type": "node",
+"id": 7095120205,
+"lat": 35.7503078,
+"lon": 139.7128927,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "門前そば田丸庵"
+}
+},
+{
+"type": "node",
+"id": 7095120209,
+"lat": 35.7500735,
+"lon": 139.7133164,
+"tags": {
+"amenity": "bar",
+"name": "ホワイトハウス"
+}
+},
+{
+"type": "node",
+"id": 7095120211,
+"lat": 35.7500689,
+"lon": 139.7136027,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "陳嗎家"
+}
+},
+{
+"type": "node",
+"id": 7095120213,
+"lat": 35.7498335,
+"lon": 139.7139923,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "喜多方屋 本店"
+}
+},
+{
+"type": "node",
+"id": 7095120214,
+"lat": 35.7497912,
+"lon": 139.7140774,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "ボンベイパレス"
+}
+},
+{
+"type": "node",
+"id": 7095137569,
+"lat": 35.7521953,
+"lon": 139.7110068,
+"tags": {
+"amenity": "restaurant",
+"name": "グリルふじ"
+}
+},
+{
+"type": "node",
+"id": 7095137571,
+"lat": 35.7522912,
+"lon": 139.7112966,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian",
+"name": "ピアンタ仲宿店"
+}
+},
+{
+"type": "node",
+"id": 7095137573,
+"lat": 35.7525137,
+"lon": 139.711609,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "龍峰"
+}
+},
+{
+"type": "node",
+"id": 7095137574,
+"lat": 35.7523461,
+"lon": 139.7114673,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "つけ麺 きくちゃん"
+}
+},
+{
+"type": "node",
+"id": 7095137575,
+"lat": 35.7524078,
+"lon": 139.7116599,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "カピ"
+}
+},
+{
+"type": "node",
+"id": 7095137576,
+"lat": 35.7524461,
+"lon": 139.711805,
+"tags": {
+"amenity": "restaurant",
+"name": "富仙"
+}
+},
+{
+"type": "node",
+"id": 7095137578,
+"lat": 35.7526811,
+"lon": 139.7126511,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "むさし乃"
+}
+},
+{
+"type": "node",
+"id": 7095141507,
+"lat": 35.7495951,
+"lon": 139.7145658,
+"tags": {
+"amenity": "restaurant",
+"name": "コリアンダイニング セブンマック"
+}
+},
+{
+"type": "node",
+"id": 7095141519,
+"lat": 35.751271,
+"lon": 139.7106194,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "sushi",
+"name": "かわ津"
+}
+},
+{
+"type": "node",
+"id": 7095141520,
+"lat": 35.7520557,
+"lon": 139.7109028,
+"tags": {
+"amenity": "cafe",
+"name": "カフェドカド"
+}
+},
+{
+"type": "node",
+"id": 7095184386,
+"lat": 35.7529069,
+"lon": 139.7142764,
+"tags": {
+"amenity": "bar",
+"name": "クランクビール さかみちタップルーム"
+}
+},
+{
+"type": "node",
+"id": 7095184395,
+"lat": 35.7523171,
+"lon": 139.7163161,
+"tags": {
+"amenity": "cafe",
+"name": "喫茶店 ゆめの木"
+}
+},
+{
+"type": "node",
+"id": 7095184398,
+"lat": 35.7495851,
+"lon": 139.7152454,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "破天荒"
+}
+},
+{
+"type": "node",
+"id": 7095282281,
+"lat": 35.7524643,
+"lon": 139.7102244,
+"tags": {
+"amenity": "cafe",
+"name": "Dream's Cafe"
+}
+},
+{
+"type": "node",
+"id": 7095282282,
+"lat": 35.7526012,
+"lon": 139.7103123,
+"tags": {
+"amenity": "cafe",
+"name": "珈琲 紙風船"
+}
+},
+{
+"type": "node",
+"id": 7095282588,
+"lat": 35.7538941,
+"lon": 139.7095925,
+"tags": {
+"amenity": "restaurant",
+"name": "かん"
+}
+},
+{
+"type": "node",
+"id": 7095282590,
+"lat": 35.7540061,
+"lon": 139.709391,
+"tags": {
+"amenity": "pub",
+"name": "ペンギンの屋台"
+}
+},
+{
+"type": "node",
+"id": 7095282591,
+"lat": 35.7543322,
+"lon": 139.7094483,
+"tags": {
+"amenity": "restaurant",
+"name": "はいさい"
+}
+},
+{
+"type": "node",
+"id": 7095282593,
+"lat": 35.7551942,
+"lon": 139.7089736,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "れんげ食堂TOSHU 板橋仲宿店"
+}
+},
+{
+"type": "node",
+"id": 7095282594,
+"lat": 35.755518,
+"lon": 139.7089441,
+"tags": {
+"amenity": "pub",
+"name": "やきとり自慢西やん 仲宿店"
+}
+},
+{
+"type": "node",
+"id": 7095282596,
+"lat": 35.755956,
+"lon": 139.709048,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian",
+"name": "ラファミリア"
+}
+},
+{
+"type": "node",
+"id": 7095282597,
+"lat": 35.756017,
+"lon": 139.708824,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "雷神"
+}
+},
+{
+"type": "node",
+"id": 7095282602,
+"lat": 35.7563505,
+"lon": 139.7087818,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian",
+"name": "タツ"
+}
+},
+{
+"type": "node",
+"id": 7266496620,
+"lat": 35.7702823,
+"lon": 139.6450351,
+"tags": {
+"amenity": "cafe",
+"brand": "コメダ珈琲店",
+"brand:en": "KOMEDA'S Coffee",
+"brand:ja": "コメダ珈琲店",
+"brand:wikidata": "Q11302679",
+"brand:wikipedia": "ja:コメダ",
+"cuisine": "coffee_shop",
+"name": "コメダ珈琲店",
+"name:en": "Komeda's Coffee",
+"name:ja": "コメダ珈琲店",
+"outdoor_seating": "no",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 7276945785,
+"lat": 35.7859721,
+"lon": 139.6745876,
+"tags": {
+"amenity": "restaurant",
+"name": "寿製麺よしかわ"
+}
+},
+{
+"type": "node",
+"id": 7280633085,
+"lat": 35.7466066,
+"lon": 139.7163968,
+"tags": {
+"addr:block_number": "8",
+"addr:city": "板橋区",
+"addr:housenumber": "4",
+"addr:neighbourhood": "板橋区一丁目",
+"addr:postcode": "173-0004",
+"addr:province": "東京都",
+"amenity": "bar",
+"name:en": "TOKYO ALE WORKS",
+"website": "http://tokyoaleworks.com"
+}
+},
+{
+"type": "node",
+"id": 7451134372,
+"lat": 35.7648388,
+"lon": 139.706752,
+"tags": {
+"addr:block_number": "7",
+"addr:city": "板橋区",
+"addr:housenumber": "番地",
+"addr:neighbourhood": "丁目",
+"addr:postcode": "174-0053",
+"addr:province": "東京都",
+"addr:quarter": "清水町56",
+"amenity": "restaurant",
+"capacity": "16",
+"cuisine": "japanese",
+"delivery": "no",
+"name": "穂卓",
+"opening_hours": "火~日 (月曜定休日)",
+"smoking": "no",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 7546792689,
+"lat": 35.7531116,
+"lon": 139.7149251,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "ramen",
+"name": "来味"
+}
+},
+{
+"type": "node",
+"id": 7546792690,
+"lat": 35.7512091,
+"lon": 139.7126854,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "旬鮮和食たかはし"
+}
+},
+{
+"type": "node",
+"id": 7546792691,
+"lat": 35.7588219,
+"lon": 139.6878787,
+"tags": {
+"amenity": "pub",
+"name": "漁菜献舗 鳥新"
+}
+},
+{
+"type": "node",
+"id": 8431526987,
+"lat": 35.7692952,
+"lon": 139.6394668,
+"tags": {
+"addr:block_number": "32",
+"addr:city": "板橋区",
+"addr:housenumber": "14",
+"addr:neighbourhood": "3丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"name": "ごはんレストラン セージ",
+"phone": "03 6909 2370"
+}
+},
+{
+"type": "node",
+"id": 8434529883,
+"lat": 35.7698821,
+"lon": 139.6445504,
+"tags": {
+"addr:block_number": "22",
+"addr:city": "板橋区",
+"addr:housenumber": "2",
+"addr:neighbourhood": "1丁目",
+"addr:postcode": "179-0073",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "pub",
+"name": "豊後高田どり酒場 下赤塚駅前店",
+"phone": "03 3979 7588",
+"website": "https://www.monteroza.co.jp/shop.html?shop=872030"
+}
+},
+{
+"type": "node",
+"id": 8434540479,
+"lat": 35.7699081,
+"lon": 139.6449015,
+"tags": {
+"addr:block_number": "22",
+"addr:city": "板橋区",
+"addr:housenumber": "9",
+"addr:neighbourhood": "1丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"name": "焼肉ホルモン 令和苑",
+"phone": "03 6909 2919",
+"website": "https://www.reiwaen-shimoakatsuka.com/"
+}
+},
+{
+"type": "node",
+"id": 8434555828,
+"lat": 35.7701073,
+"lon": 139.6450115,
+"tags": {
+"addr:block_number": "22",
+"addr:city": "板橋区",
+"addr:housenumber": "7",
+"addr:neighbourhood": "1丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "cafe",
+"name": "コーヒータイム",
+"phone": "03 3975 9224"
+}
+},
+{
+"type": "node",
+"id": 8434578357,
+"lat": 35.7697347,
+"lon": 139.6447571,
+"tags": {
+"addr:block_number": "22",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "1丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "田中屋",
+"phone": "03 3930 0155"
+}
+},
+{
+"type": "node",
+"id": 8434578489,
+"lat": 35.7698751,
+"lon": 139.6448899,
+"tags": {
+"addr:block_number": "22",
+"addr:city": "板橋区",
+"addr:housenumber": "9",
+"addr:neighbourhood": "1丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "cafe",
+"name": "Cafe de Guy",
+"phone": "03 3939 0808"
+}
+},
+{
+"type": "node",
+"id": 8434613063,
+"lat": 35.7709031,
+"lon": 139.6451139,
+"tags": {
+"addr:block_number": "2",
+"addr:city": "板橋区",
+"addr:housenumber": "4",
+"addr:neighbourhood": "2丁目",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"amenity": "fast_food",
+"name": "てこや 下赤塚駅前店",
+"phone": "03 3977 1100",
+"website": "http://tekoya.com/shop/"
+}
+},
+{
+"type": "node",
+"id": 8434617502,
+"lat": 35.7709907,
+"lon": 139.6450417,
+"tags": {
+"addr:block_number": "2",
+"addr:city": "板橋区",
+"addr:housenumber": "4",
+"addr:neighbourhood": "2丁目",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"name": "中華逸品",
+"phone": "03 3977 7793",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 8434644474,
+"lat": 35.7706194,
+"lon": 139.6456657,
+"tags": {
+"addr:block_number": "7",
+"addr:city": "板橋区",
+"addr:housenumber": "3",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "麒麟",
+"phone": "03 4361 4657"
+}
+},
+{
+"type": "node",
+"id": 8434668742,
+"lat": 35.7708424,
+"lon": 139.6455122,
+"tags": {
+"addr:block_number": "2",
+"addr:city": "板橋区",
+"addr:housenumber": "18",
+"addr:neighbourhood": "2丁目",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"amenity": "fast_food",
+"branch": "下赤塚店",
+"brand": "ちよだ鮨",
+"brand:en": "Chiyoda Sushi",
+"brand:ja": "ちよだ鮨",
+"brand:wikidata": "Q11272065",
+"brand:wikipedia": "ja:ちよだ鮨",
+"cuisine": "sushi",
+"name": "ちよだ鮨",
+"name:en": "Chiyoda Sushi",
+"name:ja": "ちよだ鮨",
+"phone": "03 3930 2010",
+"takeaway": "only",
+"website": "https://www.chiyoda-sushi.co.jp/"
+}
+},
+{
+"type": "node",
+"id": 8434731225,
+"lat": 35.7702172,
+"lon": 139.6439358,
+"tags": {
+"addr:block_number": "25",
+"addr:city": "板橋区",
+"addr:housenumber": "5",
+"addr:neighbourhood": "1丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"air_conditioning": "yes",
+"amenity": "fast_food",
+"branch": "下赤塚店",
+"brand": "ピザハット",
+"brand:en": "Pizza Hut",
+"brand:ja": "ピザハット",
+"brand:wikidata": "Q191615",
+"brand:wikipedia": "ja:ピザハット",
+"check_date": "2026-08-30",
+"cuisine": "pizza",
+"delivery": "yes",
+"drive_through": "no",
+"name": "ピザハット",
+"name:en": "Pizza Hut",
+"name:ja": "ピザハット",
+"opening_hours": "11:00-24:00",
+"outdoor_seating": "no",
+"payment:PayPay": "yes",
+"payment:au_pay": "yes",
+"payment:cash": "yes",
+"payment:credit_cards": "yes",
+"payment:d_barai": "yes",
+"payment:debit_cards": "yes",
+"payment:rakuten_pay": "yes",
+"phone": "03 5997 4343",
+"takeaway": "yes",
+"website": "https://www.pizzahut.jp/huts/8562"
+}
+},
+{
+"type": "node",
+"id": 8452443730,
+"lat": 35.7704681,
+"lon": 139.6423,
+"tags": {
+"addr:block_number": "1",
+"addr:city": "板橋区",
+"addr:housenumber": "12",
+"addr:neighbourhood": "3丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"name": "レシピダイニング 赤塚店",
+"phone": "090 9812 2399",
+"start_date": "2021-02-11",
+"website": "https://recipedining.jp/akatsukaten/"
+}
+},
+{
+"type": "node",
+"id": 8499234217,
+"lat": 35.7711521,
+"lon": 139.6368106,
+"tags": {
+"amenity": "restaurant",
+"name": "井上"
+}
+},
+{
+"type": "node",
+"id": 8515974954,
+"lat": 35.7703216,
+"lon": 139.6455787,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "誠華園"
+}
+},
+{
+"type": "node",
+"id": 8534946529,
+"lat": 35.7635343,
+"lon": 139.6759322,
+"tags": {
+"amenity": "restaurant",
+"branch": "上板橋南口店",
+"brand": "餃子の王将",
+"brand:en": "Gyoza no Ohsho",
+"brand:ja": "餃子の王将",
+"brand:wikidata": "Q11666805",
+"brand:wikipedia": "en:Gyoza no Ohsho",
+"cuisine": "chinese;gyoza",
+"name": "餃子の王将",
+"name:en": "Gyoza no Ohsho",
+"name:ja": "餃子の王将"
+}
+},
+{
+"type": "node",
+"id": 8537884434,
+"lat": 35.7714536,
+"lon": 139.6447501,
+"tags": {
+"amenity": "restaurant",
+"name": "チョンサチョロン"
+}
+},
+{
+"type": "node",
+"id": 8537895707,
+"lat": 35.7717727,
+"lon": 139.6444433,
+"tags": {
+"name": "鶏笑 下赤塚店",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 8537895714,
+"lat": 35.7716697,
+"lon": 139.6445021,
+"tags": {
+"amenity": "pub",
+"name": "やきとり にしだ場 下赤塚北口店"
+}
+},
+{
+"type": "node",
+"id": 8537895715,
+"lat": 35.7715571,
+"lon": 139.6445699,
+"tags": {
+"name": "ペンギンの屋台",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 8537898521,
+"lat": 35.7719461,
+"lon": 139.6442426,
+"tags": {
+"amenity": "bar",
+"name": "スナック 輝"
+}
+},
+{
+"type": "node",
+"id": 8537919324,
+"lat": 35.7722048,
+"lon": 139.6442044,
+"tags": {
+"amenity": "pub",
+"name": "天晴"
+}
+},
+{
+"type": "node",
+"id": 8537919325,
+"lat": 35.7721678,
+"lon": 139.6442225,
+"tags": {
+"amenity": "pub",
+"name": "酒処 金の路"
+}
+},
+{
+"type": "node",
+"id": 8537919326,
+"lat": 35.7723207,
+"lon": 139.644134,
+"tags": {
+"amenity": "pub",
+"name": "串揚げ れん 塩もつ煮"
+}
+},
+{
+"type": "node",
+"id": 8540460039,
+"lat": 35.7713709,
+"lon": 139.6443379,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "sushi",
+"name": "魚がし寿司"
+}
+},
+{
+"type": "node",
+"id": 8540466914,
+"lat": 35.7702972,
+"lon": 139.644468,
+"tags": {
+"amenity": "pub",
+"name": "やきとり宮川"
+}
+},
+{
+"type": "node",
+"id": 8540466915,
+"lat": 35.7703962,
+"lon": 139.6445512,
+"tags": {
+"amenity": "pub",
+"name": "牛繁 下赤塚店"
+}
+},
+{
+"type": "node",
+"id": 8540466916,
+"lat": 35.7704789,
+"lon": 139.6444613,
+"tags": {
+"amenity": "bar",
+"name": "アーシェ"
+}
+},
+{
+"type": "node",
+"id": 8540467417,
+"lat": 35.7705181,
+"lon": 139.6443366,
+"tags": {
+"amenity": "pub",
+"name": "やきとり にしだ場 下赤塚南口店"
+}
+},
+{
+"type": "node",
+"id": 8540467419,
+"lat": 35.7701677,
+"lon": 139.6448529,
+"tags": {
+"amenity": "pub",
+"name": "下赤塚ダイナマイト酒場"
+}
+},
+{
+"type": "node",
+"id": 8540467420,
+"lat": 35.7700869,
+"lon": 139.6445746,
+"tags": {
+"amenity": "pub",
+"name": "あわわ屋"
+}
+},
+{
+"type": "node",
+"id": 8540467421,
+"lat": 35.7703562,
+"lon": 139.6443963,
+"tags": {
+"amenity": "bar",
+"name": "浄瑠樹"
+}
+},
+{
+"type": "node",
+"id": 8540467422,
+"lat": 35.7702588,
+"lon": 139.644745,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0093",
+"air_conditioning": "yes",
+"amenity": "fast_food",
+"branch": "下赤塚駅前店",
+"brand": "すき家",
+"brand:en": "Sukiya",
+"brand:ja": "すき家",
+"brand:wikidata": "Q6137375",
+"brand:wikipedia": "ja:すき家",
+"capacity": "21",
+"check_date": "2026-09-04",
+"cuisine": "beef_bowl;breakfast;salad;curry;seafood",
+"delivery": "yes",
+"drive_through": "no",
+"highchair": "yes",
+"level": "0",
+"name": "すき家",
+"name:en": "Sukiya",
+"name:ja": "すき家",
+"opening_hours": "04:00-03:00",
+"outdoor_seating": "no",
+"payment:PayPay": "yes",
+"payment:account_cards": "yes",
+"payment:alipay": "yes",
+"payment:au_pay": "yes",
+"payment:bank_pay": "yes",
+"payment:cash": "yes",
+"payment:credit_cards": "yes",
+"payment:d_barai": "yes",
+"payment:debit_cards": "yes",
+"payment:iD": "yes",
+"payment:jcb_premo": "yes",
+"payment:jcoin_pay": "yes",
+"payment:merpay": "yes",
+"payment:quicpay": "yes",
+"payment:rakuten_edy": "yes",
+"payment:rakuten_pay": "yes",
+"payment:unionpay": "yes",
+"payment:wechat": "yes",
+"phone": "+81 120498007",
+"ref:vatin": "T2010401093920",
+"smoking": "no",
+"stroller": "yes",
+"takeaway": "yes",
+"toilets": "yes",
+"toilets:wheelchair": "no",
+"website": "https://maps.sukiya.jp/jp/detail/1356.html",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 8540525549,
+"lat": 35.7713683,
+"lon": 139.6439318,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "しなの"
+}
+},
+{
+"type": "node",
+"id": 8540525550,
+"lat": 35.771407,
+"lon": 139.643905,
+"tags": {
+"amenity": "bar",
+"name": "あぽろん"
+}
+},
+{
+"type": "node",
+"id": 8540525552,
+"lat": 35.7713297,
+"lon": 139.6440673,
+"tags": {
+"amenity": "pub",
+"name": "居酒歌夜 美津子"
+}
+},
+{
+"type": "node",
+"id": 8540525553,
+"lat": 35.771339,
+"lon": 139.6441048,
+"tags": {
+"amenity": "restaurant",
+"name": "雅"
+}
+},
+{
+"type": "node",
+"id": 8540525555,
+"lat": 35.7713841,
+"lon": 139.6443798,
+"tags": {
+"amenity": "pub",
+"name": "食事処酒処元"
+}
+},
+{
+"type": "node",
+"id": 8540525556,
+"lat": 35.771407,
+"lon": 139.6444482,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "chinese",
+"name": "蝶香軒"
+}
+},
+{
+"type": "node",
+"id": 8540525560,
+"lat": 35.7712584,
+"lon": 139.6446741,
+"tags": {
+"amenity": "bar",
+"name": "かさぶらんか"
+}
+},
+{
+"type": "node",
+"id": 8543222385,
+"lat": 35.7723057,
+"lon": 139.6445266,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian",
+"name": "curari"
+}
+},
+{
+"type": "node",
+"id": 8543237776,
+"lat": 35.7725027,
+"lon": 139.6445588,
+"tags": {
+"amenity": "cafe",
+"name": "カフェ トモチート"
+}
+},
+{
+"type": "node",
+"id": 8543241374,
+"lat": 35.7723988,
+"lon": 139.6442248,
+"tags": {
+"amenity": "pub",
+"name": "居酒屋なかま"
+}
+},
+{
+"type": "node",
+"id": 8543249998,
+"lat": 35.7722622,
+"lon": 139.6446855,
+"tags": {
+"name": "鳥茂",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 8543881066,
+"lat": 35.7711585,
+"lon": 139.6420227,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0093",
+"air_conditioning": "yes",
+"amenity": "restaurant",
+"check_date": "2026-08-29",
+"level": "0",
+"name": "沖縄料理ちゅらさん",
+"name:en": "Okinawan Cuisine Chura-san",
+"opening_hours": "Mo,We-Su 18:00-24:00; Tu off",
+"outdoor_seating": "no",
+"phone": "+81 339762007",
+"reservation": "yes",
+"toilets": "yes"
+}
+},
+{
+"type": "node",
+"id": 8543881067,
+"lat": 35.7711667,
+"lon": 139.6419831,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0093",
+"air_conditioning": "yes",
+"amenity": "bar",
+"check_date": "2026-08-29",
+"contact:facebook": "https://www.facebook.com/igarashi.homestyledining/",
+"level": "0",
+"name": "IGARASHI",
+"opening_hours": "Mo-Sa 18:00-24:00; Su off",
+"outdoor_seating": "no",
+"phone": "+81 363384740",
+"website": "https://www.facebook.com/igarashi.homestyledining/"
+}
+},
+{
+"type": "node",
+"id": 8545104291,
+"lat": 35.7699507,
+"lon": 139.6443732,
+"tags": {
+"amenity": "restaurant",
+"name": "松のや 下赤塚店"
+}
+},
+{
+"type": "node",
+"id": 8545104292,
+"lat": 35.7700144,
+"lon": 139.6442685,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "龍一郎"
+}
+},
+{
+"type": "node",
+"id": 8545104293,
+"lat": 35.770386,
+"lon": 139.6443403,
+"tags": {
+"amenity": "bar",
+"name": "Fort AKATSUKA"
+}
+},
+{
+"type": "node",
+"id": 8547262278,
+"lat": 35.7709337,
+"lon": 139.645088,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "中華SOBA 惠ばら"
+}
+},
+{
+"type": "node",
+"id": 8547297571,
+"lat": 35.7707538,
+"lon": 139.6451426,
+"tags": {
+"amenity": "fast_food",
+"name": "バインミーバーバー"
+}
+},
+{
+"type": "node",
+"id": 8552267978,
+"lat": 35.7690908,
+"lon": 139.6764349,
+"tags": {
+"amenity": "fast_food",
+"branch": "中台店",
+"brand": "ドミノ",
+"brand:en": "Domino's",
+"brand:ja": "ドミノ",
+"brand:wikidata": "Q839466",
+"brand:wikipedia": "ja:ドミノ・ピザ",
+"cuisine": "pizza",
+"name": "ドミノ",
+"name:en": "Domino's",
+"name:ja": "ドミノ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 8555658942,
+"lat": 35.7686533,
+"lon": 139.6615013,
+"tags": {
+"amenity": "cafe",
+"branch": "エキア東武練馬店",
+"brand": "コメダ珈琲店",
+"brand:en": "Komeda Coffee Shop",
+"brand:ja": "コメダ珈琲店",
+"brand:wikidata": "Q11302679",
+"brand:wikipedia": "ja:コメダ",
+"cuisine": "coffee_shop",
+"name": "コメダ珈琲店",
+"name:en": "Komeda Coffee Shop",
+"name:ja": "コメダ珈琲店",
+"outdoor_seating": "no",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 8555658943,
+"lat": 35.7686283,
+"lon": 139.6615579,
+"tags": {
+"amenity": "restaurant",
+"branch": "東武練馬店",
+"cuisine": "sushi",
+"name": "がってん寿司"
+}
+},
+{
+"type": "node",
+"id": 8633979168,
+"lat": 35.7687266,
+"lon": 139.6472473,
+"tags": {
+"amenity": "bar",
+"name": "ビストロ 桜"
+}
+},
+{
+"type": "node",
+"id": 8642076606,
+"lat": 35.7700584,
+"lon": 139.6447243,
+"tags": {
+"amenity": "pub",
+"name": "韓の屋台"
+}
+},
+{
+"type": "node",
+"id": 8642089920,
+"lat": 35.7709646,
+"lon": 139.6457498,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "辰巳庵"
+}
+},
+{
+"type": "node",
+"id": 8643804678,
+"lat": 35.7687583,
+"lon": 139.6471243,
+"tags": {
+"amenity": "restaurant",
+"name": "とりざんまい 赤塚店"
+}
+},
+{
+"type": "node",
+"id": 8662166976,
+"lat": 35.771857,
+"lon": 139.6443883,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "tombo"
+}
+},
+{
+"type": "node",
+"id": 8730297410,
+"lat": 35.7694315,
+"lon": 139.6597821,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "ザイカ 東武練馬店"
+}
+},
+{
+"type": "node",
+"id": 8730336616,
+"lat": 35.7697487,
+"lon": 139.6588776,
+"tags": {
+"amenity": "bar",
+"name": "シルクロード"
+}
+},
+{
+"type": "node",
+"id": 8730338267,
+"lat": 35.7696992,
+"lon": 139.6591518,
+"tags": {
+"amenity": "cafe",
+"name": "COFFEE & SNACK TOM"
+}
+},
+{
+"type": "node",
+"id": 8730342869,
+"lat": 35.7697133,
+"lon": 139.6590754,
+"tags": {
+"amenity": "pub",
+"name": "やきとり大吉 東武練馬店"
+}
+},
+{
+"type": "node",
+"id": 8730346776,
+"lat": 35.7698243,
+"lon": 139.6584028,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "italian",
+"name": "アンティカピッツェリア・ダ・ズズ"
+}
+},
+{
+"type": "node",
+"id": 8732559379,
+"lat": 35.7693706,
+"lon": 139.660221,
+"tags": {
+"amenity": "pub",
+"name": "串カツ田中 東武練馬店"
+}
+},
+{
+"type": "node",
+"id": 8732586799,
+"lat": 35.7692134,
+"lon": 139.65913,
+"tags": {
+"amenity": "pub",
+"name": "しな野"
+}
+},
+{
+"type": "node",
+"id": 8732592477,
+"lat": 35.7693173,
+"lon": 139.6604551,
+"tags": {
+"amenity": "restaurant",
+"name": "ジローズテーブル 東武練馬イオン前店"
+}
+},
+{
+"type": "node",
+"id": 8732603449,
+"lat": 35.770117,
+"lon": 139.6565735,
+"tags": {
+"amenity": "cafe",
+"name": "珈琲屋らびっと"
+}
+},
+{
+"type": "node",
+"id": 8739731944,
+"lat": 35.7689179,
+"lon": 139.6607497,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "豚ラーメン 東武練馬店"
+}
+},
+{
+"type": "node",
+"id": 8739735180,
+"lat": 35.7689297,
+"lon": 139.6610205,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "ミトミトカレー"
+}
+},
+{
+"type": "node",
+"id": 8739754486,
+"lat": 35.7689092,
+"lon": 139.6608046,
+"tags": {
+"amenity": "restaurant",
+"name": "創作Dining まかない家"
+}
+},
+{
+"type": "node",
+"id": 8739755147,
+"lat": 35.7691108,
+"lon": 139.6608571,
+"tags": {
+"amenity": "pub",
+"name": "餃子酒場 いちばん星 東武練馬駅前店"
+}
+},
+{
+"type": "node",
+"id": 8819051017,
+"lat": 35.7786353,
+"lon": 139.6472229,
+"tags": {
+"addr:block_number": "27",
+"addr:city": "板橋区",
+"addr:housenumber": "11",
+"addr:neighbourhood": "赤塚六丁目",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"amenity": "restaurant",
+"cuisine": "chinese;ramen",
+"name": "寿来",
+"phone": "+81-3-3977-1991"
+}
+},
+{
+"type": "node",
+"id": 9391544564,
+"lat": 35.7636882,
+"lon": 139.6776477,
+"tags": {
+"amenity": "restaurant",
+"brand": "デニーズ",
+"brand:en": "Denny's",
+"brand:ja": "デニーズ",
+"brand:wikidata": "Q11320661",
+"brand:wikipedia": "ja:デニーズ (日本)",
+"cuisine": "western;japanese",
+"name": "デニーズ",
+"name:en": "Denny's",
+"name:ja": "デニーズ"
+}
+},
+{
+"type": "node",
+"id": 9458497317,
+"lat": 35.7511362,
+"lon": 139.6937222,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "ramen",
+"name": "時ちゃんラーメン"
+}
+},
+{
+"type": "node",
+"id": 9582287096,
+"lat": 35.7645169,
+"lon": 139.6701217,
+"tags": {
+"addr:block_number": "19",
+"addr:city": "板橋区",
+"addr:housenumber": "8",
+"addr:neighbourhood": "上板橋二丁目",
+"addr:postcode": "174-0076",
+"addr:province": "東京都",
+"amenity": "pub",
+"name": "夢献",
+"opening_hours": "Mo-Su 17:00-23:00; Mo[1,3] off",
+"opening_hours:covid19": "off",
+"payment:cash": "yes",
+"phone": "+81-3-3936-0365",
+"smoking": "yes"
+}
+},
+{
+"type": "node",
+"id": 9582467774,
+"lat": 35.7639493,
+"lon": 139.6762551,
+"tags": {
+"addr:block_number": "33",
+"addr:city": "板橋区",
+"addr:housenumber": "3",
+"addr:neighbourhood": "常盤台四丁目",
+"addr:postcode": "174-0071",
+"addr:province": "東京都",
+"addr:unit": "201",
+"amenity": "restaurant",
+"branch": "本店",
+"cuisine": "noodle",
+"name": "蒙古タンメン 中本",
+"name:ko": "몽고탕면 나카모토 본점",
+"opening_hours": "Mo-Sa 09:00-20:00",
+"phone": "+81-3-5398-1233",
+"website": "https://www.moukotanmen-nakamoto.com",
+"wikidata": "Q11621244",
+"wikipedia": "ja:蒙古タンメン中本"
+}
+},
+{
+"type": "node",
+"id": 9582514833,
+"lat": 35.7645913,
+"lon": 139.6755738,
+"tags": {
+"addr:block_number": "2",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "上板橋三丁目",
+"addr:postcode": "174-0076",
+"addr:province": "東京都",
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "ネパールインドダイニング スルエシー",
+"name:en": "SURYASHI",
+"opening_hours": "Mo-Sa 11:00-15:00,17:00-22:45",
+"phone": "+81-3-3931-2200",
+"smoking": "no",
+"website": "https://suryashi.co.jp"
+}
+},
+{
+"type": "node",
+"id": 9582628482,
+"lat": 35.7660386,
+"lon": 139.6749944,
+"tags": {
+"addr:block_number": "6",
+"addr:city": "板橋区",
+"addr:housenumber": "7",
+"addr:neighbourhood": "上板橋三丁目",
+"addr:postcode": "174-0076",
+"addr:province": "東京都",
+"amenity": "pub",
+"name": "居酒屋 花門 comeon",
+"opening_hours": "Mo-Sa 17:00-25:00; Tu off",
+"phone": "+81-3-3935-9222",
+"website": "https://comeonkamon.seesaa.net/"
+}
+},
+{
+"type": "node",
+"id": 9587376752,
+"lat": 35.7665099,
+"lon": 139.6701542,
+"tags": {
+"addr:block_number": "24-5",
+"addr:city": "板橋区",
+"addr:neighbourhood": "二丁目",
+"addr:postcode": "174-0076",
+"addr:province": "東京都",
+"addr:quarter": "上板橋",
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "美可和屋",
+"phone": "03-3934-4433"
+}
+},
+{
+"type": "node",
+"id": 9587814833,
+"lat": 35.7652603,
+"lon": 139.6759231,
+"tags": {
+"addr:block_number": "5-1",
+"addr:city": "板橋区",
+"addr:neighbourhood": "三丁目",
+"addr:postcode": "174-0076",
+"addr:province": "東京都",
+"addr:quarter": "上板橋",
+"name": "まごころ大高",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 9600034817,
+"lat": 35.7644841,
+"lon": 139.670152,
+"tags": {
+"addr:city": "板橋区",
+"addr:neighbourhood": "二丁目",
+"addr:postcode": "174-0076",
+"addr:province": "東京都",
+"addr:quarter": "上板橋",
+"amenity": "pub",
+"name": "あじまー"
+}
+},
+{
+"type": "node",
+"id": 9758764067,
+"lat": 35.7777014,
+"lon": 139.6310309,
+"tags": {
+"amenity": "restaurant",
+"brand": "からやま",
+"brand:en": "Karayama",
+"brand:ja": "からやま",
+"brand:wikidata": "Q96145071",
+"cuisine": "friture",
+"name": "からやま",
+"name:en": "Karayama",
+"name:ja": "からやま"
+}
+},
+{
+"type": "node",
+"id": 9774569828,
+"lat": 35.7698707,
+"lon": 139.6453215,
+"tags": {
+"addr:block_number": "21",
+"addr:city": "板橋区",
+"addr:housenumber": "10",
+"addr:neighbourhood": "1丁目",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"cuisine": "noodle",
+"name": "ごてん"
+}
+},
+{
+"type": "node",
+"id": 9930922826,
+"lat": 35.7765623,
+"lon": 139.6956639,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "soba;udon"
+}
+},
+{
+"type": "node",
+"id": 9930922827,
+"lat": 35.7765046,
+"lon": 139.6957269,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian;curry",
+"name": "Biyani"
+}
+},
+{
+"type": "node",
+"id": 9982773391,
+"lat": 35.7466821,
+"lon": 139.7195265,
+"tags": {
+"amenity": "fast_food",
+"brand": "富士そば",
+"brand:en": "Fuji Soba",
+"brand:ja": "富士そば",
+"brand:wikidata": "Q11414722",
+"cuisine": "soba",
+"name": "富士そば",
+"name:en": "Fuji Soba",
+"name:ja": "富士そば",
+"opening_hours": "24/7",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10044111619,
+"lat": 35.7875567,
+"lon": 139.6633076,
+"tags": {
+"amenity": "cafe",
+"name": "コミュニティカフェ"
+}
+},
+{
+"type": "node",
+"id": 10127428171,
+"lat": 35.7854108,
+"lon": 139.6764123,
+"tags": {
+"amenity": "fast_food",
+"brand": "すき家",
+"brand:en": "Sukiya",
+"brand:ja": "すき家",
+"brand:wikidata": "Q6137375",
+"cuisine": "beef_bowl",
+"drive_through": "no",
+"name": "すき家",
+"name:en": "Sukiya",
+"name:ja": "すき家",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10127428174,
+"lat": 35.7838265,
+"lon": 139.6785385,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:zh": "松屋",
+"cuisine": "japanese",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:zh": "松屋",
+"official_name": "松屋フーズ",
+"official_name:en": "Matsuya Foods",
+"official_name:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10199501315,
+"lat": 35.7760016,
+"lon": 139.6954358,
+"tags": {
+"amenity": "fast_food",
+"check_date": "2022-11-18",
+"cuisine": "burger",
+"drive_through": "no",
+"name": "マクドナルド志村坂上店"
+}
+},
+{
+"type": "node",
+"id": 10199509617,
+"lat": 35.7760965,
+"lon": 139.6947834,
+"tags": {
+"amenity": "fast_food",
+"check_date": "2022-11-18",
+"cuisine": "burger",
+"name": "松のや"
+}
+},
+{
+"type": "node",
+"id": 10219026368,
+"lat": 35.7711727,
+"lon": 139.6920674,
+"tags": {
+"amenity": "restaurant",
+"branch": "イオンスタイル板橋前野町",
+"check_date": "2022-11-18",
+"name": "サイゼリヤ",
+"name:en": "Saizeriya",
+"name:ja": "サイゼリヤ",
+"opening_hours": "10:00-22:00",
+"phone": "+81-3-5916-0031",
+"website": "https://shop.saizeriya.co.jp/sz_restaurant/spot/detail?code=1549"
+}
+},
+{
+"type": "node",
+"id": 10270136505,
+"lat": 35.7490235,
+"lon": 139.6987111,
+"tags": {
+"addr:city": "板橋区",
+"addr:postcode": "173-0023",
+"addr:province": "東京都",
+"amenity": "restaurant",
+"cuisine": "regional",
+"name": "かめやキッチン",
+"name:en": "KAMEYA KITCHEN",
+"note": "共用キッチンスペース貸出",
+"note:en": "Shared kitchen space for rental",
+"phone": "+81364279832",
+"website": "https://kameyakitchen.jp/"
+}
+},
+{
+"type": "node",
+"id": 10296216357,
+"lat": 35.7489007,
+"lon": 139.7030637,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:zh": "松屋",
+"cuisine": "beef_bowl",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja-Latn": "Matsuya",
+"name:zh": "松屋",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10296476601,
+"lat": 35.7557342,
+"lon": 139.6969088,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:zh": "松屋",
+"cuisine": "beef_bowl",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja-Latn": "Matsuya",
+"name:zh": "松屋",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10296485184,
+"lat": 35.7639019,
+"lon": 139.6769076,
+"tags": {
+"amenity": "fast_food",
+"brand": "松屋",
+"brand:en": "Matsuya",
+"brand:ja": "松屋",
+"brand:wikidata": "Q848773",
+"brand:zh": "松屋",
+"cuisine": "beef_bowl",
+"name": "松屋",
+"name:en": "Matsuya",
+"name:ja": "松屋",
+"name:ja-Latn": "Matsuya",
+"name:zh": "松屋",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10741791717,
+"lat": 35.7593181,
+"lon": 139.7144124,
+"tags": {
+"alt_name:en": "Kentucky Fried Chicken",
+"amenity": "fast_food",
+"brand": "ケンタッキーフライドチキン",
+"brand:en": "KFC",
+"brand:ja": "ケンタッキーフライドチキン",
+"brand:wikidata": "Q524757",
+"cuisine": "chicken",
+"name": "ケンタッキーフライドチキン",
+"name:en": "KFC",
+"name:ja": "ケンタッキーフライドチキン",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10741791718,
+"lat": 35.7592559,
+"lon": 139.7144884,
+"tags": {
+"amenity": "cafe",
+"brand": "スターバックス",
+"brand:en": "Starbucks",
+"brand:ja": "スターバックス",
+"brand:wikidata": "Q37158",
+"cuisine": "coffee_shop",
+"name": "スターバックス",
+"name:en": "Starbucks",
+"name:ja": "スターバックス",
+"official_name": "スターバックスコーヒー",
+"official_name:en": "Starbucks Coffee",
+"official_name:ja": "スターバックスコーヒー",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 10760686530,
+"lat": 35.7707284,
+"lon": 139.6451335,
+"tags": {
+"addr:block_number": "1",
+"addr:city": "板橋区",
+"addr:housenumber": "9",
+"addr:neighbourhood": "2丁目",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"amenity": "fast_food",
+"cuisine": "fish",
+"name": "魚丼 下赤塚店"
+}
+},
+{
+"type": "node",
+"id": 10760704183,
+"lat": 35.7715816,
+"lon": 139.6445557,
+"tags": {
+"addr:block_number": "10",
+"addr:city": "板橋区",
+"addr:housenumber": "19",
+"addr:neighbourhood": "2丁目",
+"addr:postcode": "175-0092",
+"addr:province": "東京都",
+"addr:quarter": "赤塚",
+"amenity": "cafe",
+"name": "NP"
+}
+},
+{
+"type": "node",
+"id": 11411613669,
+"lat": 35.7447585,
+"lon": 139.7069409,
+"tags": {
+"addr:block_number": "16",
+"addr:city": "板橋区",
+"addr:housenumber": "8",
+"addr:neighbourhood": "大山金井町",
+"addr:postcode": "173-0024",
+"addr:province": "東京都",
+"amenity": "cafe",
+"contact:instagram": "pinocchio.1974",
+"cuisine": "coffee_shop;pancake;tea",
+"name": "コーヒーショップ ピノキオ",
+"name:en": "Coffee Shop Pinocchio",
+"name:ja": "コーヒーショップ ピノキオ",
+"opening_hours": "Fr-Tu 09:00-17:00",
+"phone": "+81 3-397-49336"
+}
+},
+{
+"type": "node",
+"id": 11985549890,
+"lat": 35.7700392,
+"lon": 139.6612581,
+"tags": {
+"amenity": "fast_food",
+"brand": "築地銀だこ",
+"brand:en": "Gindaco",
+"brand:ja": "築地銀だこ",
+"brand:wikidata": "Q11603490",
+"cuisine": "takoyaki",
+"name": "築地銀だこ",
+"name:en": "Gindaco",
+"name:ja": "築地銀だこ",
+"short_name": "銀だこ",
+"short_name:ja": "銀だこ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 11985549892,
+"lat": 35.7698445,
+"lon": 139.6610479,
+"tags": {
+"amenity": "fast_food",
+"brand": "丸亀製麺",
+"brand:en": "Marugame Seimen",
+"brand:ja": "丸亀製麺",
+"brand:wikidata": "Q10877253",
+"brand:zh": "丸亀製麵",
+"cuisine": "noodle",
+"name": "丸亀製麺",
+"name:en": "Marugame Seimen",
+"name:ja": "丸亀製麺",
+"name:zh": "丸亀製麵",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 11985549895,
+"lat": 35.7778918,
+"lon": 139.6306429,
+"tags": {
+"amenity": "fast_food",
+"brand": "バーガーキング",
+"brand:en": "Burger King",
+"brand:ja": "バーガーキング",
+"brand:wikidata": "Q177054",
+"cuisine": "burger",
+"name": "バーガーキング",
+"name:en": "Burger King",
+"name:ja": "バーガーキング",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 11985549897,
+"lat": 35.7780294,
+"lon": 139.6303225,
+"tags": {
+"alt_name:en": "Kurazushi",
+"amenity": "fast_food",
+"brand": "くら寿司",
+"brand:en": "Kura Sushi",
+"brand:ja": "くら寿司",
+"brand:wikidata": "Q6445491",
+"cuisine": "sushi",
+"name": "くら寿司",
+"name:en": "Kura Sushi",
+"name:ja": "くら寿司",
+"official_name": "無添くら寿司",
+"official_name:en": "Muten Kura Sushi",
+"official_name:ja": "無添くら寿司",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 12002762010,
+"lat": 35.7699492,
+"lon": 139.6613796,
+"tags": {
+"amenity": "ice_cream",
+"brand": "バスキン・ロビンス",
+"brand:en": "Baskin-Robbins",
+"brand:ja": "バスキン・ロビンス",
+"brand:wikidata": "Q584601",
+"cuisine": "ice_cream",
+"name": "サーティワンアイスクリーム",
+"name:en": "Baskin-Robbins",
+"name:ja": "サーティワンアイスクリーム"
+}
+},
+{
+"type": "node",
+"id": 12101663336,
+"lat": 35.7820267,
+"lon": 139.6651826,
+"tags": {
+"alt_name:en": "Kurazushi",
+"amenity": "fast_food",
+"branch": "高島平店",
+"brand": "くら寿司",
+"brand:en": "Kura Sushi",
+"brand:ja": "くら寿司",
+"brand:wikidata": "Q6445491",
+"brand:wikipedia": "ja:くら寿司",
+"cuisine": "sushi",
+"drive_through": "no",
+"name": "くら寿司",
+"name:en": "Kura Sushi",
+"name:ja": "くら寿司",
+"name:ja-Hira": "くらずし",
+"name:ja_rm": "Kura-zushi",
+"official_name": "無添くら寿司",
+"official_name:en": "Muten Kura Sushi",
+"official_name:ja": "無添くら寿司",
+"operator": "くらコーポレーション",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 12102782221,
+"lat": 35.7824017,
+"lon": 139.6733598,
+"tags": {
+"amenity": "restaurant",
+"brand": "デニーズ",
+"brand:en": "Denny's",
+"brand:ja": "デニーズ",
+"brand:wikidata": "Q11320661",
+"cuisine": "western;japanese",
+"name": "デニーズ",
+"name:en": "Denny's",
+"name:ja": "デニーズ",
+"website": "https://www.dennys.jp/"
+}
+},
+{
+"type": "node",
+"id": 12102854439,
+"lat": 35.7864517,
+"lon": 139.6702777,
+"tags": {
+"amenity": "fast_food",
+"brand": "すき家",
+"brand:en": "Sukiya",
+"brand:ja": "すき家",
+"brand:wikidata": "Q6137375",
+"cuisine": "beef_bowl",
+"name": "すき家",
+"name:en": "Sukiya",
+"name:ja": "すき家",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 12103785849,
+"lat": 35.7810067,
+"lon": 139.6681756,
+"tags": {
+"amenity": "restaurant",
+"branch": "板橋西台店",
+"brand": "ガスト",
+"brand:en": "Gusto",
+"brand:ja": "ガスト",
+"brand:wikidata": "Q87724117",
+"cuisine": "western;japanese",
+"name": "ガスト",
+"name:en": "Gusto",
+"name:ja": "ガスト",
+"name:ja-Hira": "じょなさん",
+"name:ja_rm": "jonasan",
+"operator": "すかいらーく"
+}
+},
+{
+"type": "node",
+"id": 12110044127,
+"lat": 35.7588476,
+"lon": 139.6878859,
+"tags": {
+"amenity": "pub",
+"check_date": "2024-08-14",
+"name": "Tomoshibi"
+}
+},
+{
+"type": "node",
+"id": 12112414320,
+"lat": 35.7581576,
+"lon": 139.6895075,
+"tags": {
+"amenity": "fast_food",
+"check_date": "2024-08-15",
+"cuisine": "mediterranean",
+"name": "Yummy Kebab",
+"takeaway": "only",
+"wheelchair": "yes"
+}
+},
+{
+"type": "node",
+"id": 12113833019,
+"lat": 35.7587961,
+"lon": 139.6863379,
+"tags": {
+"amenity": "cafe",
+"check_date": "2024-08-19",
+"name": "Cafe Ponte Alto",
+"opening_hours": "11:00-15:00"
+}
+},
+{
+"type": "node",
+"id": 12116026703,
+"lat": 35.7585551,
+"lon": 139.6887833,
+"tags": {
+"amenity": "restaurant",
+"check_date": "2024-08-17",
+"name": "Tonton"
+}
+},
+{
+"type": "node",
+"id": 12194421559,
+"lat": 35.7566551,
+"lon": 139.6959596,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "finnish",
+"name": "Papu Cafe",
+"phone": "+81 03 6912 4348"
+}
+},
+{
+"type": "node",
+"id": 12385457113,
+"lat": 35.7628242,
+"lon": 139.6813979,
+"tags": {
+"amenity": "fast_food",
+"fast_food": "cafeteria"
+}
+},
+{
+"type": "node",
+"id": 12491952578,
+"lat": 35.7449503,
+"lon": 139.7079527,
+"tags": {
+"addr:housenumber": "12",
+"amenity": "restaurant",
+"cuisine": "ramen",
+"name": "自家製麺 No11",
+"name:en": "Jikaseimen No. 11"
+}
+},
+{
+"type": "node",
+"id": 12663408217,
+"lat": 35.7872105,
+"lon": 139.6709584,
+"tags": {
+"amenity": "bar",
+"name": "夢宿"
+}
+},
+{
+"type": "node",
+"id": 12663408235,
+"lat": 35.7870468,
+"lon": 139.6726421,
+"tags": {
+"amenity": "cafe",
+"name": "コーヒーハウス トレビアン"
+}
+},
+{
+"type": "node",
+"id": 12663408241,
+"lat": 35.7870218,
+"lon": 139.6729124,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "ramen",
+"name": "麺's BAR らーめん勇人"
+}
+},
+{
+"type": "node",
+"id": 12663408243,
+"lat": 35.7870011,
+"lon": 139.6730947,
+"tags": {
+"amenity": "pub",
+"name": "KARABI TOKYO"
+}
+},
+{
+"type": "node",
+"id": 12663408248,
+"lat": 35.7867988,
+"lon": 139.6734703,
+"tags": {
+"amenity": "cafe",
+"name": "Tasty Cafe"
+}
+},
+{
+"type": "node",
+"id": 12663408251,
+"lat": 35.7867596,
+"lon": 139.6744982,
+"tags": {
+"cuisine": "sushi",
+"name": "スシロー 京樽",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 12663408254,
+"lat": 35.7867754,
+"lon": 139.6747711,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "soba",
+"name": "善十郎"
+}
+},
+{
+"type": "node",
+"id": 12663408255,
+"lat": 35.7867683,
+"lon": 139.6748321,
+"tags": {
+"name": "唐",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 12663408257,
+"lat": 35.7867542,
+"lon": 139.6746089,
+"tags": {
+"amenity": "restaurant",
+"name": "餃子の王将"
+}
+},
+{
+"type": "node",
+"id": 12663408266,
+"lat": 35.7869179,
+"lon": 139.6747986,
+"tags": {
+"amenity": "restaurant",
+"name": "西遊記"
+}
+},
+{
+"type": "node",
+"id": 12663408272,
+"lat": 35.7871219,
+"lon": 139.6748489,
+"tags": {
+"name": "キッチンオリジン",
+"shop": "deli"
+}
+},
+{
+"type": "node",
+"id": 12923208145,
+"lat": 35.7766006,
+"lon": 139.6326771,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "curry",
+"diet:vegan": "yes",
+"diet:vegetarian": "yes",
+"name": "鉄板カレー 匠えん",
+"name:en": "Teppan Curry Shōen"
+}
+},
+{
+"type": "node",
+"id": 13109994601,
+"lat": 35.7890977,
+"lon": 139.6617269,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "ramen",
+"name": "せい家"
+}
+},
+{
+"type": "node",
+"id": 13125327002,
+"lat": 35.7383125,
+"lon": 139.7037278,
+"tags": {
+"amenity": "restaurant",
+"level": "1",
+"name": "MUJI Kitchen"
+}
+},
+{
+"type": "node",
+"id": 13349060501,
+"lat": 35.7773446,
+"lon": 139.6329122,
+"tags": {
+"amenity": "cafe",
+"level": "1",
+"name": "STARBUCKS",
+"name:en": "STARBUCKS",
+"name:ja": "スターバックス",
+"opening_hours": "Mo-Su 07:00-22:30",
+"website": "https://store.starbucks.co.jp/detail-1361/"
+}
+},
+{
+"type": "node",
+"id": 13349066601,
+"lat": 35.7763965,
+"lon": 139.6321615,
+"tags": {
+"amenity": "cafe",
+"name": "STARBUCKS",
+"name:en": "STARBUCKS",
+"name:ja": "スターバックス",
+"opening_hours": "Mo-Su 07:00-22:00",
+"website": "https://store.starbucks.co.jp/detail-2345/"
+}
+},
+{
+"type": "node",
+"id": 13349071801,
+"lat": 35.7759881,
+"lon": 139.6321817,
+"tags": {
+"amenity": "restaurant",
+"level": "1",
+"name": "夢庵",
+"opening_hours": "Mo-Su 10:00-23:00",
+"website": "https://store-info.skylark.co.jp/yumean/map/130527/"
+}
+},
+{
+"type": "node",
+"id": 13356897801,
+"lat": 35.7790694,
+"lon": 139.675622,
+"tags": {
+"addr:postcode": "174-0046",
+"amenity": "restaurant",
+"cuisine": "french",
+"name": "Plant",
+"website": "https://hasuneplant.com",
+"website:menu": "https://www.tablecheck.com/shops/plant/reserve"
+}
+},
+{
+"type": "node",
+"id": 13358820301,
+"lat": 35.7911414,
+"lon": 139.6550839,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "indian",
+"name": "ネマステヒマラヤ",
+"name:en": "Nemaste Himalaya"
+}
+},
+{
+"type": "node",
+"id": 13373519501,
+"lat": 35.7713161,
+"lon": 139.7007652,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "vietnamese",
+"name": "Pho Miss Saigon",
+"opening_hours": "Sa 10:30-20:00; Mo-Fr 11:00-17:00"
+}
+},
+{
+"type": "node",
+"id": 13385905601,
+"lat": 35.7691159,
+"lon": 139.702368,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "thai",
+"name": "マナオ",
+"name:en": "Thai Dining Manao",
+"name:ja": "マナオ"
+}
+},
+{
+"type": "node",
+"id": 13413369539,
+"lat": 35.7916821,
+"lon": 139.6916312,
+"tags": {
+"amenity": "fast_food",
+"branch": "浮間舟渡店",
+"brand": "マイカリー食堂",
+"brand:en": "Matsuya",
+"brand:ja": "マイカリー食堂",
+"name": "マイカリー食堂",
+"name:en": "Mycurry Shokudo",
+"name:ja": "マイカリー食堂",
+"not:brand:wikidata": "Q848773",
+"operator": "松屋フーズ",
+"operator:en": "Matsuya Foods",
+"operator:ja": "松屋フーズ",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 13413587836,
+"lat": 35.7777071,
+"lon": 139.6327655,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "soba",
+"name": "文殊"
+}
+},
+{
+"type": "node",
+"id": 13413587837,
+"lat": 35.7776326,
+"lon": 139.6329758,
+"tags": {
+"amenity": "ice_cream",
+"brand": "バスキン・ロビンス",
+"brand:en": "Baskin-Robbins",
+"brand:ja": "バスキン・ロビンス",
+"brand:wikidata": "Q584601",
+"name": "サーティワンアイスクリーム",
+"name:en": "Baskin-Robbins",
+"name:ja": "サーティワンアイスクリーム"
+}
+},
+{
+"type": "node",
+"id": 13664062601,
+"lat": 35.7891472,
+"lon": 139.661726,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "japanese",
+"name": "かぶら屋"
+}
+},
+{
+"type": "node",
+"id": 13686270919,
+"lat": 35.7691659,
+"lon": 139.7037205,
+"tags": {
+"amenity": "restaurant"
+}
+},
+{
+"type": "node",
+"id": 13814315418,
+"lat": 35.7481495,
+"lon": 139.7022281,
+"tags": {
+"amenity": "fast_food",
+"brand": "吉野家",
+"brand:en": "Yoshinoya",
+"brand:ja": "吉野家",
+"brand:wikidata": "Q776272",
+"brand:zh": "吉野家",
+"brand:zh-Hans": "吉野家",
+"brand:zh-Hant": "吉野家",
+"cuisine": "beef_bowl",
+"name": "吉野家",
+"name:en": "Yoshinoya",
+"name:ja": "吉野家",
+"name:zh": "吉野家",
+"name:zh-Hans": "吉野家",
+"name:zh-Hant": "吉野家",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 13814315419,
+"lat": 35.7482158,
+"lon": 139.7020185,
+"tags": {
+"amenity": "pub",
+"name": "創作居酒屋 団欒炎"
+}
+},
+{
+"type": "node",
+"id": 13814324113,
+"lat": 35.7484786,
+"lon": 139.701983,
+"tags": {
+"amenity": "restaurant",
+"brand": "サイゼリヤ",
+"brand:en": "Saizeriya",
+"brand:ja": "サイゼリヤ",
+"brand:wikidata": "Q886564",
+"cuisine": "italian",
+"name": "サイゼリヤ",
+"name:en": "Saizeriya",
+"name:ja": "サイゼリヤ"
+}
+},
+{
+"type": "node",
+"id": 13814324114,
+"lat": 35.7485245,
+"lon": 139.7022263,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "soba",
+"name": "文殊"
+}
+},
+{
+"type": "node",
+"id": 13814324116,
+"lat": 35.7489705,
+"lon": 139.7012051,
+"tags": {
+"amenity": "fast_food",
+"brand": "富士そば",
+"brand:en": "Fuji Soba",
+"brand:ja": "富士そば",
+"brand:wikidata": "Q11414722",
+"cuisine": "soba",
+"name": "富士そば",
+"name:en": "Fuji Soba",
+"name:ja": "富士そば",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 13937133864,
+"lat": 35.7788706,
+"lon": 139.6307751,
+"tags": {
+"amenity": "restaurant",
+"cuisine": "vietnamese",
+"level": "1",
+"name": "MAKOTO Banh Mi",
+"name:ja": "マコトバインミー"
+}
+},
+{
+"type": "node",
+"id": 13987508780,
+"lat": 35.7483488,
+"lon": 139.7166251,
+"tags": {
+"amenity": "cafe",
+"name": "KADOCAFE",
+"outdoor_seating": "no",
+"payment:credit_cards": "yes"
+}
+},
+{
+"type": "node",
+"id": 14133496022,
+"lat": 35.7704342,
+"lon": 139.6456233,
+"tags": {
+"addr:floor": "1",
+"addr:postcode": "175-0092",
+"air_conditioning": "yes",
+"amenity": "fast_food",
+"branch": "下赤塚店",
+"check_date": "2026-08-30",
+"cuisine": "chinese",
+"drive_through": "no",
+"internet_access": "wlan",
+"internet_access:fee": "customers",
+"level": "0",
+"name": "松軒中華食堂",
+"name:en": "Matsuken Chuka(Chinese) Shokudo",
+"opening_hours": "11:00-24:00",
+"operator": "松屋フーズ",
+"outdoor_seating": "no",
+"payment:cash": "yes",
+"payment:credit_cards": "yes",
+"payment:debit_cards": "yes",
+"phone": "+81 70-7414-1687",
+"smoking": "no",
+"stroller": "limited",
+"takeaway": "yes",
+"website": "https://pkg.navitime.co.jp/matsuyafoods/spot/detail?code=0000001433",
+"wheelchair": "limited"
+}
+},
+{
+"type": "node",
+"id": 14309528687,
+"lat": 35.7484421,
+"lon": 139.7031693,
+"tags": {
+"amenity": "fast_food",
+"branch": "大山店",
+"branch:en": "Ooyama",
+"brand": "魚べい",
+"brand:en": "Uobei",
+"brand:ja": "魚べい",
+"brand:wikidata": "Q115008809",
+"cuisine": "sushi",
+"drive_through": "no",
+"name": "魚べい",
+"name:en": "Uobei",
+"name:ja": "魚べい",
+"opening_hours": "Mo-Fr 11:00-23:00; Sa-Su 10:30-23:00",
+"takeaway": "yes"
+}
+},
+{
+"type": "node",
+"id": 14313119388,
+"lat": 35.7471333,
+"lon": 139.7157149,
+"tags": {
+"amenity": "fast_food",
+"brand": "キッチンオリジン",
+"brand:en": "Kitchen Origin",
+"brand:ja": "キッチンオリジン",
+"brand:wikidata": "Q92658990",
+"cuisine": "japanese",
+"name": "キッチンオリジン",
+"name:en": "Kitchen Origin",
+"name:ja": "キッチンオリジン",
+"takeaway": "yes"
+}
+},
+{
+"type": "way",
+"id": 156180002,
+"center": {
+"lat": 35.7833412,
+"lon": 139.6447046
+},
+"tags": {
+"amenity": "restaurant",
+"building": "commercial",
+"cuisine": "noodle",
+"cuisine:ja": "蕎麦",
+"name": "ひびき庵",
+"source": "Bing,2007-03"
+}
+},
+{
+"type": "way",
+"id": 249845988,
+"center": {
+"lat": 35.7733992,
+"lon": 139.7011177
+},
+"tags": {
+"amenity": "pub",
+"building": "yes",
+"name": "天鈴",
+"source": "GSI/KIBAN 2500;NARO",
+"source_ref": "http://wiki.osm.org/wiki/GSI_KIBAN"
+}
+},
+{
+"type": "way",
+"id": 441955455,
+"center": {
+"lat": 35.7571744,
+"lon": 139.7031616
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"cuisine": "noodle;soba",
+"name": "そば処越後屋",
+"shop": "yes"
+}
+},
+{
+"type": "way",
+"id": 528397003,
+"center": {
+"lat": 35.7525504,
+"lon": 139.7104459
+},
+"tags": {
+"addr:block_number": "1",
+"addr:city": "板橋区",
+"addr:housenumber": "40",
+"addr:neighbourhood": "仲宿",
+"addr:postcode": "173-0005",
+"addr:province": "東京都",
+"amenity": "restaurant",
+"building": "yes",
+"building:levels": "2",
+"cuisine": "japanese",
+"name": "板五米店",
+"name:en": "Itagokometen",
+"name:ja": "板五米店",
+"opening_hours": "11:00-18:00",
+"phone": "+81 03 6915 5576",
+"reservation": "yes",
+"takeaway": "yes",
+"website": "https://itagokometen.localinfo.jp/"
+}
+},
+{
+"type": "way",
+"id": 569026544,
+"center": {
+"lat": 35.7889781,
+"lon": 139.6384788
+},
+"tags": {
+"addr:block_number": "25",
+"addr:city": "板橋区",
+"addr:housenumber": "4",
+"addr:neighbourhood": "1",
+"addr:postcode": "175-0091",
+"addr:province": "東京都",
+"addr:quarter": "三園",
+"amenity": "restaurant",
+"building": "yes",
+"capacity": "30",
+"cuisine": "japanese",
+"delivery": "no",
+"name": "かしを食堂",
+"opening_hours": "Mo-Sa 11:00-20:00",
+"outdoor_seating": "no",
+"smoking": "yes",
+"takeaway": "no"
+}
+},
+{
+"type": "way",
+"id": 580129803,
+"center": {
+"lat": 35.7497192,
+"lon": 139.7144192
+},
+"tags": {
+"amenity": "restaurant",
+"brand": "ガスト",
+"brand:en": "Gusto",
+"brand:ja": "ガスト",
+"brand:wikidata": "Q87724117",
+"building": "yes",
+"cuisine": "western;japanese",
+"name": "ガスト",
+"name:en": "Gusto",
+"name:ja": "ガスト"
+}
+},
+{
+"type": "way",
+"id": 681355194,
+"center": {
+"lat": 35.7891728,
+"lon": 139.6663927
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"cuisine": "chinese",
+"name": "天宝"
+}
+},
+{
+"type": "way",
+"id": 682406054,
+"center": {
+"lat": 35.790039,
+"lon": 139.6661724
+},
+"tags": {
+"amenity": "food_court",
+"opening_hours": "10:00-20:00"
+}
+},
+{
+"type": "way",
+"id": 720330900,
+"center": {
+"lat": 35.7849125,
+"lon": 139.6789905
+},
+"tags": {
+"addr:block_number": "31",
+"addr:city": "板橋区",
+"addr:housenumber": "27",
+"addr:neighbourhood": "２丁目",
+"addr:postcode": "174-0046",
+"addr:province": "東京都",
+"addr:quarter": "蓮根",
+"air_conditioning": "yes",
+"amenity": "bar",
+"brewery": "yes",
+"building": "yes",
+"level": "2",
+"name": "蓮根小樰",
+"opening_hours": "19:00-05:00",
+"outdoor_seating": "no",
+"phone": "0363560958",
+"smoking": "yes"
+}
+},
+{
+"type": "way",
+"id": 723283742,
+"center": {
+"lat": 35.7474526,
+"lon": 139.6759639
+},
+"tags": {
+"amenity": "restaurant",
+"building": "residential",
+"building:levels": "3",
+"cuisine": "steak_house",
+"ele": "34.4",
+"height": "9.6",
+"name": "300B One",
+"source": "MLIT_PLATEAU 13119-bldg-35995",
+"survey:date": "2021"
+}
+},
+{
+"type": "way",
+"id": 759517040,
+"center": {
+"lat": 35.7513825,
+"lon": 139.711611
+},
+"tags": {
+"addr:block_number": "12",
+"addr:city": "板橋区",
+"addr:housenumber": "1",
+"addr:neighbourhood": "板橋三丁目",
+"addr:postcode": "173-0004",
+"addr:province": "東京都",
+"amenity": "cafe",
+"amenity_1": "offices",
+"building": "yes",
+"cuisine": "coffee_shop;sandwich;japanese;ice_cream;juice",
+"name": "おとなりスタンド＆ワークス",
+"name:en": "Otonari Stand & Works",
+"name:ja": "おとなりスタンド＆ワークス",
+"outdoor_seating": "no",
+"takeaway": "yes",
+"website": "https://otonari-stand-works.localinfo.jp/",
+"wikidata": "Q80307238"
+}
+},
+{
+"type": "way",
+"id": 908040841,
+"center": {
+"lat": 35.7710305,
+"lon": 139.636645
+},
+"tags": {
+"addr:block_number": "12",
+"addr:city": "板橋区",
+"addr:housenumber": "12",
+"addr:neighbourhood": "3丁目",
+"addr:postcode": "175-0093",
+"addr:province": "東京都",
+"addr:quarter": "赤塚新町",
+"amenity": "restaurant",
+"building": "yes",
+"cuisine": "chinese",
+"name": "ふなせ"
+}
+},
+{
+"type": "way",
+"id": 1002182023,
+"center": {
+"lat": 35.7609918,
+"lon": 139.7027289
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"cuisine": "noodle",
+"name": "むさしの"
+}
+},
+{
+"type": "way",
+"id": 1002557479,
+"center": {
+"lat": 35.76105,
+"lon": 139.7035914
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"cuisine": "noodle",
+"name": "元祖まぐろラーメン本店"
+}
+},
+{
+"type": "way",
+"id": 1002557480,
+"center": {
+"lat": 35.7610638,
+"lon": 139.703645
+},
+"tags": {
+"amenity": "pub",
+"building": "yes",
+"name": "酒処ときた"
+}
+},
+{
+"type": "way",
+"id": 1106516588,
+"center": {
+"lat": 35.7794819,
+"lon": 139.6876925
+},
+"tags": {
+"amenity": "restaurant",
+"brand": "リンガーハット",
+"brand:en": "Ringer Hut",
+"brand:ja": "リンガーハット",
+"brand:wikidata": "Q7334856",
+"building": "yes",
+"cuisine": "japanese",
+"name": "リンガーハット",
+"name:en": "Ringer Hut",
+"name:ja": "リンガーハット"
+}
+},
+{
+"type": "way",
+"id": 1107587867,
+"center": {
+"lat": 35.7776497,
+"lon": 139.6857273
+},
+"tags": {
+"amenity": "fast_food",
+"brand": "オリジン弁当",
+"brand:en": "Origin Bentō",
+"brand:ja": "オリジン弁当",
+"brand:wikidata": "Q11292632",
+"building": "yes",
+"cuisine": "japanese",
+"name": "オリジン弁当",
+"name:en": "Origin Bentō",
+"name:ja": "オリジン弁当",
+"takeaway": "yes"
+}
+},
+{
+"type": "way",
+"id": 1108106399,
+"center": {
+"lat": 35.784826,
+"lon": 139.6528303
+},
+"tags": {
+"amenity": "fast_food",
+"brand": "吉野家",
+"brand:en": "Yoshinoya",
+"brand:ja": "吉野家",
+"brand:wikidata": "Q776272",
+"brand:zh": "吉野家",
+"brand:zh-Hans": "吉野家",
+"brand:zh-Hant": "吉野家",
+"building": "yes",
+"cuisine": "beef_bowl",
+"name": "吉野家",
+"name:en": "Yoshinoya",
+"name:ja": "吉野家",
+"name:zh": "吉野家",
+"name:zh-Hans": "吉野家",
+"name:zh-Hant": "吉野家",
+"takeaway": "yes"
+}
+},
+{
+"type": "way",
+"id": 1320133307,
+"center": {
+"lat": 35.764302,
+"lon": 139.6768677
+},
+"tags": {
+"amenity": "fast_food",
+"brand": "モスバーガー",
+"brand:en": "MOS Burger",
+"brand:ja": "モスバーガー",
+"brand:wikidata": "Q1204169",
+"building": "yes",
+"cuisine": "burger",
+"name": "モスバーガー",
+"name:en": "MOS Burger",
+"name:ja": "モスバーガー",
+"takeaway": "yes"
+}
+},
+{
+"type": "way",
+"id": 1327138506,
+"center": {
+"lat": 35.763514,
+"lon": 139.6788371
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"cuisine": "japanese",
+"name": "長寿庵"
+}
+},
+{
+"type": "way",
+"id": 1327138507,
+"center": {
+"lat": 35.7635168,
+"lon": 139.6787662
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"name": "明煌華"
+}
+},
+{
+"type": "way",
+"id": 1327396955,
+"center": {
+"lat": 35.7631264,
+"lon": 139.6787704
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"name": "亀一"
+}
+},
+{
+"type": "way",
+"id": 1327396965,
+"center": {
+"lat": 35.7630421,
+"lon": 139.6780854
+},
+"tags": {
+"amenity": "restaurant",
+"building": "yes",
+"name": "ほっとけや"
+}
+}
+]
+}
