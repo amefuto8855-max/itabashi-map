@@ -1,0 +1,35 @@
+name: 板橋区の飲食店の元データを集める
+on:
+  push:
+    branches: [machi]
+    paths: ['.github/workflows/food.yml', 'tools/food/**']
+permissions:
+  contents: write
+concurrency:
+  group: food-data
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: machi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: OpenStreetMap・区の許可一覧・厚労省のオープンデータを集める
+        run: |
+          pip install -q openpyxl
+          python tools/food/fetch.py "$RUNNER_TEMP/raw"
+      - name: 元データを food-src ブランチに残す
+        if: always()
+        run: |
+          cd "$RUNNER_TEMP/raw"
+          git init -q -b food-src
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "板橋区の飲食店の元データ（$(TZ=Asia/Tokyo date +%F)）"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:food-src
