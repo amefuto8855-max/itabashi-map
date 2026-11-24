@@ -274,6 +274,9 @@
       it.g = typeof o.g === "number" ? o.g : -1;
       it.food = Number(o.c) >= 100;
       it.kk = !!o.kk;
+      it.os = o.os || "";
+      it.kn = !!o.kn;
+      it.md = o.md || "";
       if (it.kk) { it.wp = o.wp || ""; it.wd = o.wd || ""; it.ks = o.ks || []; it.ul = o.ul || ""; }
       return it;
     });
@@ -284,6 +287,7 @@
       // 使い方の説明と「行った場所」の数を、足した観光スポットの分も入れた数にする
       var nk = items.filter(function (it) { return it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }).length, lead = $(".c-guide-lead"), w = $(".c-stat-went");
       if (nk && lead) { lead.textContent = lead.textContent.replace("を、1つの地図", "、東京23区の観光スポット" + nk.toLocaleString("ja-JP") + "か所を、1つの地図"); }
+      if (lead) { lead.textContent = lead.textContent.replace(/飲食店[\d,]+店/, "飲食店" + items.filter(function (it) { return it.food; }).length.toLocaleString("ja-JP") + "店"); }
       if (w && w.nextElementSibling) { w.nextElementSibling.textContent = "/" + items.length + "か所"; }
     })();
 
@@ -1153,9 +1157,21 @@
             (it.approx && it.pin ? "地図の位置は、住所の近くの番地や駅から出したおおよその位置です。" : "") +
             (it.url ? '出典：<a href="' + esc(it.url) + '" target="_blank" rel="noopener">公式ページ</a>。' : "") + "</p></div>";
         }
+        if (it.os) {
+          return '<div class="c-src">' + icon("info") + "<p>OpenStreetMapに登録されている店です（" + jdate(it.checked) + "時点）。ジャンルは店名と登録内容から分けました。" +
+            (it.approx && it.pin ? "地図の位置は、住所から出したおおよその位置です。" : "") +
+            '出典：<a href="https://www.openstreetmap.org/' + esc(it.os) + '" target="_blank" rel="noopener">OpenStreetMap</a>' +
+            '（© OpenStreetMap contributors、<a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener">ODbL</a>）。</p></div>';
+        }
+        if (it.md) {
+          return '<div class="c-src">' + icon("info") + "<p>厚生労働省の食品衛生申請等システムで、" + jdate(it.md) +
+            "に営業許可を受けた店です。ジャンルは店名から分けました。" + (it.approx && it.pin ? "地図の位置は、住所から出したおおよその位置です。" : "") +
+            '出典：<a href="https://ifas.mhlw.go.jp/faspub/_link.do" target="_blank" rel="noopener">食品衛生申請等システム</a>（厚生労働省）のオープンデータ。</p></div>';
+        }
         if (it.kd && CFG.kyokaUrl) {
           return '<div class="c-src">' + icon("info") + "<p>板橋区の食品営業許可施設一覧で、" + jdate(it.kd) +
-            "に営業許可を受けた店です。ジャンルは店名や店の紹介ページから分けました。出典：<a href=\"" + esc(CFG.kyokaUrl) + '" target="_blank" rel="noopener">板橋区公式ホームページ</a>。</p></div>';
+            "に営業許可を受けた店です。ジャンルは店名" + (it.kn ? "" : "や店の紹介ページ") + "から分けました。" + (it.approx && it.pin ? "地図の位置は、住所から出したおおよその位置です。" : "") +
+            '出典：<a href="' + esc(CFG.kyokaUrl) + '" target="_blank" rel="noopener">板橋区公式ホームページ</a>。</p></div>';
         }
         return "";
       }
