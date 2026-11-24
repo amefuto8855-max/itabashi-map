@@ -83,22 +83,31 @@ area["name"="板橋区"]["boundary"="administrative"]["admin_level"="7"]->.a;
 out center tags;"""
 
 
+OSM_MIN = 50  # 板橋区の飲食店がこれより少ないときは、取得に失敗したとみる
+
+
 def fetch_osm():
     for round_ in range(3):
         for ep in OVERPASS:
             try:
                 raw, _, _ = get(ep, data=urllib.parse.urlencode({"data": OSM_Q}).encode(), tries=1, timeout=300)
                 j = json.loads(raw)
+                n = len(j.get("elements", []))
+                if n < OSM_MIN:
+                    raise RuntimeError("件数が少なすぎます %d %s" % (n, str(j.get("remark", ""))[:100]))
                 save("osm.json", j)
-                log("OpenStreetMap", len(j.get("elements", [])), "件", ep)
+                log("OpenStreetMap", n, "件", ep)
                 return
             except Exception as e:  # noqa: BLE001
                 log("OpenStreetMap の取得に失敗", ep, repr(e)[:160])
         time.sleep(90)
     try:
         raw, _, _ = get(PREV + "osm.json", tries=2, timeout=60)
-        save("osm.json", json.loads(raw))
-        log("OpenStreetMap は、前回取ったものを使う")
+        j = json.loads(raw)
+        if len(j.get("elements", [])) < OSM_MIN:
+            raise RuntimeError("前回のものも件数が少なすぎます")
+        save("osm.json", j)
+        log("OpenStreetMap は、前回取ったものを使う", len(j["elements"]), "件")
     except Exception as e:  # noqa: BLE001
         log("前回の OpenStreetMap もありません", repr(e)[:120])
 
@@ -312,17 +321,19 @@ REV = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=%
 
 
 def fetch_revgeo():
-    p = os.path.join(OUT, "osm.json")
-    if not os.path.exists(p):
-        return
-    with open(p, encoding="utf-8") as f:
-        els = json.load(f).get("elements", [])
     out = {}
     try:
         raw, _, _ = get(PREV + "revgeo.json", tries=2, timeout=60)
         out = json.loads(raw)
     except Exception:  # noqa: BLE001
         pass
+    p = os.path.join(OUT, "osm.json")
+    if not os.path.exists(p):
+        if out:
+            save("revgeo.json", out)  # 次の回のために、前回の町名を残す
+        return
+    with open(p, encoding="utf-8") as f:
+        els = json.load(f).get("elements", [])
     n = 0
     for e in els:
         key = "%s/%s" % (e["type"], e["id"])

@@ -2,7 +2,7 @@ name: 板橋区の飲食店の元データを集める
 on:
   push:
     branches: [machi]
-    paths: ['.github/workflows/food.yml', 'tools/food/**']
+    paths: ['.github/workflows/food.yml', 'tools/food/fetch.py']
 permissions:
   contents: write
 concurrency:
