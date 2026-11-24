@@ -25,8 +25,10 @@ import urllib.request
 
 UA = "itabashi-map-data/1.0 (+https://github.com/amefuto8855-max/itabashi-map)"
 KYOKA = "https://www.city.itabashi.tokyo.jp/kenko/eisei/shokuhin/1051220.html"
-MHLW = "https://ifas.mhlw.go.jp/faspub/_link.do"
-OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
+MHLW = "https://i2fas.mhlw.go.jp/faspub/_link.do"  # ifas.mhlw.go.jp から移転
+OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter",
+            "https://maps.mail.ru/osm/tools/overpass/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
+PREV = "https://raw.githubusercontent.com/amefuto8855-max/itabashi-map/food-src/"  # 前回の元データ（住所の緯度・経度を使い回す）
 GSI = "https://msearch.gsi.go.jp/address-search/AddressSearch?q="
 ITA_CODES = ("131199", "13119")
 OUT = None
@@ -81,15 +83,17 @@ out center tags;"""
 
 
 def fetch_osm():
-    for ep in OVERPASS:
-        try:
-            raw, _, _ = get(ep, data=urllib.parse.urlencode({"data": OSM_Q}).encode(), timeout=300)
-            j = json.loads(raw)
-            save("osm.json", j)
-            log("OpenStreetMap", len(j.get("elements", [])), "件", ep)
-            return
-        except Exception as e:  # noqa: BLE001
-            log("OpenStreetMap の取得に失敗", ep, repr(e)[:200])
+    for round_ in range(3):
+        for ep in OVERPASS:
+            try:
+                raw, _, _ = get(ep, data=urllib.parse.urlencode({"data": OSM_Q}).encode(), tries=1, timeout=300)
+                j = json.loads(raw)
+                save("osm.json", j)
+                log("OpenStreetMap", len(j.get("elements", [])), "件", ep)
+                return
+            except Exception as e:  # noqa: BLE001
+                log("OpenStreetMap の取得に失敗", ep, repr(e)[:160])
+        time.sleep(90)
 
 
 # ---- 板橋区の食品営業許可施設一覧 ----
@@ -147,6 +151,21 @@ def fetch_kyoka():
 
 # ---- 厚生労働省 食品衛生申請等システムのオープンデータ ----
 def fetch_mhlw():
+    import urllib.robotparser
+    rp = urllib.robotparser.RobotFileParser()
+    try:
+        raw, _, _ = get("https://i2fas.mhlw.go.jp/robots.txt", tries=2, timeout=60)
+        txt = raw.decode("utf-8", "replace")
+        save("mhlw/robots.txt", raw, binary=True)
+        log("厚労省の robots.txt:", txt.replace("\n", " | ")[:400])
+        rp.parse(txt.splitlines())
+    except Exception as e:  # noqa: BLE001
+        log("厚労省の robots.txt を取れませんでした", repr(e)[:160])
+        rp = None
+    if rp is not None and not rp.can_fetch(UA, MHLW):
+        log("厚労省のサイトは、プログラムでの取得を断っているので取りません")
+        save("mhlw/rows.json", [])
+        return
     seen, queue, n, got = set(), [(MHLW, 0)], 0, []
     while queue and n < 40:
         url, depth = queue.pop(0)
@@ -182,7 +201,7 @@ def fetch_mhlw():
         save("mhlw/page%02d.html" % n, raw, binary=True)
         log("  厚労省のページ", n, final[:160], len(raw))
         for href, label in links(text, final):
-            if "ifas.mhlw.go.jp" not in href or href in seen:
+            if "mhlw.go.jp" not in href or href in seen or (rp is not None and not rp.can_fetch(UA, href)):
                 continue
             fn = href.rsplit("/", 1)[-1].lower()
             if "food_business" in fn or fn.endswith((".csv", ".zip")):
@@ -255,9 +274,17 @@ def fetch_geocode():
                         a = norm_addr(c)
                         if a:
                             addrs.add(a)
-    log("住所", len(addrs), "件を緯度・経度にする")
     out = {}
-    for i, a in enumerate(sorted(addrs)):
+    try:
+        raw, _, _ = get(PREV + "geocode.json", tries=2, timeout=60)
+        prev = json.loads(raw)
+        out = {a: v for a, v in prev.items() if a in addrs}
+        log("前回の緯度・経度を使う", len(out), "件")
+    except Exception as e:  # noqa: BLE001
+        log("前回の緯度・経度はありません", repr(e)[:120])
+    todo = sorted(a for a in addrs if a not in out)
+    log("住所", len(todo), "件を緯度・経度にする")
+    for i, a in enumerate(todo):
         try:
             raw, _, _ = get(GSI + urllib.parse.quote("東京都" + a), tries=3, timeout=30)
             res = json.loads(raw)
@@ -269,7 +296,7 @@ def fetch_geocode():
             log("  住所を調べられませんでした", a, repr(e)[:120])
         time.sleep(0.5)
         if i % 200 == 0:
-            log("  ", i, "/", len(addrs))
+            log("  ", i, "/", len(todo))
     save("geocode.json", out)
     log("緯度・経度", len(out), "件")
 
