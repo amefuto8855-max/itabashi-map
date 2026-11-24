@@ -8,6 +8,7 @@
   mhlw/rows.json  厚生労働省「食品衛生申請等システム」のオープンデータ（板橋区分。同じく必要な列だけ）
   ※ 営業者・申請者の名前、許可番号、電話番号などの列は、ここには残さない（公開ブランチに置くため）
   geocode.json    許可一覧などの住所 → 緯度・経度（国土地理院の住所検索）
+  revgeo.json     OpenStreetMap の店の位置 → 町名（国土地理院の逆ジオコーダー）
   log.txt         取得の記録
 """
 import csv
@@ -94,6 +95,12 @@ def fetch_osm():
             except Exception as e:  # noqa: BLE001
                 log("OpenStreetMap の取得に失敗", ep, repr(e)[:160])
         time.sleep(90)
+    try:
+        raw, _, _ = get(PREV + "osm.json", tries=2, timeout=60)
+        save("osm.json", json.loads(raw))
+        log("OpenStreetMap は、前回取ったものを使う")
+    except Exception as e:  # noqa: BLE001
+        log("前回の OpenStreetMap もありません", repr(e)[:120])
 
 
 # ---- 板橋区の食品営業許可施設一覧 ----
@@ -301,12 +308,46 @@ def fetch_geocode():
     log("緯度・経度", len(out), "件")
 
 
+REV = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=%s&lon=%s"
+
+
+def fetch_revgeo():
+    p = os.path.join(OUT, "osm.json")
+    if not os.path.exists(p):
+        return
+    with open(p, encoding="utf-8") as f:
+        els = json.load(f).get("elements", [])
+    out = {}
+    try:
+        raw, _, _ = get(PREV + "revgeo.json", tries=2, timeout=60)
+        out = json.loads(raw)
+    except Exception:  # noqa: BLE001
+        pass
+    n = 0
+    for e in els:
+        key = "%s/%s" % (e["type"], e["id"])
+        lat = e.get("lat") or (e.get("center") or {}).get("lat")
+        lng = e.get("lon") or (e.get("center") or {}).get("lon")
+        if key in out or not lat or not lng:
+            continue
+        try:
+            raw, _, _ = get(REV % (lat, lng), tries=3, timeout=30)
+            res = json.loads(raw).get("results") or {}
+            out[key] = [res.get("muniCd", ""), res.get("lv01Nm", "")]
+            n += 1
+        except Exception as e2:  # noqa: BLE001
+            log("  町名を調べられませんでした", key, repr(e2)[:120])
+        time.sleep(0.3)
+    save("revgeo.json", out)
+    log("OpenStreetMap の店の町名", len(out), "件（新しく調べたもの", n, "件）")
+
+
 def main():
     global OUT
     OUT = sys.argv[1]
     os.makedirs(OUT, exist_ok=True)
     t0 = time.time()
-    for name, fn in (("OpenStreetMap", fetch_osm), ("許可一覧", fetch_kyoka), ("厚労省", fetch_mhlw), ("住所", fetch_geocode)):
+    for name, fn in (("OpenStreetMap", fetch_osm), ("町名", fetch_revgeo), ("許可一覧", fetch_kyoka), ("厚労省", fetch_mhlw), ("住所", fetch_geocode)):
         try:
             fn()
         except Exception:  # noqa: BLE001
