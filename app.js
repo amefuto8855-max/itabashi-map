@@ -1110,9 +1110,9 @@
       return KKM_P;
     }
     function kkTarget(it) { return it.kk || it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }
-    function kkThumb(p, w) {
-      var base = "https://upload.wikimedia.org/wikipedia/commons/", dir = p[0].charAt(0) + "/" + p[0] + "/";
-      return w && w < p[2] ? base + "thumb/" + dir + p[1] + "/" + w + "px-" + p[1] : base + dir + p[1];
+    function kkThumb(p, w, host) {
+      var base = "https://" + (host || "upload") + ".wikimedia.org/wikipedia/commons/", dir = p[0].charAt(0) + "/" + p[0] + "/";
+      return w && w < p[2] ? base + "thumb/" + dir + p[1] + "/" + w + "px-" + (p[8] || p[1]) : base + dir + p[1];
     }
     function kkPhotoHTML(it, x) {
       var p = x.p, ws = [500, 960].filter(function (w) { return w < p[2]; });
@@ -1121,7 +1121,7 @@
       var page = "https://commons.wikimedia.org/wiki/File:" + p[1];
       return '<figure class="c-photo"><a href="' + esc(page) + '" target="_blank" rel="noopener" aria-label="' + esc(it.name) + 'の写真をWikimedia Commonsで見る（新しいタブ）">' +
         '<img src="' + esc(kkThumb(p, ws[0] || 0)) + '" srcset="' + esc(set.join(", ")) + '" sizes="(min-width: 700px) 420px, 100vw" width="' + p[2] + '" height="' + p[3] + '"' +
-        ' alt="' + esc(it.name) + 'の写真" loading="lazy" decoding="async"' + (p[7] ? ' data-fb="' + esc(kkThumb(p, p[7])) + '"' : "") + "></a>" +
+        ' alt="' + esc(it.name) + 'の写真" loading="lazy" decoding="async"' + (p[7] ? ' data-fb="' + esc(kkThumb(p, p[7], "thumb")) + '"' : "") + "></a>" +
         "<figcaption>写真：" + esc(p[4]) + "（" + (p[6] ? '<a href="' + esc(p[6]) + '" target="_blank" rel="noopener">' + esc(p[5]) + "</a>" : esc(p[5])) + "）／" +
         '<a href="' + esc(page) + '" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>';
     }

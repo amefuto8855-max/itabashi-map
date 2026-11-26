@@ -70,7 +70,8 @@ def robots(host):
 
 
 # ---- ウィキペディアの記事 ----
-COMMONS_SRC = re.compile(r"//upload\.wikimedia\.org/wikipedia/commons/(thumb/)?([0-9a-f])/([0-9a-f]{2})/([^/?#\s]+)(?:/(\d+)px-([^/?#\s]+))?")
+PV = 2  # 読み取り方の版。変えたら、前回の結果を読み直す
+COMMONS_SRC = re.compile(r"//(?:upload|thumb)\.wikimedia\.org/wikipedia/commons/(thumb/)?([0-9a-f])/([0-9a-f]{2})/([^/?#\s]+)(?:/(\d+)px-([^/?#\s]+))?")
 NOT_PHOTO = re.compile(r"logo|ロゴ|(?<![a-z])(?:map|plan|sign|seal|icon|chart)(?![a-z])|地図|位置|location|locator|emblem|紋章|flag|旗|symbol|マーク|"
                        r"配置|平面|断面|路線|案内図|diagram|アイコン", re.I)
 SUP = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
@@ -110,7 +111,7 @@ def clean_text(el):
         tx = s.get_text("")
         s.replace_with(tx.translate(SUP) if tx.isdigit() else tx)
     t = el.get_text("")
-    t = re.sub(r"\[(?:\d+|注 ?\d+|要出典|要検証|要説明|要曖昧さ回避|いつ\?|誰\?|どこ\?|疑問点)[^\]]*\]", "", t)
+    t = re.sub(r"\[(?:\d+|注釈? ?\d+|要出典|要検証|要説明|要曖昧さ回避|いつ\?|誰\?|どこ\?|疑問点)[^\]]*\]", "", t)
     t = re.sub(r"[ \t]*\n[ \t]*", "", t)
     return re.sub(r"\s{2,}", " ", t).strip()
 
@@ -120,10 +121,12 @@ def parse_article(raw):
     root = soup.select_one("#mw-content-text .mw-parser-output") or soup.select_one(".mw-parser-output")
     if root is None:
         return {"ng": "本文が見つからない"}
+    # 今のウィキペディアは、見出しごとに <section> で包まれている（冒頭は data-mw-section-id="0"）
+    sec0 = root.find("section", attrs={"data-mw-section-id": "0"}, recursive=False)
     paras, box_img, fig_img = [], None, None
-    for el in root.find_all(recursive=False):
+    for el in (sec0 if sec0 is not None else root).find_all(recursive=False):
         cls = el.get("class") or []
-        if el.name in ("h2", "h3") or "mw-heading" in cls:
+        if el.name in ("h2", "h3", "section") or "mw-heading" in cls:
             break  # 最初の見出しまでが冒頭
         if el.name == "p":
             t = clean_text(el)
@@ -184,7 +187,15 @@ def parse_commons(raw):
         for bad in td.select("style, script, .noprint"):
             bad.decompose()
         author = td.get_text(" ", strip=True)
-    credit = re.sub(r"\s+", " ", best[3] or author or "不明").strip()
+    if not (best[3] or author):
+        # 作者の欄がないページは、最初に投稿した人を「投稿者」として出す
+        rows = soup.select("table.filehistory tr")
+        u = rows[-1].select_one(".mw-userlink") if len(rows) > 1 else None
+        if u is not None and u.get_text(strip=True):
+            author = "投稿者 " + u.get_text(strip=True)
+    if not (best[3] or author):
+        return {"ng": "作者がわからない"}
+    credit = re.sub(r"\s+", " ", best[3] or author).strip()
     if len(credit) > 100:
         credit = credit[:99] + "…"
     link = best[2] if best[2].startswith("http") else ""
@@ -238,7 +249,7 @@ def main():
                      "ウィキメディア・コモンズの写真の撮影者・使用条件を、記事のページから集めたもの")
 
     def need(e):
-        if not e:
+        if not e or e.get("pv") != PV:
             return True
         if "ng" in e:
             try:
@@ -278,7 +289,7 @@ def main():
             except Exception as e:  # noqa: BLE001
                 log(kind, "：ページの形が読み取れませんでした", key, repr(e)[:120])
                 r = {"ng": "形が読み取れない"}
-            r["at"] = TODAY.isoformat()
+            r["at"], r["pv"] = TODAY.isoformat(), PV
             cache[kind][key] = r
             n += 1
             ng += "ng" in r
