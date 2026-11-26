@@ -11,7 +11,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,6 +23,15 @@ jobs:
         run: |
           pip install -q openpyxl xlrd
           python tools/kanko/fetch.py "$RUNNER_TEMP/raw"
+      - name: 地図用のデータを作る
+        if: hashFiles('tools/kanko/build.py') != ''
+        run: python tools/kanko/build.py "$RUNNER_TEMP/raw" data.json kanko.json
+      - name: 観光スポットの写真と説明を集める（ウィキペディア・ウィキメディア・コモンズ）
+        if: hashFiles('tools/kanko/media.py') != ''
+        continue-on-error: true
+        run: |
+          pip install -q beautifulsoup4
+          python tools/kanko/media.py "$RUNNER_TEMP/raw" kanko.json kanko_more.json
       - name: 元データを kanko-src ブランチに残す
         if: always()
         run: |
@@ -33,15 +42,13 @@ jobs:
           git add -A
           git commit -qm "23区の観光スポットの元データ（$(TZ=Asia/Tokyo date +%F)）"
           git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:kanko-src
-      - name: 地図用のデータを作る
-        if: hashFiles('tools/kanko/build.py') != ''
-        run: python tools/kanko/build.py "$RUNNER_TEMP/raw" data.json kanko.json
       - name: 変わっていれば反映する
         if: hashFiles('tools/kanko/build.py') != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kanko.json
+          if [ -f kanko_more.json ]; then git add kanko_more.json; fi
           if git diff --cached --quiet; then echo "観光スポットのデータに変更はありません"; exit 0; fi
           git commit -qm "23区の観光スポットのデータを更新"
           for i in 1 2 3 4 5; do

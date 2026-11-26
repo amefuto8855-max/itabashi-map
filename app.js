@@ -282,6 +282,13 @@
     });
     var byId = {};
     items.forEach(function (it) { byId[it.id] = it; });
+    root.addEventListener("error", function (e) {
+      var t = e.target, f = t && t.tagName === "IMG" && t.closest ? t.closest(".c-photo") : null;
+      if (!f) { return; }
+      var fb = t.getAttribute("data-fb");
+      if (fb && t.getAttribute("src") !== fb) { t.removeAttribute("srcset"); t.setAttribute("src", fb); return; }
+      f.parentNode.removeChild(f);
+    }, true);
     var pins = items.filter(function (it) { return it.pin; });
     (function () {
       // 使い方の説明と「行った場所」の数を、足した観光スポットの分も入れた数にする
@@ -1093,6 +1100,58 @@
 
     function linkWord(it) { return it.ul || (it.has("情報源:公式ページ未確認") ? "案内ページ" : "公式ページ"); }
     function wpUrl(t) { return "https://ja.wikipedia.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_")); }
+    // 観光スポットの写真と説明（kanko_more.json）。観光スポットを初めて開いたときに読み込む
+    var KKM = null, KKM_P = null;
+    function kkMore() {
+      if (!KKM_P) {
+        KKM_P = fetch(BASE + "kanko_more.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+          .then(function (j) { KKM = j && j.v === 1 && j.items ? j.items : {}; return KKM; });
+      }
+      return KKM_P;
+    }
+    function kkTarget(it) { return it.kk || it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }
+    function kkThumb(p, w) {
+      var base = "https://upload.wikimedia.org/wikipedia/commons/", dir = p[0].charAt(0) + "/" + p[0] + "/";
+      return w && w < p[2] ? base + "thumb/" + dir + p[1] + "/" + w + "px-" + p[1] : base + dir + p[1];
+    }
+    function kkPhotoHTML(it, x) {
+      var p = x.p, ws = [500, 960].filter(function (w) { return w < p[2]; });
+      var set = ws.map(function (w) { return kkThumb(p, w) + " " + w + "w"; });
+      if (ws.length < 2) { set.push(kkThumb(p, 0) + " " + p[2] + "w"); }
+      var page = "https://commons.wikimedia.org/wiki/File:" + p[1];
+      return '<figure class="c-photo"><a href="' + esc(page) + '" target="_blank" rel="noopener" aria-label="' + esc(it.name) + 'の写真をWikimedia Commonsで見る（新しいタブ）">' +
+        '<img src="' + esc(kkThumb(p, ws[0] || 0)) + '" srcset="' + esc(set.join(", ")) + '" sizes="(min-width: 700px) 420px, 100vw" width="' + p[2] + '" height="' + p[3] + '"' +
+        ' alt="' + esc(it.name) + 'の写真" loading="lazy" decoding="async"' + (p[7] ? ' data-fb="' + esc(kkThumb(p, p[7])) + '"' : "") + "></a>" +
+        "<figcaption>写真：" + esc(p[4]) + "（" + (p[6] ? '<a href="' + esc(p[6]) + '" target="_blank" rel="noopener">' + esc(p[5]) + "</a>" : esc(p[5])) + "）／" +
+        '<a href="' + esc(page) + '" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>';
+    }
+    function kkAboutHTML(it, x) {
+      var t = x.w || it.wp;
+      return '<div class="c-about"><p>' + esc(x.d) + '</p><p class="c-about-src"><a href="' + esc(wpUrl(t)) + '" target="_blank" rel="noopener">ウィキペディアで続きを読む</a>' +
+        "<span>出典：ウィキペディア「" + esc(t) + '」の冒頭（<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a>）</span></p></div>';
+    }
+    function kkPart(it, kind) {
+      if (!kkTarget(it)) { return ""; }
+      if (KKM === null) {
+        kkMore().then(kkFill);
+        return '<div class="c-kkm" data-kkm="' + kind + '" data-id="' + esc(it.id) + '"></div>';
+      }
+      var x = KKM[it.id];
+      if (!x) { return ""; }
+      return kind === "photo" ? (x.p ? kkPhotoHTML(it, x) : "") : (x.d ? kkAboutHTML(it, x) : "");
+    }
+    function kkHasAbout(it) { return !!(KKM && kkTarget(it) && KKM[it.id] && KKM[it.id].d); }
+    function kkFill() {
+      $$(".c-kkm", root).forEach(function (el) {
+        var it = byId[el.getAttribute("data-id")], kind = el.getAttribute("data-kkm"), h = it ? kkPart(it, kind) : "";
+        if (h && kind === "about") {
+          var lead = el.parentNode.querySelector(".c-lead");
+          if (lead) { lead.parentNode.removeChild(lead); }
+        }
+        if (h) { el.insertAdjacentHTML("afterend", h); }
+        el.parentNode.removeChild(el);
+      });
+    }
     function kkSrcHTML(it) {
       var a = [];
       it.ks.forEach(function (k) {
@@ -1205,7 +1264,7 @@
       return '<div class="c-item-acts">' + a.join("") + "</div>";
     }
     function detailHTML(it, ctx) {
-      var h = "", flags = "";
+      var h = kkPart(it, "photo"), flags = "";
       if (ctx === "sheet") {
         flags += statusHTML(it);
       }
@@ -1218,12 +1277,13 @@
         h += '<p class="c-item-addr c-item-st">' + icon("train") + "<span>" + esc(it.st[0]) + "駅まで" + fmtDist(it.st[1]) + "・徒歩" + walkMin(it.st[1]) + "分" +
           '<small>（直線距離から出した目安）</small></span></p>';
       }
+      h += kkPart(it, "about");
       if (it.rk) {
         h += '<p class="c-rk is-rk' + it.rk[0] + '"><b>口コミ：' + ["", "多い", "ふつう", "少ない"][it.rk[0]] + '</b><span>Googleマップの口コミ ' + it.rv + "件</span></p>";
       }
       if (it.official) { h += '<p class="c-official">公式の名前：' + esc(it.official) + "</p>"; }
       if (!it.pin && !it.sameAs) { h += '<p class="c-item-nomap">地図に載せる位置の情報がありません。「経路」は名前と住所で探します。</p>'; }
-      if (it.lead) { h += '<p class="c-lead">' + rich(it.lead) + "</p>"; }
+      if (it.lead && !kkHasAbout(it)) { h += '<p class="c-lead">' + rich(it.lead) + "</p>"; }
       if (it.sameAs && byId[it.sameAs]) {
         h += '<p class="c-notice"><b>お知らせ</b>今の名前は<a href="#' + P + "-" + it.sameAs + '" data-act="rel" data-id="' + it.sameAs + '">' + esc(byId[it.sameAs].name) + "</a>です。詳しくはそちらの項目を見てください。</p>";
       }

@@ -598,7 +598,8 @@ def main():
         if hit:
             ek = {"5": "博物館・美術館", "6": "動物園・水族館・植物園", "1": "庭園・公園", "11": "名所"}.get(hit["c"]) or \
                 {"7-1": "展望・タワー", "7-2": "遊園地・テーマパーク", "7-3": "寺社", "7-4": "史跡・文化財"}.get(hit.get("s", ""), kind)
-            same_list.append((hit["i"], ek, (hit["y"], hit["x"])))
+            wp = urllib.parse.unquote(o["article"].split("/wiki/", 1)[-1]).replace("_", " ") if o and o.get("article") else ""
+            same_list.append((hit["i"], ek, (hit["y"], hit["x"]), wp))
         else:
             out_places.append((pid, pl))
     print("地図にすでにある場所と同じ", len(same_list), "／新しく足す", len(out_places))
@@ -653,7 +654,7 @@ def main():
     areas = [w for w in WARDS]
     kinds_n = {k: 0 for k in KINDS}
     out_items = []
-    all_pts = [(pl["pos"], pid) for pid, pl in out_places] + [(pos, eid) for eid, _, pos in same_list]
+    all_pts = [(pl["pos"], pid) for pid, pl in out_places] + [(pos, eid) for eid, _, pos, _ in same_list]
     agrid = Grid([p for p, _ in all_pts])
     for pid, pl in out_places:
         o, rows, kind, pos = pl["wd"], pl["rows"], pl["kind"], pl["pos"]
@@ -752,16 +753,18 @@ def main():
             x["re"] = [[q, round_m(dd)] for dd, q in rel[:3]]
         out_items.append(x)
         kinds_n[kind] += 1
-    same_out = {}
-    for eid, kind, _ in same_list:
+    same_out, same_wp = {}, {}
+    for eid, kind, _, wp in same_list:
         if eid not in same_out:
             same_out[eid] = {T("観光:" + kind)}
             kinds_n[kind] += 1
+        if wp and eid not in same_wp:
+            same_wp[eid] = wp  # 写真と説明（media.py）に使うウィキペディアの記事名
     kinds = sorted(([k, KINDS[k][0], n, KINDS[k][1]] for k, n in kinds_n.items() if n), key=lambda k: -k[2])
     out = {
         "v": 1, "made": TODAY, "areas": areas, "cats": {c: dict(v, count=sum(1 for x in out_items if x["c"] == c)) for c, v in CATS.items()},
         "labels": labels, "tags": tags, "facets": [["観光", 0]], "kinds": kinds, "src": src,
-        "same": [[eid, sorted(v)] for eid, v in sorted(same_out.items())], "items": out_items,
+        "same": [[eid, sorted(v)] + ([same_wp[eid]] if eid in same_wp else []) for eid, v in sorted(same_out.items())], "items": out_items,
     }
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
