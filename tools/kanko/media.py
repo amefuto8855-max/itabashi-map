@@ -275,8 +275,8 @@ def main():
     def need(e, kind=""):
         if not e or e.get("pv") != PV:
             return True
-        if kind == "cm" and "ng" not in e and not clean_credit(e.get("a")):
-            return True  # 作者が名前になっていないもの（Own work など）は、投稿者を調べ直す
+        if kind == "cm" and "ng" not in e and (not clean_credit(e.get("a")) or (e.get("a") or "").endswith("…")):
+            return True  # 作者が名前になっていないもの（Own work など）や、前の版で途中までにしたものは、読み直す
         if "ng" in e:
             try:
                 return (TODAY - datetime.date.fromisoformat(e.get("at", ""))).days >= RETRY_NG_DAYS
