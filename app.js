@@ -2221,68 +2221,111 @@
     }
 
     var trMenu = $(".c-trmenu");
-    var TR = null, trBusy = false, TR_KEYS = ["l", "s", "b"], ST_ZOOM = 14, BUS_ZOOM = 15, LBL_ZOOM = 15;
+    var TR = null, trBusy = false, trWait = [], TR_KEYS = ["l", "s", "b"], ST_ZOOM = 14, BUS_ZOOM = 15, LBL_ZOOM = 15;
     var trOn = store.get(KEY.tr, {});
     if (!trOn || typeof trOn !== "object" || Array.isArray(trOn)) { trOn = {}; }
-    var trLine = null, trSt = [], trBus = [], trStG = null, trBusG = null, trLblG = null, trAttr = false;
+    var trLineU = null, trLineO = null, trSt = [], trBus = [], trStG = null, trBusG = null, trLblG = null, trAttr = false;
+    var trLR = null, trLR2 = null, trPtR = null, trGot = { r: {}, b: {} }, trTB = {}, trFailAt = 0, trSoon = 0;
     function trAny() { return TR_KEYS.some(function (k) { return !!trOn[k]; }); }
     function trLL(y, x) { return L.latLng((TR.o[0] + y) / 1e5, (TR.o[1] + x) / 1e5); }
     function trLoad(done) {
       if (TR) { done(); return; }
-      if (!map || trBusy) { return; }
+      if (!map) { return; }
+      trWait.push(done);
+      if (trBusy) { return; }
       trBusy = true;
-      fetch(BASE + "tr.json").then(function (r) { if (!r.ok) { throw new Error("tr"); } return r.json(); }).then(function (j) {
+      fetch(BASE + "tr/i.json").then(function (r) { if (!r.ok) { throw new Error("tr"); } return r.json(); }).then(function (j) {
         TR = j;
         trBusy = false;
         trBuild();
-        done();
-      }, function () { trBusy = false; toast("鉄道とバス停のデータを読み込めませんでした"); });
+        var w = trWait;
+        trWait = [];
+        w.forEach(function (f) { f(); });
+      }, function () { trBusy = false; trWait = []; toast("鉄道とバス停のデータを読み込めませんでした"); });
     }
     function trBuild() {
-      ["itbxTrL", "itbxTrP", "itbxTrT"].forEach(function (name, k) {
+      ["itbxTrL", "itbxTrL2", "itbxTrP", "itbxTrT"].forEach(function (name, k) {
         var pane = map.createPane(name);
-        pane.style.zIndex = [350, 450, 460][k];
-        if (k !== 1) { pane.style.pointerEvents = "none"; }
+        pane.style.zIndex = [350, 351, 450, 460][k];
+        if (k !== 2) { pane.style.pointerEvents = "none"; }
       });
-      var lineR = L.canvas({ pane: "itbxTrL", padding: 0.5 }), ptR = L.canvas({ pane: "itbxTrP", padding: 0.3, tolerance: 5 });
-      var under = [], over = [];
-      TR.g.forEach(function (a) {
-        var ln = TR.L[a[0]], y = a[1], x = a[2], ll = [trLL(y, x)];
-        for (var i = 3; i < a.length; i += 2) { y += a[i]; x += a[i + 1]; ll.push(trLL(y, x)); }
-        under.push(L.polyline(ll, { renderer: lineR, color: "#ffffff", weight: 6.5, opacity: 0.8, interactive: false, lineCap: "round", lineJoin: "round" }));
-        over.push(L.polyline(ll, { renderer: lineR, color: ln[1], weight: 3.5, opacity: 1, interactive: false, dashArray: ln[2] ? "8 6" : null, lineCap: ln[2] ? "butt" : "round", lineJoin: "round" }));
-      });
-      trLine = L.layerGroup(under.concat(over));
+      trLR = L.canvas({ pane: "itbxTrL", padding: 0.5 });
+      trLR2 = L.canvas({ pane: "itbxTrL2", padding: 0.5 });
+      trPtR = L.canvas({ pane: "itbxTrP", padding: 0.3, tolerance: 5 });
+      trLineU = L.layerGroup();
+      trLineO = L.layerGroup();
       trStG = L.layerGroup().addTo(map);
       trBusG = L.layerGroup().addTo(map);
       trLblG = L.layerGroup().addTo(map);
-      trSt = TR.s.map(function (s) {
-        var ll = trLL(s[1], s[2]), names = [];
-        s[3].forEach(function (k) { if (names.indexOf(TR.L[k][0]) === -1) { names.push(TR.L[k][0]); } });
-        var m = L.circleMarker(ll, { renderer: ptR, radius: 6, color: "#1f2a24", weight: 2.5, fillColor: "#ffffff", fillOpacity: 1, bubblingMouseEvents: false });
-        m.bindTooltip("<b>" + esc(s[0]) + (s[4] ? "停留場" : "駅") + "</b><br>" + esc(names.join("、")), { direction: "top", offset: [0, -7], className: "c-tr-tip" });
-        var lb = L.marker(ll, { pane: "itbxTrT", interactive: false, keyboard: false,
-          icon: L.divIcon({ className: "c-tr-lbl", html: "<span>" + esc(s[0]) + "</span>", iconSize: [0, 0] }) });
-        return { ll: ll, m: m, lb: lb };
+      map.on("moveend", trSync);
+      map.on("resize", trAttrH);
+    }
+    // 区画（"行_列"）の範囲
+    function trBox(kind, k) {
+      var id = kind + k;
+      if (!trTB[id]) {
+        var p = k.split("_"), r = Number(p[0]), c = Number(p[1]), o = TR.o, sz = kind === "r" ? TR.rt : TR.bt;
+        trTB[id] = L.latLngBounds([(o[0] + r * sz[0]) / 1e5, (o[1] + c * sz[1]) / 1e5], [(o[0] + (r + 1) * sz[0]) / 1e5, (o[1] + (c + 1) * sz[1]) / 1e5]);
+      }
+      return trTB[id];
+    }
+    // 映っている範囲に掛かる区画のうち、まだ読んでいないものを読む
+    function trNeed(kind, b) {
+      (kind === "r" ? TR.r : TR.b).forEach(function (k) {
+        if (!trGot[kind][k] && trBox(kind, k).intersects(b)) { trGet(kind, k); }
       });
-      trBus = TR.b.map(function (s) { return { ll: trLL(s[1], s[2]), s: s, m: null }; });
-      trBus.forEach(function (o) {
-        o.make = function () {
-          var s = o.s, ops = (s[3] || []).map(function (k) { return TR.bo[k]; }), rts = (s[4] || []).map(function (k) { return TR.br[k]; });
-          var m = L.circleMarker(o.ll, { renderer: ptR, radius: 4.5, color: "#ffffff", weight: 1.5, fillColor: "#c2410c", fillOpacity: 1, bubblingMouseEvents: false });
-          m.bindTooltip("<b>" + esc(TR.bn[s[0]]) + "</b>（バス停）" + (ops.length ? "<br>" + esc(ops.join("、")) : "") +
+    }
+    function trGet(kind, k) {
+      trGot[kind][k] = 1;
+      fetch(BASE + "tr/" + kind + "/" + k + ".json").then(function (r) { if (!r.ok) { throw new Error("tr"); } return r.json(); }).then(function (j) {
+        if (kind === "r") { trAddR(j); } else { trAddB(j); }
+        if (!trSoon) { trSoon = setTimeout(function () { trSoon = 0; trSync(); }, 60); }
+      }, function () {
+        delete trGot[kind][k];
+        if (Date.now() - trFailAt > 15000) { trFailAt = Date.now(); toast("鉄道とバス停のデータの一部を読み込めませんでした"); }
+      });
+    }
+    function trAddR(j) {
+      (j.g || []).forEach(function (a) {
+        var ln = TR.L[a[0]], y = a[1], x = a[2], ll = [trLL(y, x)];
+        for (var i = 3; i < a.length; i += 2) { y += a[i]; x += a[i + 1]; ll.push(trLL(y, x)); }
+        trLineU.addLayer(L.polyline(ll, { renderer: trLR, color: "#ffffff", weight: 6.5, opacity: 0.8, interactive: false, lineCap: "round", lineJoin: "round" }));
+        trLineO.addLayer(L.polyline(ll, { renderer: trLR2, color: ln[1], weight: 3.5, opacity: 1, interactive: false, dashArray: ln[2] ? "8 6" : null, lineCap: ln[2] ? "butt" : "round", lineJoin: "round" }));
+      });
+      (j.s || []).forEach(function (s) {
+        var o = { ll: trLL(s[1], s[2]), m: null, lb: null };
+        o.mk = function (key) {
+          if (key === "lb") {
+            return L.marker(o.ll, { pane: "itbxTrT", interactive: false, keyboard: false,
+              icon: L.divIcon({ className: "c-tr-lbl", html: "<span>" + esc(s[0]) + "</span>", iconSize: [0, 0] }) });
+          }
+          var names = [];
+          s[3].forEach(function (k) { var n = TR.L[k] ? TR.L[k][0] : ""; if (n && names.indexOf(n) === -1) { names.push(n); } });
+          var m = L.circleMarker(o.ll, { renderer: trPtR, radius: 6, color: "#1f2a24", weight: 2.5, fillColor: "#ffffff", fillOpacity: 1, bubblingMouseEvents: false });
+          m.bindTooltip("<b>" + esc(s[0]) + (s[4] ? "停留場" : "駅") + "</b><br>" + esc(names.join("、")), { direction: "top", offset: [0, -7], className: "c-tr-tip" });
+          return m;
+        };
+        trSt.push(o);
+      });
+    }
+    function trAddB(j) {
+      (j.b || []).forEach(function (s) {
+        var o = { ll: trLL(s[1], s[2]), m: null };
+        o.mk = function () {
+          var ops = (s[3] || []).map(function (k) { return TR.bo[k]; }), rts = s[4] || [];
+          var m = L.circleMarker(o.ll, { renderer: trPtR, radius: 4.5, color: "#ffffff", weight: 1.5, fillColor: "#c2410c", fillOpacity: 1, bubblingMouseEvents: false });
+          m.bindTooltip("<b>" + esc(s[0]) + "</b>（バス停）" + (ops.length ? "<br>" + esc(ops.join("、")) : "") +
             (rts.length ? '<br><span class="c-tr-rts">' + esc(rts.join("、")) + (s[5] ? "ほか" + s[5] + "系統" : "") + "</span>" : ""), { direction: "top", offset: [0, -5], className: "c-tr-tip" });
           return m;
         };
+        trBus.push(o);
       });
-      map.on("moveend", trSync);
-      map.on("resize", trAttrH);
     }
     function trPut(list, key, on, b, group) {
       list.forEach(function (o) {
         var want = on && b.contains(o.ll), m = o[key];
         if (want) {
-          if (!m) { m = o[key] = o.make(); }
+          if (!m) { m = o[key] = o.mk(key); }
           if (!group.hasLayer(m)) { group.addLayer(m); }
         } else if (m && group.hasLayer(m)) {
           group.removeLayer(m);
@@ -2291,10 +2334,14 @@
     }
     function trSync() {
       if (!TR || !map) { return; }
-      var z = map.getZoom(), b = map.getBounds().pad(0.3);
-      var st = !!trOn.s && z >= ST_ZOOM, bus = !!trOn.b && z >= BUS_ZOOM;
-      if (trOn.l && !map.hasLayer(trLine)) { trLine.addTo(map); }
-      if (!trOn.l && map.hasLayer(trLine)) { map.removeLayer(trLine); }
+      var z = map.getZoom(), view = map.getBounds(), b = view.pad(0.3);
+      var ln = !!trOn.l, st = !!trOn.s && z >= ST_ZOOM, bus = !!trOn.b && z >= BUS_ZOOM;
+      if (ln || st) { trNeed("r", b); }
+      if (bus) { trNeed("b", b); }
+      [trLineU, trLineO].forEach(function (g) {
+        if (ln && !map.hasLayer(g)) { g.addTo(map); }
+        if (!ln && map.hasLayer(g)) { map.removeLayer(g); }
+      });
       trPut(trSt, "m", st, b, trStG);
       trPut(trSt, "lb", st && z >= LBL_ZOOM, b, trLblG);
       trPut(trBus, "m", bus, b, trBusG);
