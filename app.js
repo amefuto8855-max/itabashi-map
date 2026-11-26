@@ -178,16 +178,66 @@
       setTimeout(res, 8000);
     });
   }
+  // 区（市）ごとのファイル（idx.json と d/区のコード.json）から、最初に映る区と、共有リンクの場所の区の分だけを読む。
+  // idx.json が読めないときは、前の形（data.json と kanko.json）で全部を読む
+  function getJSON(u) { return fetch(BASE + u).then(function (r) { if (!r.ok) { throw new Error(u); } return r.json(); }); }
+  var QIDX_P = null;
+  function qIndex() {
+    // 検索と共有リンクに使う目次（場所ごとの id・区・名前）。使うときに1回だけ読む
+    if (!QIDX_P) { QIDX_P = getJSON("q.json").then(function (j) { return j && j.q ? j : { q: [] }; }, function () { return { q: [] }; }); }
+    return QIDX_P;
+  }
+  function hashState() {
+    if (location.hash.indexOf("#c=") !== 0) { return {}; }
+    try { var o = JSON.parse(decodeURIComponent(location.hash.slice(3))); return o && typeof o === "object" ? o : {}; } catch (e) { return {}; }
+  }
+  function boxHit(bb, s, w, n, e) { return !!bb && bb[0] <= n && bb[2] >= s && bb[1] <= e && bb[3] >= w; }
+  function firstCodes(X) {
+    // 最初の表示（板橋区の中心・ズーム13）に映る範囲を、画面の大きさから出す
+    var lat = 35.766, lng = 139.684, dpp = 360 / (256 * Math.pow(2, 13));
+    var w = (window.innerWidth || 1024) * dpp * 0.55, h = (window.innerHeight || 768) * dpp * 0.55 * Math.cos(lat * Math.PI / 180);
+    return X.files.filter(function (f) { return boxHit(f[3], lat - h, lng - w, lat + h, lng + w); }).map(function (f) { return f[0]; });
+  }
+  function codesOfIds(X, ids) {
+    return qIndex().then(function (Q) {
+      var want = {}, codes = {};
+      ids.forEach(function (id) { want[id] = 1; });
+      Q.q.forEach(function (e) {
+        if (!want[e[0]]) { return; }
+        X.files.forEach(function (f) { if (f[1] === X.meta.areas[e[1]]) { codes[f[0]] = 1; } });
+      });
+      return Object.keys(codes);
+    });
+  }
+  function bootData() {
+    return getJSON("idx.json").then(function (X) {
+      if (!X || X.v !== 2 || !X.files) { throw new Error("idx"); }
+      var st = hashState(), codes = firstCodes(X), ids = [];
+      if (typeof st.s === "string") { ids.push(st.s); }
+      if (Array.isArray(st.k)) { ids = ids.concat(st.k.filter(function (x) { return typeof x === "string"; })); }
+      if (typeof st.a === "string") { X.files.forEach(function (f) { if (f[1] === st.a) { codes.push(f[0]); } }); }
+      return (ids.length ? codesOfIds(X, ids) : Promise.resolve([])).then(function (more) {
+        var want = codes.concat(more).filter(function (c, i, a) { return a.indexOf(c) === i; });
+        return Promise.all(want.map(function (c) { return getJSON("d/" + c + ".json").then(function (j) { return [c, j.items || []]; }); })).then(function (parts) {
+          var D = { meta: X.meta, items: [] };
+          X.loaded = {};
+          parts.forEach(function (p) { X.loaded[p[0]] = 1; p[1].forEach(function (o) { D.items.push(o); }); });
+          return { D: D, K: null, X: X };
+        });
+      });
+    }).catch(function () {
+      return Promise.all([getJSON("data.json"), getJSON("kanko.json").catch(function () { return null; })]).then(function (a) { return { D: a[0], K: a[1], X: null }; });
+    });
+  }
   Promise.all([
-    fetch(BASE + "data.json").then(function (r) { if (!r.ok) { throw new Error("data"); } return r.json(); }),
+    bootData(),
     window.L && window.L.map ? null : loadScript(LF + "leaflet.js", "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=").catch(function () { return null; }),
     cssReady(),
-    fetch(BASE + "kanko.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
   ]).then(function (a) {
     root.classList.remove("is-nojs");
     root.classList.add("is-js");
     root.innerHTML = SKELETON;
-    try { start(a[0], a[3]); } catch (e) { if (window.console) { window.console.error(e); } giveUp(); }
+    try { start(a[0].D, a[0].K, a[0].X); } catch (e) { if (window.console) { window.console.error(e); } giveUp(); }
   }, giveUp);
 
   // 東京23区の観光スポット（kanko.json）を、地図のデータに足す
@@ -238,8 +288,18 @@
       return false;
     }
   }
-  function start(D, K) {
+  function kkSetup(kk) {
+    // 区ごとのファイルのときの、観光の目的の設定（kanko.json を足すときの kkMerge の後半と同じ）
+    if (!kk || !kk.kinds || !kk.kinds.length) { return; }
+    KK_PURP.tags = kk.kinds.map(function (k) { return "観光:" + k[0]; });
+    KK_PURP.kinds = kk.kinds.map(function (k) { return ["t:観光:" + k[0], k[1], k[2], k[3]]; });
+    CFG.purposes.push(KK_PURP);
+    KK.src = kk.src || [];
+    KK.made = kk.made || "";
+  }
+  function start(D, K, X) {
     if (K) { kkMerge(D, K); }
+    if (X) { kkSetup(X.kk); }
     var M = D.meta, TAGS = M.tags, LABELS = M.labels, CATS = M.cats, AREAS = M.areas, KANA = M.kana;
     var NICHE = {};
     M.facets.forEach(function (f) { NICHE[f[0]] = f[1] === 1; });
@@ -249,7 +309,7 @@
     function kana(t) { return KANA[t] || t; }
 
     var NO_INDEX = { "情報源": 1, "状態": 1, "Wi-Fiの場所": 1 };
-    var items = D.items.map(function (o, i) {
+    function mkItem(o, i) {
       var tags = o.tg.map(function (k) { return TAGS[k]; });
       var set = {};
       tags.forEach(function (t) { set[t] = 1; });
@@ -279,7 +339,8 @@
       it.md = o.md || "";
       if (it.kk) { it.wp = o.wp || ""; it.wd = o.wd || ""; it.ks = o.ks || []; it.ul = o.ul || ""; }
       return it;
-    });
+    }
+    var items = D.items.map(mkItem);
     var byId = {};
     items.forEach(function (it) { byId[it.id] = it; });
     root.addEventListener("error", function (e) {
@@ -292,10 +353,10 @@
     var pins = items.filter(function (it) { return it.pin; });
     (function () {
       // 使い方の説明と「行った場所」の数を、足した観光スポットの分も入れた数にする
-      var nk = items.filter(function (it) { return it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }).length, lead = $(".c-guide-lead"), w = $(".c-stat-went");
+      var nk = X ? X.n.kanko : items.filter(function (it) { return it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }).length, lead = $(".c-guide-lead"), w = $(".c-stat-went");
       if (nk && lead) { lead.textContent = lead.textContent.replace("を、1つの地図", "、東京23区の観光スポット" + nk.toLocaleString("ja-JP") + "か所を、1つの地図"); }
-      if (lead) { lead.textContent = lead.textContent.replace(/飲食店[\d,]+店/, "飲食店" + items.filter(function (it) { return it.food; }).length.toLocaleString("ja-JP") + "店"); }
-      if (w && w.nextElementSibling) { w.nextElementSibling.textContent = "/" + items.length + "か所"; }
+      if (lead) { lead.textContent = lead.textContent.replace(/飲食店[\d,]+店/, "飲食店" + (X ? X.n.food : items.filter(function (it) { return it.food; }).length).toLocaleString("ja-JP") + "店"); }
+      if (w && w.nextElementSibling) { w.nextElementSibling.textContent = "/" + (X ? X.n.all : items.length) + "か所"; }
     })();
 
     function spec(it, names) {
@@ -308,10 +369,11 @@
         return f === "駐車場" || f === "駐輪場" ? f + v : f === "最寄り駅" ? v + "駅" : v;
       }).join(" ");
     }
-    items.forEach(function (it) {
+    function addText(it) {
       it.text = norm([it.name, it.official, it.aka, it.addr, it.area, it.town, it.lead, spec(it, ["できること", "補足"]), spec(it, ["文化財"]), tagWords(it),
         CATS[it.cat].name, M.subs[it.sub] || ""].join(" ").replace(/\[\[[^|\]]+\|([^\]]+)\]\]/g, "$1"));
-    });
+    }
+    items.forEach(addText);
 
     var SYN = {};
     [
@@ -335,7 +397,7 @@
     var STUDY = ["学習・PC:学習席・自習スペース", "学習・PC:PC席", "学習・PC:持ち込みPC席"];
     var PARK = ["駐車場:あり", "駐車場:有料", "駐車場:無料", "駐車場:無料の時間あり"];
     function anyOf(it, list) { for (var k = 0; k < list.length; k++) { if (it.has(list[k])) { return true; } } return false; }
-    items.forEach(function (it) {
+    function addBadges(it) {
       var b = [];
       if (it.has("料金:無料")) { b.push(["yen", "無料"]); }
       if (it.has("子連れ:子連れ向け")) { b.push(["stroller", "子連れ"]); }
@@ -345,7 +407,8 @@
       if (anyOf(it, PARK)) { b.push(["parking", "駐車場"]); }
       if (it.has("時間・天候:24時間")) { b.push(["moon", "24時間"]); } else if (it.has("時間・天候:夜21時以降も開いている")) { b.push(["moon", "夜21時以降も"]); }
       it.badges = b;
-    });
+    }
+    items.forEach(addBadges);
     function badgeHTML(it, compact) {
       if (!it.badges.length) { return ""; }
       return '<span class="c-bds' + (compact ? " is-compact" : "") + '">' + it.badges.map(function (x) {
@@ -497,7 +560,7 @@
     var went = store.get(KEY.went, {});
     if (!Array.isArray(favs)) { favs = []; }
     if (!went || typeof went !== "object" || Array.isArray(went)) { went = {}; }
-    favs = favs.filter(function (id, i) { return byId[id] && favs.indexOf(id) === i; });
+    favs = favs.filter(function (id, i) { return (X || byId[id]) && favs.indexOf(id) === i; });
     var st0 = readHash() || {};
     var S = {
       q: "", ws: [], area: "", town: "", tag: "", presets: [], hint: null, hidden: [], purp: "", kind: "", cond: "", rings: false, panel: null, back: null,
@@ -559,27 +622,16 @@
       mapEl.innerHTML = '<p class="c-map-off-msg">地図を読み込めませんでした。通信の状態を確かめて、ページを読み込み直してください。下の一覧は使えます。</p>';
     }
     var baseNow = S.base;
-    var icons = {}, dots = {}, pinState = {}, ringLayer = null, courseLayer = null, dotLayer = null, iconLayer = null;
+    var pinState = {}, ringLayer = null, courseLayer = null, pinLayer = null;
     var NEAR_ZOOM = 14;
-    function pinIcon(it) {
-      var c = CATS[it.cat], s = statusOf(it);
-      var cls = "c-pin" + (it.approx ? " is-approx" : "") + (s ? " " + s[1] : "") + (it.rk ? " is-rk" + it.rk[0] : "");
-      return L.divIcon({
-        className: cls,
-        html: '<span class="c-pin-in" style="--c:' + c.color + '">' + icon(c.icon) + "</span>",
-        iconSize: [32, 32], iconAnchor: [16, 16],
-      });
-    }
-
-    var units = [], unitOf = {};
-    (function () {
-      var gmap = {};
-      pins.forEach(function (it) {
+    var units = [], unitOf = {}, gmapU = {};
+    function addUnits(list) {
+      list.forEach(function (it) {
         var u;
         if (it.g >= 0 && M.gp && M.gp[it.g]) {
-          u = gmap[it.g];
+          u = gmapU[it.g];
           if (!u) {
-            u = gmap[it.g] = { key: "g" + it.g, lat: M.gp[it.g][0], lng: M.gp[it.g][1], members: [], vis: [], sig: "" };
+            u = gmapU[it.g] = { key: "g" + it.g, lat: M.gp[it.g][0], lng: M.gp[it.g][1], members: [], vis: [], sig: "" };
             units.push(u);
           }
         } else {
@@ -589,7 +641,9 @@
         u.members.push(it);
         unitOf[it.id] = u;
       });
-    })();
+      if (pinLayer) { pinLayer.redraw(); }
+    }
+    addUnits(pins);
     function shown(u) { return u.vis.length ? u.vis : u.members; }
     function groupColor(v) {
       var c = v[0].cat;
@@ -600,16 +654,6 @@
       var v = shown(u);
       if (v.length === 1) { return v[0].name; }
       return v.length + "か所のピンが重なっています：" + v.slice(0, 3).map(function (it) { return it.name; }).join("、") + (v.length > 3 ? "ほか" : "");
-    }
-    function unitIcon(u) {
-      var v = shown(u);
-      if (v.length === 1) { return pinIcon(v[0]); }
-      var approx = v.every(function (it) { return it.approx; });
-      return L.divIcon({
-        className: "c-pin is-group" + (approx ? " is-approx" : ""),
-        html: '<span class="c-pin-in" style="--c:' + groupColor(v) + '"><b>' + v.length + "</b></span>",
-        iconSize: [34, 34], iconAnchor: [17, 17],
-      });
     }
     function unitState(u) {
       var v = shown(u), st = { sel: false, hot: false, went: true, dim: true };
@@ -634,103 +678,258 @@
         opacity: st.dim ? 0.45 : 1,
       };
     }
-    function applyUnit(u) {
-      var st = unitState(u), m = icons[u.key], el = m && m.getElement();
-      if (el) {
-        el.classList.toggle("is-sel", st.sel);
-        el.classList.toggle("is-hot", st.hot);
-        el.classList.toggle("is-went", st.went);
-        el.classList.toggle("is-dim", st.dim);
-        el.setAttribute("title", unitTitle(u));
-        el.setAttribute("aria-label", unitTitle(u));
-      }
-      var d = dots[u.key];
-      if (d) {
-        var o = unitStyle(u, st);
-        d.setStyle(o);
-        d.setRadius(o.radius);
-        if (big(st) && dotLayer.hasLayer(d)) { d.bringToFront(); }
-      }
-    }
+    function applyUnit() { if (pinLayer) { pinLayer.redraw(); } }
     function big(st) { return st.sel || st.hot; }
-    function iconOf(u) {
-      if (!icons[u.key]) {
-        var m = L.marker([u.lat, u.lng], { icon: unitIcon(u), title: unitTitle(u), alt: unitTitle(u), riseOnHover: true });
-        m.on("click", function () { pickAt(u); });
-        m.on("add", function () { applyUnit(u); });
-        icons[u.key] = m;
-      }
-      return icons[u.key];
-    }
     function refreshUnits() {
-      units.forEach(function (u) {
-        var vis = u.members.filter(function (it) { return visSet[it.id]; });
-        var sig = vis.length === 1 ? vis[0].id : "n" + vis.length;
-        u.vis = vis;
-        if (sig === u.sig) { return; }
-        u.sig = sig;
-        if (icons[u.key]) { icons[u.key].setIcon(unitIcon(u)); }
-        if (dots[u.key]) { dots[u.key].setTooltipContent(unitTitle(u)); }
-        applyUnit(u);
-      });
+      units.forEach(function (u) { u.vis = u.members.filter(function (it) { return visSet[it.id]; }); });
+      if (pinLayer) { pinLayer.redraw(); }
     }
+
+    // ---- ピンは1枚の canvas に描く。ピンの形は、色・絵柄・状態ごとに1回だけ作って使い回す ----
+    var SPR = {}, SVGI = {}, drawn = [];
+    var PIN_FONT = '"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif';
+    var SDPR = Math.min(Math.max(window.devicePixelRatio || 1, 1), 3);
+    function svgImg(name) {
+      var img = SVGI[name];
+      if (img) { return img; }
+      img = SVGI[name] = new Image();
+      img.onload = function () { SPR = {}; if (pinLayer) { pinLayer.redraw(); } };
+      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#fff" ' +
+        'stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" color="#fff">' + (ICONS[name] || "") + "</svg>");
+      return img;
+    }
+    function pinLook(u, st) {
+      var v = shown(u), multi = v.length > 1, it0 = v[0], s = multi ? null : statusOf(it0), rk = multi ? 2 : rkOf(it0);
+      var approx = v.every(function (it) { return it.approx; }), closed = !!(s && s[1] === "is-closed");
+      return {
+        c: multi ? groupColor(v) : CATS[it0.cat].color, ic: multi ? "" : CATS[it0.cat].icon, n: multi ? v.length : 0,
+        sc: st.sel ? 1.45 : st.hot ? 1.25 : st.dim ? 0.8 : rk === 1 ? 1.2 : rk === 3 ? 0.72 : 1,
+        a: st.dim ? 0.35 : closed ? 0.62 : rk === 3 && !st.sel && !st.hot ? 0.72 : approx ? 0.88 : 1,
+        ring: st.sel ? "sel" : multi ? "group" : rk === 1 ? "rk" : "white",
+        dash: approx && !st.sel, gray: closed, went: st.went, part: !!(s && s[1] === "is-part"),
+      };
+    }
+    function pinSprite(o) {
+      var key = [o.c, o.ic, o.n, o.sc, o.ring, o.a, o.dash, o.gray, o.went, o.part].join("|"), s = SPR[key];
+      if (s) { return s; }
+      var r = (o.n ? 17 : 16) * o.sc, size = Math.ceil(r * 2 + 34), cv = document.createElement("canvas");
+      cv.width = cv.height = Math.ceil(size * SDPR);
+      var x = cv.getContext("2d"), c = size / 2, k = o.sc;
+      x.scale(SDPR, SDPR);
+      x.globalAlpha = o.a;
+      // 輪（外から順に）と影
+      var rings = o.ring === "sel" ? [[6, ink], [3, "#fff"]] : o.ring === "rk" || o.ring === "group" ? [[5, o.c], [2.5, "#fff"]] : o.dash ? [[1.5, o.c]] : [[2.5, "#fff"]];
+      rings.forEach(function (g, i) {
+        x.save();
+        if (i === 0) { x.shadowColor = "rgba(0,0,0,.32)"; x.shadowBlur = 8 * k; x.shadowOffsetY = 3 * k; }
+        x.beginPath();
+        x.arc(c, c, r + g[0] * k, 0, 7);
+        x.fillStyle = g[1];
+        x.fill();
+        x.restore();
+      });
+      x.beginPath();
+      x.arc(c, c, r, 0, 7);
+      x.fillStyle = o.gray ? "#9aa3a0" : o.c;
+      x.fill();
+      if (o.dash) {
+        x.setLineDash([3 * k, 2.5 * k]);
+        x.lineWidth = 2 * k;
+        x.strokeStyle = "rgba(255,255,255,.95)";
+        x.beginPath();
+        x.arc(c, c, r - k, 0, 7);
+        x.stroke();
+        x.setLineDash([]);
+      }
+      if (o.n) {
+        x.fillStyle = "#fff";
+        x.font = "900 " + Math.round(14 * k) + "px " + PIN_FONT;
+        x.textAlign = "center";
+        x.textBaseline = "middle";
+        x.fillText(String(o.n), c, c + 0.5);
+      } else {
+        var im = svgImg(o.ic);
+        if (im.complete && im.naturalWidth) { var iw = r * 1.2; x.drawImage(im, c - iw / 2, c - iw / 2, iw, iw); }
+      }
+      if (o.part) {
+        x.globalAlpha = 1;
+        x.beginPath(); x.arc(c + 13.5, c - 13.5, 7.5, 0, 7); x.fillStyle = "#fff"; x.fill();
+        x.beginPath(); x.arc(c + 13.5, c - 13.5, 5.5, 0, 7); x.fillStyle = "#e8590c"; x.fill();
+      }
+      if (o.went) {
+        x.globalAlpha = 1;
+        x.beginPath(); x.arc(c + 13.5, c + 13.5, 10.5, 0, 7); x.fillStyle = "#fff"; x.fill();
+        x.beginPath(); x.arc(c + 13.5, c + 13.5, 8.5, 0, 7); x.fillStyle = "#1d6b45"; x.fill();
+        x.beginPath(); x.moveTo(c + 9.6, c + 13.6); x.lineTo(c + 12.4, c + 16.3); x.lineTo(c + 17.4, c + 10.6);
+        x.lineWidth = 2; x.lineCap = "round"; x.lineJoin = "round"; x.strokeStyle = "#fff"; x.stroke();
+      }
+      s = SPR[key] = { cv: cv, size: size, r: r };
+      return s;
+    }
+    function drawDot(ctx, p, o) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, o.radius, 0, 7);
+      ctx.globalAlpha = o.fillOpacity;
+      ctx.fillStyle = o.fillColor;
+      ctx.fill();
+      ctx.globalAlpha = o.opacity;
+      ctx.lineWidth = o.weight;
+      ctx.strokeStyle = o.color;
+      ctx.stroke();
+    }
+    function putSprite(ctx, sp, p) { ctx.globalAlpha = 1; ctx.drawImage(sp.cv, p.x - sp.size / 2, p.y - sp.size / 2, sp.size, sp.size); }
+    function drawPins(ctx, b) {
+      drawn = [];
+      if (!map) { return; }
+      var nw = map.layerPointToLatLng(b.min.subtract([40, 40])), se = map.layerPointToLatLng(b.max.add([40, 40]));
+      var n = nw.lat, w = nw.lng, s = se.lat, e = se.lng, near = isNear();
+      if (atMax()) { drawKids(ctx, n, w, s, e); return; }
+      var lv = [[], [], [], [], []];
+      units.forEach(function (u) {
+        if (!u.vis.length || u.lat > n || u.lat < s || u.lng < w || u.lng > e) { return; }
+        var st = unitState(u), v = shown(u), multi = v.length > 1;
+        // 描く順：口コミの少ないピン → ふつう → 口コミの多いピン → 強調 → 選んだピン（あとに描くほど上）
+        lv[st.sel ? 4 : st.hot ? 3 : !multi && rkOf(v[0]) === 1 ? 2 : !multi && rkOf(v[0]) === 3 ? 0 : 1].push([u, st]);
+      });
+      lv.forEach(function (list) {
+        list.forEach(function (x) {
+          var u = x[0], st = x[1], p = map.latLngToLayerPoint([u.lat, u.lng]);
+          if (near) {
+            var sp = pinSprite(pinLook(u, st));
+            putSprite(ctx, sp, p);
+            drawn.push([u, p.x, p.y, sp.r + 10, null]);  // 外側の輪と、指で押すときのゆとり
+          } else {
+            var o = unitStyle(u, st);
+            drawDot(ctx, p, o);
+            drawn.push([u, p.x, p.y, o.radius + 6, null]);
+          }
+        });
+      });
+      ctx.globalAlpha = 1;
+    }
+    function drawKids(ctx, n, w, s, e) {
+      // いちばん拡大したときは、重なったピンを少しずつずらし、もとの位置まで線を引く
+      var lay = spreadLayout(), sel = selId(), list = [];
+      pins.forEach(function (it) {
+        var q = lay.pos[it.id];
+        if (!q || !visSet[it.id] || q.lat > n || q.lat < s || q.lng < w || q.lng > e) { return; }
+        list.push([it, q, map.latLngToLayerPoint([it.lat, it.lng]), map.latLngToLayerPoint([q.lat, q.lng])]);
+      });
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = ink;
+      ctx.fillStyle = ink;
+      list.forEach(function (x) {
+        if (!x[1].moved) { return; }
+        ctx.globalAlpha = 0.55;
+        ctx.beginPath(); ctx.moveTo(x[2].x, x[2].y); ctx.lineTo(x[3].x, x[3].y); ctx.stroke();
+        ctx.globalAlpha = 0.7;
+        ctx.beginPath(); ctx.arc(x[2].x, x[2].y, 3, 0, 7); ctx.fill();
+      });
+      list.sort(function (x, y) { return (x[0].id === sel) - (y[0].id === sel); });
+      list.forEach(function (x) {
+        var k = { members: [x[0]], vis: [x[0]] }, sp = pinSprite(pinLook(k, unitState(k)));
+        putSprite(ctx, sp, x[3]);
+        drawn.push([null, x[3].x, x[3].y, sp.r + 10, x[0]]);
+      });
+      ctx.globalAlpha = 1;
+    }
+    function pinHit(e) {
+      if (!map || !drawn.length) { return null; }
+      var pt = map.mouseEventToLayerPoint(e);
+      for (var k = drawn.length - 1; k >= 0; k--) {
+        var d = drawn[k], dx = d[1] - pt.x, dy = d[2] - pt.y;
+        if (dx * dx + dy * dy <= d[3] * d[3]) { return d; }
+      }
+      return null;
+    }
+    function hookPins() {
+      var pane = map.getPane("mapPane"), tip = null, hov = null, raf = 0, last = null, touchy = false;
+      // 指で押したあとにも mousemove が来るので、指のときは名前の表示を出さない
+      mapEl.addEventListener("pointerdown", function (e) { touchy = e.pointerType === "touch"; }, true);
+      function tipOff() { if (tip) { map.closeTooltip(tip); tip = null; } hov = null; }
+      mapEl.addEventListener("click", function (e) {
+        if (!(e.target === mapEl || pane.contains(e.target)) || (map.dragging && map.dragging.moved())) { return; }
+        var d = pinHit(e);
+        if (!d) { return; }
+        e.stopPropagation();
+        e.preventDefault();
+        tipOff();
+        if (d[4]) { select(d[4].id, { fromMap: true }); } else { pickAt(d[0]); }
+      }, true);
+      mapEl.addEventListener("mousemove", function (e) {
+        last = e;
+        if (raf) { return; }
+        raf = L.Util.requestAnimFrame(function () {
+          raf = 0;
+          var d = last && (last.target === mapEl || pane.contains(last.target)) && !map._animatingZoom && !(map.dragging && map.dragging.moving()) ? pinHit(last) : null;
+          var key = d ? (d[4] ? "s" + d[4].id : d[0].key) : null;
+          mapEl.style.cursor = d ? "pointer" : "";
+          if (key === hov) { return; }
+          tipOff();
+          hov = key;
+          if (d && !touchy) {
+            tip = L.tooltip({ direction: "top", offset: [0, -Math.round(d[3] - 3)], opacity: 0.95 })
+              .setLatLng(map.layerPointToLatLng(L.point(d[1], d[2]))).setContent(esc(d[4] ? d[4].name : unitTitle(d[0])));
+            map.openTooltip(tip);
+          }
+        });
+      });
+      mapEl.addEventListener("mouseleave", function () { tipOff(); mapEl.style.cursor = ""; });
+      map.on("movestart zoomstart", tipOff);
+    }
+    var PinCanvas = map ? L.Canvas.extend({
+      _initContainer: function () {
+        var c = this._container = document.createElement("canvas");
+        c.style.pointerEvents = "none";
+        this._ctx = c.getContext("2d");
+      },
+      _destroyContainer: function () {
+        L.Util.cancelAnimFrame(this._redrawRequest);
+        delete this._ctx;
+        L.DomUtil.remove(this._container);
+        delete this._container;
+      },
+      _updatePaths: function () {
+        if (this._postponeUpdatePaths) { return; }
+        this._redrawBounds = null;
+        this._redraw();
+      },
+      _draw: function () {
+        if (!this._map || !this._bounds) { return; }
+        this._ctx.save();
+        drawPins(this._ctx, this._bounds);
+        this._ctx.restore();
+      },
+      redraw: function () {
+        if (this._map && !this._redrawRequest) {
+          this._redrawBounds = null;
+          this._redrawRequest = L.Util.requestAnimFrame(this._redraw, this);
+        }
+        return this;
+      },
+    }) : null;
     if (map) {
       ringLayer = L.layerGroup().addTo(map);
       courseLayer = L.layerGroup().addTo(map);
-      dotLayer = L.layerGroup();
-      iconLayer = L.layerGroup();
-      var dotRenderer = L.canvas({ padding: 0.4, tolerance: 6 });
-      units.forEach(function (u) {
-        var o = unitStyle(u, unitState(u));
-        o.renderer = dotRenderer;
-        o.bubblingMouseEvents = false;
-        var d = L.circleMarker([u.lat, u.lng], o);
-        d.on("click", function () { pickAt(u); });
-        d.bindTooltip(unitTitle(u), { direction: "top", offset: [0, -6], opacity: 0.95 });
-        dots[u.key] = d;
-      });
+      var pinPane = map.createPane("itbxPins");
+      pinPane.style.zIndex = 590;
+      pinPane.style.pointerEvents = "none";
+      Object.keys(CATS).forEach(function (c) { svgImg(CATS[c].icon); });
+      pinLayer = new PinCanvas({ pane: "itbxPins", padding: 0.3 }).addTo(map);
+      hookPins();
       map.on("moveend", function () { syncPins(); });
       map.on("moveend", debounce(function () {
         if (S.rings && ringMode() === "center") { drawRings(); } else { buildRail(); }
       }, 180));
     }
     function isNear() { return map.getZoom() >= NEAR_ZOOM; }
-    function syncDots() {
-      if (!map) { return; }
-      units.forEach(function (u) {
-        var d = dots[u.key], on = u.vis.length > 0;
-        if (on && !dotLayer.hasLayer(d)) { dotLayer.addLayer(d); }
-        if (!on && dotLayer.hasLayer(d)) { dotLayer.removeLayer(d); }
-      });
-    }
+    function syncDots() { if (pinLayer) { pinLayer.redraw(); } }
     function syncPins() {
       if (!map) { return; }
-      var near = isNear();
-      stage.classList.toggle("is-far", !near);
-      if (!near) {
-        if (map.hasLayer(iconLayer)) { map.removeLayer(iconLayer); }
-        if (spreadLayer && map.hasLayer(spreadLayer)) { map.removeLayer(spreadLayer); }
-        if (!map.hasLayer(dotLayer)) { dotLayer.addTo(map); }
-        return;
-      }
-      if (map.hasLayer(dotLayer)) { map.removeLayer(dotLayer); }
-      if (!map.hasLayer(iconLayer)) { iconLayer.addTo(map); }
-      if (spreadLayer && !map.hasLayer(spreadLayer)) { spreadLayer.addTo(map); }
-      var b = map.getBounds().pad(0.35), su = selId() ? unitOf[selId()] : null;
-      var mx = atMax();
-      units.forEach(function (u) {
-        var want = !mx && ((u.vis.length > 0 && b.contains([u.lat, u.lng])) || su === u);
-        var m = icons[u.key];
-        if (want) {
-          m = iconOf(u);
-          if (!iconLayer.hasLayer(m)) { iconLayer.addLayer(m); }
-        } else if (m && iconLayer.hasLayer(m)) {
-          iconLayer.removeLayer(m);
-        }
-      });
-      if (SPREAD) { syncKids(mx, b); }
+      stage.classList.toggle("is-far", !isNear());
+      if (pinLayer) { pinLayer.redraw(); }
     }
-    var SPREAD = !!(CFG.groupZoom && map), SPREAD_D = 36, kidOf = {}, spreadLayer = SPREAD ? L.layerGroup() : null, layout = null;
+    var SPREAD = !!(CFG.groupZoom && map), SPREAD_D = 36, kidOf = {}, layout = null;
     function atMax() { return SPREAD && map.getZoom() >= map.getMaxZoom() - 0.01; }
     function spreadLayout() {
       var Z = map.getMaxZoom(), v = pins.filter(function (it) { return visSet[it.id]; });
@@ -795,39 +994,6 @@
         layout.pos[q.it.id] = { lat: ll.lat, lng: ll.lng, moved: Math.abs(q.x - q.x0) + Math.abs(q.y - q.y0) > 4 };
       });
       return layout;
-    }
-    function kidMarker(k) {
-      if (!icons[k.key]) {
-        var it = k.members[0], m = L.marker([k.lat, k.lng], { icon: pinIcon(it), title: it.name, alt: it.name, riseOnHover: true });
-        m.on("click", function () { select(it.id, { fromMap: true }); });
-        m.on("add", function () { applyUnit(k); });
-        icons[k.key] = m;
-      }
-      return icons[k.key];
-    }
-    function syncKids(on, b) {
-      spreadLayer.clearLayers();
-      if (!on) {
-        Object.keys(kidOf).forEach(function (id) { var m = icons[kidOf[id].key]; if (m && iconLayer.hasLayer(m)) { iconLayer.removeLayer(m); } });
-        return;
-      }
-      var lay = spreadLayout(), sel = selId();
-      pins.forEach(function (it) {
-        var q = lay.pos[it.id], k = kidOf[it.id], m = k && icons[k.key];
-        if (!q || !(b.contains([q.lat, q.lng]) || sel === it.id)) {
-          if (m && iconLayer.hasLayer(m)) { iconLayer.removeLayer(m); }
-          return;
-        }
-        if (!k) { k = kidOf[it.id] = { key: "s" + it.id, members: [it], vis: [it], sig: it.id }; }
-        k.lat = q.lat; k.lng = q.lng;
-        m = kidMarker(k);
-        m.setLatLng([q.lat, q.lng]);
-        if (!iconLayer.hasLayer(m)) { iconLayer.addLayer(m); }
-        if (q.moved) {
-          spreadLayer.addLayer(L.polyline([[it.lat, it.lng], [q.lat, q.lng]], { color: ink, weight: 1.5, opacity: 0.55, interactive: false }));
-          spreadLayer.addLayer(L.circleMarker([it.lat, it.lng], { radius: 3, stroke: false, fillColor: ink, fillOpacity: 0.7, interactive: false }));
-        }
-      });
     }
     var PICK_MAX = 40;
     function pickAt(u) {
@@ -901,19 +1067,36 @@
     }
 
     var townCount = {}, areaCount = {};
-    items.forEach(function (it) {
-      areaCount[it.area] = (areaCount[it.area] || 0) + 1;
-      if (it.area === "板橋区" && it.town !== "板橋区内") { townCount[it.town] = (townCount[it.town] || 0) + 1; }
-    });
-    var townList = Object.keys(townCount).sort(function (a, b) { return kana(a).localeCompare(kana(b), "ja"); });
-    var areaOpts = '<option value="">エリア：すべて</option>' + AREAS.filter(function (a) { return areaCount[a]; }).map(function (a) {
-      var h = '<option value="a:' + esc(a) + '">' + esc(a) + (a === "板橋区" ? "（全域）" : "") + "（" + areaCount[a] + "）</option>";
-      if (a === "板橋区") {
-        h += '<optgroup label="板橋区の町名">' + townList.map(function (t) {
-          return '<option value="t:' + esc(t) + '">' + esc(t) + "（" + townCount[t] + "）</option>";
-        }).join("") + "</optgroup>";
+    function countAreas() {
+      // 区（市）ごと・町名ごとの件数。区ごとのファイルのときは、目次（idx.json）にある全体の数
+      townCount = {};
+      areaCount = {};
+      if (X) {
+        X.files.forEach(function (f) { areaCount[f[1]] = f[2]; f[4].forEach(function (t) { townCount[f[1] + "/" + t[0]] = t[1]; }); });
+        return;
       }
-      return h;
+      items.forEach(function (it) {
+        var k = it.area + "/" + it.town;
+        areaCount[it.area] = (areaCount[it.area] || 0) + 1;
+        townCount[k] = (townCount[k] || 0) + 1;
+      });
+    }
+    countAreas();
+    function fileOfArea(a) {
+      if (!X) { return null; }
+      for (var k = 0; k < X.files.length; k++) { if (X.files[k][1] === a) { return X.files[k]; } }
+      return null;
+    }
+    function areaList() { return X ? X.files.map(function (f) { return f[1]; }) : AREAS.filter(function (a) { return areaCount[a]; }); }
+    function townsOf(a) {
+      var f = fileOfArea(a);
+      if (f) { return f[4].map(function (t) { return t[0]; }); }
+      return Object.keys(townCount).filter(function (k) { return k.indexOf(a + "/") === 0; }).map(function (k) { return k.slice(a.length + 1); })
+        .sort(function (x, y) { return (x === a + "内") - (y === a + "内") || kana(x).localeCompare(kana(y), "ja"); });
+    }
+    function townLabel(a, t) { return t === a + "内" ? "町名の記載がない場所" : t; }
+    var areaOpts = '<option value="">エリア：すべて</option>' + areaList().map(function (a) {
+      return '<option value="' + esc(a) + '">' + esc(a) + "（" + areaCount[a] + "）</option>";
     }).join("");
     var PURPS = CFG.purposes, PURP = {};
     PURPS.forEach(function (p) { PURP[p.key] = p; });
@@ -924,7 +1107,7 @@
       for (i = 0; i < PURPS.length; i++) { if (inPurp(it, PURPS[i])) { return PURPS[i].key; } }
       return "";
     }
-    PURPS.forEach(function (p) { p.n = items.filter(function (it) { return inPurp(it, p); }).length; });
+    PURPS.forEach(function (p) { p.n = X && X.pn && typeof X.pn[p.key] === "number" ? X.pn[p.key] : items.filter(function (it) { return inPurp(it, p); }).length; });
     var CO_PURP = (PURPS.filter(function (p) { return p.co; })[0] || {}).key || "";
     function nWord(p) { return p.n.toLocaleString("ja-JP") + (p.unit || "か所"); }
     chips.innerHTML = PURPS.map(function (p) {
@@ -975,8 +1158,28 @@
           icon(p.icon) + "<span>" + esc(p.label) + '</span><span class="c-chip-n"></span></button>';
       }).join("") +
       '<label class="c-chip c-selchip c-condsel c-cochip" hidden>' + icon("shop") + '<select class="c-csel" data-k="co" aria-label="運営会社で絞る"><option value="">運営会社</option>' + coOpts + "</select></label>" +
-      '<label class="c-chip c-selchip c-areachip">' + icon("pin") + '<select class="c-areasel" aria-label="エリアで絞り込む">' + areaOpts + "</select></label>";
-    var areaSel = $(".c-areasel", condsEl), coChip = $(".c-cochip", condsEl);
+      '<label class="c-chip c-selchip c-areachip">' + icon("pin") + '<select class="c-areasel" aria-label="区・市で絞り込む">' + areaOpts + "</select></label>" +
+      '<label class="c-chip c-selchip c-townchip" hidden><select class="c-townsel" aria-label="町名で絞り込む"></select></label>';
+    var areaSel = $(".c-areasel", condsEl), coChip = $(".c-cochip", condsEl), townSel = $(".c-townsel", condsEl), townChip = $(".c-townchip", condsEl), townFor = null;
+    function fillTowns() {
+      // 2段目：選んだ区（市）の町名
+      if (townFor === S.area) { return; }
+      townFor = S.area;
+      townSel.innerHTML = S.area ? '<option value="">' + esc(S.area) + "の町名：すべて</option>" + townsOf(S.area).map(function (t) {
+        return '<option value="' + esc(t) + '">' + esc(townLabel(S.area, t)) + "（" + (townCount[S.area + "/" + t] || 0) + "）</option>";
+      }).join("") : "";
+    }
+    function fillCo() {
+      // 運営会社の選択肢を、読み込んだ場所から作り直す
+      var s = $('.c-csel[data-k="co"]', condsEl);
+      if (!s) { return; }
+      var n = {}, v = s.value;
+      items.forEach(function (it) { it.tags.forEach(function (t) { if (facet(t) === "運営会社") { n[label(t)] = (n[label(t)] || 0) + 1; } }); });
+      s.innerHTML = '<option value="">運営会社</option>' + Object.keys(n).sort(function (a, b) { return n[b] - n[a] || a.localeCompare(b, "ja"); }).map(function (x) {
+        return '<option value="co:' + esc(x) + '">' + esc(x) + "（" + n[x] + "）</option>";
+      }).join("");
+      s.value = v;
+    }
     condSels = $$(".c-csel", condsEl);
     condSels.forEach(function (s) {
       s.addEventListener("change", function () {
@@ -1049,8 +1252,12 @@
       });
       var co = S.cond.indexOf("co:") === 0;
       condSels.forEach(function (s) { s.value = co ? S.cond : ""; s.parentNode.classList.toggle("is-on", co); });
-      areaSel.value = S.town ? "t:" + S.town : S.area ? "a:" + S.area : "";
-      areaSel.parentNode.classList.toggle("is-on", !!(S.area || S.town));
+      areaSel.value = S.area || "";
+      areaSel.parentNode.classList.toggle("is-on", !!S.area);
+      fillTowns();
+      townSel.value = S.town || "";
+      townChip.hidden = !S.area;
+      townChip.classList.toggle("is-on", !!S.town);
       appTop(home, n, f);
     }
 
@@ -1070,33 +1277,159 @@
         (acts ? '<span class="c-row-acts">' + acts + "</span>" : "") + "</div>" +
         '<div class="c-row-more" hidden></div></li>';
     }
-    function gkey(it) { return it.area === "板橋区" ? it.town : it.area; }
-    var groups = [];
+    function gkey(it) { return it.area + "/" + it.town; }
+    var groups = [], grpOf = {}, rowEl = {}, grpEl = {}, wardEl = {}, listOn0 = null;
+    function wardLoaded(a) { var f = fileOfArea(a); return !f || !!LOADED[f[0]]; }
+    function grpHTML(g) {
+      return '<details class="c-grp" data-area="' + esc(g.area) + '">' +
+        '<summary class="c-grp-h"><span class="c-grp-name">' + esc(g.label) + '</span><span class="c-grp-n"><b>' + g.n + "</b>件</span>" +
+        '<span class="c-grp-prog">行った <b>0</b>/' + g.n + '</span><span class="c-grp-bar" aria-hidden="true"><i></i></span>' + icon("chevron", "c-grp-chev") + "</summary>" +
+        '<section class="c-sub"><ul class="c-rows"></ul></section></details>';
+    }
+    function hookGrp(el) {
+      grpEl[el.getAttribute("data-area")] = el;
+      el.addEventListener("toggle", function () { if (el.open) { buildRows(grpOf[el.getAttribute("data-area")]); } });
+    }
+    function mkGrp(a, t) {
+      var g = { area: a + "/" + t, ward: a, town: t, label: townLabel(a, t), n: townCount[a + "/" + t] || 0, ids: [], built: false };
+      groups.push(g);
+      grpOf[g.area] = g;
+      return g;
+    }
     (function buildGroups() {
-      var h = "", specs = [];
-      townList.concat(["板橋区内"]).forEach(function (t) {
-        var l = items.filter(function (it) { return it.area === "板橋区" && it.town === t; }).sort(sortKey);
-        if (l.length) { specs.push({ key: t, label: t === "板橋区内" ? "板橋区（町名の記載がない場所）" : t, list: l }); }
-      });
-      AREAS.forEach(function (a) {
-        if (a === "板橋区") { return; }
-        var l = items.filter(function (it) { return it.area === a; }).sort(sortKey);
-        if (l.length) { specs.push({ key: a, label: a, list: l }); }
-      });
-      specs.forEach(function (sp) {
-        var list = sp.list;
-        groups.push({ area: sp.key, label: sp.label, n: list.length, ids: list.map(function (it) { return it.id; }) });
-        h += '<details class="c-grp" data-area="' + esc(sp.key) + '">' +
-          '<summary class="c-grp-h"><span class="c-grp-name">' + esc(sp.label) + '</span><span class="c-grp-n"><b>' + list.length + "</b>件</span>" +
-          '<span class="c-grp-prog">行った <b>0</b>/' + list.length + '</span><span class="c-grp-bar" aria-hidden="true"><i></i></span>' + icon("chevron", "c-grp-chev") + "</summary>" +
-          '<section class="c-sub"><ul class="c-rows">' + list.map(rowHTML).join("") + "</ul></section></details>";
+      var h = "";
+      areaList().forEach(function (a) {
+        var inner = townsOf(a).map(function (t) { return grpHTML(mkGrp(a, t)); }).join("");
+        h += '<details class="c-ward" data-ward="' + esc(a) + '"><summary class="c-ward-h"><span class="c-ward-name">' + esc(a) + '</span><span class="c-ward-n"></span>' +
+          icon("chevron", "c-grp-chev") + '</summary><div class="c-ward-body">' + inner + "</div></details>";
       });
       groupsEl.innerHTML = h;
+      $$(".c-grp", groupsEl).forEach(hookGrp);
+      $$(".c-ward", groupsEl).forEach(function (el) {
+        var a = el.getAttribute("data-ward");
+        wardEl[a] = el;
+        el.addEventListener("toggle", function () { if (el.open && !wardLoaded(a)) { ensureArea(a, function () { apply(false); }); } });
+      });
     })();
-    var rowEl = {};
-    $$(".c-row", groupsEl).forEach(function (el) { rowEl[el.getAttribute("data-id")] = el; });
-    var grpEl = {};
-    $$(".c-grp", groupsEl).forEach(function (el) { grpEl[el.getAttribute("data-area")] = el; });
+    function listAdd(list) {
+      var touched = {};
+      list.forEach(function (it) {
+        var g = grpOf[gkey(it)];
+        if (!g) {
+          g = mkGrp(it.area, it.town);
+          var w = wardEl[it.area];
+          if (!w) { return; }
+          $(".c-ward-body", w).insertAdjacentHTML("beforeend", grpHTML(g));
+          hookGrp($(".c-ward-body", w).lastElementChild);
+        }
+        g.ids.push(it.id);
+        touched[g.area] = g;
+      });
+      Object.keys(touched).forEach(function (k) {
+        var g = touched[k];
+        if (!X) { g.n = g.ids.length; }
+        if (g.built) { g.built = false; buildRows(g); }
+      });
+    }
+    function buildRows(g) {
+      if (!g || g.built) { return; }
+      var el = grpEl[g.area], ul = el && $(".c-rows", el);
+      if (!ul) { return; }
+      if (!wardLoaded(g.ward)) {
+        ul.innerHTML = '<li class="c-rows-wait">読み込んでいます…</li>';
+        ensureArea(g.ward, function () { buildRows(g); });
+        return;
+      }
+      g.built = true;
+      var list = g.ids.map(function (id) { return byId[id]; }).filter(Boolean).sort(sortKey);
+      ul.innerHTML = list.map(rowHTML).join("");
+      $$(".c-row", ul).forEach(function (r) {
+        var id = r.getAttribute("data-id");
+        rowEl[id] = r;
+        r.hidden = listOn0 ? !listOn0[id] : false;
+      });
+      paintFavs();
+      paintWent();
+      paintDist();
+    }
+    listAdd(items);
+
+    // ---- 区ごとのファイルを、地図に映っている区の分だけ読み込む ----
+    var LOADED = X ? X.loaded || {} : {}, LOADING = {};
+    function loadCodes(codes, cb) {
+      var want = codes.filter(function (c, i) { return !LOADED[c] && codes.indexOf(c) === i; });
+      if (!want.length) { if (cb) { cb(); } return; }
+      Promise.all(want.map(function (c) {
+        if (!LOADING[c]) { LOADING[c] = getJSON("d/" + c + ".json").then(function (j) { return j.items || []; }, function () { delete LOADING[c]; return null; }); }
+        return LOADING[c].then(function (list) { return [c, list]; });
+      })).then(function (parts) {
+        var add = [];
+        parts.forEach(function (p) { if (p[1] && !LOADED[p[0]]) { LOADED[p[0]] = 1; add = add.concat(p[1]); } });
+        if (add.length) { addChunk(add); }
+        if (cb) { cb(); }
+      });
+    }
+    function ensureArea(a, cb) {
+      var f = a ? fileOfArea(a) : null;
+      if (f) { loadCodes([f[0]], cb); } else if (cb) { cb(); }
+    }
+    function ensureIds(ids, cb) {
+      var miss = ids.filter(function (id) { return !byId[id]; });
+      if (!X || !miss.length) { cb(); return; }
+      codesOfIds(X, miss).then(function (codes) { loadCodes(codes, cb); });
+    }
+    function ensureView() {
+      if (!X || !map) { return; }
+      var b = map.getBounds().pad(0.15), s = b.getSouth(), w = b.getWest(), n = b.getNorth(), e = b.getEast();
+      loadCodes(X.files.filter(function (f) { return boxHit(f[3], s, w, n, e); }).map(function (f) { return f[0]; }));
+    }
+    var VOCAB = null, QTX = null;
+    function ensureQuery() {
+      // 検索：目次から、言葉に当てはまる場所のある区を読み込む（種類やタグの言葉のときは、全部の区）
+      if (!X || !S.ws.length) { return; }
+      var ws = S.ws.slice(), sig = ws.join(" ");
+      qIndex().then(function (Q) {
+        if (S.ws.join(" ") !== sig) { return; }
+        if (!VOCAB) {
+          VOCAB = norm(Object.keys(CATS).map(function (c) { return CATS[c].name; })
+            .concat(Object.keys(M.subs).map(function (k) { return M.subs[k]; }), TAGS.map(function (t) { return label(t); })).join(" "));
+          QTX = Q.q.map(function (e) { return norm(e[2] + " " + e[3] + " " + AREAS[e[1]]); });
+        }
+        var alts = ws.map(function (w) { return SYN[w] || [w]; }), codes = {};
+        if (alts.some(function (al) { return al.some(function (a) { return VOCAB.indexOf(a) !== -1; }); })) {
+          X.files.forEach(function (f) { codes[f[0]] = 1; });
+        } else {
+          Q.q.forEach(function (e, k) {
+            if (!alts.every(function (al) { return al.some(function (a) { return QTX[k].indexOf(a) !== -1; }); })) { return; }
+            var f = fileOfArea(AREAS[e[1]]);
+            if (f) { codes[f[0]] = 1; }
+          });
+        }
+        loadCodes(Object.keys(codes), function () { if (S.ws.join(" ") === sig) { apply(true); } });
+      });
+    }
+    function addChunk(raw) {
+      var add = [];
+      raw.forEach(function (o) {
+        if (byId[o.i]) { return; }
+        var it = mkItem(o, items.length);
+        items.push(it);
+        byId[it.id] = it;
+        add.push(it);
+      });
+      if (!add.length) { return; }
+      add.forEach(addText);
+      add.forEach(addBadges);
+      var np = add.filter(function (it) { return it.pin; });
+      np.forEach(function (it) { pins.push(it); });
+      addUnits(np);
+      PRESETS.forEach(function (p) { p.n = items.filter(p.test).length; });
+      if (!X) { countAreas(); }
+      listAdd(add);
+      fillCo();
+      apply(false);
+      drawCourse();
+    }
 
     function linkWord(it) { return it.ul || (it.has("情報源:公式ページ未確認") ? "案内ページ" : "公式ページ"); }
     function wpUrl(t) { return "https://ja.wikipedia.org/wiki/" + encodeURIComponent(t.replace(/ /g, "_")); }
@@ -1351,15 +1684,27 @@
       syncDots();
       syncPins();
       var f = filtering();
+      listOn0 = listOn;
+      var wardK = {};
       groups.forEach(function (g) {
-        var el = grpEl[g.area], k = 0;
+        var el = grpEl[g.area], k = 0, ld = wardLoaded(g.ward);
+        if (!el) { return; }
         g.ids.forEach(function (id) { if (listOn[id]) { k++; } });
+        if (!ld) { k = f ? 0 : g.n; }
+        wardK[g.ward] = (wardK[g.ward] || 0) + k;
         el.hidden = k === 0;
         $(".c-grp-n b", el).textContent = k;
-        if (f && k && nl <= 80) { el.open = true; }
-        $$(".c-sub", el).forEach(function (s) { s.hidden = !$$(".c-row", s).some(function (x) { return !x.hidden; }); });
+        if (f && k && nl <= 80) { el.open = true; if (wardEl[g.ward]) { wardEl[g.ward].open = true; } }
+        if (g.built) { $$(".c-sub", el).forEach(function (s) { s.hidden = !$$(".c-row", s).some(function (x) { return !x.hidden; }); }); }
       });
-      $(".c-index-count").innerHTML = home ? "全" + items.length + "件（地図には、目的を選ぶとピンが出ます）" : "条件に合う場所 <b>" + n + "</b>件（地図に載っているのは" + np + "件）";
+      Object.keys(wardEl).forEach(function (a) {
+        // 読み込んでいない区は、閉じたまま出しておく（開くと読み込む）
+        var w = wardEl[a], ld = wardLoaded(a), k = wardK[a] || 0;
+        w.hidden = ld && k === 0;
+        w.classList.toggle("is-wait", !ld);
+        $(".c-ward-n", w).innerHTML = ld || !f ? "<b>" + k + "</b>件" : "開くと読み込みます";
+      });
+      $(".c-index-count").innerHTML = home ? "全" + (X ? X.n.all : items.length) + "件（地図には、目的を選ぶとピンが出ます）" : "条件に合う場所 <b>" + n + "</b>件（地図に載っているのは" + np + "件）";
       $(".c-index-empty").hidden = nl > 0;
       paintSearch();
       paintTop(n, f);
@@ -1589,7 +1934,14 @@
     }
     function select(id, opt) {
       var it = byId[id];
-      if (!it) { return; }
+      if (!it) {
+        if (X && !(opt && opt.retry)) {
+          var o2 = { retry: true };
+          for (var k0 in (opt || {})) { o2[k0] = opt[k0]; }
+          ensureIds([id], function () { if (byId[id]) { select(id, o2); } });
+        }
+        return;
+      }
       opt = opt || {};
       if (!it.pin) { openRow(it, true); return; }
       var ids = courseIds();
@@ -1600,7 +1952,7 @@
       S.back = back;
       openItem(it, opt.label);
       pinClass(id, "is-sel", true);
-      if (map) { iconOf(unitOf[it.id]).setZIndexOffset(2000); if (kidOf[it.id] && icons[kidOf[it.id].key]) { icons[kidOf[it.id].key].setZIndexOffset(2000); } }
+      if (pinLayer) { pinLayer.redraw(); }
       viewAt(it);
       if (cards[id]) {
         cards[id].classList.add("is-sel");
@@ -1619,6 +1971,11 @@
     }
 
     function openRow(it, scroll) {
+      var g0 = grpOf[gkey(it)];
+      if (g0) {
+        if (wardEl[g0.ward]) { wardEl[g0.ward].open = true; }
+        buildRows(g0);
+      }
       var r = rowEl[it.id];
       if (!r) { return; }
       if (scroll && root.classList.contains("is-app")) {
@@ -1675,9 +2032,10 @@
       }
       return links;
     }
-    function openCourse(shared, refit) {
+    function openCourse(shared, refit, again) {
       var own = !shared;
       var ids = own ? favs : shared;
+      if (X && !again && ids.some(function (id) { return !byId[id]; })) { ensureIds(ids, function () { openCourse(shared, refit, true); }); return; }
       var keep = S.panel && S.panel.type === (own ? "course" : "shared") ? sheet.scrollTop : 0;
       var stops = stopsOf(ids);
       var nomap = ids.map(function (id) { return byId[id]; }).filter(function (it) { return it && !it.pin; });
@@ -1825,7 +2183,7 @@
         $(".c-grp-bar i", el).style.width = (c.all ? Math.round(c.n / c.all * 100) : 0) + "%";
         el.classList.toggle("is-done", c.all > 0 && c.n === c.all);
       });
-      $(".c-stat-went").textContent = Object.keys(went).filter(function (id) { return byId[id]; }).length;
+      $(".c-stat-went").textContent = Object.keys(went).filter(function (id) { return X || byId[id]; }).length;
     }
     function toggleWent(id) {
       var it = byId[id];
@@ -3103,13 +3461,17 @@
       qIn.setAttribute("placeholder", qIn.clientWidth < PH[0].length * fs ? PH[1] : PH[0]);
     }
     window.addEventListener("resize", debounce(fitPlaceholder, 150));
-    qIn.addEventListener("input", debounce(function () { S.q = qIn.value; S.ws = words(S.q); apply(true); }, 180));
+    qIn.addEventListener("input", debounce(function () { S.q = qIn.value; S.ws = words(S.q); apply(true); ensureQuery(); }, 180));
     qIn.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); qIn.blur(); } });
     areaSel.addEventListener("change", function () {
-      var v = areaSel.value;
-      S.area = v.indexOf("a:") === 0 ? v.slice(2) : "";
-      S.town = v.indexOf("t:") === 0 ? v.slice(2) : "";
-      if (S.town) { S.area = ""; }
+      S.area = areaSel.value || "";
+      S.town = "";
+      S.hint = null;
+      if (S.panel && S.panel.type !== "item") { closePanel(); }
+      ensureArea(S.area, function () { apply(true); });
+    });
+    townSel.addEventListener("change", function () {
+      S.town = townSel.value || "";
       S.hint = null;
       if (S.panel && S.panel.type !== "item") { closePanel(); }
       apply(true);
@@ -3321,7 +3683,8 @@
       S.ws = words(S.q);
       qIn.value = S.q;
       S.area = typeof st.a === "string" && areaCount[st.a] ? st.a : "";
-      S.town = typeof st.t === "string" && townCount[st.t] ? st.t : "";
+      if (!S.area && typeof st.t === "string" && townCount["板橋区/" + st.t]) { S.area = "板橋区"; }
+      S.town = typeof st.t === "string" && S.area && townCount[S.area + "/" + st.t] ? st.t : "";
       S.tag = typeof st.g === "string" && TAGS.indexOf(st.g) !== -1 ? st.g : "";
       S.presets = Array.isArray(st.p) ? st.p.filter(function (k, i) { return PRESET[k] && st.p.indexOf(k) === i; }) : [];
       S.hint = COURSES.some(function (c) { return c.key === st.h; }) ? st.h : null;
@@ -3654,6 +4017,8 @@
     setSnap(atHome() ? "half" : "peek");
     setTimeout(hintShow, 1800);
     ready = true;
+    ensureQuery();
+    if (X && map) { map.on("moveend", debounce(ensureView, 150)); setTimeout(ensureView, 300); }
     if (map) {
       stage.classList.toggle("is-far", map.getZoom() < 14);
       setTimeout(function () { map.invalidateSize(); buildRail(); openFromState(st0); }, 60);
