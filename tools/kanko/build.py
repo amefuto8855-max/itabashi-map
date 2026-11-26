@@ -766,6 +766,17 @@ def main():
         "labels": labels, "tags": tags, "facets": [["観光", 0]], "kinds": kinds, "src": src,
         "same": [[eid, sorted(v)] + ([same_wp[eid]] if eid in same_wp else []) for eid, v in sorted(same_out.items())], "items": out_items,
     }
+    # 元データの取得に失敗して数が大きく減ったときは、地図のデータを書き換えない
+    try:
+        with open(OUT, encoding="utf-8") as f:
+            old = json.load(f)
+        old_n, old_s = len(old.get("items", [])), len(old.get("same", []))
+    except (OSError, ValueError):
+        old_n = old_s = 0
+    if (old_n and len(out_items) < old_n * 0.9) or (old_s and len(same_out) < old_s * 0.9):
+        print("観光スポットの数が前回より大きく減った（新しく足す場所", old_n, "→", len(out_items), "、地図にある場所", old_s, "→", len(same_out),
+              "）ので、元データの取得に失敗したとみて、前回のデータのままにします")
+        return
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
     print("kanko.json:", len(out_items), "か所（地図にある場所に種類を付けたもの", len(same_out), "）", os.path.getsize(OUT) // 1024, "KB")
