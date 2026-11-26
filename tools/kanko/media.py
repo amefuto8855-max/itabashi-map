@@ -113,7 +113,24 @@ def clean_text(el):
     t = el.get_text("")
     t = re.sub(r"\[(?:\d+|注釈? ?\d+|要出典|要検証|要説明|要曖昧さ回避|いつ\?|誰\?|どこ\?|疑問点)[^\]]*\]", "", t)
     t = re.sub(r"[ \t]*\n[ \t]*", "", t)
+    return tidy(t)
+
+
+def tidy(t):
+    """空のかっこ（読み仮名などを取りのぞいたあと）と、続いた空白をのぞく"""
+    t = re.sub(r"（[\s、,]*）|\([\s,]*\)", "", t)
     return re.sub(r"\s{2,}", " ", t).strip()
+
+
+CREDIT_CUT = re.compile(r"\s+(?:Alternative names|Description|Location of birth|Location of death|Date of birth|Date of death|"
+                        r"Work location|Work period|Authority file|Birth name|Native name|Sister projects)\b.*$", re.S)
+
+
+def clean_credit(a):
+    """撮影者・作者の欄から、名前のあとに続く作者の紹介（Creator のひな形）をのぞく"""
+    a = CREDIT_CUT.sub("", re.sub(r"\s+", " ", a or "")).strip()
+    a = re.sub(r"\s*\(\s*fl\.[^)]*\)", "", a).strip(" :;,")
+    return a if len(a) <= 80 else a[:79] + "…"
 
 
 def parse_article(raw):
@@ -186,7 +203,8 @@ def parse_commons(raw):
     if td is not None:
         for bad in td.select("style, script, .noprint"):
             bad.decompose()
-        author = td.get_text(" ", strip=True)
+        cr = td.select_one("#creator")  # Creator のひな形のときは、名前の部分だけ
+        author = (cr if cr is not None else td).get_text(" ", strip=True)
     if not (best[3] or author):
         # 作者の欄がないページは、最初に投稿した人を「投稿者」として出す
         rows = soup.select("table.filehistory tr")
@@ -195,9 +213,7 @@ def parse_commons(raw):
             author = "投稿者 " + u.get_text(strip=True)
     if not (best[3] or author):
         return {"ng": "作者がわからない"}
-    credit = re.sub(r"\s+", " ", best[3] or author).strip()
-    if len(credit) > 100:
-        credit = credit[:99] + "…"
+    credit = clean_credit(best[3] or author)
     link = best[2] if best[2].startswith("http") else ""
     return {"l": best[1], "u": link, "a": credit}
 
@@ -311,13 +327,13 @@ def main():
     for iid, t in sorted(want.items()):
         e = cache["wp"].get(t) or {}
         x = {"w": t}
-        d = first_sentences(e.get("p", ""))
+        d = first_sentences(tidy(e.get("p", "")))
         if d:
             x["d"] = d
         im = e.get("img")
         c = cache["cm"].get(im["s"]) if im else None
-        if im and c and c.get("l"):
-            x["p"] = [im["d"], im["s"], im["w"], im["h"], c["a"], c["l"], c.get("u", ""), im.get("fw", 0)] + ([im["tn"]] if im.get("tn") else [])
+        if im and c and c.get("l") and clean_credit(c.get("a")):
+            x["p"] = [im["d"], im["s"], im["w"], im["h"], clean_credit(c["a"]), c["l"], c.get("u", ""), im.get("fw", 0)] + ([im["tn"]] if im.get("tn") else [])
         if len(x) > 1:
             more[iid] = x
     with open(OUT, "w", encoding="utf-8") as f:
