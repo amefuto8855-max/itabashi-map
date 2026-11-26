@@ -127,10 +127,18 @@ CREDIT_CUT = re.compile(r"\s+(?:Alternative names|Description|Location of birth|
 
 
 def clean_credit(a):
-    """撮影者・作者の欄から、名前のあとに続く作者の紹介（Creator のひな形）をのぞく"""
-    a = CREDIT_CUT.sub("", re.sub(r"\s+", " ", a or "")).strip()
-    a = re.sub(r"\s*\(\s*fl\.[^)]*\)", "", a).strip(" :;,")
-    return a if len(a) <= 80 else a[:79] + "…"
+    """撮影者・作者の欄から、名前のあとに続く作者の紹介（Creator のひな形）などをのぞく。名前になっていないときは空"""
+    a = re.sub(r"\s+", " ", a or "").strip()
+    m = re.match(r"No machine-readable author provided\.\s*(.+?) assumed \(based on copyright claims\)\.?$", a)
+    if m:
+        a = "投稿者 " + m.group(1)  # コモンズが「投稿者を作者とみなす」と書いているもの
+    a = CREDIT_CUT.sub("", a).strip()
+    a = re.sub(r"\s+This (?:photo|image|file|picture)\b.*$", "", a)
+    a = re.sub(r"\s*\(\s*fl\.[^)]*\)", "", a)
+    a = re.sub(r"(?i)^(?:user|利用者)\s*:\s*", "", a).strip(" :;,")
+    if re.fullmatch(r"(?i)own work|self[- ]made|自作|投稿者本人", a):
+        return ""
+    return a if len(a) <= 150 else a[:149] + "…"
 
 
 def parse_article(raw):
@@ -205,15 +213,15 @@ def parse_commons(raw):
             bad.decompose()
         cr = td.select_one("#creator")  # Creator のひな形のときは、名前の部分だけ
         author = (cr if cr is not None else td).get_text(" ", strip=True)
-    if not (best[3] or author):
-        # 作者の欄がないページは、最初に投稿した人を「投稿者」として出す
+    credit = clean_credit(best[3] or author)
+    if not credit:
+        # 作者の欄がない（または「Own work」としか書いていない）ページは、最初に投稿した人を「投稿者」として出す
         rows = soup.select("table.filehistory tr")
         u = rows[-1].select_one(".mw-userlink") if len(rows) > 1 else None
         if u is not None and u.get_text(strip=True):
-            author = "投稿者 " + u.get_text(strip=True)
-    if not (best[3] or author):
+            credit = clean_credit("投稿者 " + u.get_text(strip=True))
+    if not credit:
         return {"ng": "作者がわからない"}
-    credit = clean_credit(best[3] or author)
     link = best[2] if best[2].startswith("http") else ""
     return {"l": best[1], "u": link, "a": credit}
 
@@ -264,9 +272,11 @@ def main():
     cache["note"] = ("ウィキペディア日本語版の記事の冒頭（CC BY-SA 4.0、https://creativecommons.org/licenses/by-sa/4.0/）と、"
                      "ウィキメディア・コモンズの写真の撮影者・使用条件を、記事のページから集めたもの")
 
-    def need(e):
+    def need(e, kind=""):
         if not e or e.get("pv") != PV:
             return True
+        if kind == "cm" and "ng" not in e and not clean_credit(e.get("a")):
+            return True  # 作者が名前になっていないもの（Own work など）は、投稿者を調べ直す
         if "ng" in e:
             try:
                 return (TODAY - datetime.date.fromisoformat(e.get("at", ""))).days >= RETRY_NG_DAYS
@@ -284,7 +294,7 @@ def main():
             log(kind, "：robots.txt を読めなかったので、今回は読まない")
             return
         for i, key in enumerate(keys):
-            if not need(cache[kind].get(key)):
+            if not need(cache[kind].get(key), kind):
                 continue
             if time.time() - T0 > BUDGET:
                 log(kind, "：時間の上限になったので、残りは次の回に読む")
