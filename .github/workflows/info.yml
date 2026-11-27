@@ -23,6 +23,8 @@ jobs:
         run: |
           pip install -q beautifulsoup4
           python tools/info/fetch_info.py tools/info/targets.json "$RUNNER_TEMP/info"
+      - name: コモンズのカテゴリから、板橋区の場所の写真のファイル名を集める
+        run: python tools/info/cm_cats.py "$RUNNER_TEMP/info"
       - name: 結果を info-src ブランチに残す
         if: always()
         run: |
