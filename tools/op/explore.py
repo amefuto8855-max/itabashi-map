@@ -16,8 +16,8 @@ import urllib.robotparser
 
 UA = "itabashi-map-data/1.0 (+https://github.com/amefuto8855-max/itabashi-map)"
 START = "https://openphoto.app/c/ita13119"
-WAIT = 2.0
-MAX_PAGES = 12
+WAIT = 10.0  # robots.txt の Crawl-delay
+MAX_PAGES = 15
 
 
 def main():
@@ -55,10 +55,12 @@ def main():
         imgs = sorted(set(re.findall(r'(?:src|content)="(https?://[^"]+\.(?:jpe?g|png|webp)[^"]*)"', html, re.I)))[:40]
         title = (re.search(r"<title>(.*?)</title>", html, re.S) or [None, ""])[1]
         lic = sorted(set(re.findall(r"(CC[ -]?BY[^<\"]{0,30}|クリエイティブ・コモンズ[^<\"]{0,40}|ライセンス[^<\"]{0,40})", html)))[:20]
+        nd = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
         res["pages"].append({"url": u, "title": title.strip()[:200], "len": len(html), "links": links[:300], "imgs": imgs, "lic": lic,
-                             "head": re.sub(r"\s+", " ", html[:4000])})
+                             "next": nd.group(1)[:400000] if nd else "", "text": re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html))[:20000]})
+        # 一覧のページだけをたどる（写真のページは読まない）
         for l in links:
-            if l.startswith("https://openphoto.app/") and ("/p/" in l or "/c/ita13119" in l or "page=" in l) and l not in seen:
+            if re.match(r"https://openphoto\.app/c/ita13119(\?page=\d+|/photos(\?page=\d+)?)?$", l) and l not in seen:
                 queue.append(l)
         time.sleep(WAIT)
     with open(os.path.join(out, "op_explore.json"), "w", encoding="utf-8") as f:
