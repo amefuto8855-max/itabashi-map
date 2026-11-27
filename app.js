@@ -334,6 +334,7 @@
       it.g = typeof o.g === "number" ? o.g : -1;
       it.food = Number(o.c) >= 100;
       it.kk = !!o.kk;
+      it.pk = o.pk || 0;
       it.os = o.os || "";
       it.kn = !!o.kn;
       it.md = o.md || "";
@@ -1442,7 +1443,7 @@
       }
       return KKM_P;
     }
-    function kkTarget(it) { return it.kk || it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }
+    function kkTarget(it) { return it.kk || it.pk || it.tags.some(function (t) { return t.indexOf("観光:") === 0; }); }
     function kkThumb(p, w, host) {
       var base = "https://" + (host || "upload") + ".wikimedia.org/wikipedia/commons/", dir = p[0].charAt(0) + "/" + p[0] + "/";
       return w && w < p[2] ? base + "thumb/" + dir + p[1] + "/" + w + "px-" + (p[8] || p[1]) : base + dir + p[1];
@@ -4063,8 +4064,183 @@
     paintWent();
     setSnap(atHome() ? "half" : "peek");
     setTimeout(hintShow, 1800);
+
+    // ---- おすすめの100か所のカード ----
+    KEY.pick = "itbx-m-pick-v1";
+    var PK = { list: null, k: -1, el: null, timer: 0, t0: 0, left: 0, hold: 0, off: false, gone: false, watch: 0 }, PK_MS = 8000;
+    function pkToday() { var d = new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+    function pickBoot() {
+      if (!map || store.get(KEY.pick, "") === pkToday()) { return; }
+      var started = false;
+      var go = function () { if (!started) { started = true; setTimeout(pkTry, 5000); } };
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+        }, { threshold: 0.5 });
+        io.observe(stage);
+      } else { go(); }
+    }
+    // ほかの案内や詳しい情報が出ているか
+    function pkBusy() {
+      return !!T || !drawer.hidden || !!RT.pick || (tagHint && !tagHint.hidden) ||
+        (hintEl && !hintEl.hidden && hintEl.offsetParent !== null) || (!!S.panel && !sheet.hidden);
+    }
+    function pkTry() {
+      if (PK.gone) { return; }
+      if (store.get(KEY.pick, "") === pkToday()) { return; }
+      if (pkBusy()) { setTimeout(pkTry, 2000); return; }
+      if (PK.list) { pkShow(); return; }
+      fetch(BASE + "pick.json").then(function (r) { if (!r.ok) { throw new Error("pick"); } return r.json(); }).then(function (j) {
+        var L0 = (j && j.items || []).filter(function (r) { return r && r[0] && r[1]; });
+        if (!L0.length) { return; }
+        for (var i = L0.length - 1; i > 0; i--) { var r = Math.floor(Math.random() * (i + 1)), t = L0[i]; L0[i] = L0[r]; L0[r] = t; }
+        PK.list = L0;
+        pkShow();
+      }, function () {});
+    }
+    function pkImg(p) { return kkThumb(p, 500 < p[2] ? 500 : 0); }
+    function pkShow() {
+      if (PK.gone || PK.el) { return; }
+      var el = PK.el = document.createElement("aside");
+      el.className = "c-osu";
+      el.setAttribute("aria-label", "おすすめの場所");
+      el.innerHTML = '<div class="c-osu-bar" aria-hidden="true"><i></i></div>' +
+        '<button type="button" class="c-osu-x" data-pk="x" aria-label="おすすめを閉じる（今日はもう出しません）"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg></button>' +
+        '<div class="c-osu-main"><div class="c-osu-ph"></div><div class="c-osu-tx"><p class="c-osu-k">特に行くべき100か所</p>' +
+        '<p class="c-osu-n"></p><p class="c-osu-w"></p><p class="c-osu-y"></p></div></div>' +
+        '<div class="c-osu-acts"><button type="button" class="c-osu-go" data-pk="go">地図で見る</button>' +
+        '<button type="button" class="c-osu-nx" data-pk="next">次へ</button></div><p class="c-osu-cr"></p>';
+      el.addEventListener("click", function (e) {
+        var b = e.target.closest ? e.target.closest("[data-pk]") : null;
+        if (!b) { return; }
+        var a = b.getAttribute("data-pk");
+        if (a === "x") { store.set(KEY.pick, pkToday()); pkEnd(); }
+        else if (a === "next") { pkNext(); }
+        else if (a === "go") {
+          var id = PK.list[PK.k][0];
+          pkEnd();
+          select(id, { label: "特に行くべき100か所から" });
+        }
+      });
+      el.addEventListener("error", function (e) {
+        var t = e.target;
+        if (!t || t.tagName !== "IMG") { return; }
+        var fb = t.getAttribute("data-fb");
+        if (fb && t.getAttribute("src") !== fb) { t.setAttribute("src", fb); return; }
+        var ph = t.parentNode;
+        ph.innerHTML = "";
+        ph.hidden = true;
+        $(".c-osu-cr", el).hidden = true;
+      }, true);
+      ["mouseenter", "focusin", "touchstart"].forEach(function (ev) { el.addEventListener(ev, function () { pkHold(1); }, { passive: true }); });
+      ["mouseleave", "focusout"].forEach(function (ev) {
+        el.addEventListener(ev, function () { if (ev === "focusout" && el.contains(document.activeElement)) { return; } pkHold(-1); });
+      });
+      document.addEventListener("visibilitychange", pkVis);
+      document.addEventListener("touchstart", pkTouchOut, { passive: true });
+      stage.appendChild(el);
+      PK.k = -1;
+      pkNext(true);
+      PK.watch = setInterval(pkWatch, 600);
+      pkWatch();
+    }
+    function pkRender() {
+      var r = PK.list[PK.k], el = PK.el, ph = $(".c-osu-ph", el), cr = $(".c-osu-cr", el), p = r[5];
+      $(".c-osu-n", el).textContent = r[1];
+      $(".c-osu-w", el).textContent = r[2];
+      $(".c-osu-y", el).textContent = r[3];
+      if (p) {
+        ph.innerHTML = '<img src="' + esc(pkImg(p)) + '" alt="" width="' + p[2] + '" height="' + p[3] + '" decoding="async"' +
+          (p[7] ? ' data-fb="' + esc(kkThumb(p, p[7], "thumb")) + '"' : "") + ">";
+        cr.innerHTML = "写真：" + esc(p[4]) + "（" + (p[6] ? '<a href="' + esc(p[6]) + '" target="_blank" rel="noopener">' + esc(p[5]) + "</a>" : esc(p[5])) + "）／" +
+          '<a href="' + esc("https://commons.wikimedia.org/wiki/File:" + p[1]) + '" target="_blank" rel="noopener">Wikimedia Commons</a>';
+        ph.hidden = false;
+        cr.hidden = false;
+      } else {
+        ph.innerHTML = "";
+        ph.hidden = true;
+        cr.innerHTML = "";
+        cr.hidden = true;
+      }
+      var nx = PK.list[(PK.k + 1) % PK.list.length];
+      if (nx && nx[5]) { (new Image()).src = pkImg(nx[5]); }
+    }
+    function pkCalm() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+    function pkNext(first) {
+      if (!PK.el) { return; }
+      PK.k = (PK.k + 1) % PK.list.length;
+      var el = PK.el;
+      if (first || pkCalm()) { pkRender(); }
+      else {
+        el.classList.add("is-swap");
+        setTimeout(function () { if (PK.el) { pkRender(); PK.el.classList.remove("is-swap"); } }, 200);
+      }
+      var bar = $(".c-osu-bar i", el);
+      bar.style.animation = "none";
+      void bar.offsetWidth;
+      bar.style.animation = "";
+      clearTimeout(PK.timer);
+      PK.left = PK_MS;
+      PK.t0 = Date.now();
+      if (!PK.hold && !PK.off && !document.hidden) { PK.timer = setTimeout(pkNext, PK.left); }
+      else { el.classList.add("is-paused"); }
+    }
+    function pkPause() {
+      if (!PK.el || PK.el.classList.contains("is-paused")) { return; }
+      clearTimeout(PK.timer);
+      PK.left = Math.max(300, PK.left - (Date.now() - PK.t0));
+      PK.el.classList.add("is-paused");
+    }
+    function pkResume() {
+      if (!PK.el || PK.hold || PK.off || document.hidden || !PK.el.classList.contains("is-paused")) { return; }
+      PK.el.classList.remove("is-paused");
+      PK.t0 = Date.now();
+      clearTimeout(PK.timer);
+      PK.timer = setTimeout(pkNext, PK.left);
+    }
+    function pkHold(d) {
+      PK.hold = Math.max(0, d > 0 ? 1 : 0);
+      if (PK.hold) { pkPause(); } else { pkResume(); }
+    }
+    function pkVis() { if (document.hidden) { pkPause(); } else { pkResume(); } }
+    // スマホでカードに触れて止めたときは、カードの外に触れたら動かし直す
+    function pkTouchOut(e) { if (PK.el && PK.hold && !PK.el.contains(e.target)) { pkHold(-1); } }
+    // 詳しい情報などが開いたら隠し、閉じたらまた出す。スマホでは下のパネルの上に置く
+    function pkWatch() {
+      var el = PK.el;
+      if (!el) { return; }
+      var off = pkBusy();
+      if (off !== PK.off) {
+        PK.off = off;
+        el.classList.toggle("is-off", off);
+        if (off) { pkPause(); } else { pkResume(); }
+      }
+      // スマホでは、下のパネル（最初の画面・一覧・選んだ場所）の上に置く。パネルが高すぎるときは重ねる
+      var b = 0;
+      if (narrow()) {
+        var sr = stage.getBoundingClientRect(), top = sr.bottom;
+        [sheet, $(".c-panel")].forEach(function (pe) {
+          if (!pe || pe.hidden || pe.offsetParent === null) { return; }
+          var r = pe.getBoundingClientRect();
+          if (r.height > 0 && r.top < top && r.bottom >= sr.bottom - 4) { top = r.top; }
+        });
+        b = Math.round(sr.bottom - top + 10);
+        if (b + el.offsetHeight > sr.height - 90) { b = 0; }
+      }
+      el.style.bottom = b > 12 ? b + "px" : "";
+    }
+    function pkEnd() {
+      PK.gone = true;
+      clearTimeout(PK.timer);
+      clearInterval(PK.watch);
+      document.removeEventListener("visibilitychange", pkVis);
+      document.removeEventListener("touchstart", pkTouchOut);
+      if (PK.el && PK.el.parentNode) { PK.el.parentNode.removeChild(PK.el); }
+      PK.el = null;
+    }
     ready = true;
     ensureQuery();
+    pickBoot();
     if (X && map) { map.on("moveend", debounce(ensureView, 150)); setTimeout(ensureView, 300); }
     if (map) {
       stage.classList.toggle("is-far", map.getZoom() < 14);

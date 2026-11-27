@@ -231,7 +231,15 @@ def parse_commons(raw):
     if not credit:
         return {"ng": "作者がわからない"}
     link = best[2] if best[2].startswith("http") else ""
-    return {"l": best[1], "u": link, "a": credit}
+    r = {"l": best[1], "u": link, "a": credit}
+    # 元の写真の置き場所と大きさ（対応表で写真を指定したときに使う）
+    a = soup.select_one(".fullMedia a[href*='upload.wikimedia.org'], .fullImageLink a[href*='upload.wikimedia.org']")
+    m = COMMONS_SRC.search(a.get("href", "")) if a is not None else None
+    box = soup.select_one(".fullMedia") or soup.select_one(".fileInfo")
+    dm = re.search(r"([\d,]+)\s*×\s*([\d,]+)", box.get_text(" ", strip=True)) if box is not None else None
+    if m and dm:
+        r.update({"d": m.group(3), "s": m.group(4), "w": int(dm.group(1).replace(",", "")), "h": int(dm.group(2).replace(",", ""))})
+    return r
 
 
 # ---- 説明：冒頭から3文 ----
@@ -272,7 +280,12 @@ def main():
             extra = json.load(f).get("items", {})
     except FileNotFoundError:
         pass
+    ov_file = {}  # 写真を指定した場所 → コモンズのファイル名（URLの形）
     for iid, ts in extra.items():
+        if isinstance(ts, dict):
+            if ts.get("f"):
+                ov_file[iid] = urllib.parse.quote(ts["f"].replace(" ", "_"), safe="")
+            ts = ts.get("t") or []
         want[iid] = ts if isinstance(ts, list) else [ts]
     log("写真と説明を付ける場所", len(want), "（うち記事名を対応表で決めるもの", len(extra), "）")
 
@@ -355,7 +368,10 @@ def main():
                 log("対応表の記事が読めませんでした", iid, v)
                 del want[iid]
     tset = set(want.values())
-    files = sorted({e["img"]["s"] for t, e in cache["wp"].items() if t in tset and e.get("img")})
+    files = sorted({e["img"]["s"] for t, e in cache["wp"].items() if t in tset and e.get("img")} | set(ov_file.values()))
+    for f in ov_file.values():
+        if f in cache["cm"] and "w" not in cache["cm"][f] and "ng" not in cache["cm"][f]:
+            del cache["cm"][f]  # 大きさを取る前に読んだものは読み直す
     crawl("cm", files, robots(CM_HOST), lambda s: CM_HOST + "/wiki/File:" + s, parse_commons)
     save_cache()
 
@@ -368,7 +384,10 @@ def main():
             x["d"] = d
         im = e.get("img")
         c = cache["cm"].get(im["s"]) if im else None
-        if im and c and c.get("l") and clean_credit(c.get("a")):
+        fo = cache["cm"].get(ov_file[iid]) if iid in ov_file else None
+        if fo and fo.get("l") and fo.get("w") and clean_credit(fo.get("a")):
+            x["p"] = [fo["d"], fo["s"], fo["w"], fo["h"], clean_credit(fo["a"]), fo["l"], fo.get("u", ""), 0]
+        elif im and c and c.get("l") and clean_credit(c.get("a")):
             x["p"] = [im["d"], im["s"], im["w"], im["h"], clean_credit(c["a"]), c["l"], c.get("u", ""), im.get("fw", 0)] + ([im["tn"]] if im.get("tn") else [])
         if len(x) > 1:
             more[iid] = x

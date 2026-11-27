@@ -120,6 +120,57 @@ def main():
         items.append(x)
         by_id[x["i"]] = x
 
+    here = os.path.dirname(os.path.abspath(__file__))
+    # ---- 上書き（extra.json）：公式ページで調べた時間・休み・料金・最寄駅など。項目名で書く ----
+    ex_p = os.path.join(here, "extra.json")
+    n_ex = 0
+    # 上書きした場所は、行を見る順に並べ直す（ない項目名は「補足」の手前）
+    order = ["見学", "できること", "時間", "営業時間", "休み", "時間・休み", "料金", "割引", "予約", "注意", "最寄駅", "バス", "駐車場", "駐輪場",
+             "支払い", "利用条件", "持ち物", "季節", "行事", "子連れ", "バリアフリー", "飲食", "学習席・PC・Wi-Fi", "無料Wi-Fi", "文化財", "運営", "補足", "所在地"]
+    rank = {}
+    for n, lab in enumerate(order):
+        if lab in li:
+            rank[li[lab]] = n
+    for iid, e in (load(ex_p).get("items", {}) if os.path.exists(ex_p) else {}).items():
+        o = by_id.get(iid)
+        if not o:
+            print("上書きする場所が見つかりません", iid)
+            continue
+        new = [[idx(li, labels, lab), txt] for lab, txt in e.get("sp", [])]
+        drop = {r[0] for r in new}
+        if drop & {li.get("時間"), li.get("休み")}:
+            drop.add(li.get("時間・休み"))  # 「時間」「休み」を書いたら、まとめ書きの古い行は外す
+        for lab in e.get("drop", []):
+            drop.add(li.get(lab))
+        rows = [r for r in o.get("sp", []) if r[0] not in drop] + new
+        rows.sort(key=lambda r: rank.get(r[0], rank.get(li.get("補足"), 90) - 0.5))
+        o["sp"] = rows
+        if o.get("un"):
+            o["un"] = [k for k in o["un"] if k not in drop]
+            if not o["un"]:
+                del o["un"]
+        for k in ("so", "no"):
+            if e.get(k):
+                o[k] = e[k] + [x for x in o.get(k, []) if x not in e[k]]
+        for k in ("ck", "ld", "u", "ul"):
+            if e.get(k):
+                o[k] = e[k]
+        n_ex += 1
+    print("上書きした場所", n_ex)
+    # ---- 「補足」に紛れている、元データの内部の注記（座標精度）を外す ----
+    hs = li.get("補足")
+    for o in items:
+        if hs is None or not o.get("sp"):
+            continue
+        sp2 = []
+        for lab, txt in o["sp"]:
+            if lab == hs and "座標精度" in txt:
+                txt = re.sub(r"・?\s*座標精度[:：][^・■]*", "", txt).strip(" 、。")
+                if not txt:
+                    continue
+            sp2.append([lab, txt])
+        o["sp"] = sp2
+
     # ---- 町名：住所から。取れない場所は逆ジオコーダ（控えを使う） ----
     cache = {}
     if RAW:
@@ -200,6 +251,29 @@ def main():
     }
     q = [[o["i"], o["a"], o["n"], " ".join(x for x in (o.get("on", ""), o.get("k", ""), o["t"]) if x)] for o in items]
 
+    # ---- おすすめの場所（pick.json）：地図を開いたときのカードで、ランダムに切り替えて出す ----
+    picks = None
+    pk_p = os.path.join(here, "pick.json")
+    if os.path.exists(pk_p):
+        km = {}
+        for cand in (os.path.join(OUT, "kanko_more.json"), os.path.join(os.path.dirname(os.path.abspath(KANKO)), "kanko_more.json")):
+            if os.path.exists(cand):
+                km = load(cand).get("items", {})
+                break
+        picks = []
+        for iid, why, tier in load(pk_p)["items"]:
+            o = by_id.get(iid)
+            if not o:
+                print("おすすめの場所が見つかりません", iid)
+                continue
+            o["pk"] = tier
+            row = [iid, o["n"], areas[o["a"]], why, tier]
+            ph = (km.get(iid) or {}).get("p")
+            if ph:
+                row.append(ph)
+            picks.append(row)
+        print("おすすめの場所", len(picks), "（写真あり", sum(1 for r in picks if len(r) > 5), "）")
+
     # ---- 書き出す（全部を作り終えてから。途中で失敗したときに、ファイルどうしが食い違わないように） ----
     def dump(path, obj):
         with open(path + ".tmp", "w", encoding="utf-8") as f:
@@ -209,6 +283,8 @@ def main():
         dump(os.path.join(OUT, "d", code + ".json"), obj)
     dump(os.path.join(OUT, "q.json"), {"v": 2, "q": q})
     dump(os.path.join(OUT, "idx.json"), idx_out)
+    if picks is not None:
+        dump(os.path.join(OUT, "pick.json"), {"v": 1, "items": picks})
     for f in os.listdir(os.path.join(OUT, "d")):
         if f.endswith(".json") and f[:-5] not in files:
             os.remove(os.path.join(OUT, "d", f))
@@ -216,6 +292,8 @@ def main():
         os.replace(os.path.join(OUT, "d", code + ".json.tmp"), os.path.join(OUT, "d", code + ".json"))
     os.replace(os.path.join(OUT, "q.json.tmp"), os.path.join(OUT, "q.json"))
     os.replace(os.path.join(OUT, "idx.json.tmp"), os.path.join(OUT, "idx.json"))
+    if picks is not None:
+        os.replace(os.path.join(OUT, "pick.json.tmp"), os.path.join(OUT, "pick.json"))
     for r in area_rows:
         print("  ", r[1], r[0], r[2], "件", "町名", len(r[4]))
     print("idx.json", os.path.getsize(os.path.join(OUT, "idx.json")) // 1024, "KB ／ q.json", os.path.getsize(os.path.join(OUT, "q.json")) // 1024, "KB ／ 場所", len(items))

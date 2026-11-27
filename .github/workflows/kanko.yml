@@ -54,6 +54,7 @@ jobs:
           git add kanko.json
           if [ -f kanko_more.json ]; then git add kanko_more.json; fi
           if [ -f idx.json ]; then git add idx.json q.json d; fi
+          if [ -f pick.json ]; then git add pick.json; fi
           if git diff --cached --quiet; then echo "観光スポットのデータに変更はありません"; exit 0; fi
           git commit -qm "23区の観光スポットのデータを更新"
           for i in 1 2 3 4 5; do
