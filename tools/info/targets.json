@@ -1,0 +1,896 @@
+{
+"items": [
+{
+"no": 1,
+"id": "kk-Q615183",
+"name": "浅草寺",
+"ward": "台東区",
+"urls": [
+"https://www.senso-ji.jp/"
+]
+},
+{
+"no": 2,
+"id": "kk-Q57965",
+"name": "東京スカイツリー",
+"ward": "墨田区",
+"urls": [
+"https://www.tokyo-skytree.jp/"
+]
+},
+{
+"no": 3,
+"id": "kk-Q183536",
+"name": "東京タワー",
+"ward": "港区",
+"urls": [
+"https://en.tokyotower.co.jp/",
+"https://www.tokyotower.co.jp/"
+]
+},
+{
+"no": 4,
+"id": "kk-Q287165",
+"name": "明治神宮",
+"ward": "渋谷区",
+"urls": [
+"https://www.meijijingu.or.jp/"
+]
+},
+{
+"no": 5,
+"id": "kk-Q844963",
+"name": "皇居外苑",
+"ward": "千代田区",
+"urls": [
+"http://www.env.go.jp/garden/kokyogaien/"
+]
+},
+{
+"no": 6,
+"id": "kk-Q6631907",
+"name": "皇居東御苑",
+"ward": "千代田区",
+"urls": [
+"https://www.kunaicho.go.jp/e-about/shisetsu/higashigyoen01.html"
+]
+},
+{
+"no": 7,
+"id": "kk-Q283196",
+"name": "東京駅",
+"ward": "千代田区",
+"urls": []
+},
+{
+"no": 8,
+"id": "kk-Q1046736",
+"name": "レインボーブリッジ",
+"ward": "港区",
+"urls": []
+},
+{
+"no": 9,
+"id": "kk-Q555255",
+"name": "迎賓館赤坂離宮",
+"ward": "港区",
+"urls": [
+"https://www.geihinkan.go.jp/akasaka/"
+]
+},
+{
+"no": 10,
+"id": "kk-Q249139",
+"name": "増上寺",
+"ward": "港区",
+"urls": [
+"https://www.zojoji.or.jp/"
+]
+},
+{
+"no": 11,
+"id": "kk-Q943255",
+"name": "築地本願寺",
+"ward": "中央区",
+"urls": [
+"https://tsukijihongwanji.jp/"
+]
+},
+{
+"no": 12,
+"id": "kk-Q335612",
+"name": "根津神社",
+"ward": "文京区",
+"urls": [
+"https://nedujinja.or.jp/"
+]
+},
+{
+"no": 13,
+"id": "kk-Q717682",
+"name": "神田明神",
+"ward": "千代田区",
+"urls": [
+"https://www.kandamyoujin.or.jp/"
+]
+},
+{
+"no": 14,
+"id": "kk-Q242803",
+"name": "靖国神社",
+"ward": "千代田区",
+"urls": [
+"https://www.yasukuni.or.jp/"
+]
+},
+{
+"no": 15,
+"id": "kk-Q3137192",
+"name": "柴又帝釈天",
+"ward": "葛飾区",
+"urls": [
+"https://www.taishakuten.com/"
+]
+},
+{
+"no": 16,
+"id": "kk-Q1537312",
+"name": "池上本門寺",
+"ward": "大田区",
+"urls": [
+"https://honmonji.jp/"
+]
+},
+{
+"no": 17,
+"id": "kk-Q11634381",
+"name": "豪徳寺",
+"ward": "世田谷区",
+"urls": [
+"https://gotokuji.jp/"
+]
+},
+{
+"no": 18,
+"id": "kk-Q1710283",
+"name": "東京ジャーミイ",
+"ward": "渋谷区",
+"urls": [
+"https://tokyocamii.org/"
+]
+},
+{
+"no": 19,
+"id": "kk-Q1193480",
+"name": "東京カテドラル聖マリア大聖堂",
+"ward": "文京区",
+"urls": [
+"http://tokyo.catholic.jp/english/",
+"https://cathedral-sekiguchi.jp/"
+]
+},
+{
+"no": 20,
+"id": "5-n8eb9",
+"name": "自由学園明日館",
+"ward": "豊島区",
+"urls": [
+"https://jiyu.jp/"
+]
+},
+{
+"no": 21,
+"id": "7-3-02",
+"name": "東京大仏（乗蓮寺）",
+"ward": "板橋区",
+"urls": [
+"https://itabashi-kanko.jp/see/detail?id=96"
+]
+},
+{
+"no": 22,
+"id": "kk-Q653433",
+"name": "東京国立博物館",
+"ward": "台東区",
+"urls": [
+"https://www.tnm.jp/"
+]
+},
+{
+"no": 23,
+"id": "kk-Q1362629",
+"name": "国立西洋美術館",
+"ward": "台東区",
+"urls": [
+"https://www.nmwa.go.jp/"
+]
+},
+{
+"no": 24,
+"id": "5-21",
+"name": "国立科学博物館",
+"ward": "台東区",
+"urls": [
+"https://www.kahaku.go.jp/"
+]
+},
+{
+"no": 25,
+"id": "kk-Q1362638",
+"name": "国立新美術館",
+"ward": "港区",
+"urls": [
+"https://www.nact.jp/"
+]
+},
+{
+"no": 26,
+"id": "kk-Q1191042",
+"name": "東京都江戸東京博物館",
+"ward": "墨田区",
+"urls": [
+"https://www.edo-tokyo-museum.or.jp/"
+]
+},
+{
+"no": 27,
+"id": "kk-Q1047097",
+"name": "根津美術館",
+"ward": "港区",
+"urls": [
+"http://www.nezu-muse.or.jp/"
+]
+},
+{
+"no": 28,
+"id": "kk-Q743773",
+"name": "東京都庭園美術館",
+"ward": "港区",
+"urls": [
+"https://www.teien-art-museum.ne.jp/"
+]
+},
+{
+"no": 29,
+"id": "kk-Q4410434",
+"name": "森美術館",
+"ward": "港区",
+"urls": [
+"https://www.mori.art.museum/"
+]
+},
+{
+"no": 30,
+"id": "kk-Q656957",
+"name": "日本科学未来館",
+"ward": "江東区",
+"urls": [
+"https://www.miraikan.jst.go.jp/"
+]
+},
+{
+"no": 31,
+"id": "kk-Q1359908",
+"name": "東京国立近代美術館",
+"ward": "千代田区",
+"urls": [
+"https://www.momat.go.jp/"
+]
+},
+{
+"no": 32,
+"id": "kk-Q17220332",
+"name": "すみだ北斎美術館",
+"ward": "墨田区",
+"urls": [
+"https://hokusai-museum.jp/"
+]
+},
+{
+"no": 33,
+"id": "kk-Q1649688",
+"name": "東京都現代美術館",
+"ward": "江東区",
+"urls": [
+"https://www.mot-art-museum.jp/"
+]
+},
+{
+"no": 34,
+"id": "kk-Q776863",
+"name": "新宿御苑",
+"ward": "新宿区",
+"urls": [
+"https://www.env.go.jp/garden/shinjukugyoen/"
+]
+},
+{
+"no": 35,
+"id": "kk-Q1033333",
+"name": "浜離宮恩賜庭園",
+"ward": "中央区",
+"urls": [
+"https://www.tokyo-park.or.jp/teien/kr/hama-rikyu/"
+]
+},
+{
+"no": 36,
+"id": "kk-Q1778881",
+"name": "小石川後楽園",
+"ward": "文京区",
+"urls": [
+"https://www.tokyo-park.or.jp/teien/kr/koishikawa/"
+]
+},
+{
+"no": 37,
+"id": "kk-Q1889010",
+"name": "六義園",
+"ward": "文京区",
+"urls": [
+"https://www.tokyo-park.or.jp/park/rikugien/"
+]
+},
+{
+"no": 38,
+"id": "kk-Q746216",
+"name": "上野恩賜公園",
+"ward": "台東区",
+"urls": [
+"https://www.kensetsu.metro.tokyo.lg.jp/jimusho/toubuk/ueno/index_top.html"
+]
+},
+{
+"no": 39,
+"id": "1-1-43",
+"name": "旧古河庭園",
+"ward": "北区",
+"urls": [
+"https://www.tokyo-park.or.jp/park/kyu-furukawa/"
+]
+},
+{
+"no": 40,
+"id": "kk-Q4388146",
+"name": "清澄庭園",
+"ward": "江東区",
+"urls": [
+"https://www.tokyo-park.or.jp/teien/kr/kiyosumi/"
+]
+},
+{
+"no": 41,
+"id": "kk-Q1358767",
+"name": "旧岩崎邸庭園",
+"ward": "台東区",
+"urls": [
+"https://www.tokyo-park.or.jp/teien/kr/kyu-iwasaki/"
+]
+},
+{
+"no": 42,
+"id": "kk-13112-7dc015",
+"name": "等々力渓谷・等々力渓谷公園",
+"ward": "世田谷区",
+"urls": [
+"https://www.city.setagaya.lg.jp/02075/9082.html"
+]
+},
+{
+"no": 43,
+"id": "kk-Q5368576",
+"name": "お台場海浜公園",
+"ward": "港区",
+"urls": [
+"http://www.tptc.co.jp/park/01_02"
+]
+},
+{
+"no": 44,
+"id": "kk-Q11633916",
+"name": "豊洲市場",
+"ward": "江東区",
+"urls": [
+"https://www.shijou.metro.tokyo.lg.jp/toyosu/"
+]
+},
+{
+"no": 45,
+"id": "kk-Q3082575",
+"name": "歌舞伎座",
+"ward": "中央区",
+"urls": [
+"https://www.kabuki-za.co.jp/"
+]
+},
+{
+"no": 46,
+"id": "kk-13107-1118ae",
+"name": "国技館",
+"ward": "墨田区",
+"urls": [
+"https://ryogoku-kokugikan.jp/"
+]
+},
+{
+"no": 47,
+"id": "6-06",
+"name": "上野動物園",
+"ward": "台東区",
+"urls": [
+"https://www.tokyo-zoo.net/zoo/ueno/"
+]
+},
+{
+"no": 48,
+"id": "kk-Q4925165",
+"name": "葛西臨海水族園",
+"ward": "江戸川区",
+"urls": [
+"https://www.tokyo-zoo.net/zoo/kasai/"
+]
+},
+{
+"no": 49,
+"id": "6-05",
+"name": "サンシャイン水族館",
+"ward": "豊島区",
+"urls": [
+"https://sunshinecity.jp/aquarium/"
+]
+},
+{
+"no": 50,
+"id": "7-2-01",
+"name": "ワーナー ブラザース スタジオツアー東京（ハリー・ポッター）",
+"ward": "練馬区",
+"urls": [
+"https://www.wbstudiotour.jp/"
+]
+},
+{
+"no": 51,
+"id": "kk-Q863180",
+"name": "浅草花やしき",
+"ward": "台東区",
+"urls": [
+"https://www.hanayashiki.net/"
+]
+},
+{
+"no": 52,
+"id": "kk-Q670049",
+"name": "浅草神社",
+"ward": "台東区",
+"urls": [
+"https://www.asakusajinja.jp/"
+]
+},
+{
+"no": 53,
+"id": "kk-Q708550",
+"name": "上野東照宮",
+"ward": "台東区",
+"urls": [
+"http://www.uenotoshogu.com"
+]
+},
+{
+"no": 54,
+"id": "kk-Q3120766",
+"name": "寛永寺",
+"ward": "台東区",
+"urls": [
+"https://kaneiji.jp/"
+]
+},
+{
+"no": 55,
+"id": "kk-Q335606",
+"name": "湯島天満宮",
+"ward": "文京区",
+"urls": [
+"https://www.yushimatenjin.or.jp/"
+]
+},
+{
+"no": 56,
+"id": "kk-Q11370953",
+"name": "亀戸天神社",
+"ward": "江東区",
+"urls": [
+"http://kameidotenjin.or.jp/"
+]
+},
+{
+"no": 57,
+"id": "kk-Q3176144",
+"name": "泉岳寺",
+"ward": "港区",
+"urls": [
+"https://sengakuji.or.jp/"
+]
+},
+{
+"no": 58,
+"id": "kk-Q702042",
+"name": "日枝神社",
+"ward": "千代田区",
+"urls": [
+"https://www.hiejinja.net/"
+]
+},
+{
+"no": 59,
+"id": "kk-Q2868748",
+"name": "愛宕神社",
+"ward": "港区",
+"urls": [
+"https://www.atago-jinja.com/"
+]
+},
+{
+"no": 60,
+"id": "kk-Q1534481",
+"name": "護国寺",
+"ward": "文京区",
+"urls": [
+"http://www.gokokuji.or.jp/"
+]
+},
+{
+"no": 61,
+"id": "kk-Q2660430",
+"name": "ニコライ堂",
+"ward": "千代田区",
+"urls": [
+"https://nikolaido.org"
+]
+},
+{
+"no": 62,
+"id": "kk-Q11370077",
+"name": "九品仏浄真寺",
+"ward": "世田谷区",
+"urls": [
+"https://kuhombutsu.jp/"
+]
+},
+{
+"no": 63,
+"id": "kk-Q654417",
+"name": "富岡八幡宮",
+"ward": "江東区",
+"urls": [
+"http://www.tomiokahachimangu.or.jp/"
+]
+},
+{
+"no": 64,
+"id": "kk-Q11495650",
+"name": "成田山東京別院深川不動堂",
+"ward": "江東区",
+"urls": [
+"http://www.fukagawafudou.gr.jp/"
+]
+},
+{
+"no": 65,
+"id": "7-3-n2f88",
+"name": "雑司ヶ谷鬼子母神堂",
+"ward": "豊島区",
+"urls": [
+"https://www.kishimojin.jp/"
+]
+},
+{
+"no": 66,
+"id": "7-3-ncd27",
+"name": "とげぬき地蔵尊 高岩寺",
+"ward": "豊島区",
+"urls": [
+"https://togenuki.jp/"
+]
+},
+{
+"no": 67,
+"id": "kk-Q100930819",
+"name": "日本橋",
+"ward": "中央区",
+"urls": []
+},
+{
+"no": 68,
+"id": "kk-Q16944532",
+"name": "旧朝倉家住宅",
+"ward": "渋谷区",
+"urls": [
+"https://www.city.shibuya.tokyo.jp/shisetsu/bunka-shisetsu/asakura/asakura_00004.html"
+]
+},
+{
+"no": 69,
+"id": "kk-Q864957",
+"name": "東京都美術館",
+"ward": "台東区",
+"urls": [
+"https://www.tobikan.jp/"
+]
+},
+{
+"no": 70,
+"id": "kk-Q913808",
+"name": "アーティゾン美術館",
+"ward": "中央区",
+"urls": [
+"https://www.artizon.museum/"
+]
+},
+{
+"no": 71,
+"id": "kk-Q864700",
+"name": "三井記念美術館",
+"ward": "中央区",
+"urls": [
+"http://www.mitsui-museum.jp/"
+]
+},
+{
+"no": 72,
+"id": "kk-Q3815458",
+"name": "三菱一号館美術館",
+"ward": "千代田区",
+"urls": [
+"https://mimt.jp/"
+]
+},
+{
+"no": 73,
+"id": "kk-Q3076188",
+"name": "皇居三の丸尚蔵館",
+"ward": "千代田区",
+"urls": [
+"https://shozokan.nich.go.jp/"
+]
+},
+{
+"no": 74,
+"id": "kk-Q862884",
+"name": "東京都写真美術館",
+"ward": "目黒区",
+"urls": [
+"https://www.topmuseum.jp/"
+]
+},
+{
+"no": 75,
+"id": "kk-Q3329572",
+"name": "山種美術館",
+"ward": "渋谷区",
+"urls": [
+"https://www.yamatane-museum.jp/"
+]
+},
+{
+"no": 76,
+"id": "kk-Q3815442",
+"name": "浮世絵 太田記念美術館",
+"ward": "渋谷区",
+"urls": [
+"http://www.ukiyoe-ota-muse.jp/"
+]
+},
+{
+"no": 77,
+"id": "kk-Q11249110",
+"name": "サントリー美術館",
+"ward": "港区",
+"urls": [
+"https://www.suntory.co.jp/sma/"
+]
+},
+{
+"no": 78,
+"id": "kk-Q1614504",
+"name": "SOMPO美術館",
+"ward": "新宿区",
+"urls": [
+"https://www.sompo-museum.org/"
+]
+},
+{
+"no": 79,
+"id": "kk-Q65941212",
+"name": "草間彌生美術館",
+"ward": "新宿区",
+"urls": [
+"https://yayoikusamamuseum.jp/"
+]
+},
+{
+"no": 80,
+"id": "kk-Q3789149",
+"name": "日本民藝館",
+"ward": "目黒区",
+"urls": [
+"https://mingeikan.or.jp/"
+]
+},
+{
+"no": 81,
+"id": "kk-Q2374140",
+"name": "五島美術館",
+"ward": "世田谷区",
+"urls": [
+"https://www.gotoh-museum.or.jp/"
+]
+},
+{
+"no": 82,
+"id": "5-17",
+"name": "トキワ荘マンガミュージアム",
+"ward": "豊島区",
+"urls": [
+"https://tokiwasomm.jp/"
+]
+},
+{
+"no": 83,
+"id": "kk-Q10855424",
+"name": "科学技術館",
+"ward": "千代田区",
+"urls": [
+"https://www.jsf.or.jp/"
+]
+},
+{
+"no": 84,
+"id": "5-01",
+"name": "板橋区立美術館",
+"ward": "板橋区",
+"urls": [
+"https://www.city.itabashi.tokyo.jp/artmuseum/"
+]
+},
+{
+"no": 85,
+"id": "kk-Q6631448",
+"name": "明治神宮外苑",
+"ward": "新宿区",
+"urls": [
+"https://www.meijijingugaien.jp/"
+]
+},
+{
+"no": 86,
+"id": "kk-Q6631821",
+"name": "千鳥ヶ淵公園",
+"ward": "千代田区",
+"urls": []
+},
+{
+"no": 87,
+"id": "kk-Q1064892",
+"name": "東京大学大学院理学系研究科附属植物園",
+"ward": "文京区",
+"urls": [
+"https://koishikawa-bg.jp/"
+]
+},
+{
+"no": 88,
+"id": "kk-Q5557026",
+"name": "国立科学博物館附属自然教育園",
+"ward": "港区",
+"urls": [
+"http://www.ins.kahaku.go.jp/"
+]
+},
+{
+"no": 89,
+"id": "kk-Q3266874",
+"name": "旧芝離宮恩賜庭園",
+"ward": "港区",
+"urls": [
+"https://www.tokyo-park.or.jp/teien/kr/kyu-shiba/"
+]
+},
+{
+"no": 90,
+"id": "kk-Q7076776",
+"name": "向島百花園",
+"ward": "墨田区",
+"urls": [
+"https://www.tokyo-park.or.jp/teien/kr/mukojima/"
+]
+},
+{
+"no": 91,
+"id": "kk-Q11427321",
+"name": "堀切菖蒲園",
+"ward": "葛飾区",
+"urls": [
+"https://www.city.katsushika.lg.jp/institution/1000096/1006888.html"
+]
+},
+{
+"no": 92,
+"id": "1-1-41",
+"name": "飛鳥山公園",
+"ward": "北区",
+"urls": [
+"https://www.city.kita.lg.jp/parks/asukayamapark/index.html"
+]
+},
+{
+"no": 93,
+"id": "1-1-36",
+"name": "石神井公園（石神井池・三宝寺池）",
+"ward": "練馬区",
+"urls": [
+"https://www.tokyo-park.or.jp/park/shakujii/index.html"
+]
+},
+{
+"no": 94,
+"id": "kk-Q1038727",
+"name": "葛西臨海公園",
+"ward": "江戸川区",
+"urls": [
+"https://www.tokyo-park.or.jp/park/format/index026.html"
+]
+},
+{
+"no": 95,
+"id": "kk-Q9087421",
+"name": "哲学堂公園",
+"ward": "中野区",
+"urls": [
+"https://www.tetsugakudo.jp/"
+]
+},
+{
+"no": 96,
+"id": "kk-Q1378533",
+"name": "日比谷公園",
+"ward": "千代田区",
+"urls": [
+"https://www.tokyo-park.or.jp/park/hibiya/"
+]
+},
+{
+"no": 97,
+"id": "7-1-03",
+"name": "サンシャイン60展望台 てんぼうパーク",
+"ward": "豊島区",
+"urls": [
+"https://sunshinecity.jp/observatory/"
+]
+},
+{
+"no": 98,
+"id": "kk-Q24877101",
+"name": "浅草文化観光センター",
+"ward": "台東区",
+"urls": []
+},
+{
+"no": 99,
+"id": "kk-Q8134074",
+"name": "すみだ水族館",
+"ward": "墨田区",
+"urls": [
+"https://www.sumida-aquarium.com/"
+]
+},
+{
+"no": 100,
+"id": "kk-Q21018928",
+"name": "葛飾柴又寅さん記念館",
+"ward": "葛飾区",
+"urls": [
+"http://www.katsushika-kanko.com/tora/"
+]
+}
+]
+}

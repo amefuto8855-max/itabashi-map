@@ -1,0 +1,35 @@
+name: おすすめの場所の公式ページを読む
+on:
+  push:
+    branches: [machi]
+    paths: ['.github/workflows/info.yml', 'tools/info/**']
+permissions:
+  contents: write
+concurrency:
+  group: info-data
+  cancel-in-progress: false
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: machi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 公式ページから手がかりの行を抜き出す
+        run: |
+          pip install -q beautifulsoup4
+          python tools/info/fetch_info.py tools/info/targets.json "$RUNNER_TEMP/info"
+      - name: 結果を info-src ブランチに残す
+        if: always()
+        run: |
+          cd "$RUNNER_TEMP/info"
+          git init -q -b info-src
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "おすすめの場所の公式ページから抜き出した行（$(TZ=Asia/Tokyo date +%F)）"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:info-src
