@@ -2751,6 +2751,7 @@
       RT.sel = 0;
     }
     function rtGo(mode, ds, t) {
+      if (RT.from && RT.from.locating) { return; }
       if (!RT.from || !RT.to) {
         RT.edit = !RT.from ? "from" : "to";
         rtPaintForm(true);
@@ -2934,13 +2935,108 @@
       if (rtLayer) { rtLayer.clearLayers(); }
     }
     function rtIn() { return S.panel && S.panel.type === "route" && !sheet.hidden; }
+    // ---- 最寄りの駅：1km以内に都営の鉄道駅があれば駅、なければ都バスの停留所も含めていちばん近い乗り場 ----
+    var NEAR_RAIL_M = 1000, NEAR_MAX_M = 8000, geoSt = "";
+    try {
+      if (navigator.permissions && navigator.permissions.query) {
+        navigator.permissions.query({ name: "geolocation" }).then(function (st) {
+          geoSt = st.state;
+          st.onchange = function () { geoSt = st.state; };
+        }, function () {});
+      }
+    } catch (e) {}
+    function rtNearSt(pt) {
+      if (!TO.entOf) {
+        TO.entOf = new Int32Array(TO.n);
+        TO.ents.forEach(function (e, i) { e.ss.forEach(function (s) { TO.entOf[s] = i; }); });
+      }
+      var sR = -1, mR = RT_INF, sA = -1, mA = RT_INF, s, m;
+      for (s = 0; s < TO.n; s++) {
+        m = meters(pt, { lat: TO.lat[s], lng: TO.lng[s] });
+        if (m < mA) { mA = m; sA = s; }
+        if (TO.kd[s] < 3 && m < mR) { mR = m; sR = s; }
+      }
+      if (sR >= 0 && mR <= NEAR_RAIL_M) { return { e: TO.ents[TO.entOf[sR]], m: mR }; }
+      return sA >= 0 ? { e: TO.ents[TO.entOf[sA]], m: mA } : null;
+    }
+    // 場所・現在地 → 最寄りの駅（遠すぎるときは null）
+    function rtStPt(p, k) {
+      var r = rtNearSt(p);
+      if (!r || r.m > NEAR_MAX_M) { return null; }
+      return { lat: r.e.lat, lng: r.e.lng, name: r.e.title, me: p.me ? 1 : 0,
+        sub: (p.me ? "現在地" : p.name) + (k === "from" ? "から" : "まで") + fmtDist(r.m) + "／" + r.e.sub };
+    }
+    // 最寄りの駅を調べているあいだの表示
+    function rtWait(p, k) { return { wait: k, lat: p.lat, lng: p.lng, name: p.name, sub: "最寄りの駅を調べています", src: p, me: p.me ? 1 : 0 }; }
+    var rtTok = 0;
+    function rtResolveGo() {
+      var tk = ++rtTok;
+      RT.busy = "最寄りの駅を調べています";
+      RT.msg = "";
+      if (rtIn()) { rtPaintForm(); rtPaintRes(); }
+      toLoad().then(function () {
+        if (tk !== rtTok) { return; }
+        ["from", "to"].forEach(function (k) {
+          var p = RT[k];
+          if (p && p.wait && !p.locating) { RT[k] = rtStPt(p.src, k) || (p.me && k === "from" ? null : p.src); }
+        });
+        if (RT.from && RT.from.locating) { if (rtIn()) { rtPaintForm(); } return; }
+        RT.busy = "";
+        if (!rtIn()) { return; }
+        if (RT.from && RT.to) { rtGo(); return; }
+        if (RT.edit && RT.q) { rtPaintRes(); return; }
+        RT.edit = !RT.from ? "from" : "to";
+        rtPaintForm(true);
+        rtPaintRes();
+        rtDraw(false);
+      }, function () {
+        if (tk !== rtTok) { return; }
+        ["from", "to"].forEach(function (k) { var p = RT[k]; if (p && p.wait && !p.locating) { RT[k] = p.src; } });
+        RT.busy = "";
+        RT.msg = "時刻表のデータを読み込めませんでした。通信の状態を確かめて、もう一度押してください。";
+        if (rtIn()) { rtPaintForm(); rtPaintRes(); }
+      });
+    }
+    function rtSetNear(k, p) {
+      RT[k] = rtWait(p, k);
+      RT.compact = false;
+      RT.edit = "";
+      RT.q = "";
+      RT.res = null;
+      rtResolveGo();
+    }
+    // 現在地を有効にしていれば、出発に現在地の最寄りの駅を入れる
+    function rtMeFrom() {
+      if (RT.from && !RT.from.me) { return; }
+      if (geoSt === "granted" && navigator.geolocation) {
+        RT.from = { wait: "from", locating: 1, me: 1, name: "現在地", sub: "現在地を調べています" };
+        RT.res = null;
+        navigator.geolocation.getCurrentPosition(function (q) {
+          pos = { lat: q.coords.latitude, lng: q.coords.longitude };
+          locateMe(true);
+          if (!RT.from || !RT.from.locating) { return; }
+          RT.from = rtWait({ lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 }, "from");
+          rtResolveGo();
+        }, function () {
+          if (!RT.from || !RT.from.locating) { return; }
+          RT.from = null;
+          RT.busy = "";
+          if (rtIn()) { RT.edit = "from"; rtPaintForm(true); rtPaintRes(); }
+        }, { enableHighAccuracy: false, timeout: 12000, maximumAge: 60000 });
+      } else if (pos) {
+        RT.from = rtWait({ lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 }, "from");
+        RT.res = null;
+      }
+    }
     function rtOpen(dest) {
       if (RT.pick) { rtPickStop(); }
-      if (dest) { RT.to = dest; RT.res = null; RT.compact = false; }
-      if (!RT.from && pos) { RT.from = { lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 }; }
+      if (dest) { RT.to = dest.id ? rtWait(dest, "to") : dest; RT.res = null; RT.compact = false; }
+      if (dest || !RT.from) { rtMeFrom(); }
       if (!RT.date) { rtNowSet(); }
+      var wait = !!((RT.from && RT.from.wait) || (RT.to && RT.to.wait));
       RT.edit = !RT.from ? "from" : !RT.to ? "to" : "";
       RT.q = "";
+      if (wait) { RT.busy = "最寄りの駅を調べています"; RT.msg = ""; }
       var h = headHTML("#0079c2", "train", "地下鉄・都バス・都電・ライナー", "都営交通で行く") +
         '<div class="c-rt">' + rtFormHTML() + '<div class="c-rt-res" aria-live="polite">' + rtResHTML() + "</div>" + '<div class="c-rt-srcbox">' + rtSrcHTML() + "</div></div>";
       showPanel({ type: "route" }, h);
@@ -2951,7 +3047,7 @@
         if (sb && rtIn()) { sb.innerHTML = rtSrcHTML(); }
         rtSug();
       }, function () {});
-      if (RT.from && RT.to && !RT.res) { rtGo(); } else { rtDraw(!!RT.res); }
+      if (wait) { rtResolveGo(); } else if (RT.from && RT.to && !RT.res) { rtGo(); } else { rtDraw(!!RT.res); }
     }
     function rtFocus() {
       var q = $(".c-rt-q", sheet);
@@ -3016,7 +3112,7 @@
       var k = RT.edit;
       if (!k || !x) { return; }
       if (x.e) { rtSetPt(k, { lat: x.e.lat, lng: x.e.lng, name: x.e.title, sub: x.e.sub }); }
-      else { rtSetPt(k, { lat: x.it.lat, lng: x.it.lng, name: x.it.name, sub: CATS[x.it.cat].short, id: x.it.id }); }
+      else { rtSetNear(k, { lat: x.it.lat, lng: x.it.lng, name: x.it.name, sub: CATS[x.it.cat].short, id: x.it.id }); }
     }
     function rtMe(k) {
       if (!navigator.geolocation) { toast("このブラウザでは現在地を取得できません"); return; }
@@ -3024,7 +3120,7 @@
       navigator.geolocation.getCurrentPosition(function (p) {
         pos = { lat: p.coords.latitude, lng: p.coords.longitude };
         locateMe(true);
-        rtSetPt(k, { lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 });
+        rtSetNear(k, { lat: pos.lat, lng: pos.lng, name: "現在地", me: 1 });
       }, function () { toast("現在地を取得できませんでした。ブラウザで位置情報の利用を許可してください。"); },
       { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 });
     }
@@ -3084,7 +3180,7 @@
       }
       [["from", "出発"], ["to", "到着"]].forEach(function (x) {
         var p = RT[x[0]];
-        if (!p) { return; }
+        if (!p || p.lat == null) { return; }
         pts.push(p);
         L.marker([p.lat, p.lng], { icon: L.divIcon({ className: "c-rtpt is-" + x[0], html: "<span>" + x[1] + "</span>", iconSize: [0, 0] }), interactive: false, keyboard: false, zIndexOffset: 3500 }).addTo(rtLayer);
       });
