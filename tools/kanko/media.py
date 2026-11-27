@@ -169,8 +169,16 @@ def parse_article(raw):
         if len(text) > 1500:
             break
         text += p
-    r = {"p": text}
+    r = {"p": text, "bv": 1}
     img = box_img or fig_img
+    if img is None:
+        # 冒頭に写真がない記事は、本文の図（最初の8つまで）から選ぶ
+        for k, el in enumerate(root.select("figure, div.thumb")):
+            if k >= 8:
+                break
+            img = pick_img(el)
+            if img:
+                break
     if img:
         r["img"] = img
     return r
@@ -258,7 +266,15 @@ def main():
     for s in K.get("same", []):
         if len(s) >= 3 and s[2]:
             want[s[0]] = s[2]
-    log("写真と説明を付ける場所", len(want), "（記事", len(set(want.values())), "）")
+    extra = {}
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "wp_extra.json"), encoding="utf-8") as f:
+            extra = json.load(f).get("items", {})
+    except FileNotFoundError:
+        pass
+    for iid, ts in extra.items():
+        want[iid] = ts if isinstance(ts, list) else [ts]
+    log("写真と説明を付ける場所", len(want), "（うち記事名を対応表で決めるもの", len(extra), "）")
 
     cache = {"v": 1, "wp": {}, "cm": {}}
     try:
@@ -275,6 +291,8 @@ def main():
     def need(e, kind=""):
         if not e or e.get("pv") != PV:
             return True
+        if kind == "wp" and "ng" not in e and not e.get("img") and not e.get("bv"):
+            return True  # 本文の図を見る前に読んだもの
         if kind == "cm" and "ng" not in e and (not clean_credit(e.get("a")) or (e.get("a") or "").endswith("…")):
             return True  # 作者が名前になっていないもの（Own work など）や、前の版で途中までにしたものは、読み直す
         if "ng" in e:
@@ -325,10 +343,18 @@ def main():
             time.sleep(WAIT)
         log(kind, "：読んだページ", n, "（使えなかったもの", ng, "）")
 
-    titles = sorted(set(want.values()))
+    titles = sorted({t for v in want.values() for t in (v if isinstance(v, list) else [v])})
     crawl("wp", titles, robots(WP_HOST),
           lambda t: WP_HOST + "/wiki/" + urllib.parse.quote(t.replace(" ", "_"), safe=";@$!*(),/~:"), parse_article)
-    tset = set(titles)
+    for iid, v in list(want.items()):
+        if isinstance(v, list):
+            ok = [t for t in v if (cache["wp"].get(t) or {}).get("p") and "ng" not in cache["wp"][t]]
+            if ok:
+                want[iid] = ok[0]
+            else:
+                log("対応表の記事が読めませんでした", iid, v)
+                del want[iid]
+    tset = set(want.values())
     files = sorted({e["img"]["s"] for t, e in cache["wp"].items() if t in tset and e.get("img")})
     crawl("cm", files, robots(CM_HOST), lambda s: CM_HOST + "/wiki/File:" + s, parse_commons)
     save_cache()
