@@ -281,10 +281,13 @@ def main():
     except FileNotFoundError:
         pass
     ov_file = {}  # 写真を指定した場所 → コモンズのファイル名（URLの形）
+    must = {}  # 記事の冒頭に入っていなければならない言葉（同じ名前の、別の場所の記事を使わないため）
     for iid, ts in extra.items():
         if isinstance(ts, dict):
             if ts.get("f"):
                 ov_file[iid] = urllib.parse.quote(ts["f"].replace(" ", "_"), safe="")
+            if ts.get("m"):
+                must[iid] = ts["m"]
             ts = ts.get("t") or []
         want[iid] = ts if isinstance(ts, list) else [ts]
     log("写真と説明を付ける場所", len(want), "（うち記事名を対応表で決めるもの", len(extra), "）")
@@ -361,9 +364,12 @@ def main():
           lambda t: WP_HOST + "/wiki/" + urllib.parse.quote(t.replace(" ", "_"), safe=";@$!*(),/~:"), parse_article)
     for iid, v in list(want.items()):
         if isinstance(v, list):
-            ok = [t for t in v if (cache["wp"].get(t) or {}).get("p") and "ng" not in cache["wp"][t]]
+            ok = [t for t in v if (cache["wp"].get(t) or {}).get("p") and "ng" not in cache["wp"][t]
+                  and (iid not in must or must[iid] in cache["wp"][t]["p"])]
             if ok:
                 want[iid] = ok[0]
+            elif iid in ov_file:
+                want[iid] = ""  # 記事はなく、指定した写真だけを付ける
             else:
                 log("対応表の記事が読めませんでした", iid, v)
                 del want[iid]
@@ -377,8 +383,8 @@ def main():
 
     more = {}
     for iid, t in sorted(want.items()):
-        e = cache["wp"].get(t) or {}
-        x = {"w": t}
+        e = (cache["wp"].get(t) or {}) if t else {}
+        x = {"w": t} if t else {}
         d = first_sentences(tidy(e.get("p", "")))
         if d:
             x["d"] = d
@@ -389,7 +395,7 @@ def main():
             x["p"] = [fo["d"], fo["s"], fo["w"], fo["h"], clean_credit(fo["a"]), fo["l"], fo.get("u", ""), 0]
         elif im and c and c.get("l") and clean_credit(c.get("a")):
             x["p"] = [im["d"], im["s"], im["w"], im["h"], clean_credit(c["a"]), c["l"], c.get("u", ""), im.get("fw", 0)] + ([im["tn"]] if im.get("tn") else [])
-        if len(x) > 1:
+        if "p" in x or "d" in x:
             more[iid] = x
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump({"v": 1, "made": TODAY.isoformat(), "items": more}, f, ensure_ascii=False, separators=(",", ":"), sort_keys=True)

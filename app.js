@@ -4163,7 +4163,7 @@
 
     // ---- おすすめの100か所のカード ----
     KEY.pick = "itbx-m-pick-v1";
-    var PK = { list: null, k: -1, el: null, timer: 0, t0: 0, left: 0, hold: 0, off: false, gone: false, watch: 0 }, PK_MS = 8000;
+    var PK = { lists: null, li: -1, el: null, timer: 0, t0: 0, left: 0, hold: 0, off: false, gone: false, watch: 0 }, PK_MS = 8000;
     function pkToday() { var d = new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
     function pickBoot() {
       if (!map || store.get(KEY.pick, "") === pkToday()) { return; }
@@ -4185,12 +4185,18 @@
       if (PK.gone) { return; }
       if (store.get(KEY.pick, "") === pkToday()) { return; }
       if (pkBusy()) { setTimeout(pkTry, 2000); return; }
-      if (PK.list) { pkShow(); return; }
+      if (PK.lists) { pkShow(); return; }
       fetch(BASE + "pick.json").then(function (r) { if (!r.ok) { throw new Error("pick"); } return r.json(); }).then(function (j) {
-        var L0 = (j && j.items || []).filter(function (r) { return r && r[0] && r[1]; });
-        if (!L0.length) { return; }
-        for (var i = L0.length - 1; i > 0; i--) { var r = Math.floor(Math.random() * (i + 1)), t = L0[i]; L0[i] = L0[r]; L0[r] = t; }
-        PK.list = L0;
+        // 一覧ごとにランダムな順に並べる。前の一覧にある場所は、あとの一覧から外す
+        var src = j && j.lists ? j.lists : [{ t: "特に行くべき100か所", items: j && j.items || [] }], seen = {};
+        var lists = src.map(function (x) {
+          var a = (x.items || []).filter(function (r) { return r && r[0] && r[1] && !seen[r[0]]; });
+          a.forEach(function (r) { seen[r[0]] = 1; });
+          for (var i = a.length - 1; i > 0; i--) { var q = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[q]; a[q] = t; }
+          return { t: x.t || "おすすめの場所", a: a, k: -1 };
+        }).filter(function (x) { return x.a.length; });
+        if (!lists.length) { return; }
+        PK.lists = lists;
         pkShow();
       }, function () {});
     }
@@ -4202,7 +4208,7 @@
       el.setAttribute("aria-label", "おすすめの場所");
       el.innerHTML = '<div class="c-osu-bar" aria-hidden="true"><i></i></div>' +
         '<button type="button" class="c-osu-x" data-pk="x" aria-label="おすすめを閉じる（今日はもう出しません）"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg></button>' +
-        '<div class="c-osu-main"><div class="c-osu-ph"></div><div class="c-osu-tx"><p class="c-osu-k">特に行くべき100か所</p>' +
+        '<div class="c-osu-main"><div class="c-osu-ph"></div><div class="c-osu-tx"><p class="c-osu-k"></p>' +
         '<p class="c-osu-n"></p><p class="c-osu-w"></p><p class="c-osu-y"></p></div></div>' +
         '<div class="c-osu-acts"><button type="button" class="c-osu-go" data-pk="go">地図で見る</button>' +
         '<button type="button" class="c-osu-nx" data-pk="next">次へ</button></div><p class="c-osu-cr"></p>';
@@ -4213,9 +4219,9 @@
         if (a === "x") { store.set(KEY.pick, pkToday()); pkEnd(); }
         else if (a === "next") { pkNext(); }
         else if (a === "go") {
-          var id = PK.list[PK.k][0];
+          var L = PK.lists[PK.li], id = L.a[L.k][0];
           pkEnd();
-          select(id, { label: "特に行くべき100か所から" });
+          select(id, { label: L.t + "から" });
         }
       });
       el.addEventListener("error", function (e) {
@@ -4223,9 +4229,8 @@
         if (!t || t.tagName !== "IMG") { return; }
         var fb = t.getAttribute("data-fb");
         if (fb && t.getAttribute("src") !== fb) { t.setAttribute("src", fb); return; }
-        var ph = t.parentNode;
-        ph.innerHTML = "";
-        ph.hidden = true;
+        var ph = t.parentNode, L = PK.lists[PK.li];
+        pkIcon(ph, L.a[L.k]);
         $(".c-osu-cr", el).hidden = true;
       }, true);
       ["mouseenter", "focusin", "touchstart"].forEach(function (ev) { el.addEventListener(ev, function () { pkHold(1); }, { passive: true }); });
@@ -4235,13 +4240,21 @@
       document.addEventListener("visibilitychange", pkVis);
       document.addEventListener("touchstart", pkTouchOut, { passive: true });
       stage.appendChild(el);
-      PK.k = -1;
+      PK.li = -1;
       pkNext(true);
       PK.watch = setInterval(pkWatch, 600);
       pkWatch();
     }
+    // 写真のない場所は、分類の色と絵を出す
+    function pkIcon(ph, r) {
+      var c = CATS[r[6]];
+      if (!c) { ph.innerHTML = ""; ph.hidden = true; return; }
+      ph.innerHTML = '<span class="c-osu-ic" style="--c:' + esc(c.color) + '" role="img" aria-label="' + esc(c.short) + '">' + icon(c.icon) + "</span>";
+      ph.hidden = false;
+    }
     function pkRender() {
-      var r = PK.list[PK.k], el = PK.el, ph = $(".c-osu-ph", el), cr = $(".c-osu-cr", el), p = r[5];
+      var L = PK.lists[PK.li], r = L.a[L.k], el = PK.el, ph = $(".c-osu-ph", el), cr = $(".c-osu-cr", el), p = r[5];
+      $(".c-osu-k", el).textContent = L.t;
       $(".c-osu-n", el).textContent = r[1];
       $(".c-osu-w", el).textContent = r[2];
       $(".c-osu-y", el).textContent = r[3];
@@ -4253,18 +4266,19 @@
         ph.hidden = false;
         cr.hidden = false;
       } else {
-        ph.innerHTML = "";
-        ph.hidden = true;
+        pkIcon(ph, r);
         cr.innerHTML = "";
         cr.hidden = true;
       }
-      var nx = PK.list[(PK.k + 1) % PK.list.length];
+      var NL = PK.lists[(PK.li + 1) % PK.lists.length], nx = NL.a[(NL.k + 1) % NL.a.length];
       if (nx && nx[5]) { (new Image()).src = pkImg(nx[5]); }
     }
     function pkCalm() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
     function pkNext(first) {
       if (!PK.el) { return; }
-      PK.k = (PK.k + 1) % PK.list.length;
+      PK.li = (PK.li + 1) % PK.lists.length;  // 一覧を交互に
+      var L = PK.lists[PK.li];
+      L.k = (L.k + 1) % L.a.length;
       var el = PK.el;
       if (first || pkCalm()) { pkRender(); }
       else {

@@ -251,28 +251,32 @@ def main():
     }
     q = [[o["i"], o["a"], o["n"], " ".join(x for x in (o.get("on", ""), o.get("k", ""), o["t"]) if x)] for o in items]
 
-    # ---- おすすめの場所（pick.json）：地図を開いたときのカードで、ランダムに切り替えて出す ----
+    # ---- おすすめの場所（pick.json）：地図を開いたときのカードで、2つの一覧（23区の100か所・板橋区の公共施設）を交互に出す ----
     picks = None
-    pk_p = os.path.join(here, "pick.json")
-    if os.path.exists(pk_p):
+    if os.path.exists(os.path.join(here, "pick.json")):
         km = {}
         for cand in (os.path.join(OUT, "kanko_more.json"), os.path.join(os.path.dirname(os.path.abspath(KANKO)), "kanko_more.json")):
             if os.path.exists(cand):
                 km = load(cand).get("items", {})
                 break
         picks = []
-        for iid, why, tier in load(pk_p)["items"]:
-            o = by_id.get(iid)
-            if not o:
-                print("おすすめの場所が見つかりません", iid)
+        for fn, title in (("pick.json", "特に行くべき100か所"), ("pick_itb.json", "板橋区のおすすめ公共施設")):
+            pth = os.path.join(here, fn)
+            if not os.path.exists(pth):
                 continue
-            o["pk"] = tier
-            row = [iid, o["n"], areas[o["a"]], why, tier]
-            ph = (km.get(iid) or {}).get("p")
-            if ph:
-                row.append(ph)
-            picks.append(row)
-        print("おすすめの場所", len(picks), "（写真あり", sum(1 for r in picks if len(r) > 5), "）")
+            src_l = load(pth)
+            rows = []
+            for iid, why, tier in src_l["items"]:
+                o = by_id.get(iid)
+                if not o:
+                    print("おすすめの場所が見つかりません", iid)
+                    continue
+                if not o.get("pk"):
+                    o["pk"] = tier  # 両方の一覧にある場所は、先の一覧（23区の100か所）の段を残す
+                ph = (km.get(iid) or {}).get("p")
+                rows.append([iid, o["n"], areas[o["a"]], why, tier, ph or 0, o["c"]])
+            picks.append({"t": src_l.get("t") or title, "items": rows})
+            print("おすすめの場所", src_l.get("t") or title, len(rows), "（写真あり", sum(1 for r in rows if r[5]), "）")
 
     # ---- 書き出す（全部を作り終えてから。途中で失敗したときに、ファイルどうしが食い違わないように） ----
     def dump(path, obj):
@@ -284,7 +288,7 @@ def main():
     dump(os.path.join(OUT, "q.json"), {"v": 2, "q": q})
     dump(os.path.join(OUT, "idx.json"), idx_out)
     if picks is not None:
-        dump(os.path.join(OUT, "pick.json"), {"v": 1, "items": picks})
+        dump(os.path.join(OUT, "pick.json"), {"v": 2, "lists": picks, "items": picks[0]["items"] if picks else []})
     for f in os.listdir(os.path.join(OUT, "d")):
         if f.endswith(".json") and f[:-5] not in files:
             os.remove(os.path.join(OUT, "d", f))
