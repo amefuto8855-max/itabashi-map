@@ -1,0 +1,5976 @@
+{
+"roots": {
+"Q570116": "観光地",
+"Q33506": "博物館",
+"Q207694": "美術館",
+"Q1007870": "美術館・画廊",
+"Q2087181": "歴史的な家の博物館",
+"Q43501": "動物園",
+"Q2281788": "水族館",
+"Q167346": "植物園",
+"Q148319": "プラネタリウム",
+"Q1107656": "庭園",
+"Q22698": "公園",
+"Q54050": "丘",
+"Q5393308": "寺",
+"Q845945": "神社",
+"Q44539": "寺院",
+"Q16970": "教会堂",
+"Q32815": "モスク",
+"Q24398318": "宗教建築",
+"Q839954": "遺跡",
+"Q1081138": "史跡",
+"Q4989906": "記念碑",
+"Q5003624": "記念物",
+"Q179700": "像",
+"Q23413": "城",
+"Q358": "遺産",
+"Q210272": "文化遺産",
+"Q35112127": "歴史的建造物",
+"Q53060": "門",
+"Q16560": "宮殿",
+"Q2319498": "ランドマーク",
+"Q12518": "塔",
+"Q1440300": "展望塔",
+"Q11303": "超高層ビル",
+"Q194195": "遊園地",
+"Q2416723": "テーマパーク",
+"Q24354": "劇場",
+"Q12280": "橋",
+"Q39614": "墓地",
+"Q483110": "スタジアム",
+"Q132510": "市場",
+"Q37654": "市場（経済）",
+"Q1076486": "スポーツ施設"
+},
+"classes": {
+"Q100705206": {
+"ja": "都道府県庁舎",
+"en": "prefectural office building",
+"roots": []
+},
+"Q1007870": {
+"ja": "ギャラリー",
+"en": "art gallery",
+"roots": [
+"Q1007870"
+]
+},
+"Q1021645": {
+"ja": "オフィスビル",
+"en": "office building",
+"roots": []
+},
+"Q10283556": {
+"ja": "車両基地",
+"en": "motive power depot",
+"roots": []
+},
+"Q10296456": {
+"ja": "御苑",
+"en": "imperial garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q10297104": {
+"ja": "投げ込み寺",
+"en": "nagekomi-dera",
+"roots": [
+"Q5393308",
+"Q44539",
+"Q24398318"
+]
+},
+"Q104099048": {
+"ja": "裁判所図書館",
+"en": "court library",
+"roots": []
+},
+"Q1041984": {
+"ja": "銅鏡",
+"en": "bronze mirror",
+"roots": []
+},
+"Q10438042": {
+"ja": "バス事業者",
+"en": "bus company",
+"roots": []
+},
+"Q1045860": {
+"ja": "喫茶店",
+"en": "kissaten",
+"roots": []
+},
+"Q1046088": {
+"ja": "殿堂",
+"en": "hall of fame",
+"roots": []
+},
+"Q10460934": {
+"ja": "築山",
+"en": "artificial hill",
+"roots": [
+"Q54050"
+]
+},
+"Q1046648": {
+"ja": "銭湯",
+"en": "sentō",
+"roots": []
+},
+"Q104664889": {
+"ja": "永久閉鎖",
+"en": "permanently closed",
+"roots": [
+"Q210272"
+]
+},
+"Q1046763": {
+"ja": "まつり",
+"en": "matsuri",
+"roots": []
+},
+"Q1047437": {
+"ja": "著作権管理団体",
+"en": "copyright collective",
+"roots": []
+},
+"Q1049757": {
+"ja": "多目的スタジアム",
+"en": "multi-purpose stadium",
+"roots": [
+"Q1076486"
+]
+},
+"Q10501291": {
+"ja": "企業アーカイヴ",
+"en": "business archives",
+"roots": []
+},
+"Q10528555": {
+"ja": "警察と市民の衝突",
+"en": "police-civilian conflicts",
+"roots": []
+},
+"Q10547643": {
+"ja": "",
+"en": "concert hall",
+"roots": []
+},
+"Q1055465": {
+"ja": "桁橋",
+"en": "girder bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q105725005": {
+"ja": "記念館",
+"en": "memorial museum",
+"roots": [
+"Q4989906",
+"Q5003624",
+"Q33506"
+]
+},
+"Q105731": {
+"ja": "閘門",
+"en": "lock",
+"roots": []
+},
+"Q105910864": {
+"ja": "日本の女子校",
+"en": "Japanese girls' school",
+"roots": []
+},
+"Q1059324": {
+"ja": "大学病院",
+"en": "university hospital",
+"roots": []
+},
+"Q1060829": {
+"ja": "コンサートホール",
+"en": "concert hall",
+"roots": []
+},
+"Q1061197": {
+"ja": "ラジオネットワーク",
+"en": "radio network",
+"roots": []
+},
+"Q10624527": {
+"ja": "人物記念館",
+"en": "biographical museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1063076": {
+"ja": "第三セクター",
+"en": "voluntary sector",
+"roots": []
+},
+"Q1064063": {
+"ja": "私鉄",
+"en": "private railway",
+"roots": []
+},
+"Q106574351": {
+"ja": "クルーズターミナル",
+"en": "cruise terminal",
+"roots": []
+},
+"Q106688647": {
+"ja": "日本の幼稚園",
+"en": "kindergarten in Japan",
+"roots": []
+},
+"Q106772341": {
+"ja": "廃駅",
+"en": "abandoned railway station",
+"roots": []
+},
+"Q1068623": {
+"ja": "電波塔",
+"en": "transmitter mast",
+"roots": [
+"Q12518"
+]
+},
+"Q1068842": {
+"ja": "人道橋",
+"en": "footbridge",
+"roots": [
+"Q12280"
+]
+},
+"Q10689397": {
+"ja": "テレビ番組制作会社",
+"en": "television production company",
+"roots": []
+},
+"Q107026784": {
+"ja": "古典籍",
+"en": "Kotenseki",
+"roots": []
+},
+"Q107099245": {
+"ja": "スポーツ省",
+"en": "sport ministry",
+"roots": []
+},
+"Q1071160": {
+"ja": "摂末社",
+"en": "setsumatsusha",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q1072166": {
+"ja": "ティーハウス",
+"en": "tea house",
+"roots": []
+},
+"Q10729872": {
+"ja": "医師会",
+"en": "medical association",
+"roots": []
+},
+"Q107527229": {
+"ja": "建造物",
+"en": "structures",
+"roots": [
+"Q210272"
+]
+},
+"Q1076052": {
+"ja": "保育学校",
+"en": "preschool",
+"roots": []
+},
+"Q1076486": {
+"ja": "スポーツ会場",
+"en": "sports venue",
+"roots": [
+"Q1076486"
+]
+},
+"Q1078765": {
+"ja": "鉄道事故",
+"en": "railway accident",
+"roots": []
+},
+"Q1081138": {
+"ja": "史跡",
+"en": "historic site",
+"roots": [
+"Q358",
+"Q210272",
+"Q5003624",
+"Q4989906",
+"Q1081138"
+]
+},
+"Q10829188": {
+"ja": "国際大学 (種別)",
+"en": "international university",
+"roots": []
+},
+"Q10854973": {
+"ja": "搦手門",
+"en": "karamete-mon",
+"roots": [
+"Q53060"
+]
+},
+"Q10855239": {
+"ja": "競艇場",
+"en": "kyōteijō",
+"roots": [
+"Q1076486"
+]
+},
+"Q10855263": {
+"ja": "虎口",
+"en": "koguchi",
+"roots": []
+},
+"Q10855277": {
+"ja": "高麗門",
+"en": "Kōraimon",
+"roots": [
+"Q53060"
+]
+},
+"Q10856363": {
+"ja": "台場",
+"en": "daiba",
+"roots": []
+},
+"Q10861387": {
+"ja": "寿司屋",
+"en": "sushi-ya",
+"roots": []
+},
+"Q108804646": {
+"ja": "都市公園 (日本)",
+"en": "urban park",
+"roots": [
+"Q22698"
+]
+},
+"Q108804811": {
+"ja": "日本の拘置所",
+"en": "detention house in Japan",
+"roots": []
+},
+"Q1088552": {
+"ja": "カトリック教会の建築物",
+"en": "Catholic church building",
+"roots": [
+"Q16970",
+"Q44539",
+"Q24398318"
+]
+},
+"Q109121706": {
+"ja": "府省の行政委員会",
+"en": "",
+"roots": []
+},
+"Q109123396": {
+"ja": "市区町村教育委員会",
+"en": "Committee of Education for City, Ward, Town, Village",
+"roots": []
+},
+"Q1091292": {
+"ja": "合同庁舎",
+"en": "Joint Government Buildings in Japan",
+"roots": []
+},
+"Q10926872": {
+"ja": "国民公園",
+"en": "National Garden",
+"roots": [
+"Q22698"
+]
+},
+"Q110296306": {
+"ja": "短期大学",
+"en": "junior college in Japan",
+"roots": []
+},
+"Q110315658": {
+"ja": "",
+"en": "elected legislative house",
+"roots": []
+},
+"Q1103285": {
+"ja": "クラブハウス",
+"en": "clubhouse",
+"roots": []
+},
+"Q110498831": {
+"ja": "広告博物館",
+"en": "advertising museum",
+"roots": [
+"Q33506"
+]
+},
+"Q110534846": {
+"ja": "印刷博物館",
+"en": "printing museum",
+"roots": [
+"Q33506"
+]
+},
+"Q110582464": {
+"ja": "科学史博物館",
+"en": "history of science museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1107656": {
+"ja": "庭園",
+"en": "garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q1107679": {
+"ja": "アニメーション制作会社",
+"en": "animation studio",
+"roots": []
+},
+"Q11079823": {
+"ja": "文庫",
+"en": "bunko",
+"roots": []
+},
+"Q110848334": {
+"ja": "二層橋",
+"en": "double-decker bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q11086540": {
+"ja": "第三セクター鉄道",
+"en": "third-sector railway",
+"roots": []
+},
+"Q11086621": {
+"ja": "日本語学校",
+"en": "Japanese-language school",
+"roots": []
+},
+"Q11129889": {
+"ja": "水底トンネル",
+"en": "underwater tunnel",
+"roots": []
+},
+"Q11166728": {
+"ja": "テレビ塔",
+"en": "television tower",
+"roots": [
+"Q12518"
+]
+},
+"Q111711407": {
+"ja": "和菓子店",
+"en": "wagashi shop",
+"roots": []
+},
+"Q11183017": {
+"ja": "野外劇場",
+"en": "sylvan theater",
+"roots": [
+"Q24354"
+]
+},
+"Q111889841": {
+"ja": "大学美術館",
+"en": "university art museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q112083751": {
+"ja": "ため池",
+"en": "irrigation reservoir",
+"roots": []
+},
+"Q11241668": {
+"ja": "通り魔",
+"en": "unmotivated crime",
+"roots": []
+},
+"Q11251715": {
+"ja": "少年鑑別所",
+"en": "Juvenile Classification Home",
+"roots": []
+},
+"Q11261031": {
+"ja": "えびす神社",
+"en": "Ebisu shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11268718": {
+"ja": "前方後円墳",
+"en": "zenpō-kōen-fun",
+"roots": [
+"Q5003624",
+"Q39614",
+"Q4989906",
+"Q839954",
+"Q210272"
+]
+},
+"Q11272359": {
+"ja": "中華学校",
+"en": "Overseas Chinese Schools",
+"roots": []
+},
+"Q11298947": {
+"ja": "クラシックホテル",
+"en": "classic hotel",
+"roots": [
+"Q35112127"
+]
+},
+"Q11303": {
+"ja": "超高層建築物",
+"en": "skyscraper",
+"roots": [
+"Q11303"
+]
+},
+"Q11304835": {
+"ja": "サテライトスタジオ",
+"en": "satellite studio",
+"roots": []
+},
+"Q11305076": {
+"ja": "サポート校",
+"en": "support school",
+"roots": []
+},
+"Q11315": {
+"ja": "ショッピングセンター",
+"en": "shopping center",
+"roots": []
+},
+"Q11328994": {
+"ja": "パチンコ店",
+"en": "Pachinko Parlor",
+"roots": []
+},
+"Q11331980": {
+"ja": "ファッションビル",
+"en": "fashion building",
+"roots": []
+},
+"Q1133961": {
+"ja": "商業地域",
+"en": "commercial district",
+"roots": []
+},
+"Q11341528": {
+"ja": "マンガ・アニメミュージアム",
+"en": "comics museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q11342368": {
+"ja": "ミニシアター",
+"en": "mini theater",
+"roots": []
+},
+"Q11349822": {
+"ja": "レトロテーマパーク",
+"en": "retro themed park",
+"roots": [
+"Q2416723",
+"Q194195",
+"Q570116",
+"Q22698"
+]
+},
+"Q113536072": {
+"ja": "木造建築物",
+"en": "wooden building",
+"roots": []
+},
+"Q11355275": {
+"ja": "三島神社",
+"en": "Mishima shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11363644": {
+"ja": "中央卸売市場",
+"en": "central wholesale market",
+"roots": [
+"Q132510",
+"Q37654"
+]
+},
+"Q11366867": {
+"ja": "日本の中等教育学校",
+"en": "secondary education school of Japan",
+"roots": []
+},
+"Q11368830": {
+"ja": "乃木神社",
+"en": "Nogi shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q1137109": {
+"ja": "ゲームパブリッシャー (組織)",
+"en": "video game publisher",
+"roots": []
+},
+"Q1137809": {
+"ja": "裁判所庁舎",
+"en": "courthouse",
+"roots": []
+},
+"Q11381412": {
+"ja": "伝統工芸品",
+"en": "traditional handicraft of Japan",
+"roots": []
+},
+"Q11390939": {
+"ja": "八幡宮",
+"en": "Hachiman shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11391847": {
+"ja": "八雲神社",
+"en": "Yakumo shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11394606": {
+"ja": "内部部局",
+"en": "Internal Subdivision",
+"roots": []
+},
+"Q11394747": {
+"ja": "円墳",
+"en": "circular kofun",
+"roots": [
+"Q5003624",
+"Q39614",
+"Q4989906",
+"Q839954",
+"Q210272"
+]
+},
+"Q11396401": {
+"ja": "列車火災事故",
+"en": "train fire",
+"roots": []
+},
+"Q11396408": {
+"ja": "列車衝突事故",
+"en": "train collision",
+"roots": []
+},
+"Q1139795": {
+"ja": "国宝",
+"en": "National Treasure of Japan",
+"roots": [
+"Q210272"
+]
+},
+"Q11398011": {
+"ja": "割烹",
+"en": "kappō",
+"roots": []
+},
+"Q11400575": {
+"ja": "勤労者福祉施設",
+"en": "Welfare Facility for Workers",
+"roots": []
+},
+"Q11404686": {
+"ja": "医科大学",
+"en": "medical university in Japan",
+"roots": []
+},
+"Q1140700": {
+"ja": "即興劇",
+"en": "improvisational theatre",
+"roots": []
+},
+"Q11411321": {
+"ja": "日本の古民家",
+"en": "kominka",
+"roots": [
+"Q35112127"
+]
+},
+"Q1141225": {
+"ja": "古墳",
+"en": "kofun",
+"roots": [
+"Q5003624",
+"Q39614",
+"Q4989906",
+"Q839954",
+"Q210272"
+]
+},
+"Q11414670": {
+"ja": "同潤会アパート",
+"en": "Dōjunkai apartments",
+"roots": []
+},
+"Q11414752": {
+"ja": "名勝",
+"en": "Place of Scenic Beauty",
+"roots": [
+"Q210272"
+]
+},
+"Q11418825": {
+"ja": "問屋街",
+"en": "",
+"roots": []
+},
+"Q11419340": {
+"ja": "営業所",
+"en": "place of business",
+"roots": []
+},
+"Q11420231": {
+"ja": "回遊式庭園",
+"en": "Japanese strolling garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q11421203": {
+"ja": "国税局",
+"en": "Kokuzei-kyoku",
+"roots": []
+},
+"Q11421320": {
+"ja": "国立高度専門医療研究センター",
+"en": "National Center for Advanced and Specialized Medical Care",
+"roots": []
+},
+"Q11423672": {
+"ja": "土木学会選奨土木遺産",
+"en": "JSCE Civil Engineering Heritage Site",
+"roots": [
+"Q210272"
+]
+},
+"Q11428612": {
+"ja": "塩化物泉",
+"en": "Chloride springs",
+"roots": []
+},
+"Q11429081": {
+"ja": "境界駅",
+"en": "",
+"roots": []
+},
+"Q11430391": {
+"ja": "外国語学校",
+"en": "",
+"roots": []
+},
+"Q11430632": {
+"ja": "多叉路",
+"en": "intersection of five or more roads",
+"roots": []
+},
+"Q11433351": {
+"ja": "大名庭園",
+"en": "daimyō garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q11434268": {
+"ja": "大学校 (旧制)",
+"en": "",
+"roots": []
+},
+"Q11435892": {
+"ja": "大木戸",
+"en": "ōkido",
+"roots": [
+"Q53060"
+]
+},
+"Q11438576": {
+"ja": "大臣委員会等",
+"en": "",
+"roots": []
+},
+"Q1144689": {
+"ja": "屏風",
+"en": "folding screen",
+"roots": []
+},
+"Q11455593": {
+"ja": "家電量販店",
+"en": "home electronics retailer",
+"roots": []
+},
+"Q11455685": {
+"ja": "寄宿舎",
+"en": "communal housing",
+"roots": []
+},
+"Q11458530": {
+"ja": "専門職大学院",
+"en": "professional graduate school",
+"roots": []
+},
+"Q11458774": {
+"ja": "日本の小中一貫校",
+"en": "Japanese elementary and junior high schools",
+"roots": []
+},
+"Q1147171": {
+"ja": "乗換駅",
+"en": "interchange station",
+"roots": []
+},
+"Q11479807": {
+"ja": "巨樹",
+"en": "giant tree",
+"roots": [
+"Q2319498",
+"Q570116"
+]
+},
+"Q11480883": {
+"ja": "帆立貝形古墳",
+"en": "scallop-shaped kofun",
+"roots": [
+"Q5003624",
+"Q39614",
+"Q4989906",
+"Q839954",
+"Q210272"
+]
+},
+"Q11481853": {
+"ja": "幡",
+"en": "Buddhist ritual banner",
+"roots": []
+},
+"Q11482300": {
+"ja": "平城",
+"en": "hirajiro",
+"roots": [
+"Q23413"
+]
+},
+"Q11484204": {
+"ja": "日本の幼小中一貫校",
+"en": "",
+"roots": []
+},
+"Q11484220": {
+"ja": "幼稚園教員養成機関",
+"en": "",
+"roots": []
+},
+"Q11484275": {
+"ja": "庁",
+"en": "government office",
+"roots": []
+},
+"Q11484330": {
+"ja": "広域地名",
+"en": "kōiki chimei",
+"roots": []
+},
+"Q11486291": {
+"ja": "廃校",
+"en": "permanently closed school",
+"roots": []
+},
+"Q11486300": {
+"ja": "廃橋",
+"en": "former bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q11487748": {
+"ja": "強盗致死傷罪",
+"en": "robbery-murder",
+"roots": []
+},
+"Q11488964": {
+"ja": "御嶽神社",
+"en": "Mitake shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11489051": {
+"ja": "御所",
+"en": "gosho",
+"roots": [
+"Q16560"
+]
+},
+"Q11489117": {
+"ja": "御旅所",
+"en": "otabisho",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11497168": {
+"ja": "手鑑",
+"en": "tekagami",
+"roots": []
+},
+"Q11499981": {
+"ja": "文教研修施設",
+"en": "educational training facility",
+"roots": []
+},
+"Q11501434": {
+"ja": "新制大学",
+"en": "university in postwar Japan",
+"roots": []
+},
+"Q11505291": {
+"ja": "日帰り入浴施設",
+"en": "one-day onsen facility",
+"roots": []
+},
+"Q11507944": {
+"ja": "日本学術会議協力学術研究団体",
+"en": "Cooperative Science and Research Body",
+"roots": []
+},
+"Q11510987": {
+"ja": "旧制小学校",
+"en": "elementary school in the Empire of Japan",
+"roots": []
+},
+"Q11513225": {
+"ja": "映像ソフト会社",
+"en": "video software company",
+"roots": []
+},
+"Q11515059": {
+"ja": "曜変天目茶碗",
+"en": "yōhen tenmoku",
+"roots": []
+},
+"Q115194155": {
+"ja": "幼保連携型認定こども園",
+"en": "licensed nursery school",
+"roots": []
+},
+"Q11519624": {
+"ja": "未解決事件",
+"en": "unsolved crime",
+"roots": []
+},
+"Q1152199": {
+"ja": "貝塚",
+"en": "Shell midden",
+"roots": [
+"Q839954"
+]
+},
+"Q11525353": {
+"ja": "東京都政策連携団体",
+"en": "",
+"roots": []
+},
+"Q11525886": {
+"ja": "東京都選定歴史的建造物",
+"en": "Tokyo Metropolitan Government-designated architectural structure of historic value",
+"roots": [
+"Q35112127",
+"Q358",
+"Q210272"
+]
+},
+"Q11527003": {
+"ja": "東急プラザ",
+"en": "Tokyu Plaza",
+"roots": []
+},
+"Q11540927": {
+"ja": "検察庁",
+"en": "Public Prosecutors Office (Japan)",
+"roots": []
+},
+"Q1154323": {
+"ja": "スプリー・キラー",
+"en": "spree killer",
+"roots": []
+},
+"Q11545899": {
+"ja": "武家屋敷",
+"en": "buke yashiki",
+"roots": []
+},
+"Q1154710": {
+"ja": "サッカースタジアム",
+"en": "association football venue",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q11547135": {
+"ja": "殺人罪",
+"en": "homicide in Penal code of Japan",
+"roots": []
+},
+"Q11548891": {
+"ja": "水泳場",
+"en": "",
+"roots": [
+"Q1076486"
+]
+},
+"Q11549301": {
+"ja": "水道記念館",
+"en": "waterworks museum",
+"roots": [
+"Q33506"
+]
+},
+"Q11549517": {
+"ja": "水難事故",
+"en": "water accident",
+"roots": []
+},
+"Q115524266": {
+"ja": "寄席",
+"en": "yose",
+"roots": [
+"Q24354"
+]
+},
+"Q11555048": {
+"ja": "法務局",
+"en": "Legal Affairs Bureau",
+"roots": []
+},
+"Q11558636": {
+"ja": "海の駅",
+"en": "",
+"roots": []
+},
+"Q11559043": {
+"ja": "海浜公園",
+"en": "seaside park",
+"roots": [
+"Q22698"
+]
+},
+"Q11560645": {
+"ja": "清掃工場",
+"en": "waste management facility",
+"roots": []
+},
+"Q1156696": {
+"ja": "屋上庭園",
+"en": "roof garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q11567161": {
+"ja": "点字図書館",
+"en": "braille library",
+"roots": []
+},
+"Q11567512": {
+"ja": "無認可校",
+"en": "Muninka-kō",
+"roots": []
+},
+"Q11573451": {
+"ja": "現住建造物等放火罪",
+"en": "",
+"roots": []
+},
+"Q11573504": {
+"ja": "球技場",
+"en": "ball game venue",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q11579194": {
+"ja": "登録有形文化財",
+"en": "Registered Tangible Cultural Property of Japan",
+"roots": [
+"Q358",
+"Q210272"
+]
+},
+"Q11579196": {
+"ja": "登録有形民俗文化財",
+"en": "Registered Tangible Folk Cultural Property",
+"roots": [
+"Q210272"
+]
+},
+"Q11581043": {
+"ja": "皇室財産",
+"en": "imperial property",
+"roots": []
+},
+"Q11581608": {
+"ja": "目録",
+"en": "catalog",
+"roots": []
+},
+"Q11582564": {
+"ja": "省庁大学校",
+"en": "civil college",
+"roots": []
+},
+"Q11582691": {
+"ja": "都道府県立図書館",
+"en": "prefectural library of Japan",
+"roots": []
+},
+"Q11588275": {
+"ja": "社会教育施設",
+"en": "",
+"roots": []
+},
+"Q11588318": {
+"ja": "社会福祉法人",
+"en": "social welfare corporation",
+"roots": []
+},
+"Q11588442": {
+"ja": "祇園神社",
+"en": "Gion shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11590310": {
+"ja": "神明神社",
+"en": "Shinmei shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11595841": {
+"ja": "秋葉神社",
+"en": "Akiha shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11597480": {
+"ja": "空港警察署",
+"en": "airport police station",
+"roots": []
+},
+"Q11598565": {
+"ja": "競輪場",
+"en": "keirin racing track",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q11602399": {
+"ja": "第六天神社",
+"en": "Dairokuten shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11603902": {
+"ja": "簡易郵便局",
+"en": "simple post office",
+"roots": []
+},
+"Q11606300": {
+"ja": "終着駅",
+"en": "last station",
+"roots": []
+},
+"Q11606759": {
+"ja": "給水所",
+"en": "water supply station",
+"roots": []
+},
+"Q11606865": {
+"ja": "絵本美術館",
+"en": "picture book museum",
+"roots": [
+"Q33506",
+"Q207694"
+]
+},
+"Q11613099": {
+"ja": "自衛隊病院",
+"en": "Self-Defense Forces Hospital",
+"roots": []
+},
+"Q11613854": {
+"ja": "航空地方気象台",
+"en": "Aviation Weather Service Center",
+"roots": []
+},
+"Q1161707": {
+"ja": "水準点",
+"en": "benchmark",
+"roots": []
+},
+"Q11626975": {
+"ja": "複合商業施設",
+"en": "commercial complex",
+"roots": []
+},
+"Q11632478": {
+"ja": "議院事務局",
+"en": "house secretariat",
+"roots": []
+},
+"Q11635468": {
+"ja": "赤城神社",
+"en": "Akagi Shrine (worship)",
+"roots": []
+},
+"Q11637089": {
+"ja": "跨道橋",
+"en": "cross-road bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q11637939": {
+"ja": "農学校",
+"en": "agricultural school in the Empire of Japan",
+"roots": []
+},
+"Q11639308": {
+"ja": "退役",
+"en": "decommissioned",
+"roots": []
+},
+"Q11640472": {
+"ja": "運転免許試験場",
+"en": "Driver's License Examination Office",
+"roots": []
+},
+"Q11643712": {
+"ja": "都心等拠点地区",
+"en": "",
+"roots": []
+},
+"Q11646488": {
+"ja": "金刀比羅神社",
+"en": "Kotohira shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q11649691": {
+"ja": "鉄道学校",
+"en": "railway school",
+"roots": []
+},
+"Q11650171": {
+"ja": "銃砲刀剣類所持等取締法",
+"en": "Act for Controlling the Possession of Firearms or Swords and Other Such Weapons",
+"roots": []
+},
+"Q11659483": {
+"ja": "離宮",
+"en": "detached palace",
+"roots": [
+"Q16560"
+]
+},
+"Q11660439": {
+"ja": "電気街",
+"en": "Electronics districts",
+"roots": []
+},
+"Q11660666": {
+"ja": "震災復興公園",
+"en": "",
+"roots": [
+"Q22698"
+]
+},
+"Q11660700": {
+"ja": "霊園",
+"en": "reien",
+"roots": [
+"Q39614",
+"Q22698",
+"Q1107656"
+]
+},
+"Q11665557": {
+"ja": "風致公園",
+"en": "scenic park",
+"roots": [
+"Q22698",
+"Q1107656"
+]
+},
+"Q11666766": {
+"ja": "飲食店",
+"en": "restaurant",
+"roots": []
+},
+"Q11667022": {
+"ja": "首塚",
+"en": "kubizuka",
+"roots": [
+"Q4989906",
+"Q5003624"
+]
+},
+"Q11667187": {
+"ja": "香取神社",
+"en": "Katori shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q116673853": {
+"ja": "地上衝突",
+"en": "ground collision",
+"roots": []
+},
+"Q11668173": {
+"ja": "駅ナカ",
+"en": "eki-naka",
+"roots": []
+},
+"Q11670533": {
+"ja": "高架駅",
+"en": "elevated station",
+"roots": []
+},
+"Q11672698": {
+"ja": "高等検察庁",
+"en": "High Public Prosecutors Office",
+"roots": []
+},
+"Q116823488": {
+"ja": "近隣公園 (日本)",
+"en": "neighbourhood park (Japan)",
+"roots": [
+"Q22698"
+]
+},
+"Q116893808": {
+"ja": "私立図書館",
+"en": "private library of Japan",
+"roots": []
+},
+"Q11707": {
+"ja": "レストラン",
+"en": "restaurant",
+"roots": []
+},
+"Q11734477": {
+"ja": "石碑",
+"en": "memorial stone",
+"roots": [
+"Q5003624",
+"Q4989906"
+]
+},
+"Q11755959": {
+"ja": "2階以上の都市建築",
+"en": "multi-story urban building",
+"roots": []
+},
+"Q11786880": {
+"ja": "消防博物館",
+"en": "firefighting museum",
+"roots": [
+"Q33506"
+]
+},
+"Q118141630": {
+"ja": "都市計画公園",
+"en": "urban planning park",
+"roots": [
+"Q22698",
+"Q1107656"
+]
+},
+"Q11822917": {
+"ja": "競馬場",
+"en": "horse racing venue",
+"roots": [
+"Q1076486"
+]
+},
+"Q118526457": {
+"ja": "区役所",
+"en": "ward office",
+"roots": []
+},
+"Q1187811": {
+"ja": "学術都市",
+"en": "college town",
+"roots": []
+},
+"Q1188480": {
+"ja": "魚市場",
+"en": "fish market",
+"roots": [
+"Q132510",
+"Q37654"
+]
+},
+"Q1188622": {
+"ja": "重要文化財",
+"en": "Important Cultural Property of Japan",
+"roots": [
+"Q210272"
+]
+},
+"Q118896406": {
+"ja": "ツインタワー",
+"en": "twin towers",
+"roots": []
+},
+"Q1190456": {
+"ja": "東照宮",
+"en": "Tōshō-gū",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q1190781": {
+"ja": "絵巻物",
+"en": "emakimono",
+"roots": []
+},
+"Q1191753": {
+"ja": "バス車庫",
+"en": "bus garage",
+"roots": []
+},
+"Q119351997": {
+"ja": "時計博物館",
+"en": "horological museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q1195942": {
+"ja": "消防署",
+"en": "fire station",
+"roots": []
+},
+"Q1200701": {
+"ja": "デザイン・ミュージアム",
+"en": "design museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1202618": {
+"ja": "運動場",
+"en": "sports field",
+"roots": [
+"Q1076486"
+]
+},
+"Q12042110": {
+"ja": "鋼橋",
+"en": "steel bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q12053053": {
+"ja": "人工の滝",
+"en": "artificial waterfall",
+"roots": []
+},
+"Q120676": {
+"ja": "太刀",
+"en": "tachi",
+"roots": []
+},
+"Q120680118": {
+"ja": "神宮",
+"en": "jingū",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q1207465": {
+"ja": "会議室",
+"en": "conference hall",
+"roots": []
+},
+"Q1208212": {
+"ja": "スクランブル交差点",
+"en": "pedestrian scramble",
+"roots": []
+},
+"Q1210334": {
+"ja": "鉄道橋",
+"en": "railway bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q12104567": {
+"ja": "住宅団地",
+"en": "housing estate",
+"roots": []
+},
+"Q121072018": {
+"ja": "陸上競技場",
+"en": "",
+"roots": [
+"Q1076486"
+]
+},
+"Q12131650": {
+"ja": "埋葬地",
+"en": "location of burial",
+"roots": []
+},
+"Q121844395": {
+"ja": "直営駅",
+"en": "directly managed station",
+"roots": []
+},
+"Q121844689": {
+"ja": "業務委託駅",
+"en": "contracted station",
+"roots": []
+},
+"Q1220959": {
+"ja": "行政機関の建物",
+"en": "building of public administration",
+"roots": []
+},
+"Q122228860": {
+"ja": "高層キャンパス",
+"en": "vertical campus building",
+"roots": [
+"Q12518"
+]
+},
+"Q122397434": {
+"ja": "交換駅",
+"en": "",
+"roots": []
+},
+"Q12280": {
+"ja": "橋",
+"en": "bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q12284": {
+"ja": "運河",
+"en": "canal",
+"roots": []
+},
+"Q1228895": {
+"ja": "ディスコ",
+"en": "discothèque",
+"roots": []
+},
+"Q122904442": {
+"ja": "国指定天然記念物",
+"en": "Natural Monument of Japan",
+"roots": [
+"Q210272"
+]
+},
+"Q12292478": {
+"ja": "",
+"en": "estate",
+"roots": []
+},
+"Q123025722": {
+"ja": "管理駅",
+"en": "",
+"roots": []
+},
+"Q123027638": {
+"ja": "日本の各種学校",
+"en": "miscellaneous school",
+"roots": []
+},
+"Q123094976": {
+"ja": "被管理駅",
+"en": "railway station with limited discretionary power",
+"roots": []
+},
+"Q123114662": {
+"ja": "一般駅",
+"en": "general station",
+"roots": []
+},
+"Q123124127": {
+"ja": "廃止された博物館",
+"en": "defunct museum",
+"roots": [
+"Q33506"
+]
+},
+"Q12317349": {
+"ja": "中央図書館",
+"en": "main library",
+"roots": []
+},
+"Q12327290": {
+"ja": "記念公園",
+"en": "memorial park",
+"roots": [
+"Q22698",
+"Q4989906",
+"Q5003624"
+]
+},
+"Q123705": {
+"ja": "都市の地区",
+"en": "neighborhood",
+"roots": []
+},
+"Q12373247": {
+"ja": "聖木",
+"en": "sacred tree",
+"roots": []
+},
+"Q12377751": {
+"ja": "建設中",
+"en": "building or structure under construction",
+"roots": []
+},
+"Q123945311": {
+"ja": "ファッション学校",
+"en": "fashion school",
+"roots": []
+},
+"Q1241568": {
+"ja": "戦没者墓地",
+"en": "war cemetery",
+"roots": [
+"Q39614",
+"Q5003624",
+"Q4989906"
+]
+},
+"Q124172261": {
+"ja": "鵲尾形柄香炉",
+"en": "incense burner with a magpie's tail-shaped handle",
+"roots": []
+},
+"Q124362707": {
+"ja": "",
+"en": "Korean Cultural Center branch office",
+"roots": []
+},
+"Q124416148": {
+"ja": "地下鉄・都市高速鉄道の地下駅",
+"en": "underground metro station",
+"roots": []
+},
+"Q1244442": {
+"ja": "学校施設",
+"en": "school building",
+"roots": []
+},
+"Q124460658": {
+"ja": "師範学校",
+"en": "",
+"roots": []
+},
+"Q124757": {
+"ja": "暴動",
+"en": "riot",
+"roots": []
+},
+"Q1248784": {
+"ja": "空港",
+"en": "airport",
+"roots": []
+},
+"Q125099948": {
+"ja": "学部と大学院組織の組み合わせ",
+"en": "combination of undergraduate and graduate school",
+"roots": []
+},
+"Q125101181": {
+"ja": "東京都指定文化財",
+"en": "Tokyo Metropolitan Government designated Cultural Property",
+"roots": [
+"Q210272",
+"Q358"
+]
+},
+"Q125101200": {
+"ja": "東京都指定史跡",
+"en": "Designated historic sites of Tokyo",
+"roots": [
+"Q210272",
+"Q1081138",
+"Q5003624",
+"Q358",
+"Q4989906"
+]
+},
+"Q1251403": {
+"ja": "路地",
+"en": "alley",
+"roots": []
+},
+"Q1252971": {
+"ja": "食品会社",
+"en": "food manufacturer",
+"roots": []
+},
+"Q125313404": {
+"ja": "愛宕神社",
+"en": "Atago shrine (worship)",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125314093": {
+"ja": "白山神社",
+"en": "Hakusan shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125314171": {
+"ja": "氷川神社",
+"en": "Hikawa shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125316256": {
+"ja": "厳島神社",
+"en": "Itsukushima shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125316862": {
+"ja": "鹿島神社",
+"en": "Kashima Shrine (worship)",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125316983": {
+"ja": "春日神社",
+"en": "Kasuga shrine (worship)",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125319456": {
+"ja": "水天宮",
+"en": "Suitengū",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125339990": {
+"ja": "山王神社",
+"en": "Sannō shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q125340022": {
+"ja": "日枝神社",
+"en": "Hie shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q12570": {
+"ja": "吊橋",
+"en": "suspension bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q125749224": {
+"ja": "須賀神社",
+"en": "Suga shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q12584798": {
+"ja": "跨線橋",
+"en": "bridge over railway line",
+"roots": [
+"Q12280"
+]
+},
+"Q126004612": {
+"ja": "能舞台",
+"en": "noh stage",
+"roots": []
+},
+"Q126195053": {
+"ja": "彫刻美術館",
+"en": "sculpture museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q12719646": {
+"ja": "池",
+"en": "pond",
+"roots": []
+},
+"Q12781": {
+"ja": "イタリア式庭園",
+"en": "Giardino all'italiana",
+"roots": [
+"Q1107656"
+]
+},
+"Q12890393": {
+"ja": "事件",
+"en": "incident",
+"roots": []
+},
+"Q130326199": {
+"ja": "保存された船舶",
+"en": "preserved watercraft",
+"roots": []
+},
+"Q1307276": {
+"ja": "一戸建て",
+"en": "single-family detached home",
+"roots": []
+},
+"Q1311958": {
+"ja": "鉄道トンネル",
+"en": "railway tunnel",
+"roots": []
+},
+"Q131538088": {
+"ja": "民家園",
+"en": "minka-en",
+"roots": [
+"Q2087181",
+"Q33506",
+"Q35112127"
+]
+},
+"Q131681": {
+"ja": "貯水池",
+"en": "reservoir",
+"roots": []
+},
+"Q1317590": {
+"ja": "海底トンネル",
+"en": "undersea tunnel",
+"roots": []
+},
+"Q131828119": {
+"ja": "地方裁判所",
+"en": "District Court",
+"roots": []
+},
+"Q131828353": {
+"ja": "家庭裁判所",
+"en": "Family Court",
+"roots": []
+},
+"Q13226383": {
+"ja": "施設",
+"en": "facility",
+"roots": []
+},
+"Q132397": {
+"ja": "ピッチャー",
+"en": "pitcher",
+"roots": []
+},
+"Q132510": {
+"ja": "公共市場",
+"en": "market",
+"roots": [
+"Q37654",
+"Q132510"
+]
+},
+"Q132718497": {
+"ja": "書道美術館",
+"en": "calligraphy museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q132821": {
+"ja": "謀殺",
+"en": "murder",
+"roots": []
+},
+"Q132911": {
+"ja": "エレベーター",
+"en": "elevator",
+"roots": []
+},
+"Q1329623": {
+"ja": "文化センター",
+"en": "cultural center",
+"roots": []
+},
+"Q1331380": {
+"ja": "列車脱線事故",
+"en": "derailment",
+"roots": []
+},
+"Q1331793": {
+"ja": "メディア企業",
+"en": "media company",
+"roots": []
+},
+"Q1335652": {
+"ja": "空港駅",
+"en": "airport railway station",
+"roots": []
+},
+"Q1339195": {
+"ja": "駅舎",
+"en": "station building",
+"roots": []
+},
+"Q13402009": {
+"ja": "アパート",
+"en": "apartment building",
+"roots": []
+},
+"Q13416228": {
+"ja": "焼却施設",
+"en": "incinerator",
+"roots": []
+},
+"Q1342434": {
+"ja": "乗降分離",
+"en": "Spanish solution",
+"roots": []
+},
+"Q1348073": {
+"ja": "地下街",
+"en": "underground city",
+"roots": []
+},
+"Q1348417": {
+"ja": "学業不正",
+"en": "academic dishonesty",
+"roots": []
+},
+"Q134917286": {
+"ja": "式内社",
+"en": "Shikinaisha",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q134962447": {
+"ja": "皇室の施設",
+"en": "Japanese Imperial Facilities",
+"roots": []
+},
+"Q134986912": {
+"ja": "貴船神社",
+"en": "Kifune shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q134986940": {
+"ja": "三輪神社",
+"en": "Miwa shrines",
+"roots": []
+},
+"Q134986959": {
+"ja": "雷電神社",
+"en": "Raiden Shrine (worship)",
+"roots": []
+},
+"Q134987073": {
+"ja": "塩竈神社",
+"en": "Shiogama-jinja (worship)",
+"roots": []
+},
+"Q134987077": {
+"ja": "白鬚神社",
+"en": "Shirahige-jinja (worship)",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q134987079": {
+"ja": "神功皇后を祭神とした神社",
+"en": "shrine dedicated to Empress Jingū",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q135022904": {
+"ja": "論社",
+"en": "Shikinai Ronsha",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q1351018": {
+"ja": "",
+"en": "recreation home",
+"roots": []
+},
+"Q135160342": {
+"ja": "国幣社",
+"en": "Kokuhei-sha",
+"roots": []
+},
+"Q135471529": {
+"ja": "三峰神社",
+"en": "Mitsumine shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q135932509": {
+"ja": "地下鉄・都市高速鉄道の高架駅",
+"en": "elevated metro station",
+"roots": []
+},
+"Q136136058": {
+"ja": "無料道路",
+"en": "toll free road",
+"roots": []
+},
+"Q136138171": {
+"ja": "廃高速道路",
+"en": "abandoned motorway",
+"roots": []
+},
+"Q1363585": {
+"ja": "鐘楼",
+"en": "shōrō",
+"roots": [
+"Q12518"
+]
+},
+"Q13691": {
+"ja": "人工島",
+"en": "artificial island",
+"roots": []
+},
+"Q1371037": {
+"ja": "工業大学",
+"en": "university of technology",
+"roots": []
+},
+"Q137730859": {
+"ja": "サッカー博物館",
+"en": "association football museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1378975": {
+"ja": "コンベンション・センター",
+"en": "convention center",
+"roots": []
+},
+"Q137915715": {
+"ja": "",
+"en": "social science institute",
+"roots": []
+},
+"Q139382362": {
+"ja": "",
+"en": "United Nations research and training institute",
+"roots": []
+},
+"Q1395205": {
+"ja": "ファミリーレストラン",
+"en": "family restaurant",
+"roots": []
+},
+"Q1399692": {
+"ja": "副葬品",
+"en": "grave good",
+"roots": []
+},
+"Q140235820": {
+"ja": "デパート美術館",
+"en": "department-store art museum",
+"roots": [
+"Q33506",
+"Q207694"
+]
+},
+"Q140314122": {
+"ja": "学内神社",
+"en": "school Shinto shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q140314412": {
+"ja": "企業神社",
+"en": "corporate Shinto shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q140317348": {
+"ja": "航空神社",
+"en": "aviation shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q140317399": {
+"ja": "屋上神社",
+"en": "rooftop Shinto shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q140479582": {
+"ja": "",
+"en": "university garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q1408783": {
+"ja": "測地点",
+"en": "geodetic station",
+"roots": []
+},
+"Q14092": {
+"ja": "体育館",
+"en": "gym",
+"roots": [
+"Q1076486"
+]
+},
+"Q1413117": {
+"ja": "洪水貯水池",
+"en": "retention basin",
+"roots": []
+},
+"Q1415133": {
+"ja": "映画博物館",
+"en": "film museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1425560": {
+"ja": "陸橋",
+"en": "overpass",
+"roots": [
+"Q12280"
+]
+},
+"Q1426795": {
+"ja": "旗艦店",
+"en": "flagship store",
+"roots": []
+},
+"Q1429218": {
+"ja": "カンチレバー橋",
+"en": "cantilever bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q1435490": {
+"ja": "公民館",
+"en": "people's house",
+"roots": []
+},
+"Q1438040": {
+"ja": "研究図書館",
+"en": "research library",
+"roots": []
+},
+"Q1440300": {
+"ja": "展望塔",
+"en": "observation tower",
+"roots": [
+"Q12518",
+"Q570116",
+"Q1440300"
+]
+},
+"Q1440476": {
+"ja": "鉄塔",
+"en": "lattice tower",
+"roots": [
+"Q12518"
+]
+},
+"Q1466031": {
+"ja": "葬斎場",
+"en": "funeral home",
+"roots": []
+},
+"Q1468524": {
+"ja": "都心",
+"en": "city center",
+"roots": []
+},
+"Q1480166": {
+"ja": "日本の株式会社",
+"en": "kabushiki gaisha",
+"roots": []
+},
+"Q148319": {
+"ja": "プラネタリウム",
+"en": "planetarium",
+"roots": [
+"Q148319"
+]
+},
+"Q149086": {
+"ja": "殺人",
+"en": "homicide",
+"roots": []
+},
+"Q149566": {
+"ja": "ミドルスクール",
+"en": "middle school",
+"roots": []
+},
+"Q1497364": {
+"ja": "建築複合体",
+"en": "building complex",
+"roots": []
+},
+"Q14978": {
+"ja": "砕氷船",
+"en": "icebreaker",
+"roots": []
+},
+"Q1498804": {
+"ja": "共同住宅",
+"en": "multifamily residential",
+"roots": []
+},
+"Q1501": {
+"ja": "プール",
+"en": "swimming pool",
+"roots": [
+"Q1076486"
+]
+},
+"Q15090615": {
+"ja": "芸術施設",
+"en": "arts venue",
+"roots": []
+},
+"Q15206795": {
+"ja": "展示室",
+"en": "exhibition space",
+"roots": []
+},
+"Q15242449": {
+"ja": "下水処理場",
+"en": "wastewater treatment plant",
+"roots": []
+},
+"Q15265344": {
+"ja": "放送局",
+"en": "broadcaster",
+"roots": []
+},
+"Q1530022": {
+"ja": "宗教団体",
+"en": "religious organization",
+"roots": []
+},
+"Q15303456": {
+"ja": "ラグビー場",
+"en": "rugby union venue",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q1534477": {
+"ja": "護国神社",
+"en": "gokoku shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q153562": {
+"ja": "歌劇場",
+"en": "opera house",
+"roots": [
+"Q24354"
+]
+},
+"Q15408388": {
+"ja": "公安委員会",
+"en": "Public safety commission",
+"roots": []
+},
+"Q1541043": {
+"ja": "無名戦士の墓",
+"en": "tomb of the unknown soldier",
+"roots": [
+"Q4989906",
+"Q5003624"
+]
+},
+"Q15466213": {
+"ja": "坂",
+"en": "slope",
+"roots": []
+},
+"Q1548406": {
+"ja": "国立劇場",
+"en": "national theatre",
+"roots": []
+},
+"Q155076": {
+"ja": "法人",
+"en": "juridical person",
+"roots": []
+},
+"Q155271": {
+"ja": "シンクタンク",
+"en": "think tank",
+"roots": []
+},
+"Q1558858": {
+"ja": "下宿",
+"en": "boarding house",
+"roots": []
+},
+"Q15623926": {
+"ja": "",
+"en": "Wikimedia set index article",
+"roots": []
+},
+"Q156362": {
+"ja": "ワイナリー",
+"en": "winery",
+"roots": []
+},
+"Q1567913": {
+"ja": "港駅",
+"en": "harbour railway station",
+"roots": []
+},
+"Q1569871": {
+"ja": "産業遺産",
+"en": "industrial heritage site",
+"roots": [
+"Q1081138",
+"Q358",
+"Q210272",
+"Q5003624",
+"Q4989906"
+]
+},
+"Q157031": {
+"ja": "財団",
+"en": "foundation",
+"roots": []
+},
+"Q15709086": {
+"ja": "水堀",
+"en": "wet moat",
+"roots": []
+},
+"Q157570": {
+"ja": "火葬場",
+"en": "crematorium",
+"roots": []
+},
+"Q1577547": {
+"ja": "賃貸住宅",
+"en": "revenue house",
+"roots": []
+},
+"Q158218": {
+"ja": "トラス橋",
+"en": "truss bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q15835": {
+"ja": "日本庭園",
+"en": "Japanese garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q158438": {
+"ja": "アーチ橋",
+"en": "arch bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q158555": {
+"ja": "斜張橋",
+"en": "cable-stayed bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q1587716": {
+"ja": "観光案内所",
+"en": "tourism office",
+"roots": []
+},
+"Q1589077": {
+"ja": "ユースホステル",
+"en": "youth hostel",
+"roots": []
+},
+"Q15893266": {
+"ja": "現存しないエンティティ",
+"en": "former entity",
+"roots": []
+},
+"Q15911314": {
+"ja": "社団",
+"en": "association",
+"roots": []
+},
+"Q159334": {
+"ja": "中等教育学校",
+"en": "secondary school",
+"roots": []
+},
+"Q15936437": {
+"ja": "研究大学",
+"en": "research university",
+"roots": []
+},
+"Q1595639": {
+"ja": "郷土博物館",
+"en": "local museum",
+"roots": [
+"Q33506"
+]
+},
+"Q16141747": {
+"ja": "国立大学法人",
+"en": "national university corporation",
+"roots": []
+},
+"Q161851": {
+"ja": "マンション",
+"en": "condominium",
+"roots": []
+},
+"Q1620908": {
+"ja": "歴史的地域",
+"en": "historical region",
+"roots": []
+},
+"Q1621657": {
+"ja": "",
+"en": "equestrian facility",
+"roots": [
+"Q1076486"
+]
+},
+"Q1623285": {
+"ja": "庭",
+"en": "yard",
+"roots": []
+},
+"Q162602": {
+"ja": "中州",
+"en": "river island",
+"roots": []
+},
+"Q16266378": {
+"ja": "シリアル・キリング",
+"en": "serial murder",
+"roots": []
+},
+"Q16363669": {
+"ja": "運動公園",
+"en": "sports park",
+"roots": [
+"Q22698",
+"Q1076486"
+]
+},
+"Q163740": {
+"ja": "非営利団体",
+"en": "nonprofit organization",
+"roots": []
+},
+"Q164419": {
+"ja": "ロング・ギャラリー",
+"en": "long gallery",
+"roots": []
+},
+"Q165044": {
+"ja": "温室",
+"en": "greenhouse",
+"roots": []
+},
+"Q16534385": {
+"ja": "武道館",
+"en": "budōkan",
+"roots": [
+"Q1076486"
+]
+},
+"Q16590780": {
+"ja": "漫画屋",
+"en": "comics shop",
+"roots": []
+},
+"Q166118": {
+"ja": "アーカイブ",
+"en": "archives",
+"roots": []
+},
+"Q1663017": {
+"ja": "工業学校",
+"en": "engineering school",
+"roots": []
+},
+"Q16634966": {
+"ja": "階段通り",
+"en": "public staircase",
+"roots": []
+},
+"Q1664720": {
+"ja": "研究機関",
+"en": "institute",
+"roots": []
+},
+"Q167346": {
+"ja": "植物園",
+"en": "botanical garden",
+"roots": [
+"Q22698",
+"Q1107656",
+"Q167346"
+]
+},
+"Q16735822": {
+"ja": "歴史博物館",
+"en": "history museum",
+"roots": [
+"Q33506"
+]
+},
+"Q16738832": {
+"ja": "刑事事件",
+"en": "criminal case",
+"roots": []
+},
+"Q16905563": {
+"ja": "",
+"en": "cycle of paintings",
+"roots": []
+},
+"Q16917": {
+"ja": "病院",
+"en": "hospital",
+"roots": []
+},
+"Q16939396": {
+"ja": "有料道路",
+"en": "toll road",
+"roots": []
+},
+"Q16970": {
+"ja": "教会堂",
+"en": "church building",
+"roots": [
+"Q24398318",
+"Q44539",
+"Q16970"
+]
+},
+"Q17000320": {
+"ja": "演劇博物館",
+"en": "theatre museum",
+"roots": [
+"Q33506"
+]
+},
+"Q17000324": {
+"ja": "スポーツ博物館",
+"en": "sports museum",
+"roots": [
+"Q33506"
+]
+},
+"Q170483": {
+"ja": "帆船",
+"en": "sailing ship",
+"roots": []
+},
+"Q170584": {
+"ja": "プロジェクト",
+"en": "project",
+"roots": []
+},
+"Q171441": {
+"ja": "包領",
+"en": "enclave",
+"roots": []
+},
+"Q171448": {
+"ja": "踏切",
+"en": "level crossing",
+"roots": []
+},
+"Q17157259": {
+"ja": "",
+"en": "field hockey pitch",
+"roots": [
+"Q1076486"
+]
+},
+"Q17173503": {
+"ja": "アンテナショップ",
+"en": "Antenna shop",
+"roots": []
+},
+"Q173387": {
+"ja": "墓穴",
+"en": "grave",
+"roots": [
+"Q5003624",
+"Q210272",
+"Q4989906"
+]
+},
+"Q17350442": {
+"ja": "開催地",
+"en": "venue",
+"roots": []
+},
+"Q17431399": {
+"ja": "国立博物館",
+"en": "national museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1743327": {
+"ja": "ミッション系大学",
+"en": "church college",
+"roots": []
+},
+"Q1751429": {
+"ja": "ファストフード店",
+"en": "fast food restaurant",
+"roots": []
+},
+"Q175288": {
+"ja": "勅祭社",
+"en": "chokusaisha",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q17537576": {
+"ja": "著作物",
+"en": "creative work",
+"roots": []
+},
+"Q17558136": {
+"ja": "YouTubeチャンネル",
+"en": "YouTube channel",
+"roots": []
+},
+"Q1759559": {
+"ja": "相撲部屋",
+"en": "heya",
+"roots": [
+"Q1076486"
+]
+},
+"Q1763828": {
+"ja": "多目的ホール",
+"en": "multi-purpose hall",
+"roots": [
+"Q1076486"
+]
+},
+"Q1768697": {
+"ja": "日本刀",
+"en": "Japanese sword",
+"roots": []
+},
+"Q177305": {
+"ja": "展望台",
+"en": "observation deck",
+"roots": [
+"Q570116"
+]
+},
+"Q1774898": {
+"ja": "診療所",
+"en": "clinic",
+"roots": []
+},
+"Q1779831": {
+"ja": "対面乗り換え",
+"en": "cross-platform interchange",
+"roots": []
+},
+"Q178743": {
+"ja": "碑",
+"en": "stele",
+"roots": [
+"Q4989906"
+]
+},
+"Q1788454": {
+"ja": "ジャンクション",
+"en": "road junction",
+"roots": []
+},
+"Q1788820": {
+"ja": "国防省",
+"en": "defence ministry",
+"roots": []
+},
+"Q179057": {
+"ja": "爆発",
+"en": "explosion",
+"roots": []
+},
+"Q1792623": {
+"ja": "芸術教育機関",
+"en": "arts educational institution",
+"roots": []
+},
+"Q179700": {
+"ja": "塑像",
+"en": "statue",
+"roots": [
+"Q179700"
+]
+},
+"Q1798641": {
+"ja": "通信塔",
+"en": "communication tower",
+"roots": [
+"Q12518"
+]
+},
+"Q17987422": {
+"ja": "専門学校",
+"en": "professional training college",
+"roots": []
+},
+"Q17991606": {
+"ja": "塩博物館",
+"en": "salt museum",
+"roots": [
+"Q33506"
+]
+},
+"Q180684": {
+"ja": "紛争",
+"en": "conflict",
+"roots": []
+},
+"Q180958": {
+"ja": "学部",
+"en": "faculty",
+"roots": []
+},
+"Q18110011": {
+"ja": "墨床",
+"en": "ink rest",
+"roots": []
+},
+"Q181348": {
+"ja": "高架橋",
+"en": "viaduct",
+"roots": [
+"Q12280"
+]
+},
+"Q18142": {
+"ja": "高層建築物",
+"en": "tower block",
+"roots": []
+},
+"Q18325841": {
+"ja": "公共交通機関ネットワーク",
+"en": "public transport network",
+"roots": []
+},
+"Q18330146": {
+"ja": "文化財団",
+"en": "cultural foundation",
+"roots": []
+},
+"Q18337319": {
+"ja": "地方衛生研究所",
+"en": "Municipal Public Health Institute",
+"roots": []
+},
+"Q18449828": {
+"ja": "石造アーチ橋",
+"en": "stone arch bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q18510489": {
+"ja": "お笑いグループ",
+"en": "comedy troupe",
+"roots": []
+},
+"Q1851368": {
+"ja": "ウォーターフロント",
+"en": "waterfront",
+"roots": []
+},
+"Q18543139": {
+"ja": "中央駅",
+"en": "central station",
+"roots": []
+},
+"Q1863818": {
+"ja": "海事博物館",
+"en": "maritime museum",
+"roots": [
+"Q33506"
+]
+},
+"Q1865249": {
+"ja": "文学館",
+"en": "literary museum",
+"roots": [
+"Q33506"
+]
+},
+"Q18658261": {
+"ja": "花市場",
+"en": "flower market",
+"roots": [
+"Q37654",
+"Q132510"
+]
+},
+"Q18658526": {
+"ja": "死亡地",
+"en": "place of death",
+"roots": []
+},
+"Q18674739": {
+"ja": "イベント会場",
+"en": "event venue",
+"roots": []
+},
+"Q1868068": {
+"ja": "物流センター",
+"en": "logistics hub",
+"roots": []
+},
+"Q18691599": {
+"ja": "軍事施設",
+"en": "military installation",
+"roots": []
+},
+"Q18704634": {
+"ja": "鉄道博物館",
+"en": "railway museum",
+"roots": [
+"Q33506"
+]
+},
+"Q18711682": {
+"ja": "乗物による突入攻撃",
+"en": "vehicle-ramming attack",
+"roots": []
+},
+"Q187456": {
+"ja": "バー",
+"en": "bar",
+"roots": []
+},
+"Q18760388": {
+"ja": "小売店舗",
+"en": "retail building",
+"roots": []
+},
+"Q18761864": {
+"ja": "銀行建築",
+"en": "bank building",
+"roots": []
+},
+"Q187934": {
+"ja": "モノレール",
+"en": "monorail",
+"roots": []
+},
+"Q1880737": {
+"ja": "支店",
+"en": "branch office",
+"roots": []
+},
+"Q189004": {
+"ja": "カレッジ",
+"en": "college",
+"roots": []
+},
+"Q18991396": {
+"ja": "掛時計",
+"en": "wall clock",
+"roots": []
+},
+"Q1917391": {
+"ja": "公共交通機関ルート立案ソフトウェア",
+"en": "public transport route planner",
+"roots": []
+},
+"Q19314966": {
+"ja": "お笑い劇団",
+"en": "theatre comedy group",
+"roots": []
+},
+"Q194195": {
+"ja": "遊園地",
+"en": "amusement park",
+"roots": [
+"Q570116",
+"Q22698",
+"Q194195"
+]
+},
+"Q19479037": {
+"ja": "彫刻のシリーズ",
+"en": "sculpture series",
+"roots": []
+},
+"Q19563580": {
+"ja": "鉄道ヤード",
+"en": "rail yard",
+"roots": []
+},
+"Q1966910": {
+"ja": "国立アカデミー",
+"en": "national academy",
+"roots": []
+},
+"Q19683138": {
+"ja": "ラムサール条約登録地",
+"en": "Ramsar site",
+"roots": []
+},
+"Q197952": {
+"ja": "企業集団",
+"en": "corporate group",
+"roots": []
+},
+"Q19833158": {
+"ja": "葬儀場",
+"en": "funeral parlour",
+"roots": []
+},
+"Q19860854": {
+"ja": "破壊・解体された建築物または構造物",
+"en": "destroyed building or structure",
+"roots": []
+},
+"Q19861951": {
+"ja": "料理の種類",
+"en": "type of food or dish",
+"roots": []
+},
+"Q200023": {
+"ja": "スイミングセンター",
+"en": "swimming center",
+"roots": [
+"Q1076486"
+]
+},
+"Q20044152": {
+"ja": "顕彰碑",
+"en": "",
+"roots": [
+"Q4989906",
+"Q5003624"
+]
+},
+"Q200764": {
+"ja": "書店",
+"en": "book vendor",
+"roots": []
+},
+"Q2009686": {
+"ja": "高等裁判所",
+"en": "High Court of Japan",
+"roots": []
+},
+"Q20097897": {
+"ja": "",
+"en": "sea fort",
+"roots": []
+},
+"Q20202072": {
+"ja": "終端",
+"en": "terminus",
+"roots": []
+},
+"Q202509": {
+"ja": "中華街",
+"en": "Chinatown",
+"roots": []
+},
+"Q202570": {
+"ja": "観覧車",
+"en": "Ferris wheel",
+"roots": [
+"Q570116"
+]
+},
+"Q203443": {
+"ja": "墓石",
+"en": "tombstone",
+"roots": [
+"Q4989906",
+"Q5003624"
+]
+},
+"Q203609": {
+"ja": "道場",
+"en": "dōjō",
+"roots": [
+"Q1076486"
+]
+},
+"Q2052886": {
+"ja": "議会図書館",
+"en": "parliamentary library",
+"roots": []
+},
+"Q2055205": {
+"ja": "コールド・ケース",
+"en": "cold case",
+"roots": []
+},
+"Q2061246": {
+"ja": "音楽図書館",
+"en": "music library",
+"roots": []
+},
+"Q2073106": {
+"ja": "オリンピック公園",
+"en": "Olympic Park",
+"roots": [
+"Q1076486"
+]
+},
+"Q207524": {
+"ja": "小島",
+"en": "islet",
+"roots": []
+},
+"Q207694": {
+"ja": "美術館",
+"en": "art museum",
+"roots": [
+"Q33506",
+"Q207694"
+]
+},
+"Q2080521": {
+"ja": "マーケットハウス",
+"en": "market hall",
+"roots": []
+},
+"Q2085381": {
+"ja": "出版社",
+"en": "publishing house",
+"roots": []
+},
+"Q2087181": {
+"ja": "歴史的家屋の博物館",
+"en": "historic house museum",
+"roots": [
+"Q35112127",
+"Q2087181"
+]
+},
+"Q209465": {
+"ja": "キャンパス",
+"en": "",
+"roots": []
+},
+"Q2094773": {
+"ja": "ショールーム",
+"en": "showroom",
+"roots": []
+},
+"Q21000333": {
+"ja": "商店街",
+"en": "shopping street",
+"roots": []
+},
+"Q210167": {
+"ja": "ゲームデベロッパー (組織)",
+"en": "video game developer",
+"roots": []
+},
+"Q210272": {
+"ja": "文化遺産",
+"en": "cultural heritage",
+"roots": [
+"Q210272"
+]
+},
+"Q2106220": {
+"ja": "郵政博物館",
+"en": "postal museum",
+"roots": [
+"Q33506"
+]
+},
+"Q21117149": {
+"ja": "",
+"en": "wine shop",
+"roots": []
+},
+"Q2122214": {
+"ja": "国家公文書館",
+"en": "national archives",
+"roots": []
+},
+"Q213283": {
+"ja": "在外公館",
+"en": "diplomatic mission",
+"roots": []
+},
+"Q213441": {
+"ja": "店",
+"en": "shop",
+"roots": []
+},
+"Q2137251": {
+"ja": "ローイングとカヌーの競技施設",
+"en": "rowing and canoeing venue",
+"roots": [
+"Q1076486"
+]
+},
+"Q2142091": {
+"ja": "橋上駅",
+"en": "over-track railway station",
+"roots": []
+},
+"Q2151479": {
+"ja": "刑場",
+"en": "execution site",
+"roots": []
+},
+"Q2153373": {
+"ja": "水注",
+"en": "water-dropper",
+"roots": []
+},
+"Q21550879": {
+"ja": "切手博物館",
+"en": "philatelic museum",
+"roots": [
+"Q33506"
+]
+},
+"Q216107": {
+"ja": "百貨店",
+"en": "department store",
+"roots": []
+},
+"Q21654553": {
+"ja": "米国大学日本校",
+"en": "",
+"roots": []
+},
+"Q21655594": {
+"ja": "日本の中高一貫校",
+"en": "unified secondary school in Japan",
+"roots": []
+},
+"Q2165983": {
+"ja": "スタンピード",
+"en": "stampede",
+"roots": []
+},
+"Q217107": {
+"ja": "旅行会社",
+"en": "travel agency",
+"roots": []
+},
+"Q217327": {
+"ja": "自殺攻撃",
+"en": "suicide attack",
+"roots": []
+},
+"Q2175765": {
+"ja": "路面電車停留場",
+"en": "tram stop",
+"roots": []
+},
+"Q2176201": {
+"ja": "放送博物館",
+"en": "museum of broadcasting",
+"roots": [
+"Q33506"
+]
+},
+"Q2178147": {
+"ja": "業界団体",
+"en": "trade association",
+"roots": []
+},
+"Q2178435": {
+"ja": "料亭",
+"en": "ryōtei",
+"roots": []
+},
+"Q2190251": {
+"ja": "芸術センター",
+"en": "arts center",
+"roots": []
+},
+"Q219423": {
+"ja": "壁画",
+"en": "mural",
+"roots": []
+},
+"Q219577": {
+"ja": "持株会社",
+"en": "holding company",
+"roots": []
+},
+"Q22130673": {
+"ja": "一般社団法人",
+"en": "general incorporated association",
+"roots": []
+},
+"Q2221906": {
+"ja": "地理的位置",
+"en": "geographic location",
+"roots": []
+},
+"Q2223653": {
+"ja": "テロ攻撃",
+"en": "terrorist attack",
+"roots": []
+},
+"Q22652": {
+"ja": "緑地",
+"en": "urban green space",
+"roots": [
+"Q22698"
+]
+},
+"Q22669850": {
+"ja": "墨書",
+"en": "calligraphic work",
+"roots": []
+},
+"Q22698": {
+"ja": "公園",
+"en": "park",
+"roots": [
+"Q22698"
+]
+},
+"Q22713629": {
+"ja": "女子学校",
+"en": "girls' school",
+"roots": []
+},
+"Q22746": {
+"ja": "都市公園",
+"en": "urban park",
+"roots": [
+"Q1107656",
+"Q22698"
+]
+},
+"Q22806": {
+"ja": "国立図書館",
+"en": "national library",
+"roots": []
+},
+"Q22808403": {
+"ja": "地下駅",
+"en": "underground station",
+"roots": []
+},
+"Q22808404": {
+"ja": "地上駅",
+"en": "station located on surface",
+"roots": []
+},
+"Q2281788": {
+"ja": "水族館",
+"en": "public aquarium",
+"roots": [
+"Q22698",
+"Q43501",
+"Q570116",
+"Q2281788"
+]
+},
+"Q23005223": {
+"ja": "教育機関の部門",
+"en": "division of an educational institution",
+"roots": []
+},
+"Q2304397": {
+"ja": "超高層マンション",
+"en": "residential tower",
+"roots": []
+},
+"Q2307291": {
+"ja": "聾学校",
+"en": "school for the deaf",
+"roots": []
+},
+"Q230752": {
+"ja": "オーディトリアム",
+"en": "auditorium",
+"roots": []
+},
+"Q2310465": {
+"ja": "玩具博物館",
+"en": "toy museum",
+"roots": [
+"Q33506"
+]
+},
+"Q2319498": {
+"ja": "ランドマーク",
+"en": "architectural landmark",
+"roots": [
+"Q570116",
+"Q2319498"
+]
+},
+"Q233324": {
+"ja": "神学校",
+"en": "seminary",
+"roots": []
+},
+"Q23413": {
+"ja": "城",
+"en": "castle",
+"roots": [
+"Q23413"
+]
+},
+"Q2345125": {
+"ja": "水門",
+"en": "floodgate",
+"roots": []
+},
+"Q2354973": {
+"ja": "道路トンネル",
+"en": "road tunnel",
+"roots": []
+},
+"Q23677505": {
+"ja": "",
+"en": "National Historical Landmark",
+"roots": [
+"Q358",
+"Q210272"
+]
+},
+"Q2370082": {
+"ja": "諏訪神社",
+"en": "Suwa Shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q2376564": {
+"ja": "インターチェンジ",
+"en": "interchange",
+"roots": []
+},
+"Q23790": {
+"ja": "天然記念物",
+"en": "natural monument",
+"roots": []
+},
+"Q23812032": {
+"ja": "ラーメン店",
+"en": "ramen restaurant",
+"roots": []
+},
+"Q2385804": {
+"ja": "教育機関",
+"en": "educational institution",
+"roots": []
+},
+"Q2389789": {
+"ja": "スチール・ローラー・コースター",
+"en": "steel roller coaster",
+"roots": [
+"Q570116"
+]
+},
+"Q2398990": {
+"ja": "科学技術博物館",
+"en": "technology museum",
+"roots": [
+"Q33506"
+]
+},
+"Q240854": {
+"ja": "ホール",
+"en": "hall",
+"roots": []
+},
+"Q2416723": {
+"ja": "テーマ・パーク",
+"en": "theme park",
+"roots": [
+"Q194195",
+"Q570116",
+"Q22698",
+"Q2416723"
+]
+},
+"Q24354": {
+"ja": "劇場",
+"en": "theatre building",
+"roots": [
+"Q24354"
+]
+},
+"Q245016": {
+"ja": "軍事基地",
+"en": "military base",
+"roots": []
+},
+"Q2451577": {
+"ja": "分岐駅",
+"en": "junction station",
+"roots": []
+},
+"Q24699794": {
+"ja": "博物館建築物",
+"en": "museum building",
+"roots": []
+},
+"Q2485448": {
+"ja": "国内競技連盟",
+"en": "sports governing body",
+"roots": []
+},
+"Q24863351": {
+"ja": "義務教育学校",
+"en": "compulsory education school in Japan",
+"roots": []
+},
+"Q24898692": {
+"ja": "専修学校",
+"en": "specialized training college",
+"roots": []
+},
+"Q249556": {
+"ja": "鉄道事業体",
+"en": "railway company",
+"roots": []
+},
+"Q249565": {
+"ja": "グリーンウェイ",
+"en": "greenway",
+"roots": []
+},
+"Q2496264": {
+"ja": "大学アーカイヴ",
+"en": "university archive",
+"roots": []
+},
+"Q25047682": {
+"ja": "民俗博物館",
+"en": "folk museum",
+"roots": [
+"Q33506"
+]
+},
+"Q2516357": {
+"ja": "交通博物館",
+"en": "transport museum",
+"roots": [
+"Q33506"
+]
+},
+"Q25449765": {
+"ja": "150年祭",
+"en": "sesquicentennial",
+"roots": []
+},
+"Q2546786": {
+"ja": "",
+"en": "Quadrant roadway intersection",
+"roots": []
+},
+"Q2549179": {
+"ja": "百貨店チェーン",
+"en": "department store chain",
+"roots": []
+},
+"Q2551525": {
+"ja": "貯水施設",
+"en": "water reservoir",
+"roots": []
+},
+"Q25550691": {
+"ja": "役所",
+"en": "city hall",
+"roots": []
+},
+"Q25906438": {
+"ja": "クーデター未遂",
+"en": "attempted coup d'état",
+"roots": []
+},
+"Q259618": {
+"ja": "ブティックホテル",
+"en": "boutique hotel",
+"roots": []
+},
+"Q25964553": {
+"ja": "陶芸美術館",
+"en": "ceramics museum",
+"roots": [
+"Q33506"
+]
+},
+"Q260676": {
+"ja": "ゲームセンター",
+"en": "amusement arcade",
+"roots": []
+},
+"Q261604": {
+"ja": "石油火力発電所",
+"en": "oil-fired power station",
+"roots": []
+},
+"Q2621812": {
+"ja": "二部作",
+"en": "dilogy",
+"roots": []
+},
+"Q26271642": {
+"ja": "図書館ネットワーク",
+"en": "library network",
+"roots": []
+},
+"Q2627975": {
+"ja": "式典",
+"en": "ceremony",
+"roots": []
+},
+"Q265662": {
+"ja": "国立大学",
+"en": "national university",
+"roots": []
+},
+"Q26764449": {
+"ja": "日本国指定特別史跡",
+"en": "Special Historic Site",
+"roots": [
+"Q1081138",
+"Q358",
+"Q210272",
+"Q5003624",
+"Q4989906"
+]
+},
+"Q2686349": {
+"ja": "考古資料",
+"en": "archaeological record",
+"roots": []
+},
+"Q26928534": {
+"ja": "平和団体",
+"en": "peace organization",
+"roots": []
+},
+"Q26944969": {
+"ja": "写真美術館",
+"en": "photography museum",
+"roots": [
+"Q33506"
+]
+},
+"Q26944999": {
+"ja": "紙博物館",
+"en": "paper museum",
+"roots": [
+"Q33506"
+]
+},
+"Q26945165": {
+"ja": "建築博物館",
+"en": "architectural museum",
+"roots": [
+"Q33506"
+]
+},
+"Q26958712": {
+"ja": "天文博物館",
+"en": "astronomical museum",
+"roots": [
+"Q33506"
+]
+},
+"Q26959023": {
+"ja": "製薬博物館",
+"en": "pharmaceutical museum",
+"roots": [
+"Q33506"
+]
+},
+"Q26959070": {
+"ja": "宇宙工学博物館",
+"en": "astronautical museum",
+"roots": [
+"Q33506"
+]
+},
+"Q2699757": {
+"ja": "花火大会",
+"en": "fireworks festival",
+"roots": []
+},
+"Q27028153": {
+"ja": "路面電車基地",
+"en": "tram depot",
+"roots": []
+},
+"Q27031009": {
+"ja": "公文書館",
+"en": "public archive",
+"roots": []
+},
+"Q27067659": {
+"ja": "廃河川",
+"en": "former river",
+"roots": []
+},
+"Q27095194": {
+"ja": "",
+"en": "bookshop neighbourhood",
+"roots": []
+},
+"Q27095213": {
+"ja": "商業地域",
+"en": "shopping district",
+"roots": []
+},
+"Q2714144": {
+"ja": "鳥類保護区",
+"en": "bird sanctuary",
+"roots": []
+},
+"Q272888": {
+"ja": "風俗街",
+"en": "red-light district",
+"roots": []
+},
+"Q274153": {
+"ja": "給水塔",
+"en": "water tower",
+"roots": [
+"Q12518",
+"Q1081138",
+"Q358",
+"Q210272",
+"Q5003624",
+"Q4989906"
+]
+},
+"Q27556845": {
+"ja": "",
+"en": "skyscraper complex",
+"roots": []
+},
+"Q27686": {
+"ja": "ホテル",
+"en": "hotel",
+"roots": []
+},
+"Q2772772": {
+"ja": "軍事博物館",
+"en": "military museum",
+"roots": [
+"Q33506"
+]
+},
+"Q27951514": {
+"ja": "屋内競技施設",
+"en": "indoor arena",
+"roots": [
+"Q1076486"
+]
+},
+"Q28109487": {
+"ja": "提案中の鉄道駅",
+"en": "proposed railway station",
+"roots": []
+},
+"Q2822717": {
+"ja": "鉄道人身障害事故",
+"en": "",
+"roots": []
+},
+"Q28550993": {
+"ja": "埋立地",
+"en": "reclaimed land",
+"roots": []
+},
+"Q28564": {
+"ja": "公共図書館",
+"en": "public library",
+"roots": []
+},
+"Q285783": {
+"ja": "平面交差点",
+"en": "intersection",
+"roots": []
+},
+"Q286228": {
+"ja": "独立行政法人",
+"en": "Independent Administrative Institution",
+"roots": []
+},
+"Q28754498": {
+"ja": "丁目",
+"en": "chōme",
+"roots": []
+},
+"Q2878108": {
+"ja": "渡し船",
+"en": "flat-bottomed ferry",
+"roots": []
+},
+"Q28936014": {
+"ja": "盲学校",
+"en": "school for the blind",
+"roots": []
+},
+"Q2897058": {
+"ja": "川岸",
+"en": "bank",
+"roots": []
+},
+"Q2920759": {
+"ja": "バスターミナル",
+"en": "bus terminus",
+"roots": []
+},
+"Q29382731": {
+"ja": "金属工芸品",
+"en": "metal artwork",
+"roots": []
+},
+"Q29430681": {
+"ja": "名数3",
+"en": "triad",
+"roots": []
+},
+"Q29431432": {
+"ja": "名数2",
+"en": "dyad",
+"roots": []
+},
+"Q294422": {
+"ja": "公共建築物",
+"en": "public building",
+"roots": []
+},
+"Q2945285": {
+"ja": "ファミリーエンターテイメントセンター",
+"en": "family entertainment center",
+"roots": [
+"Q194195",
+"Q570116",
+"Q22698"
+]
+},
+"Q2977": {
+"ja": "大聖堂",
+"en": "cathedral",
+"roots": [
+"Q16970",
+"Q24398318",
+"Q44539"
+]
+},
+"Q2983893": {
+"ja": "地区",
+"en": "quarter",
+"roots": []
+},
+"Q2994840": {
+"ja": "フラワー・ガーデン",
+"en": "flower garden",
+"roots": [
+"Q1107656"
+]
+},
+"Q30022": {
+"ja": "カフェ",
+"en": "café",
+"roots": []
+},
+"Q30224326": {
+"ja": "テーマパーク",
+"en": "themed area",
+"roots": []
+},
+"Q30301498": {
+"ja": "学生住宅",
+"en": "student housing",
+"roots": []
+},
+"Q30326995": {
+"ja": "高架公園",
+"en": "elevated park",
+"roots": [
+"Q22698"
+]
+},
+"Q303439": {
+"ja": "レゴランド・ディスカバリー・センター",
+"en": "Legoland Discovery Centre",
+"roots": [
+"Q194195",
+"Q2416723",
+"Q570116",
+"Q22698"
+]
+},
+"Q3055075": {
+"ja": "歓楽街",
+"en": "entertainment district",
+"roots": []
+},
+"Q3083079": {
+"ja": "ライブハウス",
+"en": "live house",
+"roots": []
+},
+"Q30834580": {
+"ja": "日本国指定史跡",
+"en": "Historic Site of Japan",
+"roots": [
+"Q1081138",
+"Q358",
+"Q210272",
+"Q4989906",
+"Q5003624"
+]
+},
+"Q30893679": {
+"ja": "",
+"en": "multifunctional building",
+"roots": []
+},
+"Q30921777": {
+"ja": "大衆食堂",
+"en": "taishū shokudō",
+"roots": []
+},
+"Q30934637": {
+"ja": "専門職大学",
+"en": "professional and vocational university",
+"roots": []
+},
+"Q30935442": {
+"ja": "漫画図書館",
+"en": "comic book library",
+"roots": []
+},
+"Q3109696": {
+"ja": "ステーキハウス",
+"en": "steakhouse",
+"roots": []
+},
+"Q3126170": {
+"ja": "野外音楽堂",
+"en": "bandstand",
+"roots": [
+"Q1081138",
+"Q358",
+"Q210272",
+"Q5003624",
+"Q4989906"
+]
+},
+"Q3152824": {
+"ja": "文化機関",
+"en": "cultural institution",
+"roots": []
+},
+"Q31796": {
+"ja": "干潟",
+"en": "mudflat",
+"roots": []
+},
+"Q318296": {
+"ja": "拉致",
+"en": "kidnapping",
+"roots": []
+},
+"Q31855": {
+"ja": "研究所",
+"en": "research institute",
+"roots": []
+},
+"Q3196771": {
+"ja": "美術館",
+"en": "art museum",
+"roots": [
+"Q33506"
+]
+},
+"Q3200355": {
+"ja": "熊野神社",
+"en": "Kumano shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q32512": {
+"ja": "住吉神社",
+"en": "Sumiyoshi shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q3253281": {
+"ja": "人工池",
+"en": "artificial pond",
+"roots": []
+},
+"Q327333": {
+"ja": "政府機関",
+"en": "government agency",
+"roots": []
+},
+"Q327541": {
+"ja": "放火",
+"en": "arson",
+"roots": []
+},
+"Q32815": {
+"ja": "モスク",
+"en": "mosque",
+"roots": [
+"Q24398318",
+"Q32815"
+]
+},
+"Q3305213": {
+"ja": "絵画作品",
+"en": "painting",
+"roots": []
+},
+"Q33097655": {
+"ja": "アミューズメント施設",
+"en": "amusement center",
+"roots": [
+"Q194195",
+"Q1076486",
+"Q570116",
+"Q22698"
+]
+},
+"Q332496": {
+"ja": "待避駅",
+"en": "overtaking station",
+"roots": []
+},
+"Q3329412": {
+"ja": "考古学博物館",
+"en": "archaeological museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q3329663": {
+"ja": "医学博物館",
+"en": "medical museum",
+"roots": [
+"Q33506"
+]
+},
+"Q33506": {
+"ja": "博物館",
+"en": "museum",
+"roots": [
+"Q33506"
+]
+},
+"Q3364296": {
+"ja": "展示館",
+"en": "exhibition park",
+"roots": []
+},
+"Q3393392": {
+"ja": "最も高い地点",
+"en": "highest point",
+"roots": []
+},
+"Q339401": {
+"ja": "懸垂鉄道",
+"en": "suspension railway",
+"roots": []
+},
+"Q3397526": {
+"ja": "石橋",
+"en": "stone bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q34442": {
+"ja": "道路",
+"en": "road",
+"roots": []
+},
+"Q34651": {
+"ja": "教会",
+"en": "Christian Church",
+"roots": []
+},
+"Q3469910": {
+"ja": "劇場施設",
+"en": "performing arts center",
+"roots": []
+},
+"Q3471785": {
+"ja": "浅間神社",
+"en": "Sengen shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q3490443": {
+"ja": "交通公園",
+"en": "traffic park",
+"roots": []
+},
+"Q3500933": {
+"ja": "遊水池",
+"en": "detention basin",
+"roots": []
+},
+"Q35054": {
+"ja": "郵便局",
+"en": "post office",
+"roots": []
+},
+"Q35112127": {
+"ja": "歴史的建造物",
+"en": "historic building",
+"roots": [
+"Q35112127"
+]
+},
+"Q3511697": {
+"ja": "総門",
+"en": "sōmon",
+"roots": [
+"Q53060"
+]
+},
+"Q35140": {
+"ja": "興行",
+"en": "performance",
+"roots": []
+},
+"Q3560381": {
+"ja": "住居侵入罪",
+"en": "home invasion",
+"roots": []
+},
+"Q3574069": {
+"ja": "甘味処",
+"en": "confectionery store",
+"roots": []
+},
+"Q357685": {
+"ja": "廃線",
+"en": "abandoned railway",
+"roots": []
+},
+"Q35798": {
+"ja": "行政機関",
+"en": "executive branch",
+"roots": []
+},
+"Q3639850": {
+"ja": "蚕室",
+"en": "silkworm nursery",
+"roots": []
+},
+"Q365680": {
+"ja": "暴行罪",
+"en": "assault",
+"roots": []
+},
+"Q3660535": {
+"ja": "女子大学",
+"en": "women's college",
+"roots": []
+},
+"Q3661265": {
+"ja": "学生寮",
+"en": "university dormitory",
+"roots": []
+},
+"Q3681673": {
+"ja": "会員制クラブ",
+"en": "private club",
+"roots": []
+},
+"Q368972": {
+"ja": "漆器",
+"en": "lacquerware",
+"roots": []
+},
+"Q3698852": {
+"ja": "大学院大学",
+"en": "graduate university",
+"roots": []
+},
+"Q37025296": {
+"ja": "スタジアム",
+"en": "athletics stadium",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q372690": {
+"ja": "総領事館",
+"en": "consulate general",
+"roots": []
+},
+"Q3742014": {
+"ja": "護岸",
+"en": "revetment",
+"roots": []
+},
+"Q380829": {
+"ja": "私立図書館",
+"en": "private library",
+"roots": []
+},
+"Q3817741": {
+"ja": "工業高等学校",
+"en": "Danish Higher Technical Examination",
+"roots": []
+},
+"Q381885": {
+"ja": "墓",
+"en": "tomb",
+"roots": [
+"Q5003624",
+"Q4989906"
+]
+},
+"Q385994": {
+"ja": "専門図書館",
+"en": "special library",
+"roots": []
+},
+"Q3867745": {
+"ja": "企業博物館",
+"en": "corporate museum",
+"roots": [
+"Q33506"
+]
+},
+"Q38723": {
+"ja": "高等教育機関",
+"en": "higher education institution",
+"roots": []
+},
+"Q3882219": {
+"ja": "暗殺",
+"en": "assassination",
+"roots": []
+},
+"Q3918": {
+"ja": "大学",
+"en": "university",
+"roots": []
+},
+"Q3947": {
+"ja": "家屋",
+"en": "house",
+"roots": []
+},
+"Q3957": {
+"ja": "町",
+"en": "town",
+"roots": []
+},
+"Q39614": {
+"ja": "墓地",
+"en": "cemetery",
+"roots": [
+"Q39614"
+]
+},
+"Q39816": {
+"ja": "谷",
+"en": "valley",
+"roots": []
+},
+"Q4022": {
+"ja": "川",
+"en": "river",
+"roots": []
+},
+"Q40357": {
+"ja": "刑務所",
+"en": "prison",
+"roots": []
+},
+"Q40734470": {
+"ja": "公益財団法人",
+"en": "public interest incorporated foundation",
+"roots": []
+},
+"Q41176": {
+"ja": "建築物",
+"en": "building",
+"roots": []
+},
+"Q41253": {
+"ja": "映画館",
+"en": "movie theater",
+"roots": []
+},
+"Q414147": {
+"ja": "科学アカデミー",
+"en": "academy of sciences",
+"roots": []
+},
+"Q4260475": {
+"ja": "医療機関",
+"en": "medical facility",
+"roots": []
+},
+"Q4287745": {
+"ja": "医療機構",
+"en": "medical organization",
+"roots": []
+},
+"Q4303352": {
+"ja": "客船ターミナル",
+"en": "passenger ship terminal",
+"roots": []
+},
+"Q43113623": {
+"ja": "世界遺産の構成資産",
+"en": "part of UNESCO World Heritage Site",
+"roots": [
+"Q210272"
+]
+},
+"Q4312270": {
+"ja": "鉄道の地上駅",
+"en": "railway station above ground",
+"roots": []
+},
+"Q431603": {
+"ja": "利益団体",
+"en": "advocacy group",
+"roots": []
+},
+"Q43229": {
+"ja": "組織",
+"en": "organization",
+"roots": []
+},
+"Q43271061": {
+"ja": "特別支援学校",
+"en": "school for special needs education in Japan",
+"roots": []
+},
+"Q4344572": {
+"ja": "",
+"en": "house archive",
+"roots": []
+},
+"Q4346602": {
+"ja": "旅客駅",
+"en": "passenger railway station",
+"roots": []
+},
+"Q43483": {
+"ja": "井戸",
+"en": "water well",
+"roots": []
+},
+"Q43501": {
+"ja": "動物園",
+"en": "zoo",
+"roots": [
+"Q22698",
+"Q570116",
+"Q43501"
+]
+},
+"Q4358176": {
+"ja": "協議会",
+"en": "council",
+"roots": []
+},
+"Q4409567": {
+"ja": "都道府県立博物館",
+"en": "prefectural museum",
+"roots": [
+"Q33506"
+]
+},
+"Q4411732": {
+"ja": "",
+"en": "sacred boulder",
+"roots": []
+},
+"Q44269577": {
+"ja": "支部図書館",
+"en": "Branch Library",
+"roots": []
+},
+"Q44377": {
+"ja": "トンネル",
+"en": "tunnel",
+"roots": []
+},
+"Q4438121": {
+"ja": "スポーツ組織",
+"en": "sports organization",
+"roots": []
+},
+"Q46622": {
+"ja": "高速道路",
+"en": "controlled-access highway",
+"roots": []
+},
+"Q4663385": {
+"ja": "かつての鉄道駅",
+"en": "former railway station",
+"roots": []
+},
+"Q46843593": {
+"ja": "古本屋",
+"en": "used bookstore",
+"roots": []
+},
+"Q4688921": {
+"ja": "施設等機関",
+"en": "facility and other organ",
+"roots": []
+},
+"Q47163308": {
+"ja": "大使公邸",
+"en": "ambassador's residence",
+"roots": []
+},
+"Q471880": {
+"ja": "なりすまし",
+"en": "identity theft",
+"roots": []
+},
+"Q47486890": {
+"ja": "現存しない湖",
+"en": "former lake",
+"roots": []
+},
+"Q47505416": {
+"ja": "ケーキ店",
+"en": "confectionery",
+"roots": []
+},
+"Q47517141": {
+"ja": "",
+"en": "photo shop",
+"roots": []
+},
+"Q47913": {
+"ja": "情報機関",
+"en": "intelligence agency",
+"roots": []
+},
+"Q48085397": {
+"ja": "市区町村立図書館",
+"en": "municipal library of Japan",
+"roots": []
+},
+"Q481289": {
+"ja": "官邸",
+"en": "official residence",
+"roots": []
+},
+"Q4817887": {
+"ja": "特別の機関",
+"en": "extraordinary organ",
+"roots": []
+},
+"Q4828724": {
+"ja": "航空博物館",
+"en": "aviation museum",
+"roots": [
+"Q33506"
+]
+},
+"Q4830453": {
+"ja": "企業",
+"en": "business",
+"roots": []
+},
+"Q483110": {
+"ja": "スタジアム",
+"en": "stadium",
+"roots": [
+"Q1076486",
+"Q483110"
+]
+},
+"Q483242": {
+"ja": "実験室",
+"en": "laboratory",
+"roots": []
+},
+"Q483453": {
+"ja": "噴水",
+"en": "fountain",
+"roots": [
+"Q4989906"
+]
+},
+"Q4835091": {
+"ja": "領域",
+"en": "territory",
+"roots": []
+},
+"Q486972": {
+"ja": "集落",
+"en": "human settlement",
+"roots": []
+},
+"Q48748864": {
+"ja": "日本の法人",
+"en": "corporation in Japan",
+"roots": []
+},
+"Q48995876": {
+"ja": "百年祭",
+"en": "centennial",
+"roots": []
+},
+"Q491916": {
+"ja": "場外勝馬投票券発売所",
+"en": "Off-track horse race betting",
+"roots": []
+},
+"Q492425": {
+"ja": "コンテナターミナル",
+"en": "container terminal",
+"roots": []
+},
+"Q4936615": {
+"ja": "傷害罪",
+"en": "bodily harm",
+"roots": []
+},
+"Q494230": {
+"ja": "医学部",
+"en": "medical school",
+"roots": []
+},
+"Q4959031": {
+"ja": "控訴裁判所",
+"en": "appellate court",
+"roots": []
+},
+"Q5003624": {
+"ja": "記念碑",
+"en": "memorial",
+"roots": [
+"Q4989906",
+"Q5003624"
+]
+},
+"Q502074": {
+"ja": "ヘリポート",
+"en": "heliport",
+"roots": []
+},
+"Q50379845": {
+"ja": "宗教図書館",
+"en": "religious library",
+"roots": []
+},
+"Q511355": {
+"ja": "テレビスタジオ",
+"en": "television studio",
+"roots": []
+},
+"Q5119003": {
+"ja": "朝鮮学校",
+"en": "Chōsen gakkō",
+"roots": []
+},
+"Q5124370": {
+"ja": "市民社会",
+"en": "civic society",
+"roots": []
+},
+"Q514480": {
+"ja": "稲荷神社",
+"en": "Inari shrine",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q5152545": {
+"ja": "商業地域",
+"en": "commercial area",
+"roots": []
+},
+"Q5159064": {
+"ja": "コンクリート橋",
+"en": "concrete bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q51879674": {
+"ja": "",
+"en": "newspaper building",
+"roots": []
+},
+"Q519608": {
+"ja": "操車場",
+"en": "classification yard",
+"roots": []
+},
+"Q52103661": {
+"ja": "かつての島",
+"en": "former island",
+"roots": []
+},
+"Q52105": {
+"ja": "生息地",
+"en": "habitat",
+"roots": []
+},
+"Q52148241": {
+"ja": "公益社団法人",
+"en": "Public Interest Incorporated Associations",
+"roots": []
+},
+"Q5215430": {
+"ja": "団地",
+"en": "danchi",
+"roots": []
+},
+"Q5244910": {
+"ja": "事実上の大使館",
+"en": "de facto embassy",
+"roots": []
+},
+"Q5259432": {
+"ja": "歯科大学",
+"en": "dental school",
+"roots": []
+},
+"Q52843464": {
+"ja": "迎賓館",
+"en": "state guest house",
+"roots": []
+},
+"Q529711": {
+"ja": "始まり",
+"en": "beginning",
+"roots": []
+},
+"Q52987303": {
+"ja": "銀行博物館",
+"en": "bank museum",
+"roots": [
+"Q33506"
+]
+},
+"Q52987309": {
+"ja": "貨幣博物館",
+"en": "numismatic museum",
+"roots": [
+"Q33506"
+]
+},
+"Q5327369": {
+"ja": "町丁",
+"en": "chōchō",
+"roots": []
+},
+"Q5341295": {
+"ja": "教育組織",
+"en": "educational organization",
+"roots": []
+},
+"Q53536964": {
+"ja": "王宮",
+"en": "royal palace",
+"roots": [
+"Q16560"
+]
+},
+"Q5354754": {
+"ja": "芸能事務所",
+"en": "talent agency",
+"roots": []
+},
+"Q5358913": {
+"ja": "日本の小学校",
+"en": "elementary school in Japan",
+"roots": []
+},
+"Q5365803": {
+"ja": "旧制高等学校",
+"en": "higher school in the Empire of Japan",
+"roots": []
+},
+"Q537127": {
+"ja": "道路橋",
+"en": "road bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q53759838": {
+"ja": "音楽アーカイヴ",
+"en": "music archive",
+"roots": []
+},
+"Q5393308": {
+"ja": "仏教寺院",
+"en": "Buddhist temple",
+"roots": [
+"Q44539",
+"Q24398318",
+"Q5393308"
+]
+},
+"Q54050": {
+"ja": "丘",
+"en": "hill",
+"roots": [
+"Q54050"
+]
+},
+"Q5409910": {
+"ja": "坂",
+"en": "steep road",
+"roots": []
+},
+"Q5429679": {
+"ja": "テロ未遂",
+"en": "failed terrorism plot",
+"roots": []
+},
+"Q543654": {
+"ja": "市庁舎",
+"en": "Rathaus",
+"roots": []
+},
+"Q54471221": {
+"ja": "",
+"en": "former bus station",
+"roots": []
+},
+"Q5465500": {
+"ja": "食品ミュージアム",
+"en": "food museum",
+"roots": [
+"Q33506"
+]
+},
+"Q5465533": {
+"ja": "フードテーマパーク",
+"en": "food theme park",
+"roots": [
+"Q2416723",
+"Q194195",
+"Q570116",
+"Q22698"
+]
+},
+"Q54814599": {
+"ja": "一般財団法人",
+"en": "general foundation",
+"roots": []
+},
+"Q5507555": {
+"ja": "富士塚",
+"en": "Fujizuka",
+"roots": [
+"Q4989906",
+"Q54050"
+]
+},
+"Q55097243": {
+"ja": "現存しない組織",
+"en": "defunct organization",
+"roots": []
+},
+"Q55484": {
+"ja": "立体交差駅",
+"en": "multi-level interchange railway station",
+"roots": []
+},
+"Q55485": {
+"ja": "行止まり駅",
+"en": "dead-end railway station",
+"roots": []
+},
+"Q55488": {
+"ja": "鉄道駅",
+"en": "railway station",
+"roots": []
+},
+"Q55491": {
+"ja": "鉄道の地下駅",
+"en": "underground railway station",
+"roots": []
+},
+"Q55493": {
+"ja": "貨物駅",
+"en": "goods station",
+"roots": []
+},
+"Q55521176": {
+"ja": "日本の中学校",
+"en": "lower secondary school in Japan",
+"roots": []
+},
+"Q55570340": {
+"ja": "関係者以外非公開",
+"en": "closed to the public",
+"roots": []
+},
+"Q55633069": {
+"ja": "詩画軸",
+"en": "shigajiku",
+"roots": []
+},
+"Q55653430": {
+"ja": "休止",
+"en": "temporarily closed",
+"roots": []
+},
+"Q55654238": {
+"ja": "使用中",
+"en": "in use",
+"roots": []
+},
+"Q55678": {
+"ja": "ハルテプンクト",
+"en": "railway stop",
+"roots": []
+},
+"Q56061": {
+"ja": "行政区画",
+"en": "administrative territorial entity",
+"roots": []
+},
+"Q56242063": {
+"ja": "プロテスタント教会の建物",
+"en": "Protestant church building",
+"roots": [
+"Q16970",
+"Q44539",
+"Q24398318"
+]
+},
+"Q56242225": {
+"ja": "",
+"en": "Eastern Orthodox cathedral",
+"roots": [
+"Q16970",
+"Q44539",
+"Q24398318"
+]
+},
+"Q56299202": {
+"ja": "青果市場",
+"en": "fruit and vegetable market",
+"roots": [
+"Q37654",
+"Q132510"
+]
+},
+"Q56344968": {
+"ja": "財団法人",
+"en": "incorporated foundation",
+"roots": []
+},
+"Q56351315": {
+"ja": "日本の高等学校",
+"en": "Japanese high school",
+"roots": []
+},
+"Q56352703": {
+"ja": "複合施設",
+"en": "combined facility",
+"roots": []
+},
+"Q56556915": {
+"ja": "解体または破壊",
+"en": "demolished or destroyed",
+"roots": []
+},
+"Q572835": {
+"ja": "インターナショナル・スクール",
+"en": "international school",
+"roots": []
+},
+"Q575759": {
+"ja": "戦争記念施設",
+"en": "war memorial",
+"roots": [
+"Q4989906",
+"Q5003624"
+]
+},
+"Q57660343": {
+"ja": "劇場",
+"en": "performing arts building",
+"roots": []
+},
+"Q5773747": {
+"ja": "歴史的家屋",
+"en": "historic house",
+"roots": [
+"Q35112127"
+]
+},
+"Q58483009": {
+"ja": "気象博物館",
+"en": "meteorological museum",
+"roots": [
+"Q33506"
+]
+},
+"Q588140": {
+"ja": "科学館",
+"en": "science museum",
+"roots": [
+"Q33506"
+]
+},
+"Q589481": {
+"ja": "オリンピック・スタジアム",
+"en": "Olympic stadium",
+"roots": [
+"Q1076486"
+]
+},
+"Q595452": {
+"ja": "野球場施設",
+"en": "baseball venue",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q59668787": {
+"ja": "松",
+"en": "pine tree",
+"roots": []
+},
+"Q6023295": {
+"ja": "葬祭用構造物",
+"en": "funerary structure",
+"roots": []
+},
+"Q603192": {
+"ja": "櫓",
+"en": "yagura",
+"roots": [
+"Q12518"
+]
+},
+"Q60614978": {
+"ja": "",
+"en": "distributor",
+"roots": []
+},
+"Q60995784": {
+"ja": "釣り堀",
+"en": "",
+"roots": []
+},
+"Q60997538": {
+"ja": "公開会社",
+"en": "kōkai gaisha",
+"roots": []
+},
+"Q61037771": {
+"ja": "自動車事故",
+"en": "car collision",
+"roots": []
+},
+"Q610559": {
+"ja": "樋門",
+"en": "sluice",
+"roots": []
+},
+"Q618618": {
+"ja": "孔子廟",
+"en": "temple of Confucius",
+"roots": [
+"Q44539",
+"Q24398318"
+]
+},
+"Q61906224": {
+"ja": "日本料理店",
+"en": "Japanese restaurant",
+"roots": []
+},
+"Q62078547": {
+"ja": "公立研究大学",
+"en": "public research university",
+"roots": []
+},
+"Q62108745": {
+"ja": "蔵本",
+"en": "library fund",
+"roots": []
+},
+"Q622425": {
+"ja": "ナイトクラブ",
+"en": "nightclub",
+"roots": []
+},
+"Q623149": {
+"ja": "看板",
+"en": "billboard",
+"roots": []
+},
+"Q625797": {
+"ja": "ドーム球場",
+"en": "domed stadium",
+"roots": [
+"Q483110",
+"Q1076486"
+]
+},
+"Q63065035": {
+"ja": "廃止",
+"en": "abandoned",
+"roots": []
+},
+"Q63099748": {
+"ja": "ホテルの建築物",
+"en": "hotel building",
+"roots": []
+},
+"Q63125083": {
+"ja": "モノレール駅",
+"en": "monorail station",
+"roots": []
+},
+"Q637017": {
+"ja": "司教協議会",
+"en": "episcopal conference",
+"roots": []
+},
+"Q637846": {
+"ja": "上院",
+"en": "upper house",
+"roots": []
+},
+"Q63979268": {
+"ja": "",
+"en": "people mover station",
+"roots": []
+},
+"Q641226": {
+"ja": "アリーナ",
+"en": "arena",
+"roots": [
+"Q1076486"
+]
+},
+"Q644371": {
+"ja": "国際空港",
+"en": "international airport",
+"roots": []
+},
+"Q64490328": {
+"ja": "",
+"en": "military housing",
+"roots": []
+},
+"Q64581368": {
+"ja": "エネルギー博物館",
+"en": "energy museum",
+"roots": [
+"Q33506"
+]
+},
+"Q64654999": {
+"ja": "現存しない劇場",
+"en": "former theater",
+"roots": [
+"Q24354"
+]
+},
+"Q64779402": {
+"ja": "連絡事務所",
+"en": "liaison office",
+"roots": []
+},
+"Q65227640": {
+"ja": "信号場",
+"en": "staff halt",
+"roots": []
+},
+"Q6546372": {
+"ja": "灯台見回り船",
+"en": "lighthouse tender",
+"roots": []
+},
+"Q654772": {
+"ja": "ホステル",
+"en": "hostel",
+"roots": []
+},
+"Q655311": {
+"ja": "温泉",
+"en": "onsen",
+"roots": []
+},
+"Q6553474": {
+"ja": "線形公園",
+"en": "linear park",
+"roots": [
+"Q22698"
+]
+},
+"Q65553774": {
+"ja": "チェーン",
+"en": "chain",
+"roots": []
+},
+"Q65560501": {
+"ja": "",
+"en": "platform screen doors station",
+"roots": []
+},
+"Q655686": {
+"ja": "商業施設",
+"en": "commercial building",
+"roots": []
+},
+"Q6558431": {
+"ja": "石炭火力発電所",
+"en": "coal-fired power station",
+"roots": []
+},
+"Q6586445": {
+"ja": "ストリップ劇場",
+"en": "strip club",
+"roots": []
+},
+"Q65948724": {
+"ja": "町・字",
+"en": "neighborhood in Japan",
+"roots": []
+},
+"Q6634155": {
+"ja": "国立競技場",
+"en": "national stadium",
+"roots": [
+"Q1076486"
+]
+},
+"Q66364404": {
+"ja": "繁華街",
+"en": "prosperous area",
+"roots": []
+},
+"Q6636777": {
+"ja": "鉄道道路併用橋",
+"en": "road-rail bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q6641445": {
+"ja": "請願駅",
+"en": "railway station opened by petition in Japan",
+"roots": []
+},
+"Q667276": {
+"ja": "美術展覧会",
+"en": "art exhibition",
+"roots": []
+},
+"Q66737615": {
+"ja": "医学研究所",
+"en": "institute for medical research",
+"roots": []
+},
+"Q667783": {
+"ja": "参道",
+"en": "sandō",
+"roots": []
+},
+"Q67097832": {
+"ja": "御用邸",
+"en": "Imperial villa",
+"roots": []
+},
+"Q676586": {
+"ja": "テーマレストラン",
+"en": "theme restaurant",
+"roots": []
+},
+"Q6804271": {
+"ja": "食肉市場",
+"en": "meat market",
+"roots": [
+"Q37654",
+"Q132510"
+]
+},
+"Q6804492": {
+"ja": "機械遺産",
+"en": "Mechanical Engineering Heritage",
+"roots": [
+"Q210272"
+]
+},
+"Q6881511": {
+"ja": "事業者",
+"en": "enterprise",
+"roots": []
+},
+"Q699405": {
+"ja": "住居",
+"en": "dwelling",
+"roots": []
+},
+"Q7075": {
+"ja": "図書館",
+"en": "library",
+"roots": []
+},
+"Q7138926": {
+"ja": "議事堂",
+"en": "parliament building",
+"roots": []
+},
+"Q7157526": {
+"ja": "平和博物館",
+"en": "peace museum",
+"roots": [
+"Q33506"
+]
+},
+"Q7189541": {
+"ja": "薬用植物園",
+"en": "physic garden",
+"roots": [
+"Q167346",
+"Q22698",
+"Q1107656"
+]
+},
+"Q7197275": {
+"ja": "管路橋",
+"en": "pipeline bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q7209480": {
+"ja": "警察博物館",
+"en": "police museum",
+"roots": [
+"Q33506"
+]
+},
+"Q7210356": {
+"ja": "政治団体",
+"en": "political organization",
+"roots": []
+},
+"Q721207": {
+"ja": "ヨットハーバー",
+"en": "marina",
+"roots": [
+"Q1076486"
+]
+},
+"Q7245816": {
+"ja": "媽祖廟",
+"en": "temple of Mazu",
+"roots": [
+"Q44539",
+"Q24398318"
+]
+},
+"Q726929": {
+"ja": "フィルム・アーカイヴ",
+"en": "film archive",
+"roots": [
+"Q33506"
+]
+},
+"Q7278": {
+"ja": "政党",
+"en": "political party",
+"roots": []
+},
+"Q728937": {
+"ja": "鉄道路線",
+"en": "railway line",
+"roots": []
+},
+"Q7309389": {
+"ja": "登録記念物",
+"en": "Registered Monument of Japan",
+"roots": [
+"Q210272"
+]
+},
+"Q735032": {
+"ja": "子ども図書館",
+"en": "children's library",
+"roots": []
+},
+"Q741226": {
+"ja": "屏風",
+"en": "byōbu",
+"roots": []
+},
+"Q742421": {
+"ja": "劇団",
+"en": "theatre company",
+"roots": []
+},
+"Q7448015": {
+"ja": "自碇式吊橋",
+"en": "self-anchored suspension bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q744913": {
+"ja": "航空事故",
+"en": "aviation accident",
+"roots": []
+},
+"Q74539696": {
+"ja": "現存しない競技場",
+"en": "defunct sports venue",
+"roots": [
+"Q1076486"
+]
+},
+"Q745877": {
+"ja": "信用協同組合",
+"en": "credit union",
+"roots": []
+},
+"Q746628": {
+"ja": "スタジオ",
+"en": "studio",
+"roots": []
+},
+"Q748198": {
+"ja": "ゲイ・タウン",
+"en": "gay village",
+"roots": []
+},
+"Q748998": {
+"ja": "火の見櫓",
+"en": "fire lookout tower",
+"roots": [
+"Q1440300",
+"Q12518",
+"Q570116"
+]
+},
+"Q750215": {
+"ja": "大量殺人",
+"en": "mass murder",
+"roots": []
+},
+"Q75093704": {
+"ja": "東海道の宿場",
+"en": "station of the Tōkaidō",
+"roots": []
+},
+"Q7541349": {
+"ja": "スロープカー",
+"en": "Slope car",
+"roots": []
+},
+"Q7543083": {
+"ja": "並木道",
+"en": "avenue",
+"roots": []
+},
+"Q756102": {
+"ja": "野外博物館",
+"en": "open-air museum",
+"roots": [
+"Q33506"
+]
+},
+"Q756568": {
+"ja": "デジタルサイネージ",
+"en": "digital signage",
+"roots": []
+},
+"Q7578710": {
+"ja": "多層式ホーム",
+"en": "split platform",
+"roots": []
+},
+"Q7579839": {
+"ja": "スポーツ・コンプレックス",
+"en": "sports complex",
+"roots": []
+},
+"Q762277": {
+"ja": "常夜灯",
+"en": "nightlight",
+"roots": []
+},
+"Q7625093": {
+"ja": "建物火災",
+"en": "structure fire",
+"roots": []
+},
+"Q77115": {
+"ja": "コミュニティセンター",
+"en": "community center",
+"roots": []
+},
+"Q77608093": {
+"ja": "中央合同庁舎",
+"en": "Central Government Building",
+"roots": []
+},
+"Q783794": {
+"ja": "会社",
+"en": "company",
+"roots": []
+},
+"Q78443472": {
+"ja": "公益法人",
+"en": "public-benefit corporation",
+"roots": []
+},
+"Q7858339": {
+"ja": "2橋並列",
+"en": "twin bridges",
+"roots": []
+},
+"Q785979": {
+"ja": "パーキングエリア",
+"en": "rest area",
+"roots": []
+},
+"Q787113": {
+"ja": "遊歩道",
+"en": "promenade",
+"roots": []
+},
+"Q787159": {
+"ja": "からくり時計",
+"en": "automaton clock",
+"roots": []
+},
+"Q787934": {
+"ja": "自動車博物館",
+"en": "automobile museum",
+"roots": [
+"Q33506"
+]
+},
+"Q7884789": {
+"ja": "地名",
+"en": "toponym",
+"roots": []
+},
+"Q7886778": {
+"ja": "共同使用駅",
+"en": "union station",
+"roots": []
+},
+"Q7893898": {
+"ja": "日本建築の門",
+"en": "mon",
+"roots": [
+"Q53060"
+]
+},
+"Q79007": {
+"ja": "街路",
+"en": "street",
+"roots": []
+},
+"Q7927919": {
+"ja": "ビデオゲーム販売店",
+"en": "video game store",
+"roots": []
+},
+"Q7979077": {
+"ja": "結婚式場",
+"en": "wedding chapel",
+"roots": [
+"Q16970",
+"Q44539",
+"Q24398318"
+]
+},
+"Q798838": {
+"ja": "天満宮",
+"en": "Tenmangū (worship)",
+"roots": [
+"Q845945",
+"Q24398318"
+]
+},
+"Q8010730": {
+"ja": "外局",
+"en": "independent organ",
+"roots": []
+},
+"Q809889": {
+"ja": "野球場",
+"en": "baseball field",
+"roots": [
+"Q1076486"
+]
+},
+"Q811430": {
+"ja": "工作物",
+"en": "fixed construction",
+"roots": []
+},
+"Q811534": {
+"ja": "著名な木",
+"en": "remarkable tree",
+"roots": []
+},
+"Q811683": {
+"ja": "提案中の建築物",
+"en": "proposed building or structure",
+"roots": []
+},
+"Q811979": {
+"ja": "構造物",
+"en": "built structure",
+"roots": []
+},
+"Q81672": {
+"ja": "殺人未遂",
+"en": "attempted murder",
+"roots": []
+},
+"Q81895": {
+"ja": "スプーン",
+"en": "spoon",
+"roots": []
+},
+"Q82794": {
+"ja": "地域",
+"en": "region",
+"roots": []
+},
+"Q828827": {
+"ja": "停電",
+"en": "power outage",
+"roots": []
+},
+"Q828909": {
+"ja": "埠頭",
+"en": "wharf",
+"roots": []
+},
+"Q829080": {
+"ja": "職能団体",
+"en": "professional association",
+"roots": []
+},
+"Q83620": {
+"ja": "道",
+"en": "thoroughfare",
+"roots": []
+},
+"Q838718": {
+"ja": "都市火災",
+"en": "city fire",
+"roots": []
+},
+"Q839954": {
+"ja": "遺跡",
+"en": "archaeological site",
+"roots": [
+"Q839954"
+]
+},
+"Q841248": {
+"ja": "高等専門学校",
+"en": "college of technology in Japan",
+"roots": []
+},
+"Q845945": {
+"ja": "神社",
+"en": "Shinto shrine",
+"roots": [
+"Q24398318",
+"Q845945"
+]
+},
+"Q849376": {
+"ja": "埴輪",
+"en": "haniwa",
+"roots": []
+},
+"Q8502": {
+"ja": "山",
+"en": "mountain",
+"roots": []
+},
+"Q853854": {
+"ja": "時計台",
+"en": "clock tower",
+"roots": [
+"Q12518"
+]
+},
+"Q856234": {
+"ja": "大学図書館",
+"en": "academic library",
+"roots": []
+},
+"Q856564": {
+"ja": "図書館協会",
+"en": "library association",
+"roots": []
+},
+"Q856584": {
+"ja": "図書館施設",
+"en": "library building",
+"roots": []
+},
+"Q85882206": {
+"ja": "無人駅",
+"en": "unmanned station",
+"roots": []
+},
+"Q85882664": {
+"ja": "知事公館",
+"en": "",
+"roots": []
+},
+"Q85907346": {
+"ja": "鉄道事業者",
+"en": "rail company (Japan)",
+"roots": []
+},
+"Q860861": {
+"ja": "彫刻作品",
+"en": "sculpture",
+"roots": []
+},
+"Q861951": {
+"ja": "警察署",
+"en": "police station",
+"roots": []
+},
+"Q866133": {
+"ja": "大学博物館",
+"en": "university museum",
+"roots": [
+"Q33506"
+]
+},
+"Q866623": {
+"ja": "選手村",
+"en": "Olympic Village",
+"roots": []
+},
+"Q867703": {
+"ja": "西洋館",
+"en": "Western-style building",
+"roots": []
+},
+"Q867738": {
+"ja": "キリスト教主義学校",
+"en": "Christian school",
+"roots": []
+},
+"Q87167": {
+"ja": "写本",
+"en": "manuscript",
+"roots": []
+},
+"Q8719053": {
+"ja": "コンサート会場",
+"en": "music venue",
+"roots": []
+},
+"Q87487749": {
+"ja": "旧ホテル",
+"en": "former hotel",
+"roots": []
+},
+"Q88178910": {
+"ja": "暗殺未遂",
+"en": "assassination attempt",
+"roots": []
+},
+"Q88556": {
+"ja": "駐屯地",
+"en": "garrison",
+"roots": []
+},
+"Q891723": {
+"ja": "公開会社",
+"en": "public company",
+"roots": []
+},
+"Q89298567": {
+"ja": "古文書",
+"en": "komonjo",
+"roots": []
+},
+"Q897797": {
+"ja": "放火テロ事件",
+"en": "arson attack",
+"roots": []
+},
+"Q902104": {
+"ja": "私立大学",
+"en": "private university",
+"roots": []
+},
+"Q904319": {
+"ja": "コリア・タウン",
+"en": "Koreatown",
+"roots": []
+},
+"Q90808178": {
+"ja": "家具博物館",
+"en": "furniture museum",
+"roots": [
+"Q207694",
+"Q33506"
+]
+},
+"Q90867752": {
+"ja": "ふね遺産",
+"en": "Ship Heritage",
+"roots": [
+"Q210272"
+]
+},
+"Q911663": {
+"ja": "跳開橋",
+"en": "bascule bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q917182": {
+"ja": "士官学校",
+"en": "military academy",
+"roots": [
+"Q1076486"
+]
+},
+"Q9197445": {
+"ja": "LEDディスプレイ",
+"en": "LED display",
+"roots": []
+},
+"Q92026": {
+"ja": "日本の城",
+"en": "Japanese castle",
+"roots": [
+"Q23413"
+]
+},
+"Q920600": {
+"ja": "都市更新",
+"en": "urban renewal",
+"roots": []
+},
+"Q928830": {
+"ja": "地下鉄・都市高速鉄道の駅",
+"en": "metro station",
+"roots": []
+},
+"Q933394": {
+"ja": "飛地",
+"en": "exclave",
+"roots": []
+},
+"Q93350035": {
+"ja": "廃止された町・字",
+"en": "former chōaza",
+"roots": []
+},
+"Q9341055": {
+"ja": "浄水場",
+"en": "water treatment plant",
+"roots": []
+},
+"Q9364781": {
+"ja": "標高ゼロ",
+"en": "vertical datum",
+"roots": []
+},
+"Q94987823": {
+"ja": "特別名勝",
+"en": "Special Place of Scenic Beauty",
+"roots": [
+"Q210272"
+]
+},
+"Q94993988": {
+"ja": "商業交通飛行場",
+"en": "commercial traffic aerodrome",
+"roots": []
+},
+"Q950431": {
+"ja": "旋回橋",
+"en": "swing bridge",
+"roots": [
+"Q12280"
+]
+},
+"Q955824": {
+"ja": "学術団体",
+"en": "learned society",
+"roots": []
+},
+"Q95977092": {
+"ja": "東京都立公園",
+"en": "Tokyo metropolitan park",
+"roots": [
+"Q22698"
+]
+},
+"Q96083918": {
+"ja": "旧映画館",
+"en": "former cinema",
+"roots": []
+},
+"Q96084375": {
+"ja": "現存しない建築物または構造物",
+"en": "former building or structure",
+"roots": []
+},
+"Q96086399": {
+"ja": "旧学校施設",
+"en": "former school building",
+"roots": []
+},
+"Q96088545": {
+"ja": "現存しない地物",
+"en": "former geographical object",
+"roots": []
+},
+"Q962734": {
+"ja": "人類移動博物館",
+"en": "migration museum",
+"roots": [
+"Q33506"
+]
+},
+"Q96288394": {
+"ja": "日本の商店街",
+"en": "shōtengai",
+"roots": []
+},
+"Q96288605": {
+"ja": "日本のアーケード商店街",
+"en": "shopping arcade in Japan",
+"roots": []
+},
+"Q9687": {
+"ja": "交通事故",
+"en": "traffic collision",
+"roots": []
+},
+"Q96888669": {
+"ja": "学術出版社",
+"en": "academic publisher",
+"roots": []
+},
+"Q97095925": {
+"ja": "",
+"en": "military area",
+"roots": []
+},
+"Q97186758": {
+"ja": "複合遺跡",
+"en": "multi-period archaeological site",
+"roots": [
+"Q839954"
+]
+},
+"Q973085": {
+"ja": "打刀",
+"en": "uchigatana",
+"roots": []
+},
+"Q97379116": {
+"ja": "日本の小中高一貫校",
+"en": "Japanese elementary, junior high and high schools",
+"roots": []
+},
+"Q9826": {
+"ja": "ハイスクール",
+"en": "high school",
+"roots": []
+},
+"Q98280550": {
+"ja": "",
+"en": "station located in a cut",
+"roots": []
+},
+"Q9842": {
+"ja": "小学校",
+"en": "primary school",
+"roots": []
+},
+"Q98555051": {
+"ja": "食料品店チェーン",
+"en": "food store chain",
+"roots": []
+}
+}
+}

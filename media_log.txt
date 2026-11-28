@@ -1,0 +1,23 @@
+写真と説明を付ける場所 733 （うち記事名を対応表で決めるもの 39 ）
+前回のものを使う：記事 765 ／写真 732
+wp ：読んだページ 0 （使えなかったもの 0 ）
+対応表の記事が読めませんでした 6-02 ['板橋区立こども動物園']
+対応表の記事が読めませんでした 1-1-29 ['氷川つり堀公園']
+対応表の記事が読めませんでした 1-1-09 ['高島平緑地']
+対応表の記事が読めませんでした 7-4-nb9d7 ['板谷公園']
+cm ：読んだページ 0 （使えなかったもの 0 ）
+kanko_more.json：写真 710 ／説明 709 ／場所 729 ／ 326 KB
+例 1-1-02 小豆沢公園 ： 小豆沢公園（あずさわこうえん）は､東京都板橋区小豆沢にある区立の公園である｡2020年7月24日に開設された。この公園は2020年東京オリンピックに合わせる形で開設、リニューアルした。ここは元々はじゃぶじゃぶ池といて運営されていた。
+例 1-1-03 東板橋公園 ： 東板橋公園(ひがしいたばしこうえん)は、東京都板橋区板橋の、石神井川と国道17号の間に広がる住宅街の中にある、中規模の区立公園。園内は、動物と遊べる「板橋こども動物園」と公園の二つに大きく分かれ、遊具があって自由に遊べるのは野球場に近いエリ
+例 1-1-04 板橋交通公園 ： 板橋交通公園（いたばしこうつうこうえん）は、東京都板橋区大山西町21-1に所在する交通公園である。
+例 1-1-07 城北中央公園 ： 城北中央公園（じょうほくちゅうおうこうえん）は、東京都練馬区から板橋区にかけて広がる都立公園。城北地区最大の総合公園であり、運動場・テニス場などのスポーツ施設がある。城北地区住民の憩いの場、また運動の場となっている。
+例 1-1-08 城北交通公園 ： 城北交通公園（じょうほくこうつうこうえん）は、東京都板橋区坂下2－19－1に所在する交通公園である。蒸気機関車、都バスの保存展示を始め、ミニSLの運転、鉄道模型の展示などを行っている。
+縮小画像 500 px： 200 https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Akatsuka_tameike_park_itabashi.JPG/500px-Akatsuka_tameike_park_itabashi.JPG
+縮小画像 960 px： 200 https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Akatsuka_tameike_park_itabashi.JPG/960px-Akatsuka_tameike_park_itabashi.JPG
+写真の例 1-1-01 Akatsuka_tameike_park_itabashi.JPG 1867 x 1400 ／ Kamemaru2000 ／ CC BY-SA 3.0
+縮小画像 500 px： 200 https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Azusawa_park_entrance_itabashi.JPG/500px-Azusawa_park_entrance_itabashi.JPG
+縮小画像 960 px： 200 https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Azusawa_park_entrance_itabashi.JPG/960px-Azusawa_park_entrance_itabashi.JPG
+写真の例 1-1-02 Azusawa_park_entrance_itabashi.JPG 2592 x 1944 ／ Kamemaru2000 ／ CC BY-SA 3.0
+縮小画像 500 px： 200 https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Higashiitabashi_park_itabashi_2009.JPG/500px-Higashiitabashi_park_itabashi_2009.JPG
+縮小画像 960 px： 200 https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Higashiitabashi_park_itabashi_2009.JPG/960px-Higashiitabashi_park_itabashi_2009.JPG
+写真の例 1-1-03 Higashiitabashi_park_itabashi_2009.JPG 2592 x 1944 ／ Kamemaru2000 ／ CC BY-SA 3.0

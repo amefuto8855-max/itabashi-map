@@ -1,0 +1,85 @@
+区 23 千代田区=Q214051 中央区=Q212704 港区=Q190088 新宿区=Q179645 文京区=Q212713 台東区=Q232641 墨田区=Q235135 江東区=Q215175 品川区=Q233495 目黒区=Q233903 大田区=Q217234 世田谷区=Q231645 渋谷区=Q193638 中野区=Q234087 杉並区=Q232631 豊島区=Q236680 北区=Q235130 荒川区=Q232624 板橋区=Q232635 練馬区=Q232655 足立区=Q213464 葛飾区=Q232628 江戸川区=Q214056
+   千代田区 551 件
+   中央区 297 件
+   港区 586 件
+   新宿区 488 件
+   文京区 353 件
+   台東区 425 件
+   墨田区 212 件
+   江東区 377 件
+   品川区 269 件
+   目黒区 181 件
+   大田区 355 件
+   世田谷区 465 件
+   渋谷区 324 件
+   中野区 174 件
+   杉並区 257 件
+   豊島区 213 件
+   北区 228 件
+   荒川区 125 件
+   板橋区 235 件
+   練馬区 268 件
+   足立区 376 件
+   葛飾区 268 件
+   江戸川区 306 件
+項目 7200
+種類 1022 うち候補の種類 310
+詳しい情報を取る候補 2978
+詳しい情報 2978
+カタログの検索結果 2596
+   葛飾区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   中央区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   世田谷区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   練馬区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   江東区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   江戸川区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   荒川区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   豊島区 観光施設一覧 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   台東区 文化観光施設 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   中央区 観光ポイント 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   江東区 観光ポイント 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   江戸川区 観光ポイント 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   板橋区 観光・文化財 2 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   台東区 観光ポイント 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   大田区 区内宿泊施設の宿泊者数、観光情報発信拠点数 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   大田区 区内宿泊施設の宿泊者数、観光情報発信拠点数 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 港区 港区観光情報 https://opendata.city.minato.tokyo.jp/dataset/1de129d1-ea9f-4cc7-8e17-4f02bf57e4d1/resource/2f0d2c91-5b81-477b-ba5a-b93d34e1f8a2/download/minato_shukuhakushisetsu.csv c7-8e17-4f02bf57e4d1/resource/2f0d2c91-5b81-477b-ba5a-b93d34e1f8a2/download/minato_shukuhakushiset "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 港区観光情報 https://opendata.city.minato.tokyo.jp/dataset/1de129d1-ea9f-4cc7-8e17-4f02bf57e4d1/resource/bd865e0d-1b6f-4cd6-8c62-e6377f44d9a5/download/minato_shukuhakushisetsu.json c7-8e17-4f02bf57e4d1/resource/bd865e0d-1b6f-4cd6-8c62-e6377f44d9a5/download/minato_shukuhakushiset "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 港区観光情報 https://opendata.city.minato.tokyo.jp/dataset/e1b08c99-e695-47e8-bce4-a243247effed/resource/0d9bdc66-22e0-469f-a90f-8481dc2341b6/download/minato_shoutengai.csv 7e8-bce4-a243247effed/resource/0d9bdc66-22e0-469f-a90f-8481dc2341b6/download/minato_shoutengai.csv "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 港区観光情報 https://opendata.city.minato.tokyo.jp/dataset/e1b08c99-e695-47e8-bce4-a243247effed/resource/eee864a8-107e-4953-b312-89b77580ff13/download/minato_shoutengai.json e8-bce4-a243247effed/resource/eee864a8-107e-4953-b312-89b77580ff13/download/minato_shoutengai.json "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+   港区 港区観光情報 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 港区 港区観光マップ https://opendata.city.minato.tokyo.jp/dataset/838add1b-2d05-4bdc-8385-af669725d4a5/resource/66716e85-c05f-429f-9f4f-e36fe3e285ba/download/minato_kankoumap.csv 4bdc-8385-af669725d4a5/resource/66716e85-c05f-429f-9f4f-e36fe3e285ba/download/minato_kankoumap.csv "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 港区観光マップ https://opendata.city.minato.tokyo.jp/dataset/838add1b-2d05-4bdc-8385-af669725d4a5/resource/206baf0c-fd4a-4283-9143-7ee50c2b9417/download/minato_touristmap.csv bdc-8385-af669725d4a5/resource/206baf0c-fd4a-4283-9143-7ee50c2b9417/download/minato_touristmap.csv "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+   港区 港区観光マップ 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   江東区 江東区観光周遊マップ 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   新宿区 新宿区の観光ポイント 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 港区 港区のバリアフリー観光ルート https://opendata.city.minato.tokyo.jp/dataset/039f6af4-b490-4c34-b000-bf3a3d1e3878/resource/aa453535-29a4-4d4e-ab69-228bf7ab2605/download/minato_barrier_free_kankou.csv 34-b000-bf3a3d1e3878/resource/aa453535-29a4-4d4e-ab69-228bf7ab2605/download/minato_barrier_free_ka "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 港区のバリアフリー観光ルート https://opendata.city.minato.tokyo.jp/dataset/039f6af4-b490-4c34-b000-bf3a3d1e3878/resource/7c47fca9-0fd4-4637-9c0c-bb67ebf9f0cf/download/minato_barrier_free_kankou.json 34-b000-bf3a3d1e3878/resource/7c47fca9-0fd4-4637-9c0c-bb67ebf9f0cf/download/minato_barrier_free_ka "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+   港区 港区のバリアフリー観光ルート 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   品川区 観光情報（しながわ百景） 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   板橋区 いたばし観光センター外観 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 台東区 台東区行政資料集　観光の振興 https://www.city.taito.lg.jp/other/gyouseisiryou/2024/opd2_331.csv eisiryou/2024/opd2_331.csv \'HTTP Error 404: Not Found b\\\'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\\\\r\\\\n<html>\\\\r\\\\n<head>\\\\r\\\\n<meta content="text/html; charset=SHIFT_JIS" http-equiv="content-type">\\\\r\\\\n<title>\\\'\'')
+  ファイルを取れませんでした 台東区 台東区行政資料集　観光の振興 https://www.city.taito.lg.jp/other/gyouseisiryou/2024/opd2_332.csv eisiryou/2024/opd2_332.csv \'HTTP Error 404: Not Found b\\\'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\\\\r\\\\n<html>\\\\r\\\\n<head>\\\\r\\\\n<meta content="text/html; charset=SHIFT_JIS" http-equiv="content-type">\\\\r\\\\n<title>\\\'\'')
+   台東区 台東区行政資料集　観光の振興 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   板橋区 いたばし観光センター展示室 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   江東区 深川・城東シャトルバスルートと観光名所マップ 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 台東区 台東区行政資料集　7．観光案内所 https://www.city.taito.lg.jp/other/gyouseisiryou/2024/opd3_050.csv eisiryou/2024/opd3_050.csv \'HTTP Error 404: Not Found b\\\'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\\\\r\\\\n<html>\\\\r\\\\n<head>\\\\r\\\\n<meta content="text/html; charset=SHIFT_JIS" http-equiv="content-type">\\\\r\\\\n<title>\\\'\'')
+   台東区 台東区行政資料集　7．観光案内所 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（令和3年度版） 11 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（令和元年度版） 11 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（令和2年度版） 11 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（令和6年度版） 11 観光 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（令和5年度版） 11 観光 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（令和4年度版） 11 観光 1 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（平成27年4月1日基準） 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（平成28年4月1日基準） 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（平成29年4月1日基準） 11 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+   墨田区 行政基礎資料集（平成30年4月1日基準） 11 観光 4 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 港区 第34回港区民世論調査クロス集計表・港区へ訪れる観光客について https://opendata.city.minato.tokyo.jp/dataset/51027527-fd25-423e-a2f6-6fb2eea7486e/resource/3ee10343-9d27-48b4-84a4-39e9f72a4fd1/download/yoronchosa34_cross_q13.csv 3e-a2f6-6fb2eea7486e/resource/3ee10343-9d27-48b4-84a4-39e9f72a4fd1/download/yoronchosa34_cross_q13 "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 第34回港区民世論調査クロス集計表・港区へ訪れる観光客について https://opendata.city.minato.tokyo.jp/dataset/51027527-fd25-423e-a2f6-6fb2eea7486e/resource/b905a49d-8415-42f4-94b0-879d0ceabd44/download/yoronchosa34_cross_q14.csv 3e-a2f6-6fb2eea7486e/resource/b905a49d-8415-42f4-94b0-879d0ceabd44/download/yoronchosa34_cross_q14 "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+  ファイルを取れませんでした 港区 第34回港区民世論調査クロス集計表・港区へ訪れる観光客について https://opendata.city.minato.tokyo.jp/dataset/51027527-fd25-423e-a2f6-6fb2eea7486e/resource/7b8c69f2-da0d-49e6-9612-1653288da5bd/download/yoronchosa34_cross_q15.csv 3e-a2f6-6fb2eea7486e/resource/7b8c69f2-da0d-49e6-9612-1653288da5bd/download/yoronchosa34_cross_q15 "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+   港区 第34回港区民世論調査クロス集計表・港区へ訪れる観光客について 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+  ファイルを取れませんでした 港区 第34回港区民世論調査単純集計表・港区へ訪れる観光客について https://opendata.city.minato.tokyo.jp/dataset/8c73dd5b-9e48-4182-8b07-56048621b06a/resource/5dbf4aab-b9b5-42ba-b483-3ee2b0768e45/download/yoronchosa34_tanjun_4.csv 82-8b07-56048621b06a/resource/5dbf4aab-b9b5-42ba-b483-3ee2b0768e45/download/yoronchosa34_tanjun_4. "HTTP Error 403: Forbidden b\'<html>\\\\r\\\\n<head><title>403 Forbidden</title></head>\\\\r\\\\n<body>\\\\r\\\\n<center><h1>403 Forbidden</h1></center>\\\\r\\\\n</body>\\\\r\\\\n</html>\\\\r\\\\n\'"')
+   港区 第34回港区民世論調査単純集計表・港区へ訪れる観光客について 0 ファイル クリエイティブ・コモンズ 表示（CC BY）
+かかった時間 263 秒

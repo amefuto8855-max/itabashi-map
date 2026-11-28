@@ -1,0 +1,940 @@
+[
+{
+"ward": "葛飾区",
+"org": "葛飾区",
+"title": "観光施設一覧",
+"name": "t131229d0000000004",
+"id": "6d8308b7-e6cd-41d6-ace2-2e58d59e7fba",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "葛飾区内の観光施設一覧です。",
+"modified": "2025-12-12T08:52:26.563591",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131229d0000000004",
+"files": [
+{
+"file": "t131229d0000000004/79266ea3-6d55-477d-b501-e22310eb9560.csv",
+"name": "観光施設一覧",
+"url": "https://www.opendata.metro.tokyo.lg.jp/suisyoudataset/131229_tourism.csv",
+"format": "csv",
+"bytes": 3667
+}
+]
+},
+{
+"ward": "中央区",
+"org": "中央区",
+"title": "観光施設一覧",
+"name": "t131024d0000000020",
+"id": "72ad7f8f-a685-49f8-b319-b3405ad2de0d",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【中央区】観光施設一覧",
+"modified": "2025-12-12T07:55:30.608742",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131024d0000000020",
+"files": [
+{
+"file": "t131024d0000000020/5361bb81-a996-4cf8-98f4-36fdc719aabd.csv",
+"name": "観光施設一覧",
+"url": "https://www.city.chuo.lg.jp/documents/984/kankoushisetu.csv",
+"format": "csv",
+"bytes": 2862
+}
+]
+},
+{
+"ward": "世田谷区",
+"org": "世田谷区",
+"title": "観光施設一覧",
+"name": "t131121d0000000006",
+"id": "d9f96efd-7e71-45b1-995a-3f4c0a8485ba",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "世田谷区の観光施設の一覧です。",
+"modified": "2025-12-12T08:35:46.804551",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131121d0000000006",
+"files": [
+{
+"file": "t131121d0000000006/d56daf51-19f3-4672-80d4-02923a2918f1.csv",
+"name": "観光施設一覧",
+"url": "https://www.city.setagaya.lg.jp/documents/22308/11_131121_tourism.csv",
+"format": "csv",
+"bytes": 89437
+}
+]
+},
+{
+"ward": "練馬区",
+"org": "練馬区",
+"title": "観光施設一覧",
+"name": "t131202d0000000038",
+"id": "14808531-907d-457e-b95a-74af4296ede6",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【練馬区】練馬区内にある主な観光施設の一覧です。\n\n※令和6年9月1日時点の一覧から、デジタル庁が公表している自治体標準オープンデータセットに準拠して作成しています。あわせて、データ名を「区内観光施設」から「観光施設一覧」に変更しています。",
+"modified": "2026-08-31T05:09:19.432298",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131202d0000000038",
+"files": [
+{
+"file": "t131202d0000000038/e1be6036-aba7-4767-b0d7-cd8ff99f33cd.csv",
+"name": "観光施設一覧（令和8年4月1日時点）",
+"url": "https://www.city.nerima.tokyo.jp/kusei/tokei/opendata/opendatasite/kanko/tourism.files/131202_tourism.csv",
+"format": "csv",
+"bytes": 36390
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "観光施設一覧",
+"name": "t131075d0000000135",
+"id": "bb8eedf6-203a-450d-acca-b9b27556fc55",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】観光施設一覧",
+"modified": "2025-12-12T08:19:18.555567",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000135",
+"files": [
+{
+"file": "t131075d0000000135/77f67986-8b80-4b8b-8196-6f0dff16fa62.csv",
+"name": "観光施設一覧",
+"url": "https://www.opendata.metro.tokyo.lg.jp/sumida/131075_tourism.csv",
+"format": "csv",
+"bytes": 22373
+}
+]
+},
+{
+"ward": "江東区",
+"org": "江東区",
+"title": "観光施設一覧",
+"name": "t131083d0000000016",
+"id": "c0dcfccf-a534-4d47-a295-30907885a211",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【江東区】観光施設一覧です。",
+"modified": "2025-12-12T08:20:31.481647",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131083d0000000016",
+"files": [
+{
+"file": "t131083d0000000016/e5af0359-3c16-4595-95ac-02dd7d9c2b01.csv",
+"name": "観光施設一覧",
+"url": "https://www.opendata.metro.tokyo.lg.jp/koto/131083_011_tourism.csv",
+"format": "csv",
+"bytes": 12649
+}
+]
+},
+{
+"ward": "江戸川区",
+"org": "江戸川区",
+"title": "観光施設一覧",
+"name": "t131237d3100000007",
+"id": "0dfde8d9-d378-4fe0-ae80-f1045ef5eada",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【江戸川区】11.観光施設一覧",
+"modified": "2026-11-20T04:42:09.178856",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131237d3100000007",
+"files": [
+{
+"file": "t131237d3100000007/80364473-d8f4-4b08-9287-aa04dd165f01.csv",
+"name": "観光施設一覧",
+"url": "https://www.opendata.metro.tokyo.lg.jp/edogawa/131237_tourism.csv",
+"format": "csv",
+"bytes": 14140
+}
+]
+},
+{
+"ward": "荒川区",
+"org": "荒川区",
+"title": "観光施設一覧",
+"name": "t131181d0000000006",
+"id": "cfcb2212-0045-48a5-95cf-67d700724e60",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【荒川区】観光施設の一覧です。\n\n※デジタル庁が公開を推奨している「自治体標準オープンデータセット」に準拠し、作成しています。\n",
+"modified": "2025-12-12T08:45:01.456802",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131181d0000000006",
+"files": [
+{
+"file": "t131181d0000000006/9888736e-d138-4904-9835-8415cc9704c8.csv",
+"name": "観光施設一覧",
+"url": "https://www.city.arakawa.tokyo.jp/documents/23112/131181_tourism.csv",
+"format": "csv",
+"bytes": 16518
+}
+]
+},
+{
+"ward": "豊島区",
+"org": "豊島区",
+"title": "観光施設一覧",
+"name": "t131164d0000000005",
+"id": "6b75befa-d006-4d32-96da-71ba349c5299",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "豊島区が公開しているデータ（オープンデータ）をご覧いただけます。",
+"modified": "2025-12-12T08:44:19.863179",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131164d0000000005",
+"files": [
+{
+"file": "t131164d0000000005/8af89620-4475-427a-ba41-88ad297007ca.csv",
+"name": "観光施設一覧",
+"url": "https://www.opendata.metro.tokyo.lg.jp/toyoshima/R4_tourism.csv",
+"format": "csv",
+"bytes": 3631
+}
+]
+},
+{
+"ward": "台東区",
+"org": "台東区",
+"title": "文化観光施設",
+"name": "t131067d0000000236",
+"id": "11883a47-4383-4e7a-acf6-9f54f3bad22c",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "",
+"modified": "2025-12-12T08:11:04.828173",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131067d0000000236",
+"files": [
+{
+"file": "t131067d0000000236/ffe1a1c6-f9d5-4724-8bd4-db1b66876daf.csv",
+"name": "主な文化観光施設",
+"url": "https://www.city.taito.lg.jp/kusei/online/opendata/seikatu/shisethutizujouhou.files/sisetu_14.csv",
+"format": "csv",
+"bytes": 2723
+}
+]
+},
+{
+"ward": "中央区",
+"org": "中央区",
+"title": "観光ポイント",
+"name": "t131024d0000000023",
+"id": "e197ceb4-bf10-46a8-a2d5-eace69e20fd2",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【中央区】観光ポイント",
+"modified": "2025-12-12T07:55:34.566635",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131024d0000000023",
+"files": [
+{
+"file": "t131024d0000000023/10900dcb-3c58-43cf-a20f-64cc310b37ea.csv",
+"name": "観光ポイント",
+"url": "https://www.city.chuo.lg.jp/documents/984/kankoupoint.csv",
+"format": "csv",
+"bytes": 1163
+}
+]
+},
+{
+"ward": "江東区",
+"org": "江東区",
+"title": "観光ポイント",
+"name": "t131083d3100000012",
+"id": "d4e69288-0323-490f-89c8-b64061efdac7",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【江東区】観光ポイントです。",
+"modified": "2025-12-12T08:22:35.688406",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131083d3100000012",
+"files": []
+},
+{
+"ward": "江戸川区",
+"org": "江戸川区",
+"title": "観光ポイント",
+"name": "t131237d3100000013",
+"id": "512c780e-e3b1-4bae-aac2-11e43fa193fd",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【江戸川区】31.観光ポイント",
+"modified": "2026-11-20T04:42:22.300917",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131237d3100000013",
+"files": [
+{
+"file": "t131237d3100000013/5c97315e-e3b5-4333-930a-185ef5ed95fa.csv",
+"name": "観光ポイント",
+"url": "https://www.opendata.metro.tokyo.lg.jp/edogawa/131237_tourist_attraction.csv",
+"format": "csv",
+"bytes": 1438
+}
+]
+},
+{
+"ward": "板橋区",
+"org": "板橋区",
+"title": "観光・文化財",
+"name": "t131199d0000000155",
+"id": "888bacab-fbf2-463c-a6e7-42124f96e433",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【板橋区】どこナビいたばし（地図）で掲載している地理情報のうち、観光・文化財に関するデータを掲載しています。",
+"modified": "2025-12-12T08:45:48.865934",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131199d0000000155",
+"files": [
+{
+"file": "t131199d0000000155/33cae6b5-25e3-4e35-93db-5f478d7c9915.csv",
+"name": "観光スポット",
+"url": "https://www.city.itabashi.tokyo.jp/_res/projects/default_project/_page_/001/031/246/attach_89547_01.csv",
+"format": "csv",
+"bytes": 3711
+},
+{
+"file": "t131199d0000000155/b961d65e-8a88-4da9-bd5d-d22684d70790.csv",
+"name": "文化財",
+"url": "https://www.city.itabashi.tokyo.jp/_res/projects/default_project/_page_/001/031/246/attach_89547_02.csv",
+"format": "csv",
+"bytes": 4175
+}
+]
+},
+{
+"ward": "台東区",
+"org": "台東区",
+"title": "観光ポイント",
+"name": "t131067d0000000392",
+"id": "35ba6de9-0967-4d98-96ad-6f0ce8771ad1",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "",
+"modified": "2025-12-12T08:14:04.911635",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131067d0000000392",
+"files": [
+{
+"file": "t131067d0000000392/f5c308b2-e3f4-4811-9240-7ec6be4378de.csv",
+"name": "観光ポイント",
+"url": "https://www.city.taito.lg.jp/kusei/online/opendata/seikatu/shisethutizujouhou.files/20250314_kanko_point.csv",
+"format": "csv",
+"bytes": 2640
+}
+]
+},
+{
+"ward": "大田区",
+"org": "大田区",
+"title": "区内宿泊施設の宿泊者数、観光情報発信拠点数",
+"name": "t131113d3100000139",
+"id": "b63c158f-2374-4aa6-a452-94087ccea4f0",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "令和7年度区政ファイルデータ",
+"modified": "2026-02-25T09:20:23.180298",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131113d3100000139",
+"files": [
+{
+"file": "t131113d3100000139/383df907-9798-473d-bc0b-0f5d3843e1f0.xlsx",
+"name": "区内宿泊施設の宿泊者数、観光情報発信拠点数",
+"url": "https://www.opendata.metro.tokyo.lg.jp/ota/131113_R7_14_kunaishukuhakushisetsunoshukuhakushasuu_kankoujouhouhasshinkyotensuu.xlsx",
+"format": "xlsx",
+"bytes": 12131
+}
+]
+},
+{
+"ward": "大田区",
+"org": "大田区",
+"title": "区内宿泊施設の宿泊者数、観光情報発信拠点数",
+"name": "t131113d0000000179",
+"id": "e5e66b94-9562-4834-99b4-53a1ffe94f2c",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "令和6年度区政ファイルデータ",
+"modified": "2026-06-04T03:11:19.405035",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131113d0000000179",
+"files": [
+{
+"file": "t131113d0000000179/f08e9e84-2a6f-4890-9e8b-099b2d529bd6.xlsx",
+"name": "区内宿泊施設の宿泊者数、観光情報発信拠点数",
+"url": "https://www.opendata.metro.tokyo.lg.jp/ota/R6/131113_R6_14_kunaishukuhakushisetsunoshukuhakushasuu_kankoujouhouhasshinkyotensuu.xlsx",
+"format": "xlsx",
+"bytes": 12029
+}
+]
+},
+{
+"ward": "港区",
+"org": "港区",
+"title": "港区観光情報",
+"name": "t131032d0000000009",
+"id": "8575048b-a588-47c4-9529-b870edb67326",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【港区】区内の観光についての情報です。",
+"modified": "2025-12-12T07:56:24.548959",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131032d0000000009",
+"files": []
+},
+{
+"ward": "港区",
+"org": "港区",
+"title": "港区観光マップ",
+"name": "t131032d0000000227",
+"id": "7ca7a807-2869-4aa0-8960-3b28ce613907",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【港区】港区の観光マップ（日本語版） です。",
+"modified": "2026-11-06T07:55:15.919962",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131032d0000000227",
+"files": []
+},
+{
+"ward": "江東区",
+"org": "江東区",
+"title": "江東区観光周遊マップ",
+"name": "t131083d0000000039",
+"id": "6f9508e5-55d2-42cf-9c13-9d4c19e79cf1",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【江東区】江東区観光周遊マップ",
+"modified": "2025-12-12T08:20:52.784306",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131083d0000000039",
+"files": []
+},
+{
+"ward": "新宿区",
+"org": "新宿区",
+"title": "新宿区の観光ポイント",
+"name": "t131041d0000000131",
+"id": "bc85f2d3-53b7-4e26-a891-3bf0b820cd0f",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【新宿区】観光ポイントです。",
+"modified": "2025-12-12T08:09:12.933080",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131041d0000000131",
+"files": [
+{
+"file": "t131041d0000000131/122c8a2a-e370-4340-9e0e-b80d783aad20.csv",
+"name": "観光ポイント（自治体標準データセット）",
+"url": "https://www.city.shinjuku.lg.jp/content/000399980.csv",
+"format": "csv",
+"bytes": 2674
+}
+]
+},
+{
+"ward": "港区",
+"org": "港区",
+"title": "港区のバリアフリー観光ルート",
+"name": "t131032d0000000239",
+"id": "9cfbe267-0b5c-4fe6-a2e9-d2a5d0fbbbfa",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【港区】バリアフリー観光ルートについての情報です。",
+"modified": "2026-11-06T07:53:38.474212",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131032d0000000239",
+"files": []
+},
+{
+"ward": "品川区",
+"org": "品川区",
+"title": "観光情報（しながわ百景）",
+"name": "t131091d0000000005",
+"id": "cd643691-65ff-4586-9bbe-2e127e2e8754",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【品川区】　品川区の歴史・風土を伝える風景、施設、名所などの説明と位置情報",
+"modified": "2026-07-02T09:13:13.014972",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131091d0000000005",
+"files": [
+{
+"file": "t131091d0000000005/2261b918-da4d-4eb7-a0ac-9fd800a3fcaf.csv",
+"name": "観光情報（しながわ百景)csvデータ",
+"url": "https://www.opendata.metro.tokyo.lg.jp/shinagawa/kankojoho-shinagawa100kei.csv",
+"format": "csv",
+"bytes": 44896
+}
+]
+},
+{
+"ward": "板橋区",
+"org": "板橋区",
+"title": "いたばし観光センター外観",
+"name": "t131199d0000006014",
+"id": "67dca6f8-c501-4913-9d51-ad554566170f",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【板橋区】いたばし観光センター外観の写真です。",
+"modified": "2025-12-12T08:47:31.524551",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131199d0000006014",
+"files": []
+},
+{
+"ward": "台東区",
+"org": "台東区",
+"title": "台東区行政資料集　観光の振興",
+"name": "t131067d0000000328",
+"id": "c49a4a52-abb5-43ab-84a3-eaabec80a815",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "",
+"modified": "2025-12-12T08:12:55.457988",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131067d0000000328",
+"files": []
+},
+{
+"ward": "板橋区",
+"org": "板橋区",
+"title": "いたばし観光センター展示室",
+"name": "t131199d0000006015",
+"id": "e29e2b1a-21a5-4ebe-8db5-73515afd058c",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【板橋区】いたばし観光センター外観の写真です。",
+"modified": "2025-12-12T08:47:32.563165",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131199d0000006015",
+"files": []
+},
+{
+"ward": "江東区",
+"org": "江東区",
+"title": "深川・城東シャトルバスルートと観光名所マップ",
+"name": "t131083d0000000040",
+"id": "745848e3-1765-4d51-a675-81c020c525ff",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【江東区】深川・城東シャトルバスルートと観光名所マップ",
+"modified": "2025-12-12T08:20:53.775239",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131083d0000000040",
+"files": []
+},
+{
+"ward": "台東区",
+"org": "台東区",
+"title": "台東区行政資料集　7．観光案内所",
+"name": "t131067d0000000368",
+"id": "b49ae055-197f-4363-89c0-4574d43dc570",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "",
+"modified": "2025-12-12T08:13:36.800408",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131067d0000000368",
+"files": []
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（令和3年度版） 11 観光",
+"name": "t131075d0000000129",
+"id": "6100dfb6-0e81-4b18-9dbb-e7ecae34309a",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:19:03.289504",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000129",
+"files": [
+{
+"file": "t131075d0000000129/430f9429-0e8b-4468-80c4-15df8d244a4d.xlsx",
+"name": "11-(1) 観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20210401/11_kankou.files/11-1.xlsx",
+"format": "xlsx",
+"bytes": 11647
+},
+{
+"file": "t131075d0000000129/a9a35ffc-96d9-40e7-a80c-e14ec73967ae.xlsx",
+"name": "11-(2) まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20210401/11_kankou.files/11-2.xlsx",
+"format": "xlsx",
+"bytes": 10613
+},
+{
+"file": "t131075d0000000129/438eeaf4-efce-491a-babf-45071071c7f0.xlsx",
+"name": "11-(3) 主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20210401/11_kankou.files/11-3.xlsx",
+"format": "xlsx",
+"bytes": 11756
+},
+{
+"file": "t131075d0000000129/c20fdcb7-b877-40b7-8cb8-bea8704b470b.xlsx",
+"name": "11-(4) 主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20210401/11_kankou.files/11-4.xlsx",
+"format": "xlsx",
+"bytes": 11497
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（令和元年度版） 11 観光",
+"name": "t131075d0000000029",
+"id": "4736e836-3c69-428a-b971-46a009280bc7",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:14:58.257518",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000029",
+"files": [
+{
+"file": "t131075d0000000029/cfb8fe45-d5c6-437e-a703-7df57c640dcc.xlsx",
+"name": "11-(1) 観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20190401/11_kankou.files/11-1.xlsx",
+"format": "xlsx",
+"bytes": 11724
+},
+{
+"file": "t131075d0000000029/2c43f84b-a1d7-4fcb-98c8-8e3f1224a091.xlsx",
+"name": "11-(2) まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20190401/11_kankou.files/11-2.xlsx",
+"format": "xlsx",
+"bytes": 9491
+},
+{
+"file": "t131075d0000000029/d00a695b-6643-487b-bf33-990945728d6d.xlsx",
+"name": "11-(3) 主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20190401/11_kankou.files/11-3.xlsx",
+"format": "xlsx",
+"bytes": 10637
+},
+{
+"file": "t131075d0000000029/f54fb8d2-7076-4acb-b16b-3220ead4c2be.xlsx",
+"name": "11-(4) 主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20190401/11_kankou.files/11-4.xlsx",
+"format": "xlsx",
+"bytes": 10296
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（令和2年度版） 11 観光",
+"name": "t131075d0000000016",
+"id": "9ef1c305-08c0-4986-978a-62fd2e1eb88a",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:14:36.488395",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000016",
+"files": [
+{
+"file": "t131075d0000000016/5a66bbaf-ebf2-4d95-a074-87cdecb410b4.xlsx",
+"name": "11-(1) 観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20200401/11_kankou.files/11-1.xlsx",
+"format": "xlsx",
+"bytes": 11583
+},
+{
+"file": "t131075d0000000016/841ecce4-1ee9-4131-a7f3-1c22fcacb453.xlsx",
+"name": "11-(2) まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20200401/11_kankou.files/11-2.xlsx",
+"format": "xlsx",
+"bytes": 10596
+},
+{
+"file": "t131075d0000000016/5ac6c049-c6eb-42a6-9a4d-f25c734eae96.xlsx",
+"name": "11-(3) 主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20200401/11_kankou.files/11-3.xlsx",
+"format": "xlsx",
+"bytes": 10623
+},
+{
+"file": "t131075d0000000016/79d86ecf-4d5c-4ae7-b772-86f8f177758a.xlsx",
+"name": "11-(4) 主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20200401/11_kankou.files/11-4.xlsx",
+"format": "xlsx",
+"bytes": 10201
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（令和6年度版） 11 観光",
+"name": "t131075d0000000184",
+"id": "c98bb26f-ca86-48cb-b2b0-f429d312c5d4",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:20:09.779727",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000184",
+"files": [
+{
+"file": "t131075d0000000184/2af6466a-0744-4353-bf2d-f6f52db81460.xlsx",
+"name": "11 観光",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/r6.files/r6-11.xlsx",
+"format": "xlsx",
+"bytes": 28739
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（令和5年度版） 11 観光",
+"name": "t131075d0000000169",
+"id": "a3510076-60c4-4a10-aad0-c3496b319469",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:19:54.180138",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000169",
+"files": [
+{
+"file": "t131075d0000000169/84467dba-1b8f-4ca7-bbc0-107455d3fcb9.xlsx",
+"name": "11 観光",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/r5.files/r5-11.xlsx",
+"format": "xlsx",
+"bytes": 28419
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（令和4年度版） 11 観光",
+"name": "t131075d0000000154",
+"id": "0235b380-2d0f-4034-8b46-b99a4730289e",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:19:37.613847",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000154",
+"files": [
+{
+"file": "t131075d0000000154/deb65dc4-2742-4e55-b4b3-16d7cfd124b5.xlsx",
+"name": "11 観光",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/r4.files/r4-11.xlsx",
+"format": "xlsx",
+"bytes": 19721
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（平成27年4月1日基準） 観光",
+"name": "t131075d0000000089",
+"id": "a777edc7-2642-438b-a67b-789b0863c258",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:17:39.813202",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000089",
+"files": [
+{
+"file": "t131075d0000000089/0972154a-5f01-4dfa-820f-7d57fff6f17c.xls",
+"name": "観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20150401/kanko.files/11-1.xls",
+"format": "xls",
+"bytes": 26624
+},
+{
+"file": "t131075d0000000089/644d17ae-c02c-4979-bb16-611cb5ad3f6d.xls",
+"name": "まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20150401/kanko.files/11-2.xls",
+"format": "xls",
+"bytes": 25600
+},
+{
+"file": "t131075d0000000089/5ce9a5ee-1ddf-4383-a1c8-532ffdda6d53.xls",
+"name": "主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20150401/kanko.files/11-3.xls",
+"format": "xls",
+"bytes": 27648
+},
+{
+"file": "t131075d0000000089/404a5955-ce7c-474b-8aa7-29c69874a31f.xls",
+"name": "主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20150401/kanko.files/11-4.xls",
+"format": "xls",
+"bytes": 26112
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（平成28年4月1日基準） 観光",
+"name": "t131075d0000000072",
+"id": "9aef3784-e326-467f-8aff-a9c5a70346a9",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:16:56.910139",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000072",
+"files": [
+{
+"file": "t131075d0000000072/c0dc8889-16e6-471e-8ccb-f71f90d0d891.csv",
+"name": "観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20160401/11.files/11-1.csv",
+"format": "csv",
+"bytes": 499
+},
+{
+"file": "t131075d0000000072/fc45167d-54ed-4460-b1c4-ec6c868bc204.csv",
+"name": "まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20160401/11.files/11-2.csv",
+"format": "csv",
+"bytes": 143
+},
+{
+"file": "t131075d0000000072/51c60a22-d07f-4712-9376-40d971a00236.csv",
+"name": "主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20160401/11.files/11-3.csv",
+"format": "csv",
+"bytes": 617
+},
+{
+"file": "t131075d0000000072/861b8408-e9a2-4297-a380-8825d0be6616.csv",
+"name": "主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20160401/11.files/11-4.csv",
+"format": "csv",
+"bytes": 561
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（平成29年4月1日基準） 11 観光",
+"name": "t131075d0000000055",
+"id": "cd12f116-2b14-481f-bb6c-d466d84b2946",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:16:14.495005",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000055",
+"files": [
+{
+"file": "t131075d0000000055/55b2d6e6-b255-4125-8fb5-6f5e47b44976.xlsx",
+"name": "11-(1) 観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20170401/11_kankou.files/11-1.xlsx",
+"format": "xlsx",
+"bytes": 12282
+},
+{
+"file": "t131075d0000000055/0cbcbbcf-d1d9-4f28-9315-a794bb966395.xlsx",
+"name": "11-(2) まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20170401/11_kankou.files/11-2.xlsx",
+"format": "xlsx",
+"bytes": 10980
+},
+{
+"file": "t131075d0000000055/36efa2f0-a090-4aab-9718-961a836c248f.xlsx",
+"name": "11-(3) 主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20170401/11_kankou.files/11-3.xlsx",
+"format": "xlsx",
+"bytes": 12655
+},
+{
+"file": "t131075d0000000055/3b7766ea-5286-4c10-abff-c7c880ba8d80.xlsx",
+"name": "11-(4) 主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20170401/11_kankou.files/11-4.xlsx",
+"format": "xlsx",
+"bytes": 11850
+}
+]
+},
+{
+"ward": "墨田区",
+"org": "墨田区",
+"title": "行政基礎資料集（平成30年4月1日基準） 11 観光",
+"name": "t131075d0000000042",
+"id": "c67f1e3c-92c7-4722-8ce5-00c340ddd22b",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【墨田区】墨田区政全般にわたる基本的な数値等を収集し、墨田区行政基礎資料集として発行しています。",
+"modified": "2025-12-12T08:15:26.470379",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131075d0000000042",
+"files": [
+{
+"file": "t131075d0000000042/82892008-0a2f-48ae-875e-709278948cc9.xlsx",
+"name": "11-(1) 観光案内所利用人数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20180401/11_kankou.files/11-1.xlsx",
+"format": "xlsx",
+"bytes": 10665
+},
+{
+"file": "t131075d0000000042/831701d2-2f22-40b4-b25f-0542ce8b7050.xlsx",
+"name": "11-(2) まち歩きガイドツアー事業実績",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20180401/11_kankou.files/11-2.xlsx",
+"format": "xlsx",
+"bytes": 9954
+},
+{
+"file": "t131075d0000000042/84c1d693-1ee7-4288-bcf1-c9d2be2fe404.xlsx",
+"name": "11-(3) 主要観光施設入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20180401/11_kankou.files/11-3.xlsx",
+"format": "xlsx",
+"bytes": 10772
+},
+{
+"file": "t131075d0000000042/7f56b0b7-8eed-4889-8a78-c1c2ea98902e.xlsx",
+"name": "11-(4) 主要イベント入込客数",
+"url": "https://www.city.sumida.lg.jp/kuseijoho/sumida_info/opendata/opendata_ichiran/gyoseikisosiryo/20180401/11_kankou.files/11-4.xlsx",
+"format": "xlsx",
+"bytes": 10746
+}
+]
+},
+{
+"ward": "港区",
+"org": "港区",
+"title": "第34回港区民世論調査クロス集計表・港区へ訪れる観光客について",
+"name": "t131032d0000000264",
+"id": "1385d231-a504-4571-ac8c-6da49af5eb63",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "第34回港区民世論調査クロス集計表・港区へ訪れる観光客についての情報です",
+"modified": "2025-12-12T08:06:11.633740",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131032d0000000264",
+"files": []
+},
+{
+"ward": "港区",
+"org": "港区",
+"title": "第34回港区民世論調査単純集計表・港区へ訪れる観光客について",
+"name": "t131032d0000000257",
+"id": "feea6b41-a790-4b52-95fb-eb3e65804ceb",
+"license": "クリエイティブ・コモンズ 表示（CC BY）",
+"license_id": "CC-BY-4.0",
+"license_url": "https://creativecommons.org/licenses/by/4.0/deed.ja",
+"notes": "【港区】第34回港区民世論調査単純集計表・区基本計画についての情報です。",
+"modified": "2025-12-12T08:06:03.248880",
+"page": "https://catalog.data.metro.tokyo.lg.jp/dataset/t131032d0000000257",
+"files": []
+}
+]
