@@ -236,12 +236,10 @@ def main():
     pp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "purposes.json")
     if os.path.exists(pp):
         for p in load(pp):
-            if p.get("tags"):
-                want = {ti[t] for t in p["tags"] if t in ti}
-                pn[p["key"]] = n_of(lambda o: any(t in want for t in o["tg"]))
-            else:
-                cs = set(p.get("cats") or [])
-                pn[p["key"]] = n_of(lambda o: o["c"] in cs)
+            # 分類に入るか、タグのどれかがある場所（地図の inPurp と同じ）
+            want = {ti[t] for t in (p.get("tags") or []) if t in ti}
+            cs = set(p.get("cats") or [])
+            pn[p["key"]] = n_of(lambda o: o["c"] in cs or any(t in want for t in o["tg"]))
     meta = {k: v for k, v in M.items() if k not in ("areas", "tags", "labels", "cats", "facets")}
     meta.update({"areas": areas, "tags": tags, "labels": labels, "cats": cats, "facets": facets})
     idx_out = {
